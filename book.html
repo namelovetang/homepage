@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>หนังสือเรียนจีน | ก็แค่จีน by ครูพี่เหม่ยถิง</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Arial", "Tahoma", sans-serif;
+    background: linear-gradient(135deg, #f8fbff, #eef6ff);
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background: white;
+    padding: 16px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #3b82c4;
+}
+
+.logo span {
+    color: #f28b9c;
+}
+
+.home-btn {
+    text-decoration: none;
+    color: #3b82c4;
+    background: #eef8ff;
+    padding: 9px 17px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.home-btn:hover {
+    background: #dff1ff;
+}
+
+/* Header */
+.page-header {
+    text-align: center;
+    padding: 50px 20px 35px;
+}
+
+.page-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.page-header h1 {
+    font-size: 30px;
+    color: #3b82c4;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #888;
+    font-size: 15px;
+}
+
+/* Category */
+.category {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+}
+
+.category-title {
+    font-size: 23px;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+.category-subtitle {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+/* Group */
+.book-group {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 7px 22px rgba(70,130,180,0.09);
+}
+
+.group-title {
+    font-size: 19px;
+    color: #3b82c4;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Book Grid */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.book-card {
+    background: #f9fcff;
+    border-radius: 18px;
+    padding: 20px;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #edf6fc;
+    transition: 0.25s;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    border-color: #b8def7;
+    background: white;
+}
+
+.book-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    flex-shrink: 0;
+}
+
+.blue {
+    background: #e5f4ff;
+}
+
+.pink {
+    background: #fff0f4;
+}
+
+.yellow {
+    background: #fff8dc;
+}
+
+.green {
+    background: #e6f8ee;
+}
+
+.purple {
+    background: #f0eaff;
+}
+
+.orange {
+    background: #fff0e3;
+}
+
+.book-info {
+    flex: 1;
+}
+
+.book-info h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.book-info p {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.arrow {
+    color: #aaa;
+    font-size: 23px;
+}
+
+/* HSK Card */
+.hsk-group {
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    margin-bottom: 22px;
+    box-shadow: 0 7px 22px rgba(70,130,180,0.09);
+}
+
+.hsk-title {
+    font-size: 20px;
+    color: #3b82c4;
+    margin-bottom: 18px;
+}
+
+.hsk-books {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.hsk-book {
+    background: #f9fcff;
+    border-radius: 17px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #edf6fc;
+    transition: 0.25s;
+}
+
+.hsk-book:hover {
+    transform: translateY(-3px);
+    border-color: #b8def7;
+}
+
+.hsk-book .emoji {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.hsk-book h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.hsk-book p {
+    color: #999;
+    font-size: 13px;
+}
+
+/* Coming Soon */
+.coming-soon {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.coming-box {
+    background: white;
+    border-radius: 22px;
+    padding: 25px;
+    text-align: center;
+    color: #999;
+    border: 2px dashed #cfe7f7;
+    line-height: 1.7;
+}
+
+.coming-box .emoji {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: white;
+    color: #999;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+footer strong {
+    color: #3b82c4;
+}
+
+.creator {
+    display: inline-block;
+    margin-top: 5px;
+    color: #999;
+    font-size: 13px;
+}
+
+.creator strong {
+    color: #f28b9c;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 14px 20px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .page-header {
+        padding: 40px 20px 25px;
+    }
+
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+    .book-grid,
+    .hsk-books {
+        grid-template-columns: 1fr;
+    }
+
+    .book-group,
+    .hsk-group {
+        padding: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+
+    <div class="logo">
+        学中文 <span>♡</span>
+    </div>
+
+    <a href="index.html" class="home-btn">
+        🏠 หน้าหลัก
+    </a>
+
+</nav>
+
+
+<!-- Header -->
+<header class="page-header">
+
+    <div class="page-icon">📖</div>
+
+    <h1>หนังสือเรียนจีน</h1>
+
+    <p>
+        รวมหนังสือเรียนภาษาจีนสำหรับเรียนและทบทวน 🇨🇳
+    </p>
+
+</header>
+
+
+<!-- ========================================= -->
+<!-- 汉语教程 -->
+<!-- ========================================= -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        📚 汉语教程
+    </h2>
+
+    <p class="category-subtitle">
+        Hanyu Jiaocheng · หนังสือเรียนภาษาจีน
+    </p>
+
+
+    <!-- A -->
+    <div class="book-group">
+
+        <h3 class="group-title">
+            📘 汉语教程 A
+        </h3>
+
+        <div class="book-grid">
+
+            <a href="#" class="book-card">
+
+                <div class="book-icon blue">
+                    📘
+                </div>
+
+                <div class="book-info">
+                    <h3>汉语教程 A1</h3>
+                    <p>
+                        Hanyu Jiaocheng A1
+                    </p>
+                </div>
+
+                <div class="arrow">›</div>
+
+            </a>
+
+
+            <a href="#" class="book-card">
+
+                <div class="book-icon blue">
+                    📗
+                </div>
+
+                <div class="book-info">
+                    <h3>汉语教程 A2</h3>
+                    <p>
+                        Hanyu Jiaocheng A2
+                    </p>
+                </div>
+
+                <div class="arrow">›</div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- B -->
+    <div class="book-group">
+
+        <h3 class="group-title">
+            📗 汉语教程 B
+        </h3>
+
+        <div class="book-grid">
+
+            <a href="#" class="book-card">
+
+                <div class="book-icon green">
+                    📗
+                </div>
+
+                <div class="book-info">
+                    <h3>汉语教程 B1</h3>
+                    <p>
+                        Hanyu Jiaocheng B1
+                    </p>
+                </div>
+
+                <div class="arrow">›</div>
+
+            </a>
+
+
+            <a href="#" class="book-card">
+
+                <div class="book-icon green">
+                    📙
+                </div>
+
+                <div class="book-info">
+                    <h3>汉语教程 B2</h3>
+                    <p>
+                        Hanyu Jiaocheng B2
+                    </p>
+                </div>
+
+                <div class="arrow">›</div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- C -->
+    <div class="book-group">
+
+        <h3 class="group-title">
+            📕 汉语教程 C
+        </h3>
+
+        <div class="book-grid">
+
+            <a href="#" class="book-card">
+
+                <div class="book-icon pink">
+                    📕
+                </div>
+
+                <div class="book-info">
+                    <h3>汉语教程 C1</h3>
+                    <p>
+                        Hanyu Jiaocheng C1
+                    </p>
+                </div>
+
+                <div class="arrow">›</div>
+
+            </a>
+
+
+            <a href="#" class="book-card">
+
+                <div class="book-icon pink">
+                    📔
+                </div>
+
+                <div class="book-info">
+                    <h3>汉语教程 C2</h3>
+                    <p>
+                        Hanyu Jiaocheng C2
+                    </p>
+                </div>
+
+                <div class="arrow">›</div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================= -->
+<!-- HSK STANDARD COURSE -->
+<!-- ========================================= -->
+
+<section class="category">
+
+    <h2 class="category-title">
+        📝 HSK Standard Course
+    </h2>
+
+    <p class="category-subtitle">
+        Textbook + Workbook · ระดับ HSK 1–6
+    </p>
+
+
+    <!-- HSK 1 -->
+    <div class="hsk-group">
+
+        <h3 class="hsk-title">
+            HSK 1
+        </h3>
+
+        <div class="hsk-books">
+
+            <div class="hsk-book">
+                <div class="emoji">📘</div>
+                <h3>Textbook 1</h3>
+                <p>HSK Standard Course 1</p>
+            </div>
+
+            <div class="hsk-book">
+                <div class="emoji">📝</div>
+                <h3>Workbook 1</h3>
+                <p>HSK Standard Course 1</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HSK 2 -->
+    <div class="hsk-group">
+
+        <h3 class="hsk-title">
+            HSK 2
+        </h3>
+
+        <div class="hsk-books">
+
+            <div class="hsk-book">
+                <div class="emoji">📗</div>
+                <h3>Textbook 1</h3>
+                <p>HSK Standard Course 2</p>
+            </div>
+
+            <div class="hsk-book">
+                <div class="emoji">📝</div>
+                <h3>Workbook 1</h3>
+                <p>HSK Standard Course 2</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HSK 3 -->
+    <div class="hsk-group">
+
+        <h3 class="hsk-title">
+            HSK 3
+        </h3>
+
+        <div class="hsk-books">
+
+            <div class="hsk-book">
+                <div class="emoji">📙</div>
+                <h3>Textbook 1</h3>
+                <p>HSK Standard Course 3</p>
+            </div>
+
+            <div class="hsk-book">
+                <div class="emoji">📝</div>
+                <h3>Workbook 1</h3>
+                <p>HSK Standard Course 3</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HSK 4 -->
+    <div class="hsk-group">
+
+        <h3 class="hsk-title">
+            HSK 4
+        </h3>
+
+        <div class="hsk-books">
+
+            <div class="hsk-book">
+                <div class="emoji">📕</div>
+                <h3>Textbook 1</h3>
+                <p>HSK Standard Course 4</p>
+            </div>
+
+            <div class="hsk-book">
+                <div class="emoji">📕</div>
+                <h3>Textbook 2</h3>
+                <p>HSK Standard Course 4</p>
+            </div>
+
+            <div class="hsk-book">
+                <div class="emoji">📝</div>
+                <h3>Workbook 1</h3>
+                <p>HSK Standard Course 4</p>
+            </div>
+
+            <div class="hsk-book">
+                <div class="emoji">📝</div>
+                <h3>Workbook 2</h3>
+                <p>HSK Standard Course 4</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HSK 5 -->
+    <div class="hsk-group">
+
+        <h3 class="hsk-title">
+            HSK 5
+        </h3>
+
+        <div class="hsk-books">
+
+            <div class="hsk-book">
+                <div class="emoji">📔</div>
+                <h3>Textbook 1</h3>
+                <p>HSK Standard Course 5</p>
+            </div>
+
+            <div class="hsk-book">
+                <div class="emoji">📔</div>
+                <h3>Textbook 2</h3>
+                <p>HSK Standard Course 5</p>
+            </div>
+
+            <div class="hsk-book">
+                <div class="emoji">📝</div>
+                <h3>Workbook 1</h3>
+                <p>HSK Standard Course 5</p>
+            </div>
+
+            <div class="hsk-book">
+                <div class="emoji">📝</div>
+                <h3>Workbook 2</h3>
+                <p>HSK Standard Course 5</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HSK 6 -->
+    <div class="hsk-group">
+
+        <h3 class="hsk-title">
+            HSK 6
+        </h3>
+
+        <div class="hsk-books">
+
+            <div class="hsk-book">
+                <div class="emoji">📚</div>
+                <h3>Textbook 1</h3>
+                <p>HSK Standard Course 6</p>
+            </div>
+
+            <div class="hsk-book">
+                <div class="emoji">📚</div>
+                <h3>Textbook 2</h3>
+                <p>HSK Standard Course 6</p>
+            </div>
+
+            <div class="hsk-book">
+                <div class="emoji">📝</div>
+                <h3>Workbook 1</h3>
+                <p>HSK Standard Course 6</p>
+            </div>
+
+            <div class="hsk-book">
+                <div class="emoji">📝</div>
+                <h3>Workbook 2</h3>
+                <p>HSK Standard Course 6</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    © 2026 <strong>เรียนจีน</strong>
+    · เรียนภาษาจีนไปด้วยกัน 🇨🇳
+
+    <br>
+
+    <span class="creator">
+        สร้างโดย <strong>ก็แค่จีน by ครูพี่เหม่ยถิง</strong>
+    </span>
+
+</footer>
+
+
+</body>
+</html>

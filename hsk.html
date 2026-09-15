@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title></title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans Thai", "Noto Sans", Arial, sans-serif;
+  background: linear-gradient(135deg, #eef7ff, #fff7fb);
+  color: #334155;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 14px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: #2563eb;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+
+  padding: 9px 13px;
+  border-radius: 12px;
+
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.nav-links a.active {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px 70px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  text-align: center;
+  padding: 25px 10px 35px;
+}
+
+.hero-icon {
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  margin: 0 0 12px;
+  font-size: 38px;
+  color: #1e40af;
+}
+
+.hero p {
+  margin: 0 auto;
+  max-width: 700px;
+  line-height: 1.8;
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* =========================
+   FILTER
+========================= */
+
+.filter-box {
+  background: rgba(255,255,255,0.85);
+  border: 1px solid #e5e7eb;
+  border-radius: 22px;
+  padding: 18px;
+
+  box-shadow: 0 8px 25px rgba(59,130,246,0.08);
+
+  margin-bottom: 25px;
+}
+
+.filter-title {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-btn {
+  border: none;
+  background: #f1f5f9;
+  color: #475569;
+
+  padding: 9px 16px;
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filter-btn:hover {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.filter-btn.active {
+  background: #2563eb;
+  color: white;
+}
+
+/* =========================
+   RESULT INFO
+========================= */
+
+.result-info {
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   HSK GRID
+========================= */
+
+.hsk-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.hsk-card {
+  background: rgba(255,255,255,0.95);
+
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+
+  padding: 22px;
+
+  box-shadow: 0 10px 30px rgba(15,23,42,0.07);
+
+  transition: 0.25s;
+}
+
+.hsk-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(37,99,235,0.12);
+}
+
+.hsk-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.hsk-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eff6ff;
+  border-radius: 18px;
+
+  font-size: 30px;
+  flex-shrink: 0;
+}
+
+.hsk-info h2 {
+  margin: 0 0 4px;
+  color: #1e40af;
+  font-size: 25px;
+}
+
+.hsk-info p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* =========================
+   FILE LIST
+========================= */
+
+.file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.file-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  padding: 13px 14px;
+}
+
+.file-row strong {
+  display: block;
+  color: #334155;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.file-row span {
+  display: block;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* =========================
+   DOWNLOAD BUTTON
+========================= */
+
+.file-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  background: #2563eb;
+  color: white;
+
+  padding: 9px 13px;
+  border-radius: 11px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition: 0.2s;
+}
+
+.file-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.file-button.disabled {
+  background: #cbd5e1;
+  color: #f8fafc;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* =========================
+   NOTE
+========================= */
+
+.note {
+  margin-top: 25px;
+
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+
+  border-radius: 18px;
+
+  padding: 17px 18px;
+
+  color: #9a3412;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.note strong {
+  color: #c2410c;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+
+  padding: 25px 20px;
+
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hsk-card.hidden {
+  display: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+  .navbar-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .hsk-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .container {
+    padding: 25px 13px 50px;
+  }
+
+  .navbar-inner {
+    padding: 12px 10px;
+  }
+
+  .nav-links {
+    gap: 4px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    padding: 7px 9px;
+  }
+
+  .hero-icon {
+    font-size: 45px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hsk-card {
+    padding: 17px;
+  }
+
+  .hsk-header {
+    gap: 11px;
+  }
+
+  .hsk-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+  }
+
+  .hsk-info h2 {
+    font-size: 21px;
+  }
+
+  .file-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .file-button {
+    width: 100%;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+  <div class="navbar-inner">
+
+    <a href="index.html" class="logo">
+      ก็แค่จีน 🇨🇳
+    </a>
+
+    <div class="nav-links">
+
+      <a href="index.html">
+        หน้าแรก
+      </a>
+
+      <a href="hsk.html" class="active">
+        📚 ไฟล์ข้อสอบ HSK
+      </a>
+
+      <a href="dictionary.html">
+        📖 พจนานุกรม
+      </a>
+
+      <a href="favorites.html">
+        ❤️ คำที่ชอบ
+      </a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="container">
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-icon">
+      📚🇨🇳
+    </div>
+
+    <h1>
+      ไฟล์ข้อสอบ HSK
+    </h1>
+
+    <p>
+      รวมไฟล์ข้อสอบ HSK สำหรับฝึกทำข้อสอบ
+      ตั้งแต่ระดับ HSK1–HSK6 และ HSK7-9
+      พร้อมไฟล์เฉลยและ Listening
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       FILTER
+  ========================= -->
+
+  <section class="filter-box">
+
+    <div class="filter-title">
+      เลือกระดับ HSK
+    </div>
+
+    <div class="filters">
+
+      <button
+        class="filter-btn active"
+        data-filter="ALL">
+        ALL
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="HSK1">
+        HSK1
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="HSK2">
+        HSK2
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="HSK3">
+        HSK3
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="HSK4">
+        HSK4
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="HSK5">
+        HSK5
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="HSK6">
+        HSK6
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="HSK7-9">
+        HSK7-9
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       RESULT INFO
+  ========================= -->
+
+  <div class="result-info" id="resultInfo">
+    📚 แสดงทั้งหมด 7 ระดับ
+    <br>
+    📥 เลือกไฟล์ที่ต้องการ
+  </div>
+
+
+  <!-- =========================
+       HSK CARDS
+  ========================= -->
+
+  <section class="hsk-grid" id="hskGrid">
+
+
+    <!-- =====================
+         HSK1
+    ====================== -->
+
+    <div class="hsk-card" data-level="HSK1">
+
+      <div class="hsk-header">
+
+        <div class="hsk-icon">
+          🌱
+        </div>
+
+        <div class="hsk-info">
+
+          <h2>
+            HSK1
+          </h2>
+
+          <p>
+            ระดับเริ่มต้น
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="file-list">
+
+        <div class="file-row">
+
+          <div>
+            <strong>📝 ข้อสอบ HSK1</strong>
+            <span>ไฟล์ข้อสอบ</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+
+        <div class="file-row">
+
+          <div>
+            <strong>✅ เฉลย HSK1</strong>
+            <span>ไฟล์เฉลยข้อสอบ</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+
+        <div class="file-row">
+
+          <div>
+            <strong>🎧 Listening HSK1</strong>
+            <span>ไฟล์สำหรับฝึกฟัง</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================
+         HSK2
+    ====================== -->
+
+    <div class="hsk-card" data-level="HSK2">
+
+      <div class="hsk-header">
+
+        <div class="hsk-icon">
+          🌿
+        </div>
+
+        <div class="hsk-info">
+
+          <h2>
+            HSK2
+          </h2>
+
+          <p>
+            ระดับพื้นฐาน
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="file-list">
+
+        <div class="file-row">
+
+          <div>
+            <strong>📝 ข้อสอบ HSK2</strong>
+            <span>ไฟล์ข้อสอบ</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+
+        <div class="file-row">
+
+          <div>
+            <strong>✅ เฉลย HSK2</strong>
+            <span>ไฟล์เฉลยข้อสอบ</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+
+        <div class="file-row">
+
+          <div>
+            <strong>🎧 Listening HSK2</strong>
+            <span>ไฟล์สำหรับฝึกฟัง</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================
+         HSK3
+    ====================== -->
+
+    <div class="hsk-card" data-level="HSK3">
+
+      <div class="hsk-header">
+
+        <div class="hsk-icon">
+          🌳
+        </div>
+
+        <div class="hsk-info">
+
+          <h2>
+            HSK3
+          </h2>
+
+          <p>
+            ระดับกลางต้น
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="file-list">
+
+        <div class="file-row">
+
+          <div>
+            <strong>📝 ข้อสอบ HSK3</strong>
+            <span>ไฟล์ข้อสอบ</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+
+        <div class="file-row">
+
+          <div>
+            <strong>✅ เฉลย HSK3</strong>
+            <span>ไฟล์เฉลยข้อสอบ</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+
+        <div class="file-row">
+
+          <div>
+            <strong>🎧 Listening HSK3</strong>
+            <span>ไฟล์สำหรับฝึกฟัง</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================
+         HSK4
+    ====================== -->
+
+    <div class="hsk-card" data-level="HSK4">
+
+      <div class="hsk-header">
+
+        <div class="hsk-icon">
+          🌸
+        </div>
+
+        <div class="hsk-info">
+
+          <h2>
+            HSK4
+          </h2>
+
+          <p>
+            ระดับกลาง
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="file-list">
+
+        <div class="file-row">
+
+          <div>
+            <strong>📝 ข้อสอบ HSK4</strong>
+            <span>ไฟล์ข้อสอบ</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+
+        <div class="file-row">
+
+          <div>
+            <strong>✅ เฉลย HSK4</strong>
+            <span>ไฟล์เฉลยข้อสอบ</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+
+        <div class="file-row">
+
+          <div>
+            <strong>🎧 Listening HSK4</strong>
+            <span>ไฟล์สำหรับฝึกฟัง</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================
+         HSK5
+    ====================== -->
+
+    <div class="hsk-card" data-level="HSK5">
+
+      <div class="hsk-header">
+
+        <div class="hsk-icon">
+          🌺
+        </div>
+
+        <div class="hsk-info">
+
+          <h2>
+            HSK5
+          </h2>
+
+          <p>
+            ระดับกลางสูง
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="file-list">
+
+        <div class="file-row">
+
+          <div>
+            <strong>📝 ข้อสอบ HSK5</strong>
+            <span>ไฟล์ข้อสอบ</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+
+        <div class="file-row">
+
+          <div>
+            <strong>✅ เฉลย HSK5</strong>
+            <span>ไฟล์เฉลยข้อสอบ</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+
+        <div class="file-row">
+
+          <div>
+            <strong>🎧 Listening HSK5</strong>
+            <span>ไฟล์สำหรับฝึกฟัง</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================
+         HSK6
+    ====================== -->
+
+    <div class="hsk-card" data-level="HSK6">
+
+      <div class="hsk-header">
+
+        <div class="hsk-icon">
+          🌟
+        </div>
+
+        <div class="hsk-info">
+
+          <h2>
+            HSK6
+          </h2>
+
+          <p>
+            ระดับสูง
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="file-list">
+
+        <div class="file-row">
+
+          <div>
+            <strong>📝 ข้อสอบ HSK6</strong>
+            <span>ไฟล์ข้อสอบ</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+
+        <div class="file-row">
+
+          <div>
+            <strong>✅ เฉลย HSK6</strong>
+            <span>ไฟล์เฉลยข้อสอบ</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+
+        <div class="file-row">
+
+          <div>
+            <strong>🎧 Listening HSK6</strong>
+            <span>ไฟล์สำหรับฝึกฟัง</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================
+         HSK7-9
+    ====================== -->
+
+    <div class="hsk-card" data-level="HSK7-9">
+
+      <div class="hsk-header">
+
+        <div class="hsk-icon">
+          👑
+        </div>
+
+        <div class="hsk-info">
+
+          <h2>
+            HSK7-9
+          </h2>
+
+          <p>
+            ระดับสูงมาก · รวม HSK7–9
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="file-list">
+
+        <div class="file-row">
+
+          <div>
+            <strong>📝 ข้อสอบ HSK7-9</strong>
+            <span>ไฟล์ข้อสอบระดับ HSK7–9</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+
+        <div class="file-row">
+
+          <div>
+            <strong>✅ เฉลย HSK7-9</strong>
+            <span>ไฟล์เฉลยข้อสอบ</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+
+        <div class="file-row">
+
+          <div>
+            <strong>🎧 Listening HSK7-9</strong>
+            <span>ไฟล์สำหรับฝึกฟัง</span>
+          </div>
+
+          <a
+            href="#"
+            class="file-button disabled">
+            📥 ยังไม่มีไฟล์
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+  © ก็แค่จีน by ครูพี่เหม่ยถิง 🇨🇳
+</footer>
+
+
+<script>
+
+/* =========================
+   HSK FILTER
+========================= */
+
+const filterButtons =
+  document.querySelectorAll(".filter-btn");
+
+const hskCards =
+  document.querySelectorAll(".hsk-card");
+
+const resultInfo =
+  document.getElementById("resultInfo");
+
+
+filterButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const filter =
+      button.dataset.filter;
+
+
+    /* เปลี่ยนปุ่ม active */
+
+    filterButtons.forEach(btn => {
+      btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+
+    /* กรองการ์ด */
+
+    let visibleCount = 0;
+
+    hskCards.forEach(card => {
+
+      const level =
+        card.dataset.level;
+
+      if (
+        filter === "ALL" ||
+        level === filter
+      ) {
+
+        card.classList.remove("hidden");
+
+        visibleCount++;
+
+      } else {
+
+        card.classList.add("hidden");
+
+      }
+
+    });
+
+
+    /* เปลี่ยนข้อความด้านบน */
+
+    if (filter === "ALL") {
+
+      resultInfo.innerHTML =
+        "📚 แสดงทั้งหมด 7 ระดับ" +
+        "<br>" +
+        "📥 เลือกไฟล์ที่ต้องการ";
+
+    } else {
+
+      resultInfo.innerHTML =
+        "📚 แสดงระดับ " +
+        "<strong>" +
+        filter +
+        "</strong>" +
+        "<br>" +
+        "📥 เลือกไฟล์ที่ต้องการ";
+
+    }
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>
