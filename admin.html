@@ -1,1759 +1,1298 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-Admin | พจนานุกรมจีน–ไทย
-</title>
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
-rel="stylesheet">
-
-<style>
-
-/* =========================================
-   RESET
-========================================= */
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-
-  font-family:
-    "Noto Sans Thai",
-    "Noto Sans SC",
-    sans-serif;
-
-  background:
-    linear-gradient(
-      180deg,
-      #f4faff 0%,
-      #ffffff 55%,
-      #f8fbff 100%
-    );
-
-  color: #26354a;
-}
-
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-
-/* =========================================
-   LOGIN
-========================================= */
-
-.login-page {
-
-  min-height: 100vh;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 20px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #edf8ff,
-      #ffffff,
-      #fff5f8
-    );
-}
-
-.login-box {
-
-  width: 100%;
-
-  max-width: 410px;
-
-  background: white;
-
-  border:
-    1px solid #e2edf7;
-
-  border-radius: 24px;
-
-  padding: 35px 30px;
-
-  box-shadow:
-    0 15px 45px
-    rgba(50,100,150,.10);
-
-  text-align: center;
-}
-
-.login-logo {
-
-  font-size: 22px;
-
-  font-weight: 700;
-
-  color: #2c83c1;
-}
-
-.login-subtitle {
-
-  margin-top: 5px;
-
-  color: #91a2b2;
-
-  font-size: 12px;
-}
-
-.login-title {
-
-  margin:
-    28px 0 18px;
-
-  font-size: 20px;
-
-  color: #40576d;
-}
-
-.form-group {
-
-  text-align: left;
-
-  margin-bottom: 15px;
-}
-
-.form-group label {
-
-  display: block;
-
-  margin-bottom: 6px;
-
-  color: #64798c;
-
-  font-size: 13px;
-
-  font-weight: 600;
-}
-
-.form-group input {
-
-  width: 100%;
-
-  height: 46px;
-
-  padding: 0 14px;
-
-  border:
-    1px solid #dceaf5;
-
-  border-radius: 12px;
-
-  outline: none;
-
-  background: #fbfdff;
-
-  font-size: 14px;
-}
-
-.form-group input:focus {
-
-  border-color: #8bc5e8;
-
-  box-shadow:
-    0 0 0 3px
-    rgba(76,155,208,.08);
-}
-
-.login-btn {
-
-  width: 100%;
-
-  height: 47px;
-
-  margin-top: 5px;
-
-  border: 0;
-
-  border-radius: 13px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #4c9bd0,
-      #287fbe
-    );
-
-  color: white;
-
-  font-weight: 700;
-
-  font-size: 14px;
-}
-
-.login-btn:hover {
-
-  transform: translateY(-1px);
-
-  box-shadow:
-    0 7px 18px
-    rgba(40,127,190,.20);
-}
-
-.login-error {
-
-  display: none;
-
-  margin-top: 13px;
-
-  padding: 10px;
-
-  border-radius: 10px;
-
-  background: #fff1f3;
-
-  color: #d85d78;
-
-  font-size: 12px;
-}
-
-
-/* =========================================
-   ADMIN PAGE
-========================================= */
-
-#adminPage {
-  display: none;
-}
-
-.navbar {
-
-  position: sticky;
-
-  top: 0;
-
-  z-index: 100;
-
-  background:
-    rgba(255,255,255,.97);
-
-  border-bottom:
-    1px solid #e5eef8;
-
-  box-shadow:
-    0 2px 12px
-    rgba(55,100,150,.06);
-}
-
-.nav-inner {
-
-  max-width: 1200px;
-
-  min-height: 68px;
-
-  margin: auto;
-
-  padding:
-    10px 20px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 15px;
-}
-
-.logo {
-
-  color: #3787c8;
-
-  font-size: 18px;
-
-  font-weight: 700;
-}
-
-.logo span {
-
-  display: block;
-
-  margin-top: 1px;
-
-  color: #91a5b8;
-
-  font-size: 10px;
-
-  font-weight: 500;
-}
-
-.nav-right {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 8px;
-}
-
-.nav-link {
-
-  padding:
-    8px 12px;
-
-  border-radius: 10px;
-
-  color: #63778c;
-
-  font-size: 13px;
-}
-
-.nav-link:hover {
-
-  background: #eaf5ff;
-
-  color: #2582c5;
-}
-
-.logout-btn {
-
-  padding:
-    8px 13px;
-
-  border: 0;
-
-  border-radius: 10px;
-
-  background: #fff0f3;
-
-  color: #d95e7b;
-
-  font-size: 12px;
-
-  font-weight: 700;
-}
-
-
-/* =========================================
-   CONTAINER
-========================================= */
-
-.container {
-
-  max-width: 1200px;
-
-  margin: auto;
-
-  padding:
-    30px 20px 50px;
-}
-
-.page-title {
-
-  margin-bottom: 22px;
-}
-
-.page-title h1 {
-
-  margin: 0;
-
-  color: #287fbe;
-
-  font-size:
-    clamp(25px,4vw,34px);
-}
-
-.page-title p {
-
-  margin:
-    7px 0 0;
-
-  color: #8a9baa;
-
-  font-size: 13px;
-}
-
-
-/* =========================================
-   STATS
-========================================= */
-
-.stats {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap: 14px;
-
-  margin-bottom: 20px;
-}
-
-.stat-card {
-
-  background: white;
-
-  border:
-    1px solid #e3edf6;
-
-  border-radius: 17px;
-
-  padding: 18px;
-
-  box-shadow:
-    0 4px 15px
-    rgba(50,100,150,.04);
-}
-
-.stat-label {
-
-  color: #899bab;
-
-  font-size: 12px;
-}
-
-.stat-number {
-
-  margin-top: 5px;
-
-  color: #287fbe;
-
-  font-size: 27px;
-
-  font-weight: 700;
-}
-
-
-/* =========================================
-   CARD
-========================================= */
-
-.card {
-
-  background: white;
-
-  border:
-    1px solid #e3edf6;
-
-  border-radius: 20px;
-
-  padding: 22px;
-
-  margin-bottom: 20px;
-
-  box-shadow:
-    0 5px 18px
-    rgba(50,100,150,.045);
-}
-
-.card-title {
-
-  margin: 0 0 15px;
-
-  color: #50677d;
-
-  font-size: 16px;
-
-  font-weight: 700;
-}
-
-.card-description {
-
-  margin:
-    -7px 0 15px;
-
-  color: #94a3b1;
-
-  font-size: 12px;
-
-  line-height: 1.6;
-}
-
-
-/* =========================================
-   IMPORT
-========================================= */
-
-.import-textarea {
-
-  width: 100%;
-
-  min-height: 180px;
-
-  padding: 14px;
-
-  resize: vertical;
-
-  border:
-    1px solid #dceaf5;
-
-  border-radius: 13px;
-
-  outline: none;
-
-  background: #fbfdff;
-
-  font-family:
-    "Noto Sans Thai",
-    "Noto Sans SC",
-    monospace;
-
-  font-size: 13px;
-
-  line-height: 1.7;
-}
-
-.import-textarea:focus {
-
-  border-color: #8fc8ec;
-
-  box-shadow:
-    0 0 0 3px
-    rgba(76,155,208,.07);
-}
-
-.import-actions {
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 8px;
-
-  margin-top: 12px;
-}
-
-
-/* =========================================
-   BUTTONS
-========================================= */
-
-.btn {
-
-  border: 0;
-
-  border-radius: 11px;
-
-  padding:
-    10px 15px;
-
-  font-size: 13px;
-
-  font-weight: 700;
-}
-
-.btn-primary {
-
-  background: #4c9bd0;
-
-  color: white;
-}
-
-.btn-primary:hover {
-
-  background: #378bc4;
-}
-
-.btn-success {
-
-  background: #e7f8ef;
-
-  color: #268456;
-}
-
-.btn-danger {
-
-  background: #fff0f2;
-
-  color: #d65e76;
-}
-
-.btn-secondary {
-
-  background: #f0f5f9;
-
-  color: #63798c;
-}
-
-.btn-pink {
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff91ae,
-      #f47f9d
-    );
-
-  color: white;
-}
-
-.btn:hover {
-
-  transform: translateY(-1px);
-}
-
-
-/* =========================================
-   TOOLBAR
-========================================= */
-
-.toolbar {
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 9px;
-
-  align-items: center;
-
-  margin-bottom: 15px;
-}
-
-.search {
-
-  flex:
-    1 1 250px;
-
-  height: 44px;
-
-  padding:
-    0 14px;
-
-  border:
-    1px solid #dceaf5;
-
-  border-radius: 12px;
-
-  outline: none;
-
-  background: #fbfdff;
-
-  font-size: 13px;
-}
-
-.search:focus {
-
-  border-color: #8fc8ec;
-}
-
-.filter-select {
-
-  height: 44px;
-
-  padding:
-    0 12px;
-
-  border:
-    1px solid #dceaf5;
-
-  border-radius: 12px;
-
-  outline: none;
-
-  background: white;
-
-  color: #62778a;
-
-  font-size: 13px;
-}
-
-
-/* =========================================
-   TABLE
-========================================= */
-
-.table-wrap {
-
-  overflow-x: auto;
-
-  border:
-    1px solid #e5eef6;
-
-  border-radius: 15px;
-}
-
-table {
-
-  width: 100%;
-
-  min-width: 900px;
-
-  border-collapse: collapse;
-
-  font-size: 12px;
-}
-
-thead {
-
-  background: #f4faff;
-}
-
-th {
-
-  padding:
-    12px 10px;
-
-  text-align: left;
-
-  color: #668095;
-
-  font-weight: 700;
-
-  white-space: nowrap;
-}
-
-td {
-
-  padding:
-    12px 10px;
-
-  border-top:
-    1px solid #edf2f6;
-
-  color: #52687b;
-
-  vertical-align: middle;
-}
-
-.word-cell {
-
-  font-family: "Noto Sans SC";
-
-  color: #287fbe;
-
-  font-size: 19px;
-
-  font-weight: 700;
-}
-
-.pinyin-cell {
-
-  color: #7595a9;
-}
-
-.meaning-cell {
-
-  max-width: 180px;
-
-  line-height: 1.5;
-}
-
-.example-cell {
-
-  max-width: 220px;
-
-  line-height: 1.5;
-}
-
-.status {
-
-  display: inline-block;
-
-  padding:
-    4px 8px;
-
-  border-radius: 8px;
-
-  font-size: 10px;
-
-  font-weight: 700;
-}
-
-.status-approved {
-
-  background: #e8f8ef;
-
-  color: #268456;
-}
-
-.status-pending {
-
-  background: #fff8e7;
-
-  color: #ae7b16;
-}
-
-.status-rejected {
-
-  background: #fff0f2;
-
-  color: #d65e76;
-}
-
-.action-group {
-
-  display: flex;
-
-  gap: 5px;
-}
-
-.action-btn {
-
-  border: 0;
-
-  border-radius: 8px;
-
-  padding:
-    6px 8px;
-
-  font-size: 11px;
-
-  font-weight: 600;
-}
-
-.edit-btn {
-
-  background: #eef7ff;
-
-  color: #3688c3;
-}
-
-.delete-btn {
-
-  background: #fff1f3;
-
-  color: #d45f77;
-}
-
-.approve-btn {
-
-  background: #e8f8ef;
-
-  color: #28845a;
-}
-
-
-/* =========================================
-   MODAL
-========================================= */
-
-.modal {
-
-  display: none;
-
-  position: fixed;
-
-  inset: 0;
-
-  z-index: 500;
-
-  padding:
-    20px;
-
-  background:
-    rgba(30,50,70,.38);
-
-  overflow-y: auto;
-}
-
-.modal-box {
-
-  width: 100%;
-
-  max-width: 700px;
-
-  margin:
-    30px auto;
-
-  background: white;
-
-  border-radius: 22px;
-
-  padding: 25px;
-
-  box-shadow:
-    0 20px 60px
-    rgba(30,60,90,.18);
-}
-
-.modal-header {
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 10px;
-
-  margin-bottom: 20px;
-}
-
-.modal-title {
-
-  margin: 0;
-
-  color: #287fbe;
-
-  font-size: 19px;
-}
-
-.close-btn {
-
-  width: 34px;
-
-  height: 34px;
-
-  border: 0;
-
-  border-radius: 50%;
-
-  background: #f1f6fa;
-
-  color: #71879a;
-
-  font-size: 18px;
-}
-
-.form-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(2,1fr);
-
-  gap: 13px;
-}
-
-.full {
-
-  grid-column:
-    1 / -1;
-}
-
-.modal .form-group {
-
-  margin-bottom: 0;
-}
-
-.modal textarea {
-
-  width: 100%;
-
-  min-height: 80px;
-
-  padding: 10px 12px;
-
-  border:
-    1px solid #dceaf5;
-
-  border-radius: 11px;
-
-  outline: none;
-
-  resize: vertical;
-
-  font-size: 13px;
-}
-
-.modal select {
-
-  width: 100%;
-
-  height: 43px;
-
-  padding: 0 10px;
-
-  border:
-    1px solid #dceaf5;
-
-  border-radius: 11px;
-
-  outline: none;
-
-  background: white;
-
-  color: #52687b;
-
-  font-size: 13px;
-}
-
-.modal-footer {
-
-  display: flex;
-
-  justify-content: flex-end;
-
-  gap: 8px;
-
-  margin-top: 20px;
-}
-
-
-/* =========================================
-   EXPORT
-========================================= */
-
-.export-box {
-
-  width: 100%;
-
-  min-height: 240px;
-
-  padding: 15px;
-
-  border:
-    1px solid #dceaf5;
-
-  border-radius: 13px;
-
-  background: #f9fcff;
-
-  font-family: monospace;
-
-  font-size: 12px;
-
-  line-height: 1.7;
-
-  white-space: pre;
-
-  overflow: auto;
-}
-
-
-/* =========================================
-   TOAST
-========================================= */
-
-.toast {
-
-  position: fixed;
-
-  right: 20px;
-
-  bottom: 20px;
-
-  z-index: 1000;
-
-  display: none;
-
-  max-width: 350px;
-
-  padding:
-    12px 17px;
-
-  border-radius: 13px;
-
-  background: #26354a;
-
-  color: white;
-
-  font-size: 12px;
-
-  box-shadow:
-    0 8px 25px
-    rgba(0,0,0,.15);
-}
-
-
-/* =========================================
-   EMPTY
-========================================= */
-
-.empty {
-
-  padding: 45px 20px;
-
-  text-align: center;
-
-  color: #95a5b3;
-}
-
-
-/* =========================================
-   FOOTER
-========================================= */
-
-footer {
-
-  padding:
-    25px 20px;
-
-  text-align: center;
-
-  color: #9aabba;
-
-  font-size: 11px;
-
-  border-top:
-    1px solid #e9f1f7;
-
-  background: white;
-}
-
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media(max-width:900px) {
-
-  .stats {
-
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
-}
-
-@media(max-width:650px) {
-
-  .nav-inner {
-
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-  .nav-right {
-
-    width: 100%;
-
-    justify-content: flex-end;
-  }
-
-  .form-grid {
-
-    grid-template-columns: 1fr;
-  }
-
-  .full {
-
-    grid-column: auto;
-  }
-
-}
-
-@media(max-width:480px) {
-
-  .stats {
-
-    grid-template-columns: 1fr;
-  }
-
-  .container {
-
-    padding:
-      22px 12px 40px;
-  }
-
-  .card {
-
-    padding: 16px;
-  }
-
-  .login-box {
-
-    padding:
-      28px 20px;
-  }
-
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin · Chinese–Thai Dictionary</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        "Noto Sans Thai",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+      background: #f5f8ff;
+      color: #263238;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* =========================
+       LOGIN
+    ========================= */
+
+    #loginPage {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background:
+        linear-gradient(
+          135deg,
+          #eaf3ff,
+          #fff4f8
+        );
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 420px;
+      background: white;
+      padding: 35px 30px;
+      border-radius: 24px;
+      box-shadow:
+        0 15px 45px rgba(50, 80, 130, 0.15);
+      text-align: center;
+    }
+
+    .login-icon {
+      width: 75px;
+      height: 75px;
+      margin: 0 auto 15px;
+      border-radius: 22px;
+      background: #e8f2ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+    }
+
+    .login-box h1 {
+      margin: 0;
+      color: #2878d8;
+      font-size: 25px;
+    }
+
+    .login-box p {
+      margin: 8px 0 25px;
+      color: #78909c;
+      font-size: 14px;
+    }
+
+    .login-field {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    .login-field label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .login-field input {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid #d8e2f0;
+      border-radius: 12px;
+      outline: none;
+    }
+
+    .login-field input:focus {
+      border-color: #4a90e2;
+      box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+    }
+
+    .login-button {
+      width: 100%;
+      border: 0;
+      padding: 13px;
+      border-radius: 12px;
+      background: #2878d8;
+      color: white;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+    .login-button:hover {
+      background: #1766c2;
+    }
+
+    .login-error {
+      display: none;
+      margin-top: 14px;
+      color: #d93025;
+      background: #fff0f0;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 13px;
+    }
+
+    /* =========================
+       ADMIN
+    ========================= */
+
+    #adminPage {
+      display: none;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: white;
+      border-bottom: 1px solid #e3ebf5;
+      box-shadow: 0 3px 15px rgba(50, 80, 130, 0.06);
+    }
+
+    .nav-inner {
+      max-width: 1400px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .brand {
+      font-weight: 800;
+      color: #2878d8;
+      font-size: 18px;
+    }
+
+    .brand small {
+      display: block;
+      font-size: 11px;
+      color: #90a4ae;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-button {
+      border: 0;
+      padding: 9px 13px;
+      border-radius: 10px;
+      background: #eef5ff;
+      color: #2878d8;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .nav-button:hover {
+      background: #dcecff;
+    }
+
+    .logout-button {
+      background: #fff0f3;
+      color: #e05270;
+    }
+
+    .logout-button:hover {
+      background: #ffe0e7;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: auto;
+      padding: 25px 20px 50px;
+    }
+
+    .page-header {
+      margin-bottom: 20px;
+    }
+
+    .page-header h1 {
+      margin: 0;
+      color: #2878d8;
+      font-size: 28px;
+    }
+
+    .page-header p {
+      margin: 6px 0 0;
+      color: #78909c;
+      font-size: 14px;
+    }
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats {
+      display: grid;
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card {
+      background: white;
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow:
+        0 5px 20px rgba(50, 80, 130, 0.07);
+    }
+
+    .stat-title {
+      font-size: 13px;
+      color: #78909c;
+    }
+
+    .stat-number {
+      font-size: 28px;
+      font-weight: 800;
+      color: #2878d8;
+      margin-top: 5px;
+    }
+
+    /* =========================
+       TOOLBAR
+    ========================= */
+
+    .panel {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow:
+        0 5px 20px rgba(50, 80, 130, 0.07);
+    }
+
+    .panel-title {
+      margin: 0 0 15px;
+      font-size: 18px;
+      color: #37474f;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns:
+        minmax(200px, 1fr)
+        150px
+        150px
+        auto;
+      gap: 10px;
+    }
+
+    .toolbar input,
+    .toolbar select {
+      width: 100%;
+      padding: 11px 13px;
+      border: 1px solid #dbe5f1;
+      border-radius: 11px;
+      outline: none;
+      background: white;
+    }
+
+    .toolbar input:focus,
+    .toolbar select:focus {
+      border-color: #4a90e2;
+    }
+
+    .primary-button,
+    .secondary-button,
+    .success-button,
+    .danger-button,
+    .warning-button {
+      border: 0;
+      padding: 11px 15px;
+      border-radius: 11px;
+      font-weight: 700;
+    }
+
+    .primary-button {
+      background: #2878d8;
+      color: white;
+    }
+
+    .secondary-button {
+      background: #edf3fa;
+      color: #455a64;
+    }
+
+    .success-button {
+      background: #e8f7ee;
+      color: #168447;
+    }
+
+    .danger-button {
+      background: #fff0f2;
+      color: #d84a64;
+    }
+
+    .warning-button {
+      background: #fff7df;
+      color: #b27b00;
+    }
+
+    .primary-button:hover {
+      background: #1766c2;
+    }
+
+    /* =========================
+       IMPORT / EXPORT
+    ========================= */
+
+    .import-grid {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(280px, 380px);
+      gap: 20px;
+    }
+
+    .import-help {
+      background: #f7faff;
+      border-radius: 14px;
+      padding: 15px;
+      border: 1px solid #e2ecf8;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .import-help strong {
+      color: #2878d8;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 180px;
+      resize: vertical;
+      border: 1px solid #dbe5f1;
+      border-radius: 12px;
+      padding: 12px;
+      outline: none;
+    }
+
+    textarea:focus {
+      border-color: #4a90e2;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    /* =========================
+       TABLE
+    ========================= */
+
+    .table-wrapper {
+      overflow-x: auto;
+      border: 1px solid #edf1f6;
+      border-radius: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1100px;
+    }
+
+    th {
+      background: #f5f8fc;
+      color: #546e7a;
+      font-size: 13px;
+      text-align: left;
+      padding: 13px 10px;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 12px 10px;
+      border-top: 1px solid #edf1f6;
+      vertical-align: top;
+      font-size: 13px;
+    }
+
+    tr:hover td {
+      background: #fbfdff;
+    }
+
+    .word-main {
+      font-size: 22px;
+      font-weight: 800;
+      color: #263238;
+    }
+
+    .word-pinyin {
+      color: #2878d8;
+      margin-top: 3px;
+    }
+
+    .meaning {
+      max-width: 230px;
+      line-height: 1.5;
+    }
+
+    .example {
+      max-width: 260px;
+      line-height: 1.5;
+    }
+
+    .example-pinyin {
+      color: #78909c;
+      font-size: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .tag-hsk {
+      background: #eaf3ff;
+      color: #2878d8;
+    }
+
+    .tag-pending {
+      background: #fff7df;
+      color: #ad7800;
+    }
+
+    .tag-approved {
+      background: #e7f8ee;
+      color: #18864a;
+    }
+
+    .tag-rejected {
+      background: #fff0f2;
+      color: #d84a64;
+    }
+
+    .actions {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .small-button {
+      border: 0;
+      padding: 7px 9px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* =========================
+       MODAL
+    ========================= */
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(20, 40, 70, 0.45);
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 750px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 22px;
+      padding: 25px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      color: #2878d8;
+      font-size: 21px;
+    }
+
+    .close-button {
+      border: 0;
+      background: #f3f6fa;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      font-size: 20px;
+      color: #607d8b;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns:
+        1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #455a64;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid #dbe5f1;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    .form-group textarea {
+      min-height: 90px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #4a90e2;
+    }
+
+    /* =========================
+       EXPORT BOX
+    ========================= */
+
+    #exportBox {
+      display: none;
+    }
+
+    #exportCode {
+      min-height: 350px;
+      font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+      font-size: 12px;
+      background: #f8fafc;
+    }
+
+    .notice {
+      padding: 12px 15px;
+      border-radius: 11px;
+      background: #eef6ff;
+      color: #35658f;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    /* =========================
+       EMPTY
+    ========================= */
+
+    .empty {
+      text-align: center;
+      padding: 45px 20px;
+      color: #90a4ae;
+    }
+
+    .empty-icon {
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      color: #90a4ae;
+      font-size: 12px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1000px) {
+      .stats {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .toolbar {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+      .import-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .container {
+        padding: 20px 12px 40px;
+      }
+
+      .panel {
+        padding: 15px;
+      }
+
+      .page-header h1 {
+        font-size: 23px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
-
-<!-- =====================================================
+<!-- =========================================================
      LOGIN PAGE
-===================================================== -->
+========================================================= -->
 
-<section
-  class="login-page"
-  id="loginPage">
+<section id="loginPage">
 
   <div class="login-box">
 
-    <div class="login-logo">
-      ก็แค่จีน by ครูพี่เหม่ยถิง
+    <div class="login-icon">
+      🔐
     </div>
 
-    <div class="login-subtitle">
+    <h1>Admin Dictionary</h1>
+
+    <p>
       Chinese–Thai Dictionary
-    </div>
-
-    <h1 class="login-title">
-      🔐 เข้าสู่ระบบ Admin
-    </h1>
+      <br>
+      ระบบจัดการคำศัพท์
+    </p>
 
     <form id="loginForm">
 
-      <div class="form-group">
-
-        <label>
-          Username
+      <div class="login-field">
+        <label for="username">
+          ชื่อผู้ใช้
         </label>
 
         <input
           id="username"
           type="text"
           autocomplete="username"
-          placeholder="กรอก Username"
-          required>
-
+          placeholder="กรอกชื่อผู้ใช้"
+          required
+        >
       </div>
 
-
-      <div class="form-group">
-
-        <label>
-          Password
+      <div class="login-field">
+        <label for="password">
+          รหัสผ่าน
         </label>
 
         <input
           id="password"
           type="password"
           autocomplete="current-password"
-          placeholder="กรอก Password"
-          required>
+          placeholder="กรอกรหัสผ่าน"
+          required
+        >
+      </div>
+
+      <button
+        type="submit"
+        class="login-button"
+      >
+        🔑 เข้าสู่ระบบ
+      </button>
+
+      <div
+        id="loginError"
+        class="login-error"
+      >
+        ❌ ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง
+      </div>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     ADMIN PAGE
+========================================================= -->
+
+<section id="adminPage">
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <div class="nav-inner">
+
+      <div class="brand">
+        📚 Chinese–Thai Dictionary
+        <small>
+          ระบบจัดการคำศัพท์
+        </small>
+      </div>
+
+      <div class="nav-actions">
+
+        <a
+          href="./dictionary.html"
+          target="_blank"
+          class="nav-button"
+        >
+          🔎 ดูพจนานุกรม
+        </a>
+
+        <button
+          id="logoutButton"
+          class="nav-button logout-button"
+        >
+          🚪 ออกจากระบบ
+        </button>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <main class="container">
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+      <h1>
+        🛠️ จัดการพจนานุกรม
+      </h1>
+
+      <p>
+        เพิ่ม แก้ไข ตรวจสอบ และสร้างไฟล์ dictionary.js
+      </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         STATS
+    ====================================================== -->
+
+    <section class="stats">
+
+      <div class="stat-card">
+
+        <div class="stat-title">
+          คำศัพท์ทั้งหมด
+        </div>
+
+        <div
+          id="totalCount"
+          class="stat-number"
+        >
+          0
+        </div>
 
       </div>
 
 
-      <button
-        type="submit"
-        class="login-btn">
+      <div class="stat-card">
 
-        🔑 เข้าสู่ระบบ
+        <div class="stat-title">
+          รอตรวจสอบ
+        </div>
 
-      </button>
+        <div
+          id="pendingCount"
+          class="stat-number"
+        >
+          0
+        </div>
 
-    </form>
+      </div>
 
 
-    <div
-      class="login-error"
-      id="loginError">
+      <div class="stat-card">
 
-      ❌ Username หรือ Password ไม่ถูกต้อง
+        <div class="stat-title">
+          อนุมัติแล้ว
+        </div>
 
-    </div>
+        <div
+          id="approvedCount"
+          class="stat-number"
+        >
+          0
+        </div>
 
-  </div>
+      </div>
+
+
+      <div class="stat-card">
+
+        <div class="stat-title">
+          ไม่อนุมัติ
+        </div>
+
+        <div
+          id="rejectedCount"
+          class="stat-number"
+        >
+          0
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SEARCH / FILTER
+    ====================================================== -->
+
+    <section class="panel">
+
+      <h2 class="panel-title">
+        🔎 ค้นหาและกรองข้อมูล
+      </h2>
+
+      <div class="toolbar">
+
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="ค้นหาคำศัพท์ / Pinyin / คำแปล / ตัวอย่าง..."
+        >
+
+        <select id="hskFilter">
+
+          <option value="all">
+            ทุกระดับ HSK
+          </option>
+
+          <option value="HSK1">
+            HSK1
+          </option>
+
+          <option value="HSK2">
+            HSK2
+          </option>
+
+          <option value="HSK3">
+            HSK3
+          </option>
+
+          <option value="HSK4">
+            HSK4
+          </option>
+
+          <option value="HSK5">
+            HSK5
+          </option>
+
+          <option value="HSK6">
+            HSK6
+          </option>
+
+        </select>
+
+
+        <select id="statusFilter">
+
+          <option value="all">
+            ทุกสถานะ
+          </option>
+
+          <option value="pending">
+            ⏳ รอตรวจสอบ
+          </option>
+
+          <option value="approved">
+            ✅ อนุมัติแล้ว
+          </option>
+
+          <option value="rejected">
+            ❌ ไม่อนุมัติ
+          </option>
+
+        </select>
+
+
+        <button
+          id="addWordButton"
+          class="primary-button"
+        >
+          ➕ เพิ่มคำศัพท์
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         GOOGLE SHEETS IMPORT
+    ====================================================== -->
+
+    <section class="panel">
+
+      <h2 class="panel-title">
+        📥 นำข้อมูลจาก Google Sheets
+      </h2>
+
+      <div class="import-grid">
+
+        <div>
+
+          <textarea
+            id="importData"
+            placeholder="คัดลอกข้อมูลจาก Google Sheets แล้ววางที่นี่..."
+          ></textarea>
+
+          <div class="button-row">
+
+            <button
+              id="importButton"
+              class="primary-button"
+            >
+              📥 นำเข้าข้อมูล
+            </button>
+
+            <button
+              id="clearImportButton"
+              class="secondary-button"
+            >
+              🗑️ ล้าง
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="import-help">
+
+          <strong>
+            วิธีใช้งาน
+          </strong>
+
+          <br>
+
+          1. เปิด Google Sheets
+
+          <br>
+
+          2. เลือกข้อมูลที่ต้องการนำเข้า
+
+          <br>
+
+          3. กด Ctrl + C
+
+          <br>
+
+          4. นำมาวางในช่องด้านซ้าย
+
+          <br>
+
+          5. กด
+          <b>📥 นำเข้าข้อมูล</b>
+
+          <br><br>
+
+          รองรับคอลัมน์:
+
+          <br>
+
+          <b>
+            ID | คำศัพท์จีน | Pinyin | คำแปล |
+            HSK | ชนิดคำ | ตัวอย่าง |
+            Pinyin ตัวอย่าง | แปลตัวอย่าง |
+            สถานะ | ผู้ส่ง | วันที่
+          </b>
+
+          <br><br>
+
+          หากข้อมูลที่นำเข้ามาจาก Google Sheets
+          ยังไม่มีสถานะ ระบบจะกำหนดเป็น
+          <b>pending</b>
+          ให้อัตโนมัติ
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DATA TABLE
+    ====================================================== -->
+
+    <section class="panel">
+
+      <h2 class="panel-title">
+        📚 รายการคำศัพท์
+      </h2>
+
+      <div
+        id="resultInfo"
+        class="notice"
+      >
+        แสดง 0 รายการ
+      </div>
+
+      <div class="table-wrapper">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>
+                ID
+              </th>
+
+              <th>
+                คำศัพท์
+              </th>
+
+              <th>
+                ความหมาย
+              </th>
+
+              <th>
+                HSK
+              </th>
+
+              <th>
+                ชนิดคำ
+              </th>
+
+              <th>
+                ตัวอย่าง
+              </th>
+
+              <th>
+                สถานะ
+              </th>
+
+              <th>
+                ผู้ส่ง
+              </th>
+
+              <th>
+                วันที่
+              </th>
+
+              <th>
+                จัดการ
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody id="wordTableBody">
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <div
+        id="emptyState"
+        class="empty"
+        style="display:none;"
+      >
+
+        <div class="empty-icon">
+          📭
+        </div>
+
+        ไม่พบคำศัพท์ที่ตรงกับเงื่อนไข
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EXPORT
+    ====================================================== -->
+
+    <section class="panel">
+
+      <h2 class="panel-title">
+        📤 สร้าง dictionary.js
+      </h2>
+
+      <div class="notice">
+
+        ระบบจะสร้างไฟล์
+        <b>dictionary.js</b>
+        จากคำศัพท์ที่มีสถานะ
+        <b>approved</b>
+        เท่านั้น
+
+        <br>
+
+        จากนั้นนำไฟล์ที่ได้ไปแทนที่
+
+        <b>
+          data/dictionary.js
+        </b>
+
+        เพื่ออัปเดตข้อมูลบนเว็บไซต์
+
+      </div>
+
+
+      <div class="button-row">
+
+        <button
+          id="generateButton"
+          class="primary-button"
+        >
+          ⚙️ สร้าง dictionary.js
+        </button>
+
+        <button
+          id="downloadButton"
+          class="success-button"
+          style="display:none;"
+        >
+          💾 ดาวน์โหลด dictionary.js
+        </button>
+
+        <button
+          id="copyButton"
+          class="secondary-button"
+          style="display:none;"
+        >
+          📋 คัดลอก
+        </button>
+
+      </div>
+
+
+      <div
+        id="exportBox"
+        style="margin-top:15px;"
+      >
+
+        <textarea
+          id="exportCode"
+          readonly
+        ></textarea>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    สร้างโดย ก็แค่จีน by ครูพี่เหม่ยถิง
+
+    <br>
+
+    © ก็แค่จีน by ครูพี่เหม่ยถิง ·
+    Chinese–Thai Dictionary 💙
+
+  </footer>
 
 </section>
 
 
-
-<!-- =====================================================
-     ADMIN PAGE
-===================================================== -->
-
-<section id="adminPage">
-
-
-<!-- NAVBAR -->
-
-<nav class="navbar">
-
-  <div class="nav-inner">
-
-    <a
-      href="index.html"
-      class="logo">
-
-      ก็แค่จีน by ครูพี่เหม่ยถิง
-
-      <span>
-        Chinese–Thai Dictionary Admin
-      </span>
-
-    </a>
-
-
-    <div class="nav-right">
-
-      <a
-        href="dictionary.html"
-        target="_blank"
-        class="nav-link">
-
-        📖 ดูพจนานุกรม
-
-      </a>
-
-      <button
-        id="logoutBtn"
-        class="logout-btn">
-
-        ออกจากระบบ
-
-      </button>
-
-    </div>
-
-  </div>
-
-</nav>
-
-
-
-<main class="container">
-
-
-<!-- PAGE TITLE -->
-
-<div class="page-title">
-
-  <h1>
-    📚 จัดการพจนานุกรม
-  </h1>
-
-  <p>
-    เพิ่ม แก้ไข ตรวจสอบ และเตรียมคำศัพท์สำหรับเว็บไซต์
-  </p>
-
-</div>
-
-
-
-<!-- =====================================================
-     STATS
-===================================================== -->
-
-<section class="stats">
-
-
-  <div class="stat-card">
-
-    <div class="stat-label">
-      📚 คำศัพท์ทั้งหมด
-    </div>
-
-    <div
-      class="stat-number"
-      id="totalCount">
-
-      0
-
-    </div>
-
-  </div>
-
-
-  <div class="stat-card">
-
-    <div class="stat-label">
-      ✅ อนุมัติแล้ว
-    </div>
-
-    <div
-      class="stat-number"
-      id="approvedCount">
-
-      0
-
-    </div>
-
-  </div>
-
-
-  <div class="stat-card">
-
-    <div class="stat-label">
-      ⏳ รอตรวจสอบ
-    </div>
-
-    <div
-      class="stat-number"
-      id="pendingCount">
-
-      0
-
-    </div>
-
-  </div>
-
-
-  <div class="stat-card">
-
-    <div class="stat-label">
-      ❌ ไม่อนุมัติ
-    </div>
-
-    <div
-      class="stat-number"
-      id="rejectedCount">
-
-      0
-
-    </div>
-
-  </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     IMPORT GOOGLE SHEETS
-===================================================== -->
-
-<section class="card">
-
-  <h2 class="card-title">
-    📥 นำข้อมูลจาก Google Sheets
-  </h2>
-
-  <p class="card-description">
-
-    เปิด Google Sheets → เลือกข้อมูล → Copy → นำมาวางในช่องด้านล่าง
-    ระบบรองรับข้อมูลที่คั่นด้วย Tab หรือ | 
-
-  </p>
-
-
-  <textarea
-    id="importTextarea"
-    class="import-textarea"
-    placeholder="ตัวอย่าง:
-
-1	爱	ài	รัก, ชอบ	HSK1	กริยา	我爱你。	Wǒ ài nǐ.	ฉันรักคุณ	approved	ครูพี่เหม่ยถิง	2026-09-15
-
-หรือ
-
-1 | 爱 | ài | รัก, ชอบ | HSK1 | กริยา | 我爱你。 | Wǒ ài nǐ. | ฉันรักคุณ | approved | ครูพี่เหม่ยถิง | 2026-09-15"></textarea>
-
-
-  <div class="import-actions">
-
-    <button
-      class="btn btn-primary"
-      id="importBtn">
-
-      📥 Import ข้อมูล
-
-    </button>
-
-
-    <button
-      class="btn btn-secondary"
-      id="clearImportBtn">
-
-      🧹 ล้างช่อง
-
-    </button>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     DATA MANAGEMENT
-===================================================== -->
-
-<section class="card">
-
-  <h2 class="card-title">
-    📝 รายการคำศัพท์
-  </h2>
-
-
-  <div class="toolbar">
-
-
-    <input
-      id="searchAdmin"
-      class="search"
-      type="text"
-      placeholder="🔍 ค้นหาคำศัพท์ / Pinyin / คำแปล">
-
-
-    <select
-      id="hskFilter"
-      class="filter-select">
-
-      <option value="ALL">
-        HSK ทั้งหมด
-      </option>
-
-      <option value="HSK1">
-        HSK1
-      </option>
-
-      <option value="HSK2">
-        HSK2
-      </option>
-
-      <option value="HSK3">
-        HSK3
-      </option>
-
-      <option value="HSK4">
-        HSK4
-      </option>
-
-      <option value="HSK5">
-        HSK5
-      </option>
-
-      <option value="HSK6">
-        HSK6
-      </option>
-
-    </select>
-
-
-    <select
-      id="statusFilter"
-      class="filter-select">
-
-      <option value="ALL">
-        ทุกสถานะ
-      </option>
-
-      <option value="approved">
-        ✅ อนุมัติแล้ว
-      </option>
-
-      <option value="pending">
-        ⏳ รอตรวจสอบ
-      </option>
-
-      <option value="rejected">
-        ❌ ไม่อนุมัติ
-      </option>
-
-    </select>
-
-
-    <button
-      class="btn btn-pink"
-      id="addWordBtn">
-
-      ➕ เพิ่มคำศัพท์
-
-    </button>
-
-
-    <button
-      class="btn btn-secondary"
-      id="loadDictionaryBtn">
-
-      🔄 โหลด dictionary.js
-
-    </button>
-
-
-  </div>
-
-
-
-  <div class="table-wrap">
-
-    <table>
-
-      <thead>
-
-        <tr>
-
-          <th>
-            ID
-          </th>
-
-          <th>
-            คำศัพท์
-          </th>
-
-          <th>
-            Pinyin
-          </th>
-
-          <th>
-            คำแปล
-          </th>
-
-          <th>
-            HSK
-          </th>
-
-          <th>
-            ชนิดคำ
-          </th>
-
-          <th>
-            ตัวอย่าง
-          </th>
-
-          <th>
-            สถานะ
-          </th>
-
-          <th>
-            จัดการ
-          </th>
-
-        </tr>
-
-      </thead>
-
-
-      <tbody id="wordTableBody">
-
-      </tbody>
-
-    </table>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     EXPORT
-===================================================== -->
-
-<section class="card">
-
-  <h2 class="card-title">
-    📤 Export สำหรับเว็บไซต์
-  </h2>
-
-
-  <p class="card-description">
-
-    ระบบจะสร้างข้อมูลเฉพาะคำที่มีสถานะ
-    <b>approved</b>
-    สำหรับนำไปใช้ใน
-    <b>data/dictionary.js</b>
-
-  </p>
-
-
-  <textarea
-    id="exportOutput"
-    class="export-box"
-    readonly
-    placeholder="// กดปุ่ม Generate เพื่อสร้าง dictionary.js"></textarea>
-
-
-  <div class="import-actions">
-
-    <button
-      class="btn btn-primary"
-      id="generateBtn">
-
-      ⚙️ Generate dictionary.js
-
-    </button>
-
-
-    <button
-      class="btn btn-success"
-      id="downloadBtn">
-
-      💾 ดาวน์โหลด dictionary.js
-
-    </button>
-
-
-    <button
-      class="btn btn-secondary"
-      id="copyBtn">
-
-      📋 Copy
-
-    </button>
-
-  </div>
-
-</section>
-
-
-</main>
-
-
-
-<footer>
-
-  © ก็แค่จีน by ครูพี่เหม่ยถิง
-  · Chinese–Thai Dictionary Admin 💙
-
-</footer>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     WORD MODAL
-===================================================== -->
+<!-- =========================================================
+     EDIT MODAL
+========================================================= -->
 
 <div
+  id="wordModal"
   class="modal"
-  id="wordModal">
+>
 
   <div class="modal-box">
 
-
     <div class="modal-header">
 
-      <h2
-        class="modal-title"
-        id="modalTitle">
-
+      <h2 id="modalTitle">
         ➕ เพิ่มคำศัพท์
-
       </h2>
 
-
       <button
-        class="close-btn"
-        id="closeModalBtn"
-        type="button">
-
+        id="closeModalButton"
+        class="close-button"
+      >
         ×
-
       </button>
 
     </div>
-
 
 
     <form id="wordForm">
 
-
       <input
+        id="editId"
         type="hidden"
-        id="editId">
+      >
 
 
       <div class="form-grid">
@@ -1768,10 +1307,10 @@ footer {
           </label>
 
           <input
-            id="word"
-            type="text"
+            id="formWord"
             required
-            placeholder="เช่น 爱">
+            placeholder="例如：爱"
+          >
 
         </div>
 
@@ -1785,27 +1324,27 @@ footer {
           </label>
 
           <input
-            id="pinyin"
-            type="text"
+            id="formPinyin"
             required
-            placeholder="เช่น ài">
+            placeholder="例如：ài"
+          >
 
         </div>
 
 
         <!-- MEANING -->
 
-        <div class="form-group">
+        <div class="form-group full">
 
           <label>
-            คำแปล *
+            คำแปลภาษาไทย *
           </label>
 
           <input
-            id="meaning"
-            type="text"
+            id="formMeaning"
             required
-            placeholder="เช่น รัก, ชอบ">
+            placeholder="เช่น รัก, ชอบ"
+          >
 
         </div>
 
@@ -1818,7 +1357,7 @@ footer {
             ระดับ HSK
           </label>
 
-          <select id="hsk">
+          <select id="formHsk">
 
             <option value="">
               ไม่ระบุ
@@ -1862,36 +1401,9 @@ footer {
           </label>
 
           <input
-            id="pos"
-            type="text"
-            placeholder="เช่น กริยา">
-
-        </div>
-
-
-        <!-- STATUS -->
-
-        <div class="form-group">
-
-          <label>
-            สถานะ
-          </label>
-
-          <select id="status">
-
-            <option value="pending">
-              ⏳ รอตรวจสอบ
-            </option>
-
-            <option value="approved">
-              ✅ อนุมัติแล้ว
-            </option>
-
-            <option value="rejected">
-              ❌ ไม่อนุมัติ
-            </option>
-
-          </select>
+            id="formPos"
+            placeholder="เช่น กริยา / คำนาม"
+          >
 
         </div>
 
@@ -1905,38 +1417,68 @@ footer {
           </label>
 
           <textarea
-            id="example"
-            placeholder="เช่น 我爱你。"></textarea>
+            id="formExample"
+            placeholder="例如：我爱你。"
+          ></textarea>
 
         </div>
 
 
         <!-- EXAMPLE PINYIN -->
 
-        <div class="form-group">
+        <div class="form-group full">
 
           <label>
             Pinyin ตัวอย่าง
           </label>
 
-          <textarea
-            id="examplePinyin"
-            placeholder="เช่น Wǒ ài nǐ."></textarea>
+          <input
+            id="formExamplePinyin"
+            placeholder="Wǒ ài nǐ."
+          >
 
         </div>
 
 
         <!-- EXAMPLE MEANING -->
 
-        <div class="form-group">
+        <div class="form-group full">
 
           <label>
-            แปลตัวอย่าง
+            คำแปลตัวอย่าง
           </label>
 
           <textarea
-            id="exampleMeaning"
-            placeholder="เช่น ฉันรักคุณ"></textarea>
+            id="formExampleMeaning"
+            placeholder="ฉันรักคุณ"
+          ></textarea>
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <div class="form-group">
+
+          <label>
+            สถานะ
+          </label>
+
+          <select id="formStatus">
+
+            <option value="pending">
+              ⏳ pending
+            </option>
+
+            <option value="approved">
+              ✅ approved
+            </option>
+
+            <option value="rejected">
+              ❌ rejected
+            </option>
+
+          </select>
 
         </div>
 
@@ -1950,24 +1492,26 @@ footer {
           </label>
 
           <input
-            id="sender"
-            type="text"
-            placeholder="เช่น ครูพี่เหม่ยถิง">
+            id="formSender"
+            placeholder="ชื่อ / นามแฝง"
+          >
 
         </div>
 
 
         <!-- DATE -->
 
-        <div class="form-group">
+        <div class="form-group full">
 
           <label>
             วันที่
           </label>
 
           <input
-            id="date"
-            type="date">
+            id="formDate"
+            type="text"
+            placeholder="เช่น 15/09/2026"
+          >
 
         </div>
 
@@ -1975,28 +1519,24 @@ footer {
       </div>
 
 
-      <div class="modal-footer">
-
-        <button
-          type="button"
-          class="btn btn-secondary"
-          id="cancelModalBtn">
-
-          ยกเลิก
-
-        </button>
-
+      <div class="button-row">
 
         <button
           type="submit"
-          class="btn btn-primary">
-
+          class="primary-button"
+        >
           💾 บันทึก
+        </button>
 
+        <button
+          type="button"
+          id="cancelModalButton"
+          class="secondary-button"
+        >
+          ยกเลิก
         </button>
 
       </div>
-
 
     </form>
 
@@ -2005,652 +1545,338 @@ footer {
 </div>
 
 
-
-<!-- TOAST -->
-
-<div
-  class="toast"
-  id="toast">
-
-</div>
-
-
-
-<!-- =====================================================
+<!-- =========================================================
      DICTIONARY DATA
-===================================================== -->
+========================================================= -->
 
 <script src="./data/dictionary.js"></script>
 
 
-
 <script>
 
-/* ========================================================
-   CONFIG
-======================================================== */
+  /* =========================================================
+     CONFIG
+  ========================================================= */
 
-const ADMIN_USERNAME = "admin";
+  const ADMIN_USERNAME = "admin";
+  const ADMIN_PASSWORD = "n23102546";
 
-const ADMIN_PASSWORD = "n23102546";
-
-const STORAGE_KEY =
-  "chineseDictionaryAdminData";
-
-
-/* ========================================================
-   STATE
-======================================================== */
-
-let dictionaryData = [];
-
-let editingId = null;
+  const STORAGE_KEY =
+    "chineseDictionaryAdminData";
 
 
-/* ========================================================
-   ELEMENTS
-======================================================== */
+  /* =========================================================
+     DATA
+  ========================================================= */
 
-const loginPage =
-  document.getElementById("loginPage");
+  let dictionaryData = [];
 
-const adminPage =
-  document.getElementById("adminPage");
+  let filteredData = [];
 
-const loginForm =
-  document.getElementById("loginForm");
-
-const loginError =
-  document.getElementById("loginError");
-
-const wordTableBody =
-  document.getElementById("wordTableBody");
-
-const searchAdmin =
-  document.getElementById("searchAdmin");
-
-const hskFilter =
-  document.getElementById("hskFilter");
-
-const statusFilter =
-  document.getElementById("statusFilter");
-
-const wordModal =
-  document.getElementById("wordModal");
-
-const wordForm =
-  document.getElementById("wordForm");
-
-const exportOutput =
-  document.getElementById("exportOutput");
-
-const importTextarea =
-  document.getElementById("importTextarea");
+  let editingId = null;
 
 
+  /* =========================================================
+     ELEMENTS
+  ========================================================= */
 
-/* ========================================================
-   TOAST
-======================================================== */
+  const loginPage =
+    document.getElementById("loginPage");
 
-function showToast(message) {
+  const adminPage =
+    document.getElementById("adminPage");
 
-  const toast =
-    document.getElementById("toast");
+  const loginForm =
+    document.getElementById("loginForm");
 
-  toast.textContent = message;
+  const loginError =
+    document.getElementById("loginError");
 
-  toast.style.display = "block";
 
-  clearTimeout(
-    window.toastTimer
+  /* =========================================================
+     LOGIN
+  ========================================================= */
+
+  loginForm.addEventListener(
+    "submit",
+    function(event) {
+
+      event.preventDefault();
+
+      const username =
+        document
+          .getElementById("username")
+          .value
+          .trim();
+
+      const password =
+        document
+          .getElementById("password")
+          .value;
+
+      if (
+        username === ADMIN_USERNAME &&
+        password === ADMIN_PASSWORD
+      ) {
+
+        loginPage.style.display = "none";
+
+        adminPage.style.display = "block";
+
+        loginError.style.display = "none";
+
+        loadData();
+
+        renderTable();
+
+        updateStats();
+
+      } else {
+
+        loginError.style.display = "block";
+
+      }
+
+    }
   );
 
-  window.toastTimer =
-    setTimeout(
-      () => {
 
-        toast.style.display =
-          "none";
+  /* =========================================================
+     LOGOUT
+  ========================================================= */
 
-      },
-      2600
+  document
+    .getElementById("logoutButton")
+    .addEventListener(
+      "click",
+      function() {
+
+        adminPage.style.display = "none";
+
+        loginPage.style.display = "flex";
+
+        document
+          .getElementById("password")
+          .value = "";
+
+      }
     );
 
-}
+
+  /* =========================================================
+     NORMALIZE DATA
+  ========================================================= */
+
+  function normalizeWord(item, index) {
+
+    return {
+
+      id:
+        Number(item.id) ||
+        index + 1,
+
+      word:
+        String(item.word || "")
+          .trim(),
+
+      pinyin:
+        String(item.pinyin || "")
+          .trim(),
+
+      meaning:
+        String(item.meaning || "")
+          .trim(),
+
+      hsk:
+        String(item.hsk || "")
+          .trim(),
+
+      pos:
+        String(item.pos || "")
+          .trim(),
+
+      example:
+        String(item.example || "")
+          .trim(),
+
+      examplePinyin:
+        String(item.examplePinyin || "")
+          .trim(),
+
+      exampleMeaning:
+        String(item.exampleMeaning || "")
+          .trim(),
+
+      status:
+        String(item.status || "approved")
+          .trim()
+          .toLowerCase(),
+
+      sender:
+        String(item.sender || "")
+          .trim(),
+
+      date:
+        String(item.date || "")
+          .trim()
+
+    };
+
+  }
 
 
+  /* =========================================================
+     LOAD DATA
+  ========================================================= */
 
-/* ========================================================
-   ESCAPE HTML
-======================================================== */
-
-function escapeHTML(value) {
-
-  return String(value ?? "")
-
-    .replace(
-      /&/g,
-      "&amp;"
-    )
-
-    .replace(
-      /</g,
-      "&lt;"
-    )
-
-    .replace(
-      />/g,
-      "&gt;"
-    )
-
-    .replace(
-      /"/g,
-      "&quot;"
-    )
-
-    .replace(
-      /'/g,
-      "&#039;"
-    );
-
-}
-
-
-
-/* ========================================================
-   NORMALIZE DATA
-======================================================== */
-
-function normalizeItem(item, index) {
-
-  return {
-
-    id:
-      Number(item.id)
-      || index + 1,
-
-    word:
-      String(
-        item.word || ""
-      ).trim(),
-
-    pinyin:
-      String(
-        item.pinyin || ""
-      ).trim(),
-
-    meaning:
-      String(
-        item.meaning || ""
-      ).trim(),
-
-    hsk:
-      String(
-        item.hsk || ""
-      ).trim(),
-
-    pos:
-      String(
-        item.pos || ""
-      ).trim(),
-
-    example:
-      String(
-        item.example || ""
-      ).trim(),
-
-    examplePinyin:
-      String(
-        item.examplePinyin
-        || ""
-      ).trim(),
-
-    exampleMeaning:
-      String(
-        item.exampleMeaning
-        || ""
-      ).trim(),
-
-    status:
-      String(
-        item.status || "approved"
-      ).toLowerCase(),
-
-    sender:
-      String(
-        item.sender || ""
-      ).trim(),
-
-    date:
-      String(
-        item.date || ""
-      ).trim()
-
-  };
-
-}
-
-
-
-/* ========================================================
-   LOAD LOCAL STORAGE
-======================================================== */
-
-function loadLocalData() {
-
-  try {
+  function loadData() {
 
     const saved =
       localStorage.getItem(
         STORAGE_KEY
       );
 
-    if (!saved) {
+    if (saved) {
 
-      return false;
+      try {
 
-    }
+        const parsed =
+          JSON.parse(saved);
 
-    const parsed =
-      JSON.parse(saved);
+        if (Array.isArray(parsed)) {
 
-    if (
-      !Array.isArray(parsed)
-    ) {
+          dictionaryData =
+            parsed.map(normalizeWord);
 
-      return false;
+          return;
 
-    }
+        }
 
-    dictionaryData =
-      parsed.map(
-        normalizeItem
-      );
+      } catch(error) {
 
-    return true;
-
-  } catch(error) {
-
-    console.error(error);
-
-    return false;
-
-  }
-
-}
-
-
-
-/* ========================================================
-   SAVE LOCAL STORAGE
-======================================================== */
-
-function saveLocalData() {
-
-  localStorage.setItem(
-    STORAGE_KEY,
-    JSON.stringify(
-      dictionaryData
-    )
-  );
-
-}
-
-
-
-/* ========================================================
-   LOAD DICTIONARY.JS
-======================================================== */
-
-function loadDictionaryJS(
-  replaceLocal = false
-) {
-
-  try {
-
-    let source = null;
-
-
-    if (
-      Array.isArray(
-        window.dictionary
-      )
-    ) {
-
-      source =
-        window.dictionary;
-
-    }
-
-    else if (
-      Array.isArray(
-        window.dictionaryData
-      )
-    ) {
-
-      source =
-        window.dictionaryData;
-
-    }
-
-
-    if (!source) {
-
-      showToast(
-        "⚠️ ไม่พบข้อมูลใน dictionary.js"
-      );
-
-      return;
-
-    }
-
-
-    if (
-      replaceLocal ||
-      !dictionaryData.length
-    ) {
-
-      dictionaryData =
-        source.map(
-          normalizeItem
-        );
-
-
-      /*
-       * คำที่มาจาก dictionary.js
-       * ถือว่า approved โดยค่าเริ่มต้น
-       */
-
-      dictionaryData =
-        dictionaryData.map(
-          item => ({
-
-            ...item,
-
-            status:
-              item.status
-              || "approved"
-
-          })
-        );
-
-
-      saveLocalData();
-
-      renderTable();
-
-      updateStats();
-
-      showToast(
-        `✅ โหลดคำศัพท์ ${dictionaryData.length} คำแล้ว`
-      );
-
-    }
-
-  } catch(error) {
-
-    console.error(error);
-
-    showToast(
-      "⚠️ โหลด dictionary.js ไม่สำเร็จ"
-    );
-
-  }
-
-}
-
-
-
-/* ========================================================
-   LOGIN
-======================================================== */
-
-loginForm.addEventListener(
-  "submit",
-  function(event) {
-
-    event.preventDefault();
-
-
-    const username =
-      document
-        .getElementById("username")
-        .value
-        .trim();
-
-
-    const password =
-      document
-        .getElementById("password")
-        .value;
-
-
-    if (
-      username ===
-        ADMIN_USERNAME
-      &&
-      password ===
-        ADMIN_PASSWORD
-    ) {
-
-      loginPage.style.display =
-        "none";
-
-      adminPage.style.display =
-        "block";
-
-      loginError.style.display =
-        "none";
-
-
-      /*
-       * โหลดข้อมูลจาก localStorage ก่อน
-       */
-
-      const hasLocal =
-        loadLocalData();
-
-
-      /*
-       * ถ้ายังไม่มีข้อมูล
-       * ให้โหลด dictionary.js
-       */
-
-      if (!hasLocal) {
-
-        loadDictionaryJS(
-          true
+        console.error(
+          "อ่าน localStorage ไม่สำเร็จ",
+          error
         );
 
       }
 
-
-      renderTable();
-
-      updateStats();
-
     }
 
-    else {
 
-      loginError.style.display =
-        "block";
+    /*
+      ถ้ายังไม่มีข้อมูลใน localStorage
+      ให้โหลดจาก dictionary.js
+    */
 
-    }
-
-  }
-);
-
-
-
-/* ========================================================
-   LOGOUT
-======================================================== */
-
-document
-  .getElementById("logoutBtn")
-  .onclick = function() {
-
-    adminPage.style.display =
-      "none";
-
-    loginPage.style.display =
-      "flex";
-
-    document
-      .getElementById("password")
-      .value = "";
-
-  };
+    const source =
+      Array.isArray(window.dictionary)
+        ? window.dictionary
+        : (
+            Array.isArray(window.dictionaryData)
+              ? window.dictionaryData
+              : []
+          );
 
 
+    dictionaryData =
+      source.map(function(item, index) {
 
-/* ========================================================
-   STATS
-======================================================== */
-
-function updateStats() {
-
-  const total =
-    dictionaryData.length;
-
-
-  const approved =
-    dictionaryData.filter(
-      item =>
-        item.status ===
-        "approved"
-    ).length;
-
-
-  const pending =
-    dictionaryData.filter(
-      item =>
-        item.status ===
-        "pending"
-    ).length;
-
-
-  const rejected =
-    dictionaryData.filter(
-      item =>
-        item.status ===
-        "rejected"
-    ).length;
-
-
-  document
-    .getElementById("totalCount")
-    .textContent =
-      total;
-
-
-  document
-    .getElementById("approvedCount")
-    .textContent =
-      approved;
-
-
-  document
-    .getElementById("pendingCount")
-    .textContent =
-      pending;
-
-
-  document
-    .getElementById("rejectedCount")
-    .textContent =
-      rejected;
-
-}
-
-
-
-/* ========================================================
-   FILTER
-======================================================== */
-
-function getFilteredData() {
-
-  const keyword =
-    searchAdmin.value
-      .trim()
-      .toLowerCase();
-
-
-  const hsk =
-    hskFilter.value;
-
-
-  const status =
-    statusFilter.value;
-
-
-  return dictionaryData.filter(
-    item => {
-
-
-      const searchText = [
-
-        item.word,
-
-        item.pinyin,
-
-        item.meaning,
-
-        item.example,
-
-        item.exampleMeaning
-
-      ]
-
-      .join(" ")
-      .toLowerCase();
-
-
-      const searchMatch =
-        !keyword ||
-        searchText.includes(
-          keyword
+        return normalizeWord(
+          {
+            ...item,
+            status: "approved"
+          },
+          index
         );
 
-
-      const hskMatch =
-        hsk === "ALL" ||
-        item.hsk === hsk;
+      });
 
 
-      const statusMatch =
-        status === "ALL" ||
-        item.status === status;
+    saveData();
+
+  }
 
 
-      return (
-        searchMatch &&
-        hskMatch &&
-        statusMatch
-      );
+  /* =========================================================
+     SAVE DATA
+  ========================================================= */
+
+  function saveData() {
+
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(dictionaryData)
+    );
+
+  }
+
+
+  /* =========================================================
+     NEXT ID
+  ========================================================= */
+
+  function getNextId() {
+
+    if (!dictionaryData.length) {
+      return 1;
+    }
+
+    return (
+      Math.max(
+        ...dictionaryData.map(
+          item => Number(item.id) || 0
+        )
+      ) + 1
+    );
+
+  }
+
+
+  /* =========================================================
+     ESCAPE HTML
+  ========================================================= */
+
+  function escapeHTML(value) {
+
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  /* =========================================================
+     STATUS LABEL
+  ========================================================= */
+
+  function getStatusHTML(status) {
+
+    if (status === "pending") {
+
+      return `
+        <span class="tag tag-pending">
+          ⏳ pending
+        </span>
+      `;
 
     }
-  );
 
-}
+    if (status === "rejected") {
 
+      return `
+        <span class="tag tag-rejected">
+          ❌ rejected
+        </span>
+      `;
 
-
-/* ========================================================
-   STATUS HTML
-======================================================== */
-
-function statusHTML(status) {
-
-  if (
-    status === "approved"
-  ) {
+    }
 
     return `
-      <span class="status status-approved">
+      <span class="tag tag-approved">
         ✅ approved
       </span>
     `;
@@ -2658,453 +1884,862 @@ function statusHTML(status) {
   }
 
 
-  if (
-    status === "rejected"
-  ) {
+  /* =========================================================
+     FILTER
+  ========================================================= */
 
-    return `
-      <span class="status status-rejected">
-        ❌ rejected
-      </span>
-    `;
+  function applyFilters() {
+
+    const search =
+      document
+        .getElementById("searchInput")
+        .value
+        .trim()
+        .toLowerCase();
+
+    const hsk =
+      document
+        .getElementById("hskFilter")
+        .value;
+
+    const status =
+      document
+        .getElementById("statusFilter")
+        .value;
+
+
+    filteredData =
+      dictionaryData.filter(
+        function(item) {
+
+          const searchable = [
+
+            item.word,
+
+            item.pinyin,
+
+            item.meaning,
+
+            item.pos,
+
+            item.example,
+
+            item.examplePinyin,
+
+            item.exampleMeaning,
+
+            item.sender
+
+          ]
+            .join(" ")
+            .toLowerCase();
+
+
+          const matchSearch =
+            !search ||
+            searchable.includes(search);
+
+
+          const matchHsk =
+            hsk === "all" ||
+            item.hsk === hsk;
+
+
+          const matchStatus =
+            status === "all" ||
+            item.status === status;
+
+
+          return (
+            matchSearch &&
+            matchHsk &&
+            matchStatus
+          );
+
+        }
+      );
+
+
+    renderTable();
 
   }
 
 
-  return `
-    <span class="status status-pending">
-      ⏳ pending
-    </span>
-  `;
+  /* =========================================================
+     RENDER TABLE
+  ========================================================= */
 
-}
+  function renderTable() {
 
+    const tbody =
+      document.getElementById(
+        "wordTableBody"
+      );
 
+    const emptyState =
+      document.getElementById(
+        "emptyState"
+      );
 
-/* ========================================================
-   RENDER TABLE
-======================================================== */
-
-function renderTable() {
-
-  const data =
-    getFilteredData();
-
-
-  wordTableBody.innerHTML =
-    "";
+    const resultInfo =
+      document.getElementById(
+        "resultInfo"
+      );
 
 
-  if (!data.length) {
+    tbody.innerHTML = "";
 
-    wordTableBody.innerHTML = `
 
-      <tr>
+    if (!filteredData.length) {
 
-        <td
-          colspan="9"
-          class="empty">
+      emptyState.style.display =
+        "block";
 
-          🔎 ไม่พบข้อมูลคำศัพท์
+      resultInfo.textContent =
+        "แสดง 0 รายการ";
 
-        </td>
+      return;
 
-      </tr>
+    }
 
-    `;
 
-    return;
+    emptyState.style.display =
+      "none";
+
+
+    resultInfo.textContent =
+      `แสดง ${filteredData.length} จาก ${dictionaryData.length} รายการ`;
+
+
+    filteredData.forEach(
+      function(item) {
+
+        const tr =
+          document.createElement("tr");
+
+
+        tr.innerHTML = `
+
+          <td>
+            ${escapeHTML(item.id)}
+          </td>
+
+
+          <td>
+
+            <div class="word-main">
+              ${escapeHTML(item.word)}
+            </div>
+
+            <div class="word-pinyin">
+              ${escapeHTML(item.pinyin)}
+            </div>
+
+          </td>
+
+
+          <td>
+
+            <div class="meaning">
+              ${escapeHTML(item.meaning)}
+            </div>
+
+          </td>
+
+
+          <td>
+
+            ${
+              item.hsk
+                ? `
+                  <span class="tag tag-hsk">
+                    ${escapeHTML(item.hsk)}
+                  </span>
+                `
+                : "-"
+            }
+
+          </td>
+
+
+          <td>
+            ${escapeHTML(item.pos || "-")}
+          </td>
+
+
+          <td>
+
+            <div class="example">
+              ${
+                item.example
+                  ? escapeHTML(item.example)
+                  : "-"
+              }
+
+              ${
+                item.examplePinyin
+                  ? `
+                    <div class="example-pinyin">
+                      ${escapeHTML(
+                        item.examplePinyin
+                      )}
+                    </div>
+                  `
+                  : ""
+              }
+
+              ${
+                item.exampleMeaning
+                  ? `
+                    <div>
+                      ${escapeHTML(
+                        item.exampleMeaning
+                      )}
+                    </div>
+                  `
+                  : ""
+              }
+            </div>
+
+          </td>
+
+
+          <td>
+            ${getStatusHTML(item.status)}
+          </td>
+
+
+          <td>
+            ${escapeHTML(item.sender || "-")}
+          </td>
+
+
+          <td>
+            ${escapeHTML(item.date || "-")}
+          </td>
+
+
+          <td>
+
+            <div class="actions">
+
+              ${
+                item.status !== "approved"
+                  ? `
+                    <button
+                      class="small-button success-button"
+                      onclick="approveWord(${item.id})"
+                    >
+                      ✓ อนุมัติ
+                    </button>
+                  `
+                  : ""
+              }
+
+
+              ${
+                item.status !== "rejected"
+                  ? `
+                    <button
+                      class="small-button warning-button"
+                      onclick="rejectWord(${item.id})"
+                    >
+                      ✕ ไม่อนุมัติ
+                    </button>
+                  `
+                  : ""
+              }
+
+
+              <button
+                class="small-button secondary-button"
+                onclick="editWord(${item.id})"
+              >
+                ✏️ แก้ไข
+              </button>
+
+
+              <button
+                class="small-button danger-button"
+                onclick="deleteWord(${item.id})"
+              >
+                🗑️ ลบ
+              </button>
+
+            </div>
+
+          </td>
+
+        `;
+
+
+        tbody.appendChild(tr);
+
+      }
+    );
 
   }
 
 
-  data.forEach(
-    item => {
+  /* =========================================================
+     UPDATE STATS
+  ========================================================= */
 
-      const tr =
-        document.createElement(
-          "tr"
+  function updateStats() {
+
+    const total =
+      dictionaryData.length;
+
+    const pending =
+      dictionaryData.filter(
+        item => item.status === "pending"
+      ).length;
+
+    const approved =
+      dictionaryData.filter(
+        item => item.status === "approved"
+      ).length;
+
+    const rejected =
+      dictionaryData.filter(
+        item => item.status === "rejected"
+      ).length;
+
+
+    document
+      .getElementById("totalCount")
+      .textContent = total;
+
+
+    document
+      .getElementById("pendingCount")
+      .textContent = pending;
+
+
+    document
+      .getElementById("approvedCount")
+      .textContent = approved;
+
+
+    document
+      .getElementById("rejectedCount")
+      .textContent = rejected;
+
+  }
+
+
+  /* =========================================================
+     APPROVE
+  ========================================================= */
+
+  function approveWord(id) {
+
+    const item =
+      dictionaryData.find(
+        word => Number(word.id) === Number(id)
+      );
+
+    if (!item) {
+      return;
+    }
+
+
+    item.status = "approved";
+
+    saveData();
+
+    renderTable();
+
+    updateStats();
+
+  }
+
+
+  /* =========================================================
+     REJECT
+  ========================================================= */
+
+  function rejectWord(id) {
+
+    const item =
+      dictionaryData.find(
+        word => Number(word.id) === Number(id)
+      );
+
+    if (!item) {
+      return;
+    }
+
+
+    item.status = "rejected";
+
+    saveData();
+
+    renderTable();
+
+    updateStats();
+
+  }
+
+
+  /* =========================================================
+     DELETE
+  ========================================================= */
+
+  function deleteWord(id) {
+
+    const item =
+      dictionaryData.find(
+        word => Number(word.id) === Number(id)
+      );
+
+
+    if (!item) {
+      return;
+    }
+
+
+    const confirmed =
+      confirm(
+        `ต้องการลบคำว่า "${item.word}" หรือไม่?`
+      );
+
+
+    if (!confirmed) {
+      return;
+    }
+
+
+    dictionaryData =
+      dictionaryData.filter(
+        word =>
+          Number(word.id) !== Number(id)
+      );
+
+
+    saveData();
+
+    applyFilters();
+
+    updateStats();
+
+  }
+
+
+  /* =========================================================
+     OPEN ADD MODAL
+  ========================================================= */
+
+  document
+    .getElementById("addWordButton")
+    .addEventListener(
+      "click",
+      function() {
+
+        openAddModal();
+
+      }
+    );
+
+
+  function openAddModal() {
+
+    editingId = null;
+
+    document
+      .getElementById("modalTitle")
+      .textContent =
+      "➕ เพิ่มคำศัพท์";
+
+
+    clearForm();
+
+
+    document
+      .getElementById("formStatus")
+      .value =
+      "pending";
+
+
+    document
+      .getElementById("wordModal")
+      .style.display =
+      "block";
+
+  }
+
+
+  /* =========================================================
+     EDIT WORD
+  ========================================================= */
+
+  function editWord(id) {
+
+    const item =
+      dictionaryData.find(
+        word =>
+          Number(word.id) === Number(id)
+      );
+
+
+    if (!item) {
+      return;
+    }
+
+
+    editingId =
+      Number(item.id);
+
+
+    document
+      .getElementById("modalTitle")
+      .textContent =
+      "✏️ แก้ไขคำศัพท์";
+
+
+    document
+      .getElementById("editId")
+      .value =
+      item.id;
+
+
+    document
+      .getElementById("formWord")
+      .value =
+      item.word;
+
+
+    document
+      .getElementById("formPinyin")
+      .value =
+      item.pinyin;
+
+
+    document
+      .getElementById("formMeaning")
+      .value =
+      item.meaning;
+
+
+    document
+      .getElementById("formHsk")
+      .value =
+      item.hsk;
+
+
+    document
+      .getElementById("formPos")
+      .value =
+      item.pos;
+
+
+    document
+      .getElementById("formExample")
+      .value =
+      item.example;
+
+
+    document
+      .getElementById("formExamplePinyin")
+      .value =
+      item.examplePinyin;
+
+
+    document
+      .getElementById("formExampleMeaning")
+      .value =
+      item.exampleMeaning;
+
+
+    document
+      .getElementById("formStatus")
+      .value =
+      item.status;
+
+
+    document
+      .getElementById("formSender")
+      .value =
+      item.sender;
+
+
+    document
+      .getElementById("formDate")
+      .value =
+      item.date;
+
+
+    document
+      .getElementById("wordModal")
+      .style.display =
+      "block";
+
+  }
+
+
+  /* =========================================================
+     CLEAR FORM
+  ========================================================= */
+
+  function clearForm() {
+
+    document
+      .getElementById("wordForm")
+      .reset();
+
+
+    document
+      .getElementById("editId")
+      .value = "";
+
+  }
+
+
+  /* =========================================================
+     SAVE FORM
+  ========================================================= */
+
+  document
+    .getElementById("wordForm")
+    .addEventListener(
+      "submit",
+      function(event) {
+
+        event.preventDefault();
+
+
+        const word =
+          document
+            .getElementById("formWord")
+            .value
+            .trim();
+
+        const pinyin =
+          document
+            .getElementById("formPinyin")
+            .value
+            .trim();
+
+        const meaning =
+          document
+            .getElementById("formMeaning")
+            .value
+            .trim();
+
+
+        if (!word || !pinyin || !meaning) {
+
+          alert(
+            "กรุณากรอกคำศัพท์ Pinyin และคำแปล"
+          );
+
+          return;
+
+        }
+
+
+        const item = {
+
+          id:
+            editingId !== null
+              ? editingId
+              : getNextId(),
+
+          word,
+
+          pinyin,
+
+          meaning,
+
+          hsk:
+            document
+              .getElementById("formHsk")
+              .value
+              .trim(),
+
+          pos:
+            document
+              .getElementById("formPos")
+              .value
+              .trim(),
+
+          example:
+            document
+              .getElementById("formExample")
+              .value
+              .trim(),
+
+          examplePinyin:
+            document
+              .getElementById("formExamplePinyin")
+              .value
+              .trim(),
+
+          exampleMeaning:
+            document
+              .getElementById("formExampleMeaning")
+              .value
+              .trim(),
+
+          status:
+            document
+              .getElementById("formStatus")
+              .value,
+
+          sender:
+            document
+              .getElementById("formSender")
+              .value
+              .trim(),
+
+          date:
+            document
+              .getElementById("formDate")
+              .value
+              .trim()
+
+        };
+
+
+        if (editingId !== null) {
+
+          const index =
+            dictionaryData.findIndex(
+              existing =>
+                Number(existing.id) ===
+                Number(editingId)
+            );
+
+
+          if (index !== -1) {
+
+            dictionaryData[index] =
+              item;
+
+          }
+
+        } else {
+
+          dictionaryData.push(item);
+
+        }
+
+
+        saveData();
+
+        closeModal();
+
+        applyFilters();
+
+        updateStats();
+
+      }
+    );
+
+
+  /* =========================================================
+     CLOSE MODAL
+  ========================================================= */
+
+  function closeModal() {
+
+    document
+      .getElementById("wordModal")
+      .style.display =
+      "none";
+
+  }
+
+
+  document
+    .getElementById("closeModalButton")
+    .addEventListener(
+      "click",
+      closeModal
+    );
+
+
+  document
+    .getElementById("cancelModalButton")
+    .addEventListener(
+      "click",
+      closeModal
+    );
+
+
+  window.addEventListener(
+    "click",
+    function(event) {
+
+      const modal =
+        document.getElementById(
+          "wordModal"
         );
 
 
-      tr.innerHTML = `
+      if (event.target === modal) {
 
-        <td>
-          ${escapeHTML(item.id)}
-        </td>
+        closeModal();
 
-
-        <td>
-          <div class="word-cell">
-            ${escapeHTML(item.word)}
-          </div>
-        </td>
-
-
-        <td>
-          <div class="pinyin-cell">
-            ${escapeHTML(item.pinyin)}
-          </div>
-        </td>
-
-
-        <td>
-          <div class="meaning-cell">
-            ${escapeHTML(item.meaning)}
-          </div>
-        </td>
-
-
-        <td>
-          ${escapeHTML(
-            item.hsk || "-"
-          )}
-        </td>
-
-
-        <td>
-          ${escapeHTML(
-            item.pos || "-"
-          )}
-        </td>
-
-
-        <td>
-          <div class="example-cell">
-
-            ${
-              escapeHTML(
-                item.example
-              )
-              || "-"
-            }
-
-            ${
-              item.exampleMeaning
-              ? `<br><small>${escapeHTML(
-                  item.exampleMeaning
-                )}</small>`
-              : ""
-            }
-
-          </div>
-        </td>
-
-
-        <td>
-          ${statusHTML(item.status)}
-        </td>
-
-
-        <td>
-
-          <div class="action-group">
-
-            ${
-              item.status !==
-              "approved"
-
-              ? `
-
-                <button
-                  class="action-btn approve-btn"
-                  onclick="approveWord(${item.id})">
-
-                  ✓
-
-                </button>
-
-              `
-
-              : ""
-            }
-
-
-            <button
-              class="action-btn edit-btn"
-              onclick="editWord(${item.id})">
-
-              ✏️
-
-            </button>
-
-
-            <button
-              class="action-btn delete-btn"
-              onclick="deleteWord(${item.id})">
-
-              🗑️
-
-            </button>
-
-          </div>
-
-        </td>
-
-      `;
-
-
-      wordTableBody.appendChild(
-        tr
-      );
+      }
 
     }
   );
 
-}
 
-
-
-/* ========================================================
-   OPEN ADD MODAL
-======================================================== */
-
-function openAddModal() {
-
-  editingId = null;
+  /* =========================================================
+     SEARCH / FILTER EVENTS
+  ========================================================= */
 
   document
-    .getElementById("modalTitle")
-    .textContent =
-      "➕ เพิ่มคำศัพท์";
-
-
-  wordForm.reset();
-
-
-  document
-    .getElementById("editId")
-    .value = "";
-
-
-  document
-    .getElementById("status")
-    .value =
-      "pending";
-
-
-  document
-    .getElementById("date")
-    .value =
-      new Date()
-        .toISOString()
-        .slice(0,10);
-
-
-  wordModal.style.display =
-    "block";
-
-}
-
-
-
-/* ========================================================
-   CLOSE MODAL
-======================================================== */
-
-function closeModal() {
-
-  wordModal.style.display =
-    "none";
-
-  editingId = null;
-
-}
-
-
-
-document
-  .getElementById("closeModalBtn")
-  .onclick =
-    closeModal;
-
-
-document
-  .getElementById("cancelModalBtn")
-  .onclick =
-    closeModal;
-
-
-
-window.addEventListener(
-  "click",
-  function(event) {
-
-    if (
-      event.target ===
-      wordModal
-    ) {
-
-      closeModal();
-
-    }
-
-  }
-);
-
-
-
-/* ========================================================
-   ADD BUTTON
-======================================================== */
-
-document
-  .getElementById("addWordBtn")
-  .onclick =
-    openAddModal;
-
-
-
-/* ========================================================
-   EDIT WORD
-======================================================== */
-
-function editWord(id) {
-
-  const item =
-    dictionaryData.find(
-      x =>
-        Number(x.id) ===
-        Number(id)
+    .getElementById("searchInput")
+    .addEventListener(
+      "input",
+      applyFilters
     );
 
 
-  if (!item) {
-
-    return;
-
-  }
-
-
-  editingId =
-    Number(id);
+  document
+    .getElementById("hskFilter")
+    .addEventListener(
+      "change",
+      applyFilters
+    );
 
 
   document
-    .getElementById("modalTitle")
-    .textContent =
-      "✏️ แก้ไขคำศัพท์";
+    .getElementById("statusFilter")
+    .addEventListener(
+      "change",
+      applyFilters
+    );
 
 
-  document
-    .getElementById("editId")
-    .value =
-      item.id;
-
-
-  document
-    .getElementById("word")
-    .value =
-      item.word;
-
+  /* =========================================================
+     IMPORT GOOGLE SHEETS
+  ========================================================= */
 
   document
-    .getElementById("pinyin")
-    .value =
-      item.pinyin;
+    .getElementById("importButton")
+    .addEventListener(
+      "click",
+      importGoogleSheets
+    );
 
 
-  document
-    .getElementById("meaning")
-    .value =
-      item.meaning;
+  function importGoogleSheets() {
 
-
-  document
-    .getElementById("hsk")
-    .value =
-      item.hsk;
-
-
-  document
-    .getElementById("pos")
-    .value =
-      item.pos;
-
-
-  document
-    .getElementById("status")
-    .value =
-      item.status;
-
-
-  document
-    .getElementById("example")
-    .value =
-      item.example;
-
-
-  document
-    .getElementById("examplePinyin")
-    .value =
-      item.examplePinyin;
-
-
-  document
-    .getElementById("exampleMeaning")
-    .value =
-      item.exampleMeaning;
-
-
-  document
-    .getElementById("sender")
-    .value =
-      item.sender;
-
-
-  document
-    .getElementById("date")
-    .value =
-      item.date;
-
-
-  wordModal.style.display =
-    "block";
-
-}
-
-
-
-/* ========================================================
-   SAVE WORD
-======================================================== */
-
-wordForm.addEventListener(
-  "submit",
-  function(event) {
-
-    event.preventDefault();
-
-
-    const word =
+    const raw =
       document
-        .getElementById("word")
+        .getElementById("importData")
         .value
         .trim();
 
 
-    const pinyin =
-      document
-        .getElementById("pinyin")
-        .value
-        .trim();
-
-
-    const meaning =
-      document
-        .getElementById("meaning")
-        .value
-        .trim();
-
-
-    if (
-      !word ||
-      !pinyin ||
-      !meaning
-    ) {
+    if (!raw) {
 
       alert(
-        "กรุณากรอก คำศัพท์ / Pinyin / คำแปล ให้ครบค่ะ"
+        "กรุณาวางข้อมูลจาก Google Sheets ก่อน"
       );
 
       return;
@@ -3112,952 +2747,614 @@ wordForm.addEventListener(
     }
 
 
-    const item = {
-
-      id:
-        editingId
-        || getNextId(),
-
-      word,
-
-      pinyin,
-
-      meaning,
-
-      hsk:
-        document
-          .getElementById("hsk")
-          .value,
-
-      pos:
-        document
-          .getElementById("pos")
-          .value
-          .trim(),
-
-      example:
-        document
-          .getElementById("example")
-          .value
-          .trim(),
-
-      examplePinyin:
-        document
-          .getElementById("examplePinyin")
-          .value
-          .trim(),
-
-      exampleMeaning:
-        document
-          .getElementById("exampleMeaning")
-          .value
-          .trim(),
-
-      status:
-        document
-          .getElementById("status")
-          .value,
-
-      sender:
-        document
-          .getElementById("sender")
-          .value
-          .trim(),
-
-      date:
-        document
-          .getElementById("date")
-          .value
-
-    };
-
-
-    if (editingId) {
-
-      const index =
-        dictionaryData.findIndex(
-          x =>
-            Number(x.id) ===
-            Number(editingId)
+    const lines =
+      raw
+        .split(/\r?\n/)
+        .filter(
+          line => line.trim()
         );
 
 
-      if (index !== -1) {
+    if (!lines.length) {
+      return;
+    }
 
-        dictionaryData[index] =
-          item;
+
+    let startIndex = 0;
+
+
+    /*
+      ตรวจสอบว่าแถวแรกเป็น Header หรือไม่
+    */
+
+    const firstLine =
+      lines[0]
+        .toLowerCase();
+
+
+    if (
+      firstLine.includes("คำศัพท์") ||
+      firstLine.includes("pinyin") ||
+      firstLine.includes("meaning") ||
+      firstLine.includes("สถานะ")
+    ) {
+
+      startIndex = 1;
+
+    }
+
+
+    let imported = 0;
+
+
+    for (
+      let i = startIndex;
+      i < lines.length;
+      i++
+    ) {
+
+      const line =
+        lines[i];
+
+
+      /*
+        Google Sheets ปกติจะคั่นด้วย TAB
+        รองรับ | ด้วย
+      */
+
+      let columns =
+        line.split("\t");
+
+
+      if (columns.length < 3) {
+
+        columns =
+          line.split("|");
 
       }
 
-      showToast(
-        "✅ แก้ไขคำศัพท์แล้ว"
-      );
 
-    }
+      columns =
+        columns.map(
+          value => value.trim()
+        );
 
-    else {
+
+      /*
+        รองรับ 12 columns:
+        ID
+        word
+        pinyin
+        meaning
+        hsk
+        pos
+        example
+        examplePinyin
+        exampleMeaning
+        status
+        sender
+        date
+      */
+
+
+      let item;
+
+
+      if (columns.length >= 12) {
+
+        item = {
+
+          id:
+            Number(columns[0]) ||
+            getNextId(),
+
+          word:
+            columns[1] || "",
+
+          pinyin:
+            columns[2] || "",
+
+          meaning:
+            columns[3] || "",
+
+          hsk:
+            columns[4] || "",
+
+          pos:
+            columns[5] || "",
+
+          example:
+            columns[6] || "",
+
+          examplePinyin:
+            columns[7] || "",
+
+          exampleMeaning:
+            columns[8] || "",
+
+          status:
+            normalizeStatus(
+              columns[9]
+            ),
+
+          sender:
+            columns[10] || "",
+
+          date:
+            columns[11] || ""
+
+        };
+
+      }
+
+      /*
+        รองรับ 11 columns
+        โดยไม่มี ID
+      */
+
+      else if (columns.length >= 9) {
+
+        item = {
+
+          id:
+            getNextId(),
+
+          word:
+            columns[0] || "",
+
+          pinyin:
+            columns[1] || "",
+
+          meaning:
+            columns[2] || "",
+
+          hsk:
+            columns[3] || "",
+
+          pos:
+            columns[4] || "",
+
+          example:
+            columns[5] || "",
+
+          examplePinyin:
+            columns[6] || "",
+
+          exampleMeaning:
+            columns[7] || "",
+
+          status:
+            normalizeStatus(
+              columns[8]
+            ),
+
+          sender:
+            columns[9] || "",
+
+          date:
+            columns[10] || ""
+
+        };
+
+      }
+
+
+      if (!item) {
+        continue;
+      }
+
+
+      if (
+        !item.word ||
+        !item.pinyin ||
+        !item.meaning
+      ) {
+
+        continue;
+
+      }
+
+
+      /*
+        ถ้า ID ซ้ำ
+        ให้สร้าง ID ใหม่
+      */
+
+      if (
+        dictionaryData.some(
+          existing =>
+            Number(existing.id) ===
+            Number(item.id)
+        )
+      ) {
+
+        item.id =
+          getNextId();
+
+      }
+
+
+      /*
+        ถ้าไม่มีสถานะ
+        ให้ pending
+      */
+
+      if (!item.status) {
+
+        item.status =
+          "pending";
+
+      }
+
 
       dictionaryData.push(
-        item
+        normalizeWord(
+          item,
+          dictionaryData.length
+        )
       );
 
-      showToast(
-        "✅ เพิ่มคำศัพท์แล้ว"
-      );
+
+      imported++;
 
     }
 
 
-    saveLocalData();
+    saveData();
 
-    renderTable();
+    applyFilters();
 
     updateStats();
 
-    closeModal();
 
-  }
-);
+    document
+      .getElementById("importData")
+      .value = "";
 
-
-
-/* ========================================================
-   NEXT ID
-======================================================== */
-
-function getNextId() {
-
-  if (!dictionaryData.length) {
-
-    return 1;
-
-  }
-
-
-  return Math.max(
-    ...dictionaryData.map(
-      item =>
-        Number(item.id)
-        || 0
-    )
-  ) + 1;
-
-}
-
-
-
-/* ========================================================
-   APPROVE
-======================================================== */
-
-function approveWord(id) {
-
-  const item =
-    dictionaryData.find(
-      x =>
-        Number(x.id) ===
-        Number(id)
-    );
-
-
-  if (!item) {
-
-    return;
-
-  }
-
-
-  item.status =
-    "approved";
-
-
-  saveLocalData();
-
-  renderTable();
-
-  updateStats();
-
-  showToast(
-    `✅ อนุมัติ "${item.word}" แล้ว`
-  );
-
-}
-
-
-
-/* ========================================================
-   DELETE
-======================================================== */
-
-function deleteWord(id) {
-
-  const item =
-    dictionaryData.find(
-      x =>
-        Number(x.id) ===
-        Number(id)
-    );
-
-
-  if (!item) {
-
-    return;
-
-  }
-
-
-  const confirmed =
-    confirm(
-      `ต้องการลบคำว่า "${item.word}" หรือไม่?`
-    );
-
-
-  if (!confirmed) {
-
-    return;
-
-  }
-
-
-  dictionaryData =
-    dictionaryData.filter(
-      x =>
-        Number(x.id) !==
-        Number(id)
-    );
-
-
-  saveLocalData();
-
-  renderTable();
-
-  updateStats();
-
-  showToast(
-    "🗑️ ลบคำศัพท์แล้ว"
-  );
-
-}
-
-
-
-/* ========================================================
-   IMPORT GOOGLE SHEETS
-======================================================== */
-
-function parseImportLine(line) {
-
-  let parts;
-
-
-  /*
-   * Google Sheets
-   * Copy มาแล้วมักคั่นด้วย TAB
-   */
-
-  if (
-    line.includes("\t")
-  ) {
-
-    parts =
-      line.split("\t");
-
-  }
-
-  /*
-   * รองรับ |
-   */
-
-  else {
-
-    parts =
-      line.split("|")
-        .map(
-          x =>
-            x.trim()
-        );
-
-  }
-
-
-  parts =
-    parts.map(
-      x =>
-        String(x)
-          .trim()
-    );
-
-
-  /*
-   * ถ้าเป็น Header
-   */
-
-  const first =
-    (parts[0] || "")
-      .toLowerCase();
-
-
-  if (
-    first === "id" ||
-    first === "คำศัพท์" ||
-    first === "คำศัพท์จีน"
-  ) {
-
-    return null;
-
-  }
-
-
-  /*
-   * รองรับ 12 columns
-   *
-   * ID
-   * WORD
-   * PINYIN
-   * MEANING
-   * HSK
-   * POS
-   * EXAMPLE
-   * EXAMPLE PINYIN
-   * EXAMPLE MEANING
-   * STATUS
-   * SENDER
-   * DATE
-   */
-
-  let id,
-      word,
-      pinyin,
-      meaning,
-      hsk,
-      pos,
-      example,
-      examplePinyin,
-      exampleMeaning,
-      status,
-      sender,
-      date;
-
-
-  if (
-    parts.length >= 12
-  ) {
-
-    [
-      id,
-      word,
-      pinyin,
-      meaning,
-      hsk,
-      pos,
-      example,
-      examplePinyin,
-      exampleMeaning,
-      status,
-      sender,
-      date
-
-    ] = parts;
-
-  }
-
-  /*
-   * รองรับกรณีไม่มี ID
-   */
-
-  else {
-
-    [
-      word,
-      pinyin,
-      meaning,
-      hsk,
-      pos,
-      example,
-      examplePinyin,
-      exampleMeaning,
-      status,
-      sender,
-      date
-
-    ] = parts;
-
-    id = "";
-
-  }
-
-
-  if (
-    !word &&
-    !pinyin &&
-    !meaning
-  ) {
-
-    return null;
-
-  }
-
-
-  return {
-
-    id:
-      Number(id)
-      || getNextId(),
-
-    word:
-      word || "",
-
-    pinyin:
-      pinyin || "",
-
-    meaning:
-      meaning || "",
-
-    hsk:
-      hsk || "",
-
-    pos:
-      pos || "",
-
-    example:
-      example || "",
-
-    examplePinyin:
-      examplePinyin || "",
-
-    exampleMeaning:
-      exampleMeaning || "",
-
-    status:
-      (
-        status
-        || "pending"
-      )
-      .toLowerCase(),
-
-    sender:
-      sender || "",
-
-    date:
-      date || ""
-
-  };
-
-}
-
-
-
-function importData() {
-
-  const text =
-    importTextarea.value.trim();
-
-
-  if (!text) {
 
     alert(
-      "กรุณาวางข้อมูลจาก Google Sheets ก่อนค่ะ"
+      `นำเข้าข้อมูลสำเร็จ ${imported} รายการ`
     );
-
-    return;
 
   }
 
 
-  const lines =
-    text.split(/\r?\n/);
+  /* =========================================================
+     NORMALIZE STATUS
+  ========================================================= */
+
+  function normalizeStatus(value) {
+
+    const status =
+      String(value || "")
+        .trim()
+        .toLowerCase();
 
 
-  const imported = [];
+    if (
+      status === "approved" ||
+      status === "อนุมัติ" ||
+      status === "อนุมัติแล้ว" ||
+      status === "ผ่าน"
+    ) {
 
-
-  lines.forEach(
-    line => {
-
-      if (!line.trim()) {
-
-        return;
-
-      }
-
-
-      const item =
-        parseImportLine(
-          line
-        );
-
-
-      if (item) {
-
-        imported.push(
-          item
-        );
-
-      }
+      return "approved";
 
     }
-  );
 
 
-  if (!imported.length) {
+    if (
+      status === "rejected" ||
+      status === "ไม่อนุมัติ" ||
+      status === "ไม่ผ่าน"
+    ) {
 
-    alert(
-      "ไม่พบข้อมูลที่สามารถ Import ได้ค่ะ"
-    );
+      return "rejected";
 
-    return;
+    }
+
+
+    return "pending";
 
   }
 
 
-  let added = 0;
+  /* =========================================================
+     CLEAR IMPORT
+  ========================================================= */
 
-  let updated = 0;
+  document
+    .getElementById("clearImportButton")
+    .addEventListener(
+      "click",
+      function() {
+
+        document
+          .getElementById("importData")
+          .value = "";
+
+      }
+    );
 
 
-  imported.forEach(
-    item => {
+  /* =========================================================
+     GENERATE dictionary.js
+  ========================================================= */
 
-      /*
-       * ถ้ามี ID เดิม
-       * ให้ update
-       */
+  document
+    .getElementById("generateButton")
+    .addEventListener(
+      "click",
+      generateDictionaryJS
+    );
 
-      const existingIndex =
-        dictionaryData.findIndex(
-          x =>
-            Number(x.id) ===
-            Number(item.id)
+
+  function generateDictionaryJS() {
+
+    const approved =
+      dictionaryData
+        .filter(
+          item =>
+            item.status === "approved"
+        )
+        .sort(
+          function(a, b) {
+
+            return (
+              Number(a.id) -
+              Number(b.id)
+            );
+
+          }
         );
 
 
-      /*
-       * ถ้า ID ตรงกัน
-       */
+    if (!approved.length) {
 
-      if (
-        existingIndex !== -1
-      ) {
+      alert(
+        "ยังไม่มีคำศัพท์ที่มีสถานะ approved"
+      );
 
-        dictionaryData[
-          existingIndex
-        ] = item;
+      return;
 
-        updated++;
-
-      }
-
-      else {
-
-        /*
-         * ตรวจคำซ้ำด้วย
-         */
-
-        const duplicateIndex =
-          dictionaryData.findIndex(
-            x =>
-              x.word ===
-              item.word
-          );
+    }
 
 
-        if (
-          duplicateIndex !== -1
-        ) {
+    const publicData =
+      approved.map(
+        function(item) {
 
-          dictionaryData[
-            duplicateIndex
-          ] = {
-
-            ...dictionaryData[
-              duplicateIndex
-            ],
-
-            ...item,
+          return {
 
             id:
-              dictionaryData[
-                duplicateIndex
-              ].id
+              Number(item.id),
+
+            word:
+              item.word,
+
+            pinyin:
+              item.pinyin,
+
+            meaning:
+              item.meaning,
+
+            hsk:
+              item.hsk,
+
+            pos:
+              item.pos,
+
+            example:
+              item.example,
+
+            examplePinyin:
+              item.examplePinyin,
+
+            exampleMeaning:
+              item.exampleMeaning
 
           };
 
-          updated++;
-
         }
-
-        else {
-
-          item.id =
-            getNextId();
-
-          dictionaryData.push(
-            item
-          );
-
-          added++;
-
-        }
-
-      }
-
-    }
-  );
-
-
-  saveLocalData();
-
-  renderTable();
-
-  updateStats();
-
-
-  showToast(
-    `✅ Import สำเร็จ เพิ่ม ${added} คำ / แก้ไข ${updated} คำ`
-  );
-
-
-  importTextarea.value =
-    "";
-
-}
-
-
-
-document
-  .getElementById("importBtn")
-  .onclick =
-    importData;
-
-
-
-document
-  .getElementById("clearImportBtn")
-  .onclick =
-    function() {
-
-      importTextarea.value =
-        "";
-
-    };
-
-
-
-/* ========================================================
-   LOAD DICTIONARY BUTTON
-======================================================== */
-
-document
-  .getElementById(
-    "loadDictionaryBtn"
-  )
-  .onclick =
-    function() {
-
-      const confirmed =
-        confirm(
-          "ต้องการโหลดข้อมูลจาก dictionary.js ใหม่ทั้งหมดหรือไม่?\n\nข้อมูลที่กำลังอยู่ใน Admin จะถูกแทนที่"
-        );
-
-
-      if (!confirmed) {
-
-        return;
-
-      }
-
-
-      loadDictionaryJS(
-        true
-      );
-
-    };
-
-
-
-/* ========================================================
-   SEARCH / FILTER
-======================================================== */
-
-searchAdmin
-  .addEventListener(
-    "input",
-    renderTable
-  );
-
-
-hskFilter
-  .addEventListener(
-    "change",
-    renderTable
-  );
-
-
-statusFilter
-  .addEventListener(
-    "change",
-    renderTable
-  );
-
-
-
-/* ========================================================
-   GENERATE DICTIONARY.JS
-======================================================== */
-
-function generateDictionary() {
-
-  const approved =
-    dictionaryData
-      .filter(
-        item =>
-          item.status ===
-          "approved"
       );
 
 
-  if (!approved.length) {
-
-    exportOutput.value =
-`// ยังไม่มีคำศัพท์ที่อนุมัติแล้ว
-
-window.dictionary = [];`;
-
-    showToast(
-      "⚠️ ยังไม่มีคำศัพท์สถานะ approved"
-    );
-
-    return;
-
-  }
-
-
-  const cleanData =
-    approved.map(
-      item => ({
-
-        id:
-          Number(item.id),
-
-        word:
-          item.word,
-
-        pinyin:
-          item.pinyin,
-
-        meaning:
-          item.meaning,
-
-        hsk:
-          item.hsk,
-
-        pos:
-          item.pos,
-
-        example:
-          item.example,
-
-        examplePinyin:
-          item.examplePinyin,
-
-        exampleMeaning:
-          item.exampleMeaning
-
-      })
-    );
-
-
-  exportOutput.value =
-
-`/*
- * Chinese–Thai Dictionary
- * ก็แค่จีน by ครูพี่เหม่ยถิง
- *
- * Generated automatically
- */
-
-window.dictionary = ${JSON.stringify(
-  cleanData,
+    const code =
+`window.dictionary = ${JSON.stringify(
+  publicData,
   null,
   2
 )};`;
 
 
-  showToast(
-    `✅ สร้าง dictionary.js จาก ${approved.length} คำแล้ว`
-  );
-
-}
-
+    document
+      .getElementById("exportCode")
+      .value =
+      code;
 
 
-/* ========================================================
-   GENERATE BUTTON
-======================================================== */
-
-document
-  .getElementById("generateBtn")
-  .onclick =
-    generateDictionary;
+    document
+      .getElementById("exportBox")
+      .style.display =
+      "block";
 
 
-
-/* ========================================================
-   DOWNLOAD DICTIONARY.JS
-======================================================== */
-
-function downloadDictionary() {
-
-  if (
-    !exportOutput.value.trim()
-  ) {
-
-    generateDictionary();
-
-  }
+    document
+      .getElementById("downloadButton")
+      .style.display =
+      "inline-block";
 
 
-  if (
-    !exportOutput.value.trim()
-  ) {
+    document
+      .getElementById("copyButton")
+      .style.display =
+      "inline-block";
 
-    return;
+
+    document
+      .getElementById("exportBox")
+      .scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
 
   }
 
 
-  const blob =
-    new Blob(
-      [
-        exportOutput.value
-      ],
-      {
-        type:
-          "application/javascript;charset=utf-8"
-      }
-    );
+  /* =========================================================
+     DOWNLOAD dictionary.js
+  ========================================================= */
+
+  document
+    .getElementById("downloadButton")
+    .addEventListener(
+      "click",
+      function() {
+
+        const code =
+          document
+            .getElementById("exportCode")
+            .value;
 
 
-  const url =
-    URL.createObjectURL(
-      blob
-    );
+        if (!code) {
+          return;
+        }
 
 
-  const a =
-    document.createElement(
-      "a"
-    );
-
-
-  a.href =
-    url;
-
-  a.download =
-    "dictionary.js";
-
-
-  document.body.appendChild(a);
-
-  a.click();
-
-  a.remove();
-
-
-  URL.revokeObjectURL(
-    url
-  );
-
-
-  showToast(
-    "💾 ดาวน์โหลด dictionary.js แล้ว"
-  );
-
-}
-
-
-
-document
-  .getElementById("downloadBtn")
-  .onclick =
-    downloadDictionary;
-
-
-
-/* ========================================================
-   COPY
-======================================================== */
-
-document
-  .getElementById("copyBtn")
-  .onclick =
-    async function() {
-
-      if (
-        !exportOutput.value.trim()
-      ) {
-
-        generateDictionary();
-
-      }
-
-
-      if (
-        !exportOutput.value.trim()
-      ) {
-
-        return;
-
-      }
-
-
-      try {
-
-        await navigator
-          .clipboard
-          .writeText(
-            exportOutput.value
+        const blob =
+          new Blob(
+            [code],
+            {
+              type:
+                "application/javascript;charset=utf-8"
+            }
           );
 
 
-        showToast(
-          "📋 Copy dictionary.js แล้ว"
-        );
+        const url =
+          URL.createObjectURL(blob);
 
-      }
 
-      catch {
+        const a =
+          document.createElement("a");
 
-        exportOutput
-          .select();
+
+        a.href = url;
+
+        a.download =
+          "dictionary.js";
+
 
         document
-          .execCommand(
+          .body
+          .appendChild(a);
+
+
+        a.click();
+
+        a.remove();
+
+
+        URL.revokeObjectURL(url);
+
+      }
+    );
+
+
+  /* =========================================================
+     COPY dictionary.js
+  ========================================================= */
+
+  document
+    .getElementById("copyButton")
+    .addEventListener(
+      "click",
+      async function() {
+
+        const code =
+          document
+            .getElementById("exportCode")
+            .value;
+
+
+        if (!code) {
+          return;
+        }
+
+
+        try {
+
+          await navigator.clipboard.writeText(
+            code
+          );
+
+
+          alert(
+            "📋 คัดลอก dictionary.js แล้ว"
+          );
+
+        } catch(error) {
+
+          const textarea =
+            document.getElementById(
+              "exportCode"
+            );
+
+
+          textarea.select();
+
+          document.execCommand(
             "copy"
           );
 
 
-        showToast(
-          "📋 Copy แล้ว"
-        );
+          alert(
+            "📋 คัดลอก dictionary.js แล้ว"
+          );
+
+        }
 
       }
-
-    };
-
+    );
 
 
-/* ========================================================
-   INITIAL
-======================================================== */
+  /* =========================================================
+     INITIAL FILTER
+  ========================================================= */
 
-/*
- * ยังไม่โหลดข้อมูลจนกว่า
- * จะ Login สำเร็จ
- */
+  function initialize() {
+
+    /*
+      ยังไม่แสดง Admin จนกว่าจะ Login
+      แต่เตรียมตัวแปรไว้ก่อน
+    */
+
+    filteredData = [];
+
+  }
+
+
+  initialize();
+
+
+  /* =========================================================
+     EXPOSE FUNCTIONS
+  ========================================================= */
+
+  window.approveWord =
+    approveWord;
+
+  window.rejectWord =
+    rejectWord;
+
+  window.editWord =
+    editWord;
+
+  window.deleteWord =
+    deleteWord;
 
 </script>
 
 </body>
-
 </html>
