@@ -1,0 +1,4063 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Admin | พจนานุกรมจีน–ไทย
+</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-family:
+    "Noto Sans Thai",
+    "Noto Sans SC",
+    sans-serif;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f4faff 0%,
+      #ffffff 55%,
+      #f8fbff 100%
+    );
+
+  color: #26354a;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* =========================================
+   LOGIN
+========================================= */
+
+.login-page {
+
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #edf8ff,
+      #ffffff,
+      #fff5f8
+    );
+}
+
+.login-box {
+
+  width: 100%;
+
+  max-width: 410px;
+
+  background: white;
+
+  border:
+    1px solid #e2edf7;
+
+  border-radius: 24px;
+
+  padding: 35px 30px;
+
+  box-shadow:
+    0 15px 45px
+    rgba(50,100,150,.10);
+
+  text-align: center;
+}
+
+.login-logo {
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  color: #2c83c1;
+}
+
+.login-subtitle {
+
+  margin-top: 5px;
+
+  color: #91a2b2;
+
+  font-size: 12px;
+}
+
+.login-title {
+
+  margin:
+    28px 0 18px;
+
+  font-size: 20px;
+
+  color: #40576d;
+}
+
+.form-group {
+
+  text-align: left;
+
+  margin-bottom: 15px;
+}
+
+.form-group label {
+
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #64798c;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.form-group input {
+
+  width: 100%;
+
+  height: 46px;
+
+  padding: 0 14px;
+
+  border:
+    1px solid #dceaf5;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  background: #fbfdff;
+
+  font-size: 14px;
+}
+
+.form-group input:focus {
+
+  border-color: #8bc5e8;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(76,155,208,.08);
+}
+
+.login-btn {
+
+  width: 100%;
+
+  height: 47px;
+
+  margin-top: 5px;
+
+  border: 0;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4c9bd0,
+      #287fbe
+    );
+
+  color: white;
+
+  font-weight: 700;
+
+  font-size: 14px;
+}
+
+.login-btn:hover {
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 18px
+    rgba(40,127,190,.20);
+}
+
+.login-error {
+
+  display: none;
+
+  margin-top: 13px;
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  background: #fff1f3;
+
+  color: #d85d78;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   ADMIN PAGE
+========================================= */
+
+#adminPage {
+  display: none;
+}
+
+.navbar {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
+  background:
+    rgba(255,255,255,.97);
+
+  border-bottom:
+    1px solid #e5eef8;
+
+  box-shadow:
+    0 2px 12px
+    rgba(55,100,150,.06);
+}
+
+.nav-inner {
+
+  max-width: 1200px;
+
+  min-height: 68px;
+
+  margin: auto;
+
+  padding:
+    10px 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.logo {
+
+  color: #3787c8;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.logo span {
+
+  display: block;
+
+  margin-top: 1px;
+
+  color: #91a5b8;
+
+  font-size: 10px;
+
+  font-weight: 500;
+}
+
+.nav-right {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.nav-link {
+
+  padding:
+    8px 12px;
+
+  border-radius: 10px;
+
+  color: #63778c;
+
+  font-size: 13px;
+}
+
+.nav-link:hover {
+
+  background: #eaf5ff;
+
+  color: #2582c5;
+}
+
+.logout-btn {
+
+  padding:
+    8px 13px;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  background: #fff0f3;
+
+  color: #d95e7b;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding:
+    30px 20px 50px;
+}
+
+.page-title {
+
+  margin-bottom: 22px;
+}
+
+.page-title h1 {
+
+  margin: 0;
+
+  color: #287fbe;
+
+  font-size:
+    clamp(25px,4vw,34px);
+}
+
+.page-title p {
+
+  margin:
+    7px 0 0;
+
+  color: #8a9baa;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap: 14px;
+
+  margin-bottom: 20px;
+}
+
+.stat-card {
+
+  background: white;
+
+  border:
+    1px solid #e3edf6;
+
+  border-radius: 17px;
+
+  padding: 18px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(50,100,150,.04);
+}
+
+.stat-label {
+
+  color: #899bab;
+
+  font-size: 12px;
+}
+
+.stat-number {
+
+  margin-top: 5px;
+
+  color: #287fbe;
+
+  font-size: 27px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+
+  background: white;
+
+  border:
+    1px solid #e3edf6;
+
+  border-radius: 20px;
+
+  padding: 22px;
+
+  margin-bottom: 20px;
+
+  box-shadow:
+    0 5px 18px
+    rgba(50,100,150,.045);
+}
+
+.card-title {
+
+  margin: 0 0 15px;
+
+  color: #50677d;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+.card-description {
+
+  margin:
+    -7px 0 15px;
+
+  color: #94a3b1;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   IMPORT
+========================================= */
+
+.import-textarea {
+
+  width: 100%;
+
+  min-height: 180px;
+
+  padding: 14px;
+
+  resize: vertical;
+
+  border:
+    1px solid #dceaf5;
+
+  border-radius: 13px;
+
+  outline: none;
+
+  background: #fbfdff;
+
+  font-family:
+    "Noto Sans Thai",
+    "Noto Sans SC",
+    monospace;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.import-textarea:focus {
+
+  border-color: #8fc8ec;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(76,155,208,.07);
+}
+
+.import-actions {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 12px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn {
+
+  border: 0;
+
+  border-radius: 11px;
+
+  padding:
+    10px 15px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.btn-primary {
+
+  background: #4c9bd0;
+
+  color: white;
+}
+
+.btn-primary:hover {
+
+  background: #378bc4;
+}
+
+.btn-success {
+
+  background: #e7f8ef;
+
+  color: #268456;
+}
+
+.btn-danger {
+
+  background: #fff0f2;
+
+  color: #d65e76;
+}
+
+.btn-secondary {
+
+  background: #f0f5f9;
+
+  color: #63798c;
+}
+
+.btn-pink {
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff91ae,
+      #f47f9d
+    );
+
+  color: white;
+}
+
+.btn:hover {
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   TOOLBAR
+========================================= */
+
+.toolbar {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  align-items: center;
+
+  margin-bottom: 15px;
+}
+
+.search {
+
+  flex:
+    1 1 250px;
+
+  height: 44px;
+
+  padding:
+    0 14px;
+
+  border:
+    1px solid #dceaf5;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  background: #fbfdff;
+
+  font-size: 13px;
+}
+
+.search:focus {
+
+  border-color: #8fc8ec;
+}
+
+.filter-select {
+
+  height: 44px;
+
+  padding:
+    0 12px;
+
+  border:
+    1px solid #dceaf5;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  background: white;
+
+  color: #62778a;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-wrap {
+
+  overflow-x: auto;
+
+  border:
+    1px solid #e5eef6;
+
+  border-radius: 15px;
+}
+
+table {
+
+  width: 100%;
+
+  min-width: 900px;
+
+  border-collapse: collapse;
+
+  font-size: 12px;
+}
+
+thead {
+
+  background: #f4faff;
+}
+
+th {
+
+  padding:
+    12px 10px;
+
+  text-align: left;
+
+  color: #668095;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+td {
+
+  padding:
+    12px 10px;
+
+  border-top:
+    1px solid #edf2f6;
+
+  color: #52687b;
+
+  vertical-align: middle;
+}
+
+.word-cell {
+
+  font-family: "Noto Sans SC";
+
+  color: #287fbe;
+
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+.pinyin-cell {
+
+  color: #7595a9;
+}
+
+.meaning-cell {
+
+  max-width: 180px;
+
+  line-height: 1.5;
+}
+
+.example-cell {
+
+  max-width: 220px;
+
+  line-height: 1.5;
+}
+
+.status {
+
+  display: inline-block;
+
+  padding:
+    4px 8px;
+
+  border-radius: 8px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.status-approved {
+
+  background: #e8f8ef;
+
+  color: #268456;
+}
+
+.status-pending {
+
+  background: #fff8e7;
+
+  color: #ae7b16;
+}
+
+.status-rejected {
+
+  background: #fff0f2;
+
+  color: #d65e76;
+}
+
+.action-group {
+
+  display: flex;
+
+  gap: 5px;
+}
+
+.action-btn {
+
+  border: 0;
+
+  border-radius: 8px;
+
+  padding:
+    6px 8px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.edit-btn {
+
+  background: #eef7ff;
+
+  color: #3688c3;
+}
+
+.delete-btn {
+
+  background: #fff1f3;
+
+  color: #d45f77;
+}
+
+.approve-btn {
+
+  background: #e8f8ef;
+
+  color: #28845a;
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.modal {
+
+  display: none;
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 500;
+
+  padding:
+    20px;
+
+  background:
+    rgba(30,50,70,.38);
+
+  overflow-y: auto;
+}
+
+.modal-box {
+
+  width: 100%;
+
+  max-width: 700px;
+
+  margin:
+    30px auto;
+
+  background: white;
+
+  border-radius: 22px;
+
+  padding: 25px;
+
+  box-shadow:
+    0 20px 60px
+    rgba(30,60,90,.18);
+}
+
+.modal-header {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.modal-title {
+
+  margin: 0;
+
+  color: #287fbe;
+
+  font-size: 19px;
+}
+
+.close-btn {
+
+  width: 34px;
+
+  height: 34px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #f1f6fa;
+
+  color: #71879a;
+
+  font-size: 18px;
+}
+
+.form-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap: 13px;
+}
+
+.full {
+
+  grid-column:
+    1 / -1;
+}
+
+.modal .form-group {
+
+  margin-bottom: 0;
+}
+
+.modal textarea {
+
+  width: 100%;
+
+  min-height: 80px;
+
+  padding: 10px 12px;
+
+  border:
+    1px solid #dceaf5;
+
+  border-radius: 11px;
+
+  outline: none;
+
+  resize: vertical;
+
+  font-size: 13px;
+}
+
+.modal select {
+
+  width: 100%;
+
+  height: 43px;
+
+  padding: 0 10px;
+
+  border:
+    1px solid #dceaf5;
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background: white;
+
+  color: #52687b;
+
+  font-size: 13px;
+}
+
+.modal-footer {
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  margin-top: 20px;
+}
+
+
+/* =========================================
+   EXPORT
+========================================= */
+
+.export-box {
+
+  width: 100%;
+
+  min-height: 240px;
+
+  padding: 15px;
+
+  border:
+    1px solid #dceaf5;
+
+  border-radius: 13px;
+
+  background: #f9fcff;
+
+  font-family: monospace;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  white-space: pre;
+
+  overflow: auto;
+}
+
+
+/* =========================================
+   TOAST
+========================================= */
+
+.toast {
+
+  position: fixed;
+
+  right: 20px;
+
+  bottom: 20px;
+
+  z-index: 1000;
+
+  display: none;
+
+  max-width: 350px;
+
+  padding:
+    12px 17px;
+
+  border-radius: 13px;
+
+  background: #26354a;
+
+  color: white;
+
+  font-size: 12px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0,0,0,.15);
+}
+
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.empty {
+
+  padding: 45px 20px;
+
+  text-align: center;
+
+  color: #95a5b3;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+  padding:
+    25px 20px;
+
+  text-align: center;
+
+  color: #9aabba;
+
+  font-size: 11px;
+
+  border-top:
+    1px solid #e9f1f7;
+
+  background: white;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:900px) {
+
+  .stats {
+
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:650px) {
+
+  .nav-inner {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .nav-right {
+
+    width: 100%;
+
+    justify-content: flex-end;
+  }
+
+  .form-grid {
+
+    grid-template-columns: 1fr;
+  }
+
+  .full {
+
+    grid-column: auto;
+  }
+
+}
+
+@media(max-width:480px) {
+
+  .stats {
+
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+
+    padding:
+      22px 12px 40px;
+  }
+
+  .card {
+
+    padding: 16px;
+  }
+
+  .login-box {
+
+    padding:
+      28px 20px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     LOGIN PAGE
+===================================================== -->
+
+<section
+  class="login-page"
+  id="loginPage">
+
+  <div class="login-box">
+
+    <div class="login-logo">
+      ก็แค่จีน by ครูพี่เหม่ยถิง
+    </div>
+
+    <div class="login-subtitle">
+      Chinese–Thai Dictionary
+    </div>
+
+    <h1 class="login-title">
+      🔐 เข้าสู่ระบบ Admin
+    </h1>
+
+    <form id="loginForm">
+
+      <div class="form-group">
+
+        <label>
+          Username
+        </label>
+
+        <input
+          id="username"
+          type="text"
+          autocomplete="username"
+          placeholder="กรอก Username"
+          required>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>
+          Password
+        </label>
+
+        <input
+          id="password"
+          type="password"
+          autocomplete="current-password"
+          placeholder="กรอก Password"
+          required>
+
+      </div>
+
+
+      <button
+        type="submit"
+        class="login-btn">
+
+        🔑 เข้าสู่ระบบ
+
+      </button>
+
+    </form>
+
+
+    <div
+      class="login-error"
+      id="loginError">
+
+      ❌ Username หรือ Password ไม่ถูกต้อง
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ADMIN PAGE
+===================================================== -->
+
+<section id="adminPage">
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+  <div class="nav-inner">
+
+    <a
+      href="index.html"
+      class="logo">
+
+      ก็แค่จีน by ครูพี่เหม่ยถิง
+
+      <span>
+        Chinese–Thai Dictionary Admin
+      </span>
+
+    </a>
+
+
+    <div class="nav-right">
+
+      <a
+        href="dictionary.html"
+        target="_blank"
+        class="nav-link">
+
+        📖 ดูพจนานุกรม
+
+      </a>
+
+      <button
+        id="logoutBtn"
+        class="logout-btn">
+
+        ออกจากระบบ
+
+      </button>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+
+<main class="container">
+
+
+<!-- PAGE TITLE -->
+
+<div class="page-title">
+
+  <h1>
+    📚 จัดการพจนานุกรม
+  </h1>
+
+  <p>
+    เพิ่ม แก้ไข ตรวจสอบ และเตรียมคำศัพท์สำหรับเว็บไซต์
+  </p>
+
+</div>
+
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+
+  <div class="stat-card">
+
+    <div class="stat-label">
+      📚 คำศัพท์ทั้งหมด
+    </div>
+
+    <div
+      class="stat-number"
+      id="totalCount">
+
+      0
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-card">
+
+    <div class="stat-label">
+      ✅ อนุมัติแล้ว
+    </div>
+
+    <div
+      class="stat-number"
+      id="approvedCount">
+
+      0
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-card">
+
+    <div class="stat-label">
+      ⏳ รอตรวจสอบ
+    </div>
+
+    <div
+      class="stat-number"
+      id="pendingCount">
+
+      0
+
+    </div>
+
+  </div>
+
+
+  <div class="stat-card">
+
+    <div class="stat-label">
+      ❌ ไม่อนุมัติ
+    </div>
+
+    <div
+      class="stat-number"
+      id="rejectedCount">
+
+      0
+
+    </div>
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     IMPORT GOOGLE SHEETS
+===================================================== -->
+
+<section class="card">
+
+  <h2 class="card-title">
+    📥 นำข้อมูลจาก Google Sheets
+  </h2>
+
+  <p class="card-description">
+
+    เปิด Google Sheets → เลือกข้อมูล → Copy → นำมาวางในช่องด้านล่าง
+    ระบบรองรับข้อมูลที่คั่นด้วย Tab หรือ | 
+
+  </p>
+
+
+  <textarea
+    id="importTextarea"
+    class="import-textarea"
+    placeholder="ตัวอย่าง:
+
+1	爱	ài	รัก, ชอบ	HSK1	กริยา	我爱你。	Wǒ ài nǐ.	ฉันรักคุณ	approved	ครูพี่เหม่ยถิง	2026-09-15
+
+หรือ
+
+1 | 爱 | ài | รัก, ชอบ | HSK1 | กริยา | 我爱你。 | Wǒ ài nǐ. | ฉันรักคุณ | approved | ครูพี่เหม่ยถิง | 2026-09-15"></textarea>
+
+
+  <div class="import-actions">
+
+    <button
+      class="btn btn-primary"
+      id="importBtn">
+
+      📥 Import ข้อมูล
+
+    </button>
+
+
+    <button
+      class="btn btn-secondary"
+      id="clearImportBtn">
+
+      🧹 ล้างช่อง
+
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DATA MANAGEMENT
+===================================================== -->
+
+<section class="card">
+
+  <h2 class="card-title">
+    📝 รายการคำศัพท์
+  </h2>
+
+
+  <div class="toolbar">
+
+
+    <input
+      id="searchAdmin"
+      class="search"
+      type="text"
+      placeholder="🔍 ค้นหาคำศัพท์ / Pinyin / คำแปล">
+
+
+    <select
+      id="hskFilter"
+      class="filter-select">
+
+      <option value="ALL">
+        HSK ทั้งหมด
+      </option>
+
+      <option value="HSK1">
+        HSK1
+      </option>
+
+      <option value="HSK2">
+        HSK2
+      </option>
+
+      <option value="HSK3">
+        HSK3
+      </option>
+
+      <option value="HSK4">
+        HSK4
+      </option>
+
+      <option value="HSK5">
+        HSK5
+      </option>
+
+      <option value="HSK6">
+        HSK6
+      </option>
+
+    </select>
+
+
+    <select
+      id="statusFilter"
+      class="filter-select">
+
+      <option value="ALL">
+        ทุกสถานะ
+      </option>
+
+      <option value="approved">
+        ✅ อนุมัติแล้ว
+      </option>
+
+      <option value="pending">
+        ⏳ รอตรวจสอบ
+      </option>
+
+      <option value="rejected">
+        ❌ ไม่อนุมัติ
+      </option>
+
+    </select>
+
+
+    <button
+      class="btn btn-pink"
+      id="addWordBtn">
+
+      ➕ เพิ่มคำศัพท์
+
+    </button>
+
+
+    <button
+      class="btn btn-secondary"
+      id="loadDictionaryBtn">
+
+      🔄 โหลด dictionary.js
+
+    </button>
+
+
+  </div>
+
+
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+
+        <tr>
+
+          <th>
+            ID
+          </th>
+
+          <th>
+            คำศัพท์
+          </th>
+
+          <th>
+            Pinyin
+          </th>
+
+          <th>
+            คำแปล
+          </th>
+
+          <th>
+            HSK
+          </th>
+
+          <th>
+            ชนิดคำ
+          </th>
+
+          <th>
+            ตัวอย่าง
+          </th>
+
+          <th>
+            สถานะ
+          </th>
+
+          <th>
+            จัดการ
+          </th>
+
+        </tr>
+
+      </thead>
+
+
+      <tbody id="wordTableBody">
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPORT
+===================================================== -->
+
+<section class="card">
+
+  <h2 class="card-title">
+    📤 Export สำหรับเว็บไซต์
+  </h2>
+
+
+  <p class="card-description">
+
+    ระบบจะสร้างข้อมูลเฉพาะคำที่มีสถานะ
+    <b>approved</b>
+    สำหรับนำไปใช้ใน
+    <b>data/dictionary.js</b>
+
+  </p>
+
+
+  <textarea
+    id="exportOutput"
+    class="export-box"
+    readonly
+    placeholder="// กดปุ่ม Generate เพื่อสร้าง dictionary.js"></textarea>
+
+
+  <div class="import-actions">
+
+    <button
+      class="btn btn-primary"
+      id="generateBtn">
+
+      ⚙️ Generate dictionary.js
+
+    </button>
+
+
+    <button
+      class="btn btn-success"
+      id="downloadBtn">
+
+      💾 ดาวน์โหลด dictionary.js
+
+    </button>
+
+
+    <button
+      class="btn btn-secondary"
+      id="copyBtn">
+
+      📋 Copy
+
+    </button>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+  © ก็แค่จีน by ครูพี่เหม่ยถิง
+  · Chinese–Thai Dictionary Admin 💙
+
+</footer>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     WORD MODAL
+===================================================== -->
+
+<div
+  class="modal"
+  id="wordModal">
+
+  <div class="modal-box">
+
+
+    <div class="modal-header">
+
+      <h2
+        class="modal-title"
+        id="modalTitle">
+
+        ➕ เพิ่มคำศัพท์
+
+      </h2>
+
+
+      <button
+        class="close-btn"
+        id="closeModalBtn"
+        type="button">
+
+        ×
+
+      </button>
+
+    </div>
+
+
+
+    <form id="wordForm">
+
+
+      <input
+        type="hidden"
+        id="editId">
+
+
+      <div class="form-grid">
+
+
+        <!-- WORD -->
+
+        <div class="form-group">
+
+          <label>
+            คำศัพท์จีน *
+          </label>
+
+          <input
+            id="word"
+            type="text"
+            required
+            placeholder="เช่น 爱">
+
+        </div>
+
+
+        <!-- PINYIN -->
+
+        <div class="form-group">
+
+          <label>
+            Pinyin *
+          </label>
+
+          <input
+            id="pinyin"
+            type="text"
+            required
+            placeholder="เช่น ài">
+
+        </div>
+
+
+        <!-- MEANING -->
+
+        <div class="form-group">
+
+          <label>
+            คำแปล *
+          </label>
+
+          <input
+            id="meaning"
+            type="text"
+            required
+            placeholder="เช่น รัก, ชอบ">
+
+        </div>
+
+
+        <!-- HSK -->
+
+        <div class="form-group">
+
+          <label>
+            ระดับ HSK
+          </label>
+
+          <select id="hsk">
+
+            <option value="">
+              ไม่ระบุ
+            </option>
+
+            <option value="HSK1">
+              HSK1
+            </option>
+
+            <option value="HSK2">
+              HSK2
+            </option>
+
+            <option value="HSK3">
+              HSK3
+            </option>
+
+            <option value="HSK4">
+              HSK4
+            </option>
+
+            <option value="HSK5">
+              HSK5
+            </option>
+
+            <option value="HSK6">
+              HSK6
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- POS -->
+
+        <div class="form-group">
+
+          <label>
+            ชนิดคำ
+          </label>
+
+          <input
+            id="pos"
+            type="text"
+            placeholder="เช่น กริยา">
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <div class="form-group">
+
+          <label>
+            สถานะ
+          </label>
+
+          <select id="status">
+
+            <option value="pending">
+              ⏳ รอตรวจสอบ
+            </option>
+
+            <option value="approved">
+              ✅ อนุมัติแล้ว
+            </option>
+
+            <option value="rejected">
+              ❌ ไม่อนุมัติ
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- EXAMPLE -->
+
+        <div class="form-group full">
+
+          <label>
+            ตัวอย่างประโยค
+          </label>
+
+          <textarea
+            id="example"
+            placeholder="เช่น 我爱你。"></textarea>
+
+        </div>
+
+
+        <!-- EXAMPLE PINYIN -->
+
+        <div class="form-group">
+
+          <label>
+            Pinyin ตัวอย่าง
+          </label>
+
+          <textarea
+            id="examplePinyin"
+            placeholder="เช่น Wǒ ài nǐ."></textarea>
+
+        </div>
+
+
+        <!-- EXAMPLE MEANING -->
+
+        <div class="form-group">
+
+          <label>
+            แปลตัวอย่าง
+          </label>
+
+          <textarea
+            id="exampleMeaning"
+            placeholder="เช่น ฉันรักคุณ"></textarea>
+
+        </div>
+
+
+        <!-- SENDER -->
+
+        <div class="form-group">
+
+          <label>
+            ผู้ส่ง
+          </label>
+
+          <input
+            id="sender"
+            type="text"
+            placeholder="เช่น ครูพี่เหม่ยถิง">
+
+        </div>
+
+
+        <!-- DATE -->
+
+        <div class="form-group">
+
+          <label>
+            วันที่
+          </label>
+
+          <input
+            id="date"
+            type="date">
+
+        </div>
+
+
+      </div>
+
+
+      <div class="modal-footer">
+
+        <button
+          type="button"
+          class="btn btn-secondary"
+          id="cancelModalBtn">
+
+          ยกเลิก
+
+        </button>
+
+
+        <button
+          type="submit"
+          class="btn btn-primary">
+
+          💾 บันทึก
+
+        </button>
+
+      </div>
+
+
+    </form>
+
+  </div>
+
+</div>
+
+
+
+<!-- TOAST -->
+
+<div
+  class="toast"
+  id="toast">
+
+</div>
+
+
+
+<!-- =====================================================
+     DICTIONARY DATA
+===================================================== -->
+
+<script src="./data/dictionary.js"></script>
+
+
+
+<script>
+
+/* ========================================================
+   CONFIG
+======================================================== */
+
+const ADMIN_USERNAME = "admin";
+
+const ADMIN_PASSWORD = "n23102546";
+
+const STORAGE_KEY =
+  "chineseDictionaryAdminData";
+
+
+/* ========================================================
+   STATE
+======================================================== */
+
+let dictionaryData = [];
+
+let editingId = null;
+
+
+/* ========================================================
+   ELEMENTS
+======================================================== */
+
+const loginPage =
+  document.getElementById("loginPage");
+
+const adminPage =
+  document.getElementById("adminPage");
+
+const loginForm =
+  document.getElementById("loginForm");
+
+const loginError =
+  document.getElementById("loginError");
+
+const wordTableBody =
+  document.getElementById("wordTableBody");
+
+const searchAdmin =
+  document.getElementById("searchAdmin");
+
+const hskFilter =
+  document.getElementById("hskFilter");
+
+const statusFilter =
+  document.getElementById("statusFilter");
+
+const wordModal =
+  document.getElementById("wordModal");
+
+const wordForm =
+  document.getElementById("wordForm");
+
+const exportOutput =
+  document.getElementById("exportOutput");
+
+const importTextarea =
+  document.getElementById("importTextarea");
+
+
+
+/* ========================================================
+   TOAST
+======================================================== */
+
+function showToast(message) {
+
+  const toast =
+    document.getElementById("toast");
+
+  toast.textContent = message;
+
+  toast.style.display = "block";
+
+  clearTimeout(
+    window.toastTimer
+  );
+
+  window.toastTimer =
+    setTimeout(
+      () => {
+
+        toast.style.display =
+          "none";
+
+      },
+      2600
+    );
+
+}
+
+
+
+/* ========================================================
+   ESCAPE HTML
+======================================================== */
+
+function escapeHTML(value) {
+
+  return String(value ?? "")
+
+    .replace(
+      /&/g,
+      "&amp;"
+    )
+
+    .replace(
+      /</g,
+      "&lt;"
+    )
+
+    .replace(
+      />/g,
+      "&gt;"
+    )
+
+    .replace(
+      /"/g,
+      "&quot;"
+    )
+
+    .replace(
+      /'/g,
+      "&#039;"
+    );
+
+}
+
+
+
+/* ========================================================
+   NORMALIZE DATA
+======================================================== */
+
+function normalizeItem(item, index) {
+
+  return {
+
+    id:
+      Number(item.id)
+      || index + 1,
+
+    word:
+      String(
+        item.word || ""
+      ).trim(),
+
+    pinyin:
+      String(
+        item.pinyin || ""
+      ).trim(),
+
+    meaning:
+      String(
+        item.meaning || ""
+      ).trim(),
+
+    hsk:
+      String(
+        item.hsk || ""
+      ).trim(),
+
+    pos:
+      String(
+        item.pos || ""
+      ).trim(),
+
+    example:
+      String(
+        item.example || ""
+      ).trim(),
+
+    examplePinyin:
+      String(
+        item.examplePinyin
+        || ""
+      ).trim(),
+
+    exampleMeaning:
+      String(
+        item.exampleMeaning
+        || ""
+      ).trim(),
+
+    status:
+      String(
+        item.status || "approved"
+      ).toLowerCase(),
+
+    sender:
+      String(
+        item.sender || ""
+      ).trim(),
+
+    date:
+      String(
+        item.date || ""
+      ).trim()
+
+  };
+
+}
+
+
+
+/* ========================================================
+   LOAD LOCAL STORAGE
+======================================================== */
+
+function loadLocalData() {
+
+  try {
+
+    const saved =
+      localStorage.getItem(
+        STORAGE_KEY
+      );
+
+    if (!saved) {
+
+      return false;
+
+    }
+
+    const parsed =
+      JSON.parse(saved);
+
+    if (
+      !Array.isArray(parsed)
+    ) {
+
+      return false;
+
+    }
+
+    dictionaryData =
+      parsed.map(
+        normalizeItem
+      );
+
+    return true;
+
+  } catch(error) {
+
+    console.error(error);
+
+    return false;
+
+  }
+
+}
+
+
+
+/* ========================================================
+   SAVE LOCAL STORAGE
+======================================================== */
+
+function saveLocalData() {
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(
+      dictionaryData
+    )
+  );
+
+}
+
+
+
+/* ========================================================
+   LOAD DICTIONARY.JS
+======================================================== */
+
+function loadDictionaryJS(
+  replaceLocal = false
+) {
+
+  try {
+
+    let source = null;
+
+
+    if (
+      Array.isArray(
+        window.dictionary
+      )
+    ) {
+
+      source =
+        window.dictionary;
+
+    }
+
+    else if (
+      Array.isArray(
+        window.dictionaryData
+      )
+    ) {
+
+      source =
+        window.dictionaryData;
+
+    }
+
+
+    if (!source) {
+
+      showToast(
+        "⚠️ ไม่พบข้อมูลใน dictionary.js"
+      );
+
+      return;
+
+    }
+
+
+    if (
+      replaceLocal ||
+      !dictionaryData.length
+    ) {
+
+      dictionaryData =
+        source.map(
+          normalizeItem
+        );
+
+
+      /*
+       * คำที่มาจาก dictionary.js
+       * ถือว่า approved โดยค่าเริ่มต้น
+       */
+
+      dictionaryData =
+        dictionaryData.map(
+          item => ({
+
+            ...item,
+
+            status:
+              item.status
+              || "approved"
+
+          })
+        );
+
+
+      saveLocalData();
+
+      renderTable();
+
+      updateStats();
+
+      showToast(
+        `✅ โหลดคำศัพท์ ${dictionaryData.length} คำแล้ว`
+      );
+
+    }
+
+  } catch(error) {
+
+    console.error(error);
+
+    showToast(
+      "⚠️ โหลด dictionary.js ไม่สำเร็จ"
+    );
+
+  }
+
+}
+
+
+
+/* ========================================================
+   LOGIN
+======================================================== */
+
+loginForm.addEventListener(
+  "submit",
+  function(event) {
+
+    event.preventDefault();
+
+
+    const username =
+      document
+        .getElementById("username")
+        .value
+        .trim();
+
+
+    const password =
+      document
+        .getElementById("password")
+        .value;
+
+
+    if (
+      username ===
+        ADMIN_USERNAME
+      &&
+      password ===
+        ADMIN_PASSWORD
+    ) {
+
+      loginPage.style.display =
+        "none";
+
+      adminPage.style.display =
+        "block";
+
+      loginError.style.display =
+        "none";
+
+
+      /*
+       * โหลดข้อมูลจาก localStorage ก่อน
+       */
+
+      const hasLocal =
+        loadLocalData();
+
+
+      /*
+       * ถ้ายังไม่มีข้อมูล
+       * ให้โหลด dictionary.js
+       */
+
+      if (!hasLocal) {
+
+        loadDictionaryJS(
+          true
+        );
+
+      }
+
+
+      renderTable();
+
+      updateStats();
+
+    }
+
+    else {
+
+      loginError.style.display =
+        "block";
+
+    }
+
+  }
+);
+
+
+
+/* ========================================================
+   LOGOUT
+======================================================== */
+
+document
+  .getElementById("logoutBtn")
+  .onclick = function() {
+
+    adminPage.style.display =
+      "none";
+
+    loginPage.style.display =
+      "flex";
+
+    document
+      .getElementById("password")
+      .value = "";
+
+  };
+
+
+
+/* ========================================================
+   STATS
+======================================================== */
+
+function updateStats() {
+
+  const total =
+    dictionaryData.length;
+
+
+  const approved =
+    dictionaryData.filter(
+      item =>
+        item.status ===
+        "approved"
+    ).length;
+
+
+  const pending =
+    dictionaryData.filter(
+      item =>
+        item.status ===
+        "pending"
+    ).length;
+
+
+  const rejected =
+    dictionaryData.filter(
+      item =>
+        item.status ===
+        "rejected"
+    ).length;
+
+
+  document
+    .getElementById("totalCount")
+    .textContent =
+      total;
+
+
+  document
+    .getElementById("approvedCount")
+    .textContent =
+      approved;
+
+
+  document
+    .getElementById("pendingCount")
+    .textContent =
+      pending;
+
+
+  document
+    .getElementById("rejectedCount")
+    .textContent =
+      rejected;
+
+}
+
+
+
+/* ========================================================
+   FILTER
+======================================================== */
+
+function getFilteredData() {
+
+  const keyword =
+    searchAdmin.value
+      .trim()
+      .toLowerCase();
+
+
+  const hsk =
+    hskFilter.value;
+
+
+  const status =
+    statusFilter.value;
+
+
+  return dictionaryData.filter(
+    item => {
+
+
+      const searchText = [
+
+        item.word,
+
+        item.pinyin,
+
+        item.meaning,
+
+        item.example,
+
+        item.exampleMeaning
+
+      ]
+
+      .join(" ")
+      .toLowerCase();
+
+
+      const searchMatch =
+        !keyword ||
+        searchText.includes(
+          keyword
+        );
+
+
+      const hskMatch =
+        hsk === "ALL" ||
+        item.hsk === hsk;
+
+
+      const statusMatch =
+        status === "ALL" ||
+        item.status === status;
+
+
+      return (
+        searchMatch &&
+        hskMatch &&
+        statusMatch
+      );
+
+    }
+  );
+
+}
+
+
+
+/* ========================================================
+   STATUS HTML
+======================================================== */
+
+function statusHTML(status) {
+
+  if (
+    status === "approved"
+  ) {
+
+    return `
+      <span class="status status-approved">
+        ✅ approved
+      </span>
+    `;
+
+  }
+
+
+  if (
+    status === "rejected"
+  ) {
+
+    return `
+      <span class="status status-rejected">
+        ❌ rejected
+      </span>
+    `;
+
+  }
+
+
+  return `
+    <span class="status status-pending">
+      ⏳ pending
+    </span>
+  `;
+
+}
+
+
+
+/* ========================================================
+   RENDER TABLE
+======================================================== */
+
+function renderTable() {
+
+  const data =
+    getFilteredData();
+
+
+  wordTableBody.innerHTML =
+    "";
+
+
+  if (!data.length) {
+
+    wordTableBody.innerHTML = `
+
+      <tr>
+
+        <td
+          colspan="9"
+          class="empty">
+
+          🔎 ไม่พบข้อมูลคำศัพท์
+
+        </td>
+
+      </tr>
+
+    `;
+
+    return;
+
+  }
+
+
+  data.forEach(
+    item => {
+
+      const tr =
+        document.createElement(
+          "tr"
+        );
+
+
+      tr.innerHTML = `
+
+        <td>
+          ${escapeHTML(item.id)}
+        </td>
+
+
+        <td>
+          <div class="word-cell">
+            ${escapeHTML(item.word)}
+          </div>
+        </td>
+
+
+        <td>
+          <div class="pinyin-cell">
+            ${escapeHTML(item.pinyin)}
+          </div>
+        </td>
+
+
+        <td>
+          <div class="meaning-cell">
+            ${escapeHTML(item.meaning)}
+          </div>
+        </td>
+
+
+        <td>
+          ${escapeHTML(
+            item.hsk || "-"
+          )}
+        </td>
+
+
+        <td>
+          ${escapeHTML(
+            item.pos || "-"
+          )}
+        </td>
+
+
+        <td>
+          <div class="example-cell">
+
+            ${
+              escapeHTML(
+                item.example
+              )
+              || "-"
+            }
+
+            ${
+              item.exampleMeaning
+              ? `<br><small>${escapeHTML(
+                  item.exampleMeaning
+                )}</small>`
+              : ""
+            }
+
+          </div>
+        </td>
+
+
+        <td>
+          ${statusHTML(item.status)}
+        </td>
+
+
+        <td>
+
+          <div class="action-group">
+
+            ${
+              item.status !==
+              "approved"
+
+              ? `
+
+                <button
+                  class="action-btn approve-btn"
+                  onclick="approveWord(${item.id})">
+
+                  ✓
+
+                </button>
+
+              `
+
+              : ""
+            }
+
+
+            <button
+              class="action-btn edit-btn"
+              onclick="editWord(${item.id})">
+
+              ✏️
+
+            </button>
+
+
+            <button
+              class="action-btn delete-btn"
+              onclick="deleteWord(${item.id})">
+
+              🗑️
+
+            </button>
+
+          </div>
+
+        </td>
+
+      `;
+
+
+      wordTableBody.appendChild(
+        tr
+      );
+
+    }
+  );
+
+}
+
+
+
+/* ========================================================
+   OPEN ADD MODAL
+======================================================== */
+
+function openAddModal() {
+
+  editingId = null;
+
+  document
+    .getElementById("modalTitle")
+    .textContent =
+      "➕ เพิ่มคำศัพท์";
+
+
+  wordForm.reset();
+
+
+  document
+    .getElementById("editId")
+    .value = "";
+
+
+  document
+    .getElementById("status")
+    .value =
+      "pending";
+
+
+  document
+    .getElementById("date")
+    .value =
+      new Date()
+        .toISOString()
+        .slice(0,10);
+
+
+  wordModal.style.display =
+    "block";
+
+}
+
+
+
+/* ========================================================
+   CLOSE MODAL
+======================================================== */
+
+function closeModal() {
+
+  wordModal.style.display =
+    "none";
+
+  editingId = null;
+
+}
+
+
+
+document
+  .getElementById("closeModalBtn")
+  .onclick =
+    closeModal;
+
+
+document
+  .getElementById("cancelModalBtn")
+  .onclick =
+    closeModal;
+
+
+
+window.addEventListener(
+  "click",
+  function(event) {
+
+    if (
+      event.target ===
+      wordModal
+    ) {
+
+      closeModal();
+
+    }
+
+  }
+);
+
+
+
+/* ========================================================
+   ADD BUTTON
+======================================================== */
+
+document
+  .getElementById("addWordBtn")
+  .onclick =
+    openAddModal;
+
+
+
+/* ========================================================
+   EDIT WORD
+======================================================== */
+
+function editWord(id) {
+
+  const item =
+    dictionaryData.find(
+      x =>
+        Number(x.id) ===
+        Number(id)
+    );
+
+
+  if (!item) {
+
+    return;
+
+  }
+
+
+  editingId =
+    Number(id);
+
+
+  document
+    .getElementById("modalTitle")
+    .textContent =
+      "✏️ แก้ไขคำศัพท์";
+
+
+  document
+    .getElementById("editId")
+    .value =
+      item.id;
+
+
+  document
+    .getElementById("word")
+    .value =
+      item.word;
+
+
+  document
+    .getElementById("pinyin")
+    .value =
+      item.pinyin;
+
+
+  document
+    .getElementById("meaning")
+    .value =
+      item.meaning;
+
+
+  document
+    .getElementById("hsk")
+    .value =
+      item.hsk;
+
+
+  document
+    .getElementById("pos")
+    .value =
+      item.pos;
+
+
+  document
+    .getElementById("status")
+    .value =
+      item.status;
+
+
+  document
+    .getElementById("example")
+    .value =
+      item.example;
+
+
+  document
+    .getElementById("examplePinyin")
+    .value =
+      item.examplePinyin;
+
+
+  document
+    .getElementById("exampleMeaning")
+    .value =
+      item.exampleMeaning;
+
+
+  document
+    .getElementById("sender")
+    .value =
+      item.sender;
+
+
+  document
+    .getElementById("date")
+    .value =
+      item.date;
+
+
+  wordModal.style.display =
+    "block";
+
+}
+
+
+
+/* ========================================================
+   SAVE WORD
+======================================================== */
+
+wordForm.addEventListener(
+  "submit",
+  function(event) {
+
+    event.preventDefault();
+
+
+    const word =
+      document
+        .getElementById("word")
+        .value
+        .trim();
+
+
+    const pinyin =
+      document
+        .getElementById("pinyin")
+        .value
+        .trim();
+
+
+    const meaning =
+      document
+        .getElementById("meaning")
+        .value
+        .trim();
+
+
+    if (
+      !word ||
+      !pinyin ||
+      !meaning
+    ) {
+
+      alert(
+        "กรุณากรอก คำศัพท์ / Pinyin / คำแปล ให้ครบค่ะ"
+      );
+
+      return;
+
+    }
+
+
+    const item = {
+
+      id:
+        editingId
+        || getNextId(),
+
+      word,
+
+      pinyin,
+
+      meaning,
+
+      hsk:
+        document
+          .getElementById("hsk")
+          .value,
+
+      pos:
+        document
+          .getElementById("pos")
+          .value
+          .trim(),
+
+      example:
+        document
+          .getElementById("example")
+          .value
+          .trim(),
+
+      examplePinyin:
+        document
+          .getElementById("examplePinyin")
+          .value
+          .trim(),
+
+      exampleMeaning:
+        document
+          .getElementById("exampleMeaning")
+          .value
+          .trim(),
+
+      status:
+        document
+          .getElementById("status")
+          .value,
+
+      sender:
+        document
+          .getElementById("sender")
+          .value
+          .trim(),
+
+      date:
+        document
+          .getElementById("date")
+          .value
+
+    };
+
+
+    if (editingId) {
+
+      const index =
+        dictionaryData.findIndex(
+          x =>
+            Number(x.id) ===
+            Number(editingId)
+        );
+
+
+      if (index !== -1) {
+
+        dictionaryData[index] =
+          item;
+
+      }
+
+      showToast(
+        "✅ แก้ไขคำศัพท์แล้ว"
+      );
+
+    }
+
+    else {
+
+      dictionaryData.push(
+        item
+      );
+
+      showToast(
+        "✅ เพิ่มคำศัพท์แล้ว"
+      );
+
+    }
+
+
+    saveLocalData();
+
+    renderTable();
+
+    updateStats();
+
+    closeModal();
+
+  }
+);
+
+
+
+/* ========================================================
+   NEXT ID
+======================================================== */
+
+function getNextId() {
+
+  if (!dictionaryData.length) {
+
+    return 1;
+
+  }
+
+
+  return Math.max(
+    ...dictionaryData.map(
+      item =>
+        Number(item.id)
+        || 0
+    )
+  ) + 1;
+
+}
+
+
+
+/* ========================================================
+   APPROVE
+======================================================== */
+
+function approveWord(id) {
+
+  const item =
+    dictionaryData.find(
+      x =>
+        Number(x.id) ===
+        Number(id)
+    );
+
+
+  if (!item) {
+
+    return;
+
+  }
+
+
+  item.status =
+    "approved";
+
+
+  saveLocalData();
+
+  renderTable();
+
+  updateStats();
+
+  showToast(
+    `✅ อนุมัติ "${item.word}" แล้ว`
+  );
+
+}
+
+
+
+/* ========================================================
+   DELETE
+======================================================== */
+
+function deleteWord(id) {
+
+  const item =
+    dictionaryData.find(
+      x =>
+        Number(x.id) ===
+        Number(id)
+    );
+
+
+  if (!item) {
+
+    return;
+
+  }
+
+
+  const confirmed =
+    confirm(
+      `ต้องการลบคำว่า "${item.word}" หรือไม่?`
+    );
+
+
+  if (!confirmed) {
+
+    return;
+
+  }
+
+
+  dictionaryData =
+    dictionaryData.filter(
+      x =>
+        Number(x.id) !==
+        Number(id)
+    );
+
+
+  saveLocalData();
+
+  renderTable();
+
+  updateStats();
+
+  showToast(
+    "🗑️ ลบคำศัพท์แล้ว"
+  );
+
+}
+
+
+
+/* ========================================================
+   IMPORT GOOGLE SHEETS
+======================================================== */
+
+function parseImportLine(line) {
+
+  let parts;
+
+
+  /*
+   * Google Sheets
+   * Copy มาแล้วมักคั่นด้วย TAB
+   */
+
+  if (
+    line.includes("\t")
+  ) {
+
+    parts =
+      line.split("\t");
+
+  }
+
+  /*
+   * รองรับ |
+   */
+
+  else {
+
+    parts =
+      line.split("|")
+        .map(
+          x =>
+            x.trim()
+        );
+
+  }
+
+
+  parts =
+    parts.map(
+      x =>
+        String(x)
+          .trim()
+    );
+
+
+  /*
+   * ถ้าเป็น Header
+   */
+
+  const first =
+    (parts[0] || "")
+      .toLowerCase();
+
+
+  if (
+    first === "id" ||
+    first === "คำศัพท์" ||
+    first === "คำศัพท์จีน"
+  ) {
+
+    return null;
+
+  }
+
+
+  /*
+   * รองรับ 12 columns
+   *
+   * ID
+   * WORD
+   * PINYIN
+   * MEANING
+   * HSK
+   * POS
+   * EXAMPLE
+   * EXAMPLE PINYIN
+   * EXAMPLE MEANING
+   * STATUS
+   * SENDER
+   * DATE
+   */
+
+  let id,
+      word,
+      pinyin,
+      meaning,
+      hsk,
+      pos,
+      example,
+      examplePinyin,
+      exampleMeaning,
+      status,
+      sender,
+      date;
+
+
+  if (
+    parts.length >= 12
+  ) {
+
+    [
+      id,
+      word,
+      pinyin,
+      meaning,
+      hsk,
+      pos,
+      example,
+      examplePinyin,
+      exampleMeaning,
+      status,
+      sender,
+      date
+
+    ] = parts;
+
+  }
+
+  /*
+   * รองรับกรณีไม่มี ID
+   */
+
+  else {
+
+    [
+      word,
+      pinyin,
+      meaning,
+      hsk,
+      pos,
+      example,
+      examplePinyin,
+      exampleMeaning,
+      status,
+      sender,
+      date
+
+    ] = parts;
+
+    id = "";
+
+  }
+
+
+  if (
+    !word &&
+    !pinyin &&
+    !meaning
+  ) {
+
+    return null;
+
+  }
+
+
+  return {
+
+    id:
+      Number(id)
+      || getNextId(),
+
+    word:
+      word || "",
+
+    pinyin:
+      pinyin || "",
+
+    meaning:
+      meaning || "",
+
+    hsk:
+      hsk || "",
+
+    pos:
+      pos || "",
+
+    example:
+      example || "",
+
+    examplePinyin:
+      examplePinyin || "",
+
+    exampleMeaning:
+      exampleMeaning || "",
+
+    status:
+      (
+        status
+        || "pending"
+      )
+      .toLowerCase(),
+
+    sender:
+      sender || "",
+
+    date:
+      date || ""
+
+  };
+
+}
+
+
+
+function importData() {
+
+  const text =
+    importTextarea.value.trim();
+
+
+  if (!text) {
+
+    alert(
+      "กรุณาวางข้อมูลจาก Google Sheets ก่อนค่ะ"
+    );
+
+    return;
+
+  }
+
+
+  const lines =
+    text.split(/\r?\n/);
+
+
+  const imported = [];
+
+
+  lines.forEach(
+    line => {
+
+      if (!line.trim()) {
+
+        return;
+
+      }
+
+
+      const item =
+        parseImportLine(
+          line
+        );
+
+
+      if (item) {
+
+        imported.push(
+          item
+        );
+
+      }
+
+    }
+  );
+
+
+  if (!imported.length) {
+
+    alert(
+      "ไม่พบข้อมูลที่สามารถ Import ได้ค่ะ"
+    );
+
+    return;
+
+  }
+
+
+  let added = 0;
+
+  let updated = 0;
+
+
+  imported.forEach(
+    item => {
+
+      /*
+       * ถ้ามี ID เดิม
+       * ให้ update
+       */
+
+      const existingIndex =
+        dictionaryData.findIndex(
+          x =>
+            Number(x.id) ===
+            Number(item.id)
+        );
+
+
+      /*
+       * ถ้า ID ตรงกัน
+       */
+
+      if (
+        existingIndex !== -1
+      ) {
+
+        dictionaryData[
+          existingIndex
+        ] = item;
+
+        updated++;
+
+      }
+
+      else {
+
+        /*
+         * ตรวจคำซ้ำด้วย
+         */
+
+        const duplicateIndex =
+          dictionaryData.findIndex(
+            x =>
+              x.word ===
+              item.word
+          );
+
+
+        if (
+          duplicateIndex !== -1
+        ) {
+
+          dictionaryData[
+            duplicateIndex
+          ] = {
+
+            ...dictionaryData[
+              duplicateIndex
+            ],
+
+            ...item,
+
+            id:
+              dictionaryData[
+                duplicateIndex
+              ].id
+
+          };
+
+          updated++;
+
+        }
+
+        else {
+
+          item.id =
+            getNextId();
+
+          dictionaryData.push(
+            item
+          );
+
+          added++;
+
+        }
+
+      }
+
+    }
+  );
+
+
+  saveLocalData();
+
+  renderTable();
+
+  updateStats();
+
+
+  showToast(
+    `✅ Import สำเร็จ เพิ่ม ${added} คำ / แก้ไข ${updated} คำ`
+  );
+
+
+  importTextarea.value =
+    "";
+
+}
+
+
+
+document
+  .getElementById("importBtn")
+  .onclick =
+    importData;
+
+
+
+document
+  .getElementById("clearImportBtn")
+  .onclick =
+    function() {
+
+      importTextarea.value =
+        "";
+
+    };
+
+
+
+/* ========================================================
+   LOAD DICTIONARY BUTTON
+======================================================== */
+
+document
+  .getElementById(
+    "loadDictionaryBtn"
+  )
+  .onclick =
+    function() {
+
+      const confirmed =
+        confirm(
+          "ต้องการโหลดข้อมูลจาก dictionary.js ใหม่ทั้งหมดหรือไม่?\n\nข้อมูลที่กำลังอยู่ใน Admin จะถูกแทนที่"
+        );
+
+
+      if (!confirmed) {
+
+        return;
+
+      }
+
+
+      loadDictionaryJS(
+        true
+      );
+
+    };
+
+
+
+/* ========================================================
+   SEARCH / FILTER
+======================================================== */
+
+searchAdmin
+  .addEventListener(
+    "input",
+    renderTable
+  );
+
+
+hskFilter
+  .addEventListener(
+    "change",
+    renderTable
+  );
+
+
+statusFilter
+  .addEventListener(
+    "change",
+    renderTable
+  );
+
+
+
+/* ========================================================
+   GENERATE DICTIONARY.JS
+======================================================== */
+
+function generateDictionary() {
+
+  const approved =
+    dictionaryData
+      .filter(
+        item =>
+          item.status ===
+          "approved"
+      );
+
+
+  if (!approved.length) {
+
+    exportOutput.value =
+`// ยังไม่มีคำศัพท์ที่อนุมัติแล้ว
+
+window.dictionary = [];`;
+
+    showToast(
+      "⚠️ ยังไม่มีคำศัพท์สถานะ approved"
+    );
+
+    return;
+
+  }
+
+
+  const cleanData =
+    approved.map(
+      item => ({
+
+        id:
+          Number(item.id),
+
+        word:
+          item.word,
+
+        pinyin:
+          item.pinyin,
+
+        meaning:
+          item.meaning,
+
+        hsk:
+          item.hsk,
+
+        pos:
+          item.pos,
+
+        example:
+          item.example,
+
+        examplePinyin:
+          item.examplePinyin,
+
+        exampleMeaning:
+          item.exampleMeaning
+
+      })
+    );
+
+
+  exportOutput.value =
+
+`/*
+ * Chinese–Thai Dictionary
+ * ก็แค่จีน by ครูพี่เหม่ยถิง
+ *
+ * Generated automatically
+ */
+
+window.dictionary = ${JSON.stringify(
+  cleanData,
+  null,
+  2
+)};`;
+
+
+  showToast(
+    `✅ สร้าง dictionary.js จาก ${approved.length} คำแล้ว`
+  );
+
+}
+
+
+
+/* ========================================================
+   GENERATE BUTTON
+======================================================== */
+
+document
+  .getElementById("generateBtn")
+  .onclick =
+    generateDictionary;
+
+
+
+/* ========================================================
+   DOWNLOAD DICTIONARY.JS
+======================================================== */
+
+function downloadDictionary() {
+
+  if (
+    !exportOutput.value.trim()
+  ) {
+
+    generateDictionary();
+
+  }
+
+
+  if (
+    !exportOutput.value.trim()
+  ) {
+
+    return;
+
+  }
+
+
+  const blob =
+    new Blob(
+      [
+        exportOutput.value
+      ],
+      {
+        type:
+          "application/javascript;charset=utf-8"
+      }
+    );
+
+
+  const url =
+    URL.createObjectURL(
+      blob
+    );
+
+
+  const a =
+    document.createElement(
+      "a"
+    );
+
+
+  a.href =
+    url;
+
+  a.download =
+    "dictionary.js";
+
+
+  document.body.appendChild(a);
+
+  a.click();
+
+  a.remove();
+
+
+  URL.revokeObjectURL(
+    url
+  );
+
+
+  showToast(
+    "💾 ดาวน์โหลด dictionary.js แล้ว"
+  );
+
+}
+
+
+
+document
+  .getElementById("downloadBtn")
+  .onclick =
+    downloadDictionary;
+
+
+
+/* ========================================================
+   COPY
+======================================================== */
+
+document
+  .getElementById("copyBtn")
+  .onclick =
+    async function() {
+
+      if (
+        !exportOutput.value.trim()
+      ) {
+
+        generateDictionary();
+
+      }
+
+
+      if (
+        !exportOutput.value.trim()
+      ) {
+
+        return;
+
+      }
+
+
+      try {
+
+        await navigator
+          .clipboard
+          .writeText(
+            exportOutput.value
+          );
+
+
+        showToast(
+          "📋 Copy dictionary.js แล้ว"
+        );
+
+      }
+
+      catch {
+
+        exportOutput
+          .select();
+
+        document
+          .execCommand(
+            "copy"
+          );
+
+
+        showToast(
+          "📋 Copy แล้ว"
+        );
+
+      }
+
+    };
+
+
+
+/* ========================================================
+   INITIAL
+======================================================== */
+
+/*
+ * ยังไม่โหลดข้อมูลจนกว่า
+ * จะ Login สำเร็จ
+ */
+
+</script>
+
+</body>
+
+</html>
