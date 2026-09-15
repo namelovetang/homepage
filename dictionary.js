@@ -1,3 +1,4 @@
+window.dictionary = [
 {
     id: 1,
     word: "爱",
@@ -13,23 +14,23 @@
     id: 2,
     word: "爱好",
     pinyin: "àihào",
-    meaning: "งานอดิเรก; ชื่นชอบ",
-    pos: "คำนาม / คำกริยา",
+    meaning: "งานอดิเรก; สิ่งที่ชอบ",
+    pos: "คำนาม",
     hsk: "HSK1",
-    example: "我的爱好是唱歌。",
-    examplePinyin: "Wǒ de àihào shì chànggē.",
-    exampleThai: "งานอดิเรกของฉันคือการร้องเพลง"
+    example: "我的爱好是看书。",
+    examplePinyin: "Wǒ de àihào shì kàn shū.",
+    exampleThai: "งานอดิเรกของฉันคืออ่านหนังสือ"
   },
   {
     id: 3,
     word: "八",
     pinyin: "bā",
     meaning: "แปด",
-    pos: "จำนวน",
+    pos: "คำบอกจำนวน",
     hsk: "HSK1",
-    example: "我八点上课。",
-    examplePinyin: "Wǒ bā diǎn shàngkè.",
-    exampleThai: "ฉันเรียนตอนแปดโมง"
+    example: "我有八本书。",
+    examplePinyin: "Wǒ yǒu bā běn shū.",
+    exampleThai: "ฉันมีหนังสือแปดเล่ม"
   },
   {
     id: 4,
@@ -46,7 +47,7 @@
     id: 5,
     word: "吧",
     pinyin: "ba",
-    meaning: "เถอะ; ใช้ลงท้ายประโยคเพื่อแสดงการชักชวนหรือคาดคะเน",
+    meaning: "เถอะ; นะ",
     pos: "คำช่วย",
     hsk: "HSK1",
     example: "我们走吧。",
@@ -57,12 +58,12 @@
     id: 6,
     word: "白",
     pinyin: "bái",
-    meaning: "สีขาว",
+    meaning: "ขาว",
     pos: "คำคุณศัพท์",
     hsk: "HSK1",
-    example: "我喜欢白色。",
-    examplePinyin: "Wǒ xǐhuan báisè.",
-    exampleThai: "ฉันชอบสีขาว"
+    example: "这件衣服是白的。",
+    examplePinyin: "Zhè jiàn yīfu shì bái de.",
+    exampleThai: "เสื้อผ้าตัวนี้สีขาว"
   },
   {
     id: 7,
@@ -71,20 +72,20 @@
     meaning: "กลางวัน",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "白天很热。",
-    examplePinyin: "Báitiān hěn rè.",
-    exampleThai: "ตอนกลางวันร้อนมาก"
+    example: "我白天上课。",
+    examplePinyin: "Wǒ báitiān shàngkè.",
+    exampleThai: "ตอนกลางวันฉันเรียน"
   },
   {
     id: 8,
     word: "百",
     pinyin: "bǎi",
     meaning: "ร้อย",
-    pos: "จำนวน",
+    pos: "คำบอกจำนวน",
     hsk: "HSK1",
-    example: "这里有一百个人。",
-    examplePinyin: "Zhèlǐ yǒu yì bǎi gè rén.",
-    exampleThai: "ที่นี่มีคนหนึ่งร้อยคน"
+    example: "一百个人。",
+    examplePinyin: "Yì bǎi gè rén.",
+    exampleThai: "คนหนึ่งร้อยคน"
   },
   {
     id: 9,
@@ -93,19 +94,19 @@
     meaning: "ชั้นเรียน; ห้องเรียน",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "我们是一个班的学生。",
-    examplePinyin: "Wǒmen shì yí gè bān de xuésheng.",
-    exampleThai: "พวกเราเป็นนักเรียนห้องเดียวกัน"
+    example: "我们班有二十个人。",
+    examplePinyin: "Wǒmen bān yǒu èrshí gè rén.",
+    exampleThai: "ห้องเรียนของเรามี 20 คน"
   },
   {
     id: 10,
     word: "半",
     pinyin: "bàn",
-    meaning: "ครึ่ง",
-    pos: "จำนวน",
+    meaning: "ครึ่ง; ครึ่งหนึ่ง",
+    pos: "คำบอกจำนวน",
     hsk: "HSK1",
-    example: "现在是八点半。",
-    examplePinyin: "Xiànzài shì bā diǎn bàn.",
+    example: "现在八点半。",
+    examplePinyin: "Xiànzài bā diǎn bàn.",
     exampleThai: "ตอนนี้แปดโมงครึ่ง"
   },
   {
@@ -117,7 +118,7 @@
     hsk: "HSK1",
     example: "我学了半年汉语。",
     examplePinyin: "Wǒ xué le bànnián Hànyǔ.",
-    exampleThai: "ฉันเรียนภาษาจีนมาครึ่งปีแล้ว"
+    exampleThai: "ฉันเรียนภาษาจีนมาครึ่งปี"
   },
   {
     id: 12,
@@ -126,9 +127,9 @@
     meaning: "ครึ่งวัน; เป็นเวลานาน",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "我等了你半天。",
-    examplePinyin: "Wǒ děng le nǐ bàntiān.",
-    exampleThai: "ฉันรอคุณตั้งครึ่งวัน"
+    example: "我等了半天。",
+    examplePinyin: "Wǒ děng le bàntiān.",
+    exampleThai: "ฉันรออยู่นานมาก"
   },
   {
     id: 13,
@@ -137,8 +138,8 @@
     meaning: "ช่วย",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "请帮我一下。",
-    examplePinyin: "Qǐng bāng wǒ yíxià.",
+    example: "请帮我。",
+    examplePinyin: "Qǐng bāng wǒ.",
     exampleThai: "ช่วยฉันหน่อย"
   },
   {
@@ -150,7 +151,7 @@
     hsk: "HSK1",
     example: "谢谢你帮忙。",
     examplePinyin: "Xièxie nǐ bāngmáng.",
-    exampleThai: "ขอบคุณที่ช่วยเหลือ"
+    exampleThai: "ขอบคุณที่ช่วย"
   },
   {
     id: 15,
@@ -178,23 +179,23 @@
     id: 17,
     word: "杯",
     pinyin: "bēi",
-    meaning: "ลักษณนามสำหรับแก้วหรือถ้วย",
+    meaning: "แก้ว; ถ้วย",
     pos: "ลักษณนาม",
     hsk: "HSK1",
-    example: "一杯水。",
-    examplePinyin: "Yì bēi shuǐ.",
-    exampleThai: "น้ำหนึ่งแก้ว"
+    example: "一杯茶。",
+    examplePinyin: "Yì bēi chá.",
+    exampleThai: "ชาหนึ่งแก้ว"
   },
   {
     id: 18,
     word: "杯子",
     pinyin: "bēizi",
-    meaning: "แก้ว; ถ้วย",
+    meaning: "แก้วน้ำ; ถ้วย",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "这是我的杯子。",
-    examplePinyin: "Zhè shì wǒ de bēizi.",
-    exampleThai: "นี่คือแก้วของฉัน"
+    example: "杯子里有水。",
+    examplePinyin: "Bēizi lǐ yǒu shuǐ.",
+    exampleThai: "ในแก้วมีน้ำ"
   },
   {
     id: 19,
@@ -203,20 +204,20 @@
     meaning: "ทิศเหนือ",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "北京在中国的北边。",
-    examplePinyin: "Běijīng zài Zhōngguó de běibian.",
-    exampleThai: "ปักกิ่งอยู่ทางตอนเหนือของจีน"
+    example: "北京在北边。",
+    examplePinyin: "Běijīng zài běibian.",
+    exampleThai: "ปักกิ่งอยู่ทางเหนือ"
   },
   {
     id: 20,
     word: "北边",
     pinyin: "běibian",
-    meaning: "ด้านเหนือ; ทางเหนือ",
+    meaning: "ด้านเหนือ",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "学校在银行北边。",
-    examplePinyin: "Xuéxiào zài yínháng běibian.",
-    exampleThai: "โรงเรียนอยู่ทางเหนือของธนาคาร"
+    example: "学校在北边。",
+    examplePinyin: "Xuéxiào zài běibian.",
+    exampleThai: "โรงเรียนอยู่ทางเหนือ"
   },
   {
     id: 21,
@@ -225,15 +226,15 @@
     meaning: "ปักกิ่ง",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "我住在北京。",
-    examplePinyin: "Wǒ zhù zài Běijīng.",
-    exampleThai: "ฉันอาศัยอยู่ที่ปักกิ่ง"
+    example: "我想去北京。",
+    examplePinyin: "Wǒ xiǎng qù Běijīng.",
+    exampleThai: "ฉันอยากไปปักกิ่ง"
   },
   {
     id: 22,
     word: "本",
     pinyin: "běn",
-    meaning: "ลักษณนามสำหรับหนังสือ",
+    meaning: "เล่ม",
     pos: "ลักษณนาม",
     hsk: "HSK1",
     example: "一本书。",
@@ -267,7 +268,7 @@
     word: "别",
     pinyin: "bié",
     meaning: "อย่า",
-    pos: "คำกริยา / คำวิเศษณ์",
+    pos: "คำวิเศษณ์",
     hsk: "HSK1",
     example: "别说话。",
     examplePinyin: "Bié shuōhuà.",
@@ -280,41 +281,41 @@
     meaning: "อื่น; อย่างอื่น",
     pos: "คำสรรพนาม",
     hsk: "HSK1",
-    example: "你还要别的吗？",
-    examplePinyin: "Nǐ hái yào bié de ma?",
-    exampleThai: "คุณต้องการอย่างอื่นอีกไหม"
+    example: "你要别的吗？",
+    examplePinyin: "Nǐ yào bié de ma?",
+    exampleThai: "คุณเอาอย่างอื่นไหม"
   },
   {
     id: 27,
     word: "别人",
     pinyin: "biérén",
     meaning: "คนอื่น",
-    pos: "คำนาม / คำสรรพนาม",
+    pos: "คำสรรพนาม",
     hsk: "HSK1",
-    example: "不要打扰别人。",
-    examplePinyin: "Bú yào dǎrǎo biérén.",
-    exampleThai: "อย่ารบกวนคนอื่น"
+    example: "不要管别人。",
+    examplePinyin: "Bú yào guǎn biérén.",
+    exampleThai: "อย่าไปยุ่งกับคนอื่น"
   },
   {
     id: 28,
     word: "病",
     pinyin: "bìng",
-    meaning: "โรค; ป่วย",
-    pos: "คำนาม / คำกริยา",
+    meaning: "โรค; อาการป่วย",
+    pos: "คำนาม",
     hsk: "HSK1",
-    example: "我生病了。",
-    examplePinyin: "Wǒ shēngbìng le.",
-    exampleThai: "ฉันป่วยแล้ว"
+    example: "他的病好了。",
+    examplePinyin: "Tā de bìng hǎo le.",
+    exampleThai: "อาการป่วยของเขาหายแล้ว"
   },
   {
     id: 29,
     word: "病人",
     pinyin: "bìngrén",
-    meaning: "ผู้ป่วย",
+    meaning: "คนป่วย; ผู้ป่วย",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "医生在看病人。",
-    examplePinyin: "Yīshēng zài kàn bìngrén.",
+    example: "医生正在看病人。",
+    examplePinyin: "Yīshēng zhèngzài kàn bìngrén.",
     exampleThai: "หมอกำลังตรวจคนไข้"
   },
   {
@@ -322,7 +323,7 @@
     word: "不大",
     pinyin: "bú dà",
     meaning: "ไม่ใหญ่; ไม่มาก",
-    pos: "คำวิเศษณ์",
+    pos: "คำคุณศัพท์",
     hsk: "HSK1",
     example: "这个房间不大。",
     examplePinyin: "Zhège fángjiān bú dà.",
@@ -332,45 +333,45 @@
     id: 31,
     word: "不对",
     pinyin: "bú duì",
-    meaning: "ไม่ถูก; ไม่ใช่",
+    meaning: "ไม่ถูกต้อง",
     pos: "คำคุณศัพท์",
     hsk: "HSK1",
     example: "这个答案不对。",
     examplePinyin: "Zhège dá'àn bú duì.",
-    exampleThai: "คำตอบนี้ไม่ถูก"
+    exampleThai: "คำตอบนี้ไม่ถูกต้อง"
   },
   {
     id: 32,
     word: "不客气",
     pinyin: "bú kèqi",
     meaning: "ไม่เป็นไร; ด้วยความยินดี",
-    pos: "คำพูด",
+    pos: "คำคุณศัพท์",
     hsk: "HSK1",
-    example: "不客气。",
-    examplePinyin: "Bú kèqi.",
-    exampleThai: "ไม่เป็นไร"
+    example: "谢谢你。—不客气。",
+    examplePinyin: "Xièxie nǐ. — Bú kèqi.",
+    exampleThai: "ขอบคุณ — ไม่เป็นไร"
   },
   {
     id: 33,
     word: "不用",
     pinyin: "bú yòng",
-    meaning: "ไม่ต้อง; ไม่จำเป็น",
-    pos: "คำกริยา / คำวิเศษณ์",
+    meaning: "ไม่ต้อง",
+    pos: "คำกริยา",
     hsk: "HSK1",
-    example: "你不用担心。",
-    examplePinyin: "Nǐ bú yòng dānxīn.",
-    exampleThai: "คุณไม่ต้องกังวล"
+    example: "你不用来。",
+    examplePinyin: "Nǐ bú yòng lái.",
+    exampleThai: "คุณไม่ต้องมา"
   },
   {
     id: 34,
     word: "不",
     pinyin: "bù",
-    meaning: "ไม่; ไม่ได้",
+    meaning: "ไม่",
     pos: "คำวิเศษณ์",
     hsk: "HSK1",
-    example: "我不喝咖啡。",
-    examplePinyin: "Wǒ bù hē kāfēi.",
-    exampleThai: "ฉันไม่ดื่มกาแฟ"
+    example: "我不喝茶。",
+    examplePinyin: "Wǒ bù hē chá.",
+    exampleThai: "ฉันไม่ดื่มชา"
   },
   {
     id: 35,
@@ -379,9 +380,9 @@
     meaning: "อาหาร; กับข้าว; ผัก",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "今天的菜很好吃。",
-    examplePinyin: "Jīntiān de cài hěn hǎochī.",
-    exampleThai: "อาหารวันนี้อร่อยมาก"
+    example: "这个菜很好吃。",
+    examplePinyin: "Zhège cài hěn hǎochī.",
+    exampleThai: "อาหารจานนี้อร่อยมาก"
   },
   {
     id: 36,
@@ -401,9 +402,9 @@
     meaning: "แย่; ไม่ดี; แตกต่าง",
     pos: "คำคุณศัพท์",
     hsk: "HSK1",
-    example: "今天的天气不差。",
-    examplePinyin: "Jīntiān de tiānqì bú chà.",
-    exampleThai: "อากาศวันนี้ไม่แย่"
+    example: "他的汉语不差。",
+    examplePinyin: "Tā de Hànyǔ bù chà.",
+    exampleThai: "ภาษาจีนของเขาไม่แย่"
   },
   {
     id: 38,
@@ -423,9 +424,9 @@
     meaning: "บ่อย ๆ",
     pos: "คำวิเศษณ์",
     hsk: "HSK1",
-    example: "我常常看书。",
-    examplePinyin: "Wǒ chángcháng kàn shū.",
-    exampleThai: "ฉันอ่านหนังสือบ่อย ๆ"
+    example: "我常常看电影。",
+    examplePinyin: "Wǒ chángcháng kàn diànyǐng.",
+    exampleThai: "ฉันดูหนังบ่อย ๆ"
   },
   {
     id: 40,
@@ -445,9 +446,9 @@
     meaning: "ร้องเพลง",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "我们一起唱歌吧。",
-    examplePinyin: "Wǒmen yìqǐ chànggē ba.",
-    exampleThai: "พวกเราร้องเพลงด้วยกันเถอะ"
+    example: "我们一起唱歌。",
+    examplePinyin: "Wǒmen yìqǐ chànggē.",
+    exampleThai: "พวกเราร้องเพลงด้วยกัน"
   },
   {
     id: 42,
@@ -456,9 +457,9 @@
     meaning: "รถ",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "我的车在外面。",
-    examplePinyin: "Wǒ de chē zài wàimiàn.",
-    exampleThai: "รถของฉันอยู่ข้างนอก"
+    example: "这是我的车。",
+    examplePinyin: "Zhè shì wǒ de chē.",
+    exampleThai: "นี่คือรถของฉัน"
   },
   {
     id: 43,
@@ -474,13 +475,13 @@
   {
     id: 44,
     word: "车上",
-    pinyin: "chēshàng",
+    pinyin: "chē shàng",
     meaning: "บนรถ",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "车上有很多人。",
-    examplePinyin: "Chēshàng yǒu hěn duō rén.",
-    exampleThai: "บนรถมีคนมากมาย"
+    example: "他在车上。",
+    examplePinyin: "Tā zài chē shàng.",
+    exampleThai: "เขาอยู่บนรถ"
   },
   {
     id: 45,
@@ -489,9 +490,9 @@
     meaning: "สถานีรถ",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "我在车站等你。",
-    examplePinyin: "Wǒ zài chēzhàn děng nǐ.",
-    exampleThai: "ฉันรอคุณอยู่ที่สถานีรถ"
+    example: "车站在哪里？",
+    examplePinyin: "Chēzhàn zài nǎlǐ?",
+    exampleThai: "สถานีรถอยู่ที่ไหน"
   },
   {
     id: 46,
@@ -500,9 +501,9 @@
     meaning: "กิน",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "你吃饭了吗？",
-    examplePinyin: "Nǐ chīfàn le ma?",
-    exampleThai: "คุณกินข้าวแล้วหรือยัง"
+    example: "我吃饭了。",
+    examplePinyin: "Wǒ chīfàn le.",
+    exampleThai: "ฉันกินข้าวแล้ว"
   },
   {
     id: 47,
@@ -519,12 +520,12 @@
     id: 48,
     word: "出",
     pinyin: "chū",
-    meaning: "ออก; ออกไป",
+    meaning: "ออก",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "我出去一下。",
-    examplePinyin: "Wǒ chūqù yíxià.",
-    exampleThai: "ฉันออกไปข้างนอกสักครู่"
+    example: "请出去。",
+    examplePinyin: "Qǐng chūqù.",
+    exampleThai: "กรุณาออกไป"
   },
   {
     id: 49,
@@ -533,9 +534,9 @@
     meaning: "ออกมา",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "你快出来！",
-    examplePinyin: "Nǐ kuài chūlái!",
-    exampleThai: "คุณรีบออกมาเร็ว!"
+    example: "你出来一下。",
+    examplePinyin: "Nǐ chūlái yíxià.",
+    exampleThai: "คุณออกมาสักหน่อย"
   },
   {
     id: 50,
@@ -544,9 +545,9 @@
     meaning: "ออกไป",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "我想出去走走。",
-    examplePinyin: "Wǒ xiǎng chūqù zǒuzou.",
-    exampleThai: "ฉันอยากออกไปเดินเล่น"
+    example: "我想出去。",
+    examplePinyin: "Wǒ xiǎng chūqù.",
+    exampleThai: "ฉันอยากออกไป"
   },
   {
     id: 51,
@@ -555,9 +556,9 @@
     meaning: "สวมใส่",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "今天穿什么？",
-    examplePinyin: "Jīntiān chuān shénme?",
-    exampleThai: "วันนี้ใส่อะไรดี"
+    example: "我穿红衣服。",
+    examplePinyin: "Wǒ chuān hóng yīfu.",
+    exampleThai: "ฉันใส่เสื้อผ้าสีแดง"
   },
   {
     id: 52,
@@ -566,9 +567,9 @@
     meaning: "เตียง",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "我的床很舒服。",
-    examplePinyin: "Wǒ de chuáng hěn shūfu.",
-    exampleThai: "เตียงของฉันสบายมาก"
+    example: "猫在床上。",
+    examplePinyin: "Māo zài chuáng shàng.",
+    exampleThai: "แมวอยู่บนเตียง"
   },
   {
     id: 53,
@@ -577,9 +578,9 @@
     meaning: "ครั้ง",
     pos: "ลักษณนาม",
     hsk: "HSK1",
-    example: "我去过两次北京。",
-    examplePinyin: "Wǒ qù guo liǎng cì Běijīng.",
-    exampleThai: "ฉันเคยไปปักกิ่งสองครั้ง"
+    example: "我去过一次北京。",
+    examplePinyin: "Wǒ qù guo yí cì Běijīng.",
+    exampleThai: "ฉันเคยไปปักกิ่งหนึ่งครั้ง"
   },
   {
     id: 54,
@@ -588,9 +589,9 @@
     meaning: "จาก; ตั้งแต่",
     pos: "คำบุพบท",
     hsk: "HSK1",
-    example: "我从家里来。",
-    examplePinyin: "Wǒ cóng jiā lǐ lái.",
-    exampleThai: "ฉันมาจากบ้าน"
+    example: "我从学校回来。",
+    examplePinyin: "Wǒ cóng xuéxiào huílái.",
+    exampleThai: "ฉันกลับมาจากโรงเรียน"
   },
   {
     id: 55,
@@ -599,31 +600,31 @@
     meaning: "ผิด",
     pos: "คำคุณศัพท์",
     hsk: "HSK1",
-    example: "我说错了。",
-    examplePinyin: "Wǒ shuō cuò le.",
-    exampleThai: "ฉันพูดผิดแล้ว"
+    example: "你说错了。",
+    examplePinyin: "Nǐ shuō cuò le.",
+    exampleThai: "คุณพูดผิดแล้ว"
   },
   {
     id: 56,
     word: "打",
     pinyin: "dǎ",
-    meaning: "ตี; เล่น; โทร",
+    meaning: "ตี; เล่น; ทำ",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "我给妈妈打电话。",
-    examplePinyin: "Wǒ gěi māma dǎ diànhuà.",
+    example: "我打电话给妈妈。",
+    examplePinyin: "Wǒ dǎ diànhuà gěi māma.",
     exampleThai: "ฉันโทรหาแม่"
   },
   {
     id: 57,
     word: "打车",
-    pinyin: "dǎ chē",
+    pinyin: "dǎchē",
     meaning: "เรียกแท็กซี่; นั่งแท็กซี่",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "我们打车去吧。",
-    examplePinyin: "Wǒmen dǎ chē qù ba.",
-    exampleThai: "พวกเราเรียกแท็กซี่ไปกันเถอะ"
+    example: "我们打车去。",
+    examplePinyin: "Wǒmen dǎchē qù.",
+    exampleThai: "พวกเราไปโดยแท็กซี่"
   },
   {
     id: 58,
@@ -632,9 +633,9 @@
     meaning: "โทรศัพท์",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "我晚上给你打电话。",
-    examplePinyin: "Wǒ wǎnshang gěi nǐ dǎ diànhuà.",
-    exampleThai: "ตอนเย็นฉันจะโทรหาคุณ"
+    example: "我给爸爸打电话。",
+    examplePinyin: "Wǒ gěi bàba dǎ diànhuà.",
+    exampleThai: "ฉันโทรหาพ่อ"
   },
   {
     id: 59,
@@ -650,24 +651,24 @@
   {
     id: 60,
     word: "打球",
-    pinyin: "dǎ qiú",
-    meaning: "เล่นกีฬา; เล่นบอล",
+    pinyin: "dǎqiú",
+    meaning: "เล่นบอล",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "他们喜欢打球。",
-    examplePinyin: "Tāmen xǐhuan dǎ qiú.",
-    exampleThai: "พวกเขาชอบเล่นกีฬา"
+    example: "我喜欢打球。",
+    examplePinyin: "Wǒ xǐhuan dǎqiú.",
+    exampleThai: "ฉันชอบเล่นบอล"
   },
   {
     id: 61,
     word: "大",
     pinyin: "dà",
-    meaning: "ใหญ่; โต",
+    meaning: "ใหญ่",
     pos: "คำคุณศัพท์",
     hsk: "HSK1",
-    example: "我的房间很大。",
-    examplePinyin: "Wǒ de fángjiān hěn dà.",
-    exampleThai: "ห้องของฉันใหญ่มาก"
+    example: "这个房间很大。",
+    examplePinyin: "Zhège fángjiān hěn dà.",
+    exampleThai: "ห้องนี้ใหญ่มาก"
   },
   {
     id: 62,
@@ -676,9 +677,9 @@
     meaning: "มหาวิทยาลัย",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "我在大学学习汉语。",
-    examplePinyin: "Wǒ zài dàxué xuéxí Hànyǔ.",
-    exampleThai: "ฉันเรียนภาษาจีนที่มหาวิทยาลัย"
+    example: "我在大学学习。",
+    examplePinyin: "Wǒ zài dàxué xuéxí.",
+    exampleThai: "ฉันเรียนอยู่มหาวิทยาลัย"
   },
   {
     id: 63,
@@ -689,7 +690,7 @@
     hsk: "HSK1",
     example: "我是大学生。",
     examplePinyin: "Wǒ shì dàxuéshēng.",
-    exampleThai: "ฉันเป็นนักศึกษามหาวิทยาลัย"
+    exampleThai: "ฉันเป็นนักศึกษา"
   },
   {
     id: 64,
@@ -698,9 +699,9 @@
     meaning: "ถึง; ไปถึง",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "我八点到学校。",
-    examplePinyin: "Wǒ bā diǎn dào xuéxiào.",
-    exampleThai: "ฉันถึงโรงเรียนตอนแปดโมง"
+    example: "我到家了。",
+    examplePinyin: "Wǒ dào jiā le.",
+    exampleThai: "ฉันถึงบ้านแล้ว"
   },
   {
     id: 65,
@@ -709,26 +710,26 @@
     meaning: "ได้รับ; ได้มา",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "我得到了很多帮助。",
-    examplePinyin: "Wǒ dédào le hěn duō bāngzhù.",
-    exampleThai: "ฉันได้รับความช่วยเหลือมากมาย"
+    example: "我得到了一个礼物。",
+    examplePinyin: "Wǒ dédào le yí ge lǐwù.",
+    exampleThai: "ฉันได้รับของขวัญหนึ่งชิ้น"
   },
   {
     id: 66,
     word: "地",
     pinyin: "de",
-    meaning: "ใช้เชื่อมคำขยายกับคำกริยา",
+    meaning: "อย่าง...; ใช้เชื่อมคำวิเศษณ์",
     pos: "คำช่วย",
     hsk: "HSK1",
     example: "他高兴地笑了。",
     examplePinyin: "Tā gāoxìng de xiào le.",
-    exampleThai: "เขาหัวเราะอย่างมีความสุข"
+    exampleThai: "เขายิ้มอย่างมีความสุข"
   },
   {
     id: 67,
     word: "的",
     pinyin: "de",
-    meaning: "ของ; ที่; ใช้แสดงความเป็นเจ้าของหรือขยายคำนาม",
+    meaning: "ของ; ที่; ซึ่ง",
     pos: "คำช่วย",
     hsk: "HSK1",
     example: "这是我的书。",
@@ -750,23 +751,23 @@
     id: 69,
     word: "地",
     pinyin: "dì",
-    meaning: "พื้นดิน; พื้น",
+    meaning: "พื้นดิน; พื้นที่",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "书在地上。",
-    examplePinyin: "Shū zài dìshang.",
-    exampleThai: "หนังสืออยู่บนพื้น"
+    example: "地上有一本书。",
+    examplePinyin: "Dìshang yǒu yì běn shū.",
+    exampleThai: "บนพื้นมีหนังสือหนึ่งเล่ม"
   },
   {
     id: 70,
     word: "地点",
     pinyin: "dìdiǎn",
-    meaning: "สถานที่; จุด",
+    meaning: "สถานที่",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "我们见面的地点在哪里？",
-    examplePinyin: "Wǒmen jiànmiàn de dìdiǎn zài nǎlǐ?",
-    exampleThai: "สถานที่ที่พวกเราจะพบกันอยู่ที่ไหน"
+    example: "见面的地点在哪里？",
+    examplePinyin: "Jiànmiàn de dìdiǎn zài nǎlǐ?",
+    exampleThai: "สถานที่นัดพบอยู่ที่ไหน"
   },
   {
     id: 71,
@@ -775,9 +776,9 @@
     meaning: "สถานที่; ที่",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "这是一个很好的地方。",
-    examplePinyin: "Zhè shì yí gè hěn hǎo de dìfang.",
-    exampleThai: "ที่นี่เป็นสถานที่ที่ดีมาก"
+    example: "这是一个好地方。",
+    examplePinyin: "Zhè shì yí ge hǎo dìfang.",
+    exampleThai: "ที่นี่เป็นสถานที่ที่ดี"
   },
   {
     id: 72,
@@ -786,9 +787,9 @@
     meaning: "บนพื้น",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "地上有一本书。",
-    examplePinyin: "Dìshang yǒu yì běn shū.",
-    exampleThai: "บนพื้นมีหนังสือหนึ่งเล่ม"
+    example: "书在地上。",
+    examplePinyin: "Shū zài dìshang.",
+    exampleThai: "หนังสืออยู่บนพื้น"
   },
   {
     id: 73,
@@ -797,9 +798,9 @@
     meaning: "แผนที่",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "我在看地图。",
-    examplePinyin: "Wǒ zài kàn dìtú.",
-    exampleThai: "ฉันกำลังดูแผนที่"
+    example: "我看地图。",
+    examplePinyin: "Wǒ kàn dìtú.",
+    exampleThai: "ฉันดูแผนที่"
   },
   {
     id: 74,
@@ -816,29 +817,29 @@
     id: 75,
     word: "第",
     pinyin: "dì",
-    meaning: "ที่; ลำดับที่",
+    meaning: "ลำดับที่",
     pos: "คำบอกลำดับ",
     hsk: "HSK1",
-    example: "我是第一名。",
-    examplePinyin: "Wǒ shì dì yī míng.",
-    exampleThai: "ฉันได้อันดับที่หนึ่ง"
+    example: "他是第一名。",
+    examplePinyin: "Tā shì dì yī míng.",
+    exampleThai: "เขาเป็นอันดับหนึ่ง"
   },
   {
     id: 76,
     word: "点",
     pinyin: "diǎn",
     meaning: "โมง; จุด; เล็กน้อย",
-    pos: "คำนาม / ลักษณนาม",
+    pos: "ลักษณนาม",
     hsk: "HSK1",
-    example: "现在几点？",
-    examplePinyin: "Xiànzài jǐ diǎn?",
-    exampleThai: "ตอนนี้กี่โมง"
+    example: "现在三点。",
+    examplePinyin: "Xiànzài sān diǎn.",
+    exampleThai: "ตอนนี้สามโมง"
   },
   {
     id: 77,
     word: "电",
     pinyin: "diàn",
-    meaning: "ไฟฟ้า; ไฟ",
+    meaning: "ไฟฟ้า",
     pos: "คำนาม",
     hsk: "HSK1",
     example: "家里没有电。",
@@ -852,9 +853,9 @@
     meaning: "โทรศัพท์",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "这是我的电话号码。",
-    examplePinyin: "Zhè shì wǒ de diànhuà hàomǎ.",
-    exampleThai: "นี่คือหมายเลขโทรศัพท์ของฉัน"
+    example: "我的电话坏了。",
+    examplePinyin: "Wǒ de diànhuà huài le.",
+    exampleThai: "โทรศัพท์ของฉันเสียแล้ว"
   },
   {
     id: 79,
@@ -885,15 +886,15 @@
     meaning: "เครื่องโทรทัศน์",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "电视机在客厅。",
-    examplePinyin: "Diànshìjī zài kètīng.",
-    exampleThai: "เครื่องโทรทัศน์อยู่ในห้องนั่งเล่น"
+    example: "电视机在房间里。",
+    examplePinyin: "Diànshìjī zài fángjiān lǐ.",
+    exampleThai: "เครื่องโทรทัศน์อยู่ในห้อง"
   },
   {
     id: 82,
     word: "电影",
     pinyin: "diànyǐng",
-    meaning: "ภาพยนตร์; หนัง",
+    meaning: "ภาพยนตร์",
     pos: "คำนาม",
     hsk: "HSK1",
     example: "我喜欢看电影。",
@@ -909,7 +910,7 @@
     hsk: "HSK1",
     example: "电影院在哪里？",
     examplePinyin: "Diànyǐngyuàn zài nǎlǐ?",
-    exampleThai: "โรงหนังอยู่ที่ไหน"
+    exampleThai: "โรงภาพยนตร์อยู่ที่ไหน"
   },
   {
     id: 84,
@@ -918,20 +919,20 @@
     meaning: "ทิศตะวันออก",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "太阳从东边出来。",
-    examplePinyin: "Tàiyáng cóng dōngbian chūlái.",
-    exampleThai: "ดวงอาทิตย์ขึ้นจากทางทิศตะวันออก"
+    example: "学校在东边。",
+    examplePinyin: "Xuéxiào zài dōngbian.",
+    exampleThai: "โรงเรียนอยู่ทางตะวันออก"
   },
   {
     id: 85,
     word: "东边",
     pinyin: "dōngbian",
-    meaning: "ด้านตะวันออก; ทางตะวันออก",
+    meaning: "ด้านตะวันออก",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "银行在学校东边。",
-    examplePinyin: "Yínháng zài xuéxiào dōngbian.",
-    exampleThai: "ธนาคารอยู่ทางตะวันออกของโรงเรียน"
+    example: "商店在东边。",
+    examplePinyin: "Shāngdiàn zài dōngbian.",
+    exampleThai: "ร้านค้าอยู่ทางตะวันออก"
   },
   {
     id: 86,
@@ -940,9 +941,9 @@
     meaning: "สิ่งของ; ของ",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "这些东西是谁的？",
-    examplePinyin: "Zhèxiē dōngxi shì shéi de?",
-    exampleThai: "ของเหล่านี้เป็นของใคร"
+    example: "这是我的东西。",
+    examplePinyin: "Zhè shì wǒ de dōngxi.",
+    exampleThai: "นี่คือของของฉัน"
   },
   {
     id: 87,
@@ -959,12 +960,12 @@
     id: 88,
     word: "动作",
     pinyin: "dòngzuò",
-    meaning: "ท่าทาง; การเคลื่อนไหว",
+    meaning: "การเคลื่อนไหว; ท่าทาง",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "他的动作很快。",
-    examplePinyin: "Tā de dòngzuò hěn kuài.",
-    exampleThai: "การเคลื่อนไหวของเขาเร็วมาก"
+    example: "这个动作很难。",
+    examplePinyin: "Zhège dòngzuò hěn nán.",
+    exampleThai: "ท่านี้ยากมาก"
   },
   {
     id: 89,
@@ -974,8 +975,8 @@
     pos: "คำวิเศษณ์",
     hsk: "HSK1",
     example: "我们都是学生。",
-    examplePinyin: "Wǒmen dōu shì xuésheng.",
-    exampleThai: "พวกเราทุกคนเป็นนักเรียน"
+    examplePinyin: "Wǒmen dōu shì xuéshēng.",
+    exampleThai: "พวกเราล้วนเป็นนักเรียน"
   },
   {
     id: 90,
@@ -984,9 +985,9 @@
     meaning: "อ่าน",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "我喜欢读书。",
-    examplePinyin: "Wǒ xǐhuan dú shū.",
-    exampleThai: "ฉันชอบอ่านหนังสือ"
+    example: "我读中文。",
+    examplePinyin: "Wǒ dú Zhōngwén.",
+    exampleThai: "ฉันอ่านภาษาจีน"
   },
   {
     id: 91,
@@ -995,16 +996,16 @@
     meaning: "อ่านหนังสือ; เรียนหนังสือ",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "我每天读书。",
-    examplePinyin: "Wǒ měitiān dúshū.",
-    exampleThai: "ฉันอ่านหนังสือทุกวัน"
+    example: "我喜欢读书。",
+    examplePinyin: "Wǒ xǐhuan dúshū.",
+    exampleThai: "ฉันชอบอ่านหนังสือ"
   },
   {
     id: 92,
     word: "对",
     pinyin: "duì",
-    meaning: "ถูก; ใช่; ต่อ",
-    pos: "คำคุณศัพท์ / คำบุพบท",
+    meaning: "ถูกต้อง",
+    pos: "คำคุณศัพท์",
     hsk: "HSK1",
     example: "你说得对。",
     examplePinyin: "Nǐ shuō de duì.",
@@ -1015,7 +1016,7 @@
     word: "对不起",
     pinyin: "duìbuqǐ",
     meaning: "ขอโทษ",
-    pos: "คำพูด",
+    pos: "คำกริยา",
     hsk: "HSK1",
     example: "对不起，我来晚了。",
     examplePinyin: "Duìbuqǐ, wǒ lái wǎn le.",
@@ -1025,8 +1026,8 @@
     id: 94,
     word: "多",
     pinyin: "duō",
-    meaning: "มาก",
-    pos: "คำคุณศัพท์",
+    meaning: "มาก; เยอะ",
+    pos: "คำคุณศัพท์ / คำสรรพนาม",
     hsk: "HSK1",
     example: "这里人很多。",
     examplePinyin: "Zhèlǐ rén hěn duō.",
@@ -1039,9 +1040,9 @@
     meaning: "เท่าไร; กี่",
     pos: "คำสรรพนาม",
     hsk: "HSK1",
-    example: "这个多少钱？",
-    examplePinyin: "Zhège duōshao qián?",
-    exampleThai: "อันนี้ราคาเท่าไร"
+    example: "多少钱？",
+    examplePinyin: "Duōshao qián?",
+    exampleThai: "ราคาเท่าไร"
   },
   {
     id: 96,
@@ -1062,7 +1063,7 @@
     pos: "คำนาม",
     hsk: "HSK1",
     example: "他有一个儿子。",
-    examplePinyin: "Tā yǒu yí gè érzi.",
+    examplePinyin: "Tā yǒu yí ge érzi.",
     exampleThai: "เขามีลูกชายหนึ่งคน"
   },
   {
@@ -1070,11 +1071,11 @@
     word: "二",
     pinyin: "èr",
     meaning: "สอง",
-    pos: "จำนวน",
+    pos: "คำบอกจำนวน",
     hsk: "HSK1",
-    example: "我有两个弟弟。",
-    examplePinyin: "Wǒ yǒu liǎng gè dìdi.",
-    exampleThai: "ฉันมีน้องชายสองคน"
+    example: "我有两个妹妹。",
+    examplePinyin: "Wǒ yǒu liǎng ge mèimei.",
+    exampleThai: "ฉันมีน้องสาวสองคน"
   },
   {
     id: 99,
@@ -1105,9 +1106,9 @@
     meaning: "ห้อง",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "我的房间很干净。",
-    examplePinyin: "Wǒ de fángjiān hěn gānjìng.",
-    exampleThai: "ห้องของฉันสะอาดมาก"
+    example: "我的房间很小。",
+    examplePinyin: "Wǒ de fángjiān hěn xiǎo.",
+    exampleThai: "ห้องของฉันเล็กมาก"
   },
   {
     id: 102,
@@ -1135,12 +1136,12 @@
     id: 104,
     word: "放假",
     pinyin: "fàngjià",
-    meaning: "หยุด; ปิดเทอม",
+    meaning: "ปิดเทอม; หยุด",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "什么时候放假？",
-    examplePinyin: "Shénme shíhou fàngjià?",
-    exampleThai: "หยุดเมื่อไหร่"
+    example: "学校什么时候放假？",
+    examplePinyin: "Xuéxiào shénme shíhou fàngjià?",
+    exampleThai: "โรงเรียนหยุดเมื่อไร"
   },
   {
     id: 105,
@@ -1149,9 +1150,9 @@
     meaning: "เลิกเรียน",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "下午五点放学。",
-    examplePinyin: "Xiàwǔ wǔ diǎn fàngxué.",
-    exampleThai: "เลิกเรียนตอนห้าโมงเย็น"
+    example: "我下午五点放学。",
+    examplePinyin: "Wǒ xiàwǔ wǔ diǎn fàngxué.",
+    exampleThai: "ฉันเลิกเรียนห้าโมงเย็น"
   },
   {
     id: 106,
@@ -1160,9 +1161,9 @@
     meaning: "บิน",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "鸟在天上飞。",
-    examplePinyin: "Niǎo zài tiānshàng fēi.",
-    exampleThai: "นกกำลังบินอยู่บนท้องฟ้า"
+    example: "鸟会飞。",
+    examplePinyin: "Niǎo huì fēi.",
+    exampleThai: "นกบินได้"
   },
   {
     id: 107,
@@ -1190,12 +1191,12 @@
     id: 109,
     word: "分",
     pinyin: "fēn",
-    meaning: "นาที; คะแนน; ส่วน",
+    meaning: "นาที; ส่วน; แต้ม",
     pos: "คำนาม / ลักษณนาม",
     hsk: "HSK1",
-    example: "现在是十点十分。",
-    examplePinyin: "Xiànzài shì shí diǎn shí fēn.",
-    exampleThai: "ตอนนี้สิบโมงสิบนาที"
+    example: "现在八点十分。",
+    examplePinyin: "Xiànzài bā diǎn shí fēn.",
+    exampleThai: "ตอนนี้แปดโมงสิบนาที"
   },
   {
     id: 110,
@@ -1248,9 +1249,9 @@
     meaning: "ทำอะไร",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "你来这里干什么？",
-    examplePinyin: "Nǐ lái zhèlǐ gàn shénme?",
-    exampleThai: "คุณมาที่นี่ทำอะไร"
+    example: "你在干什么？",
+    examplePinyin: "Nǐ zài gàn shénme?",
+    exampleThai: "คุณกำลังทำอะไร"
   },
   {
     id: 115,
@@ -1311,11 +1312,11 @@
     id: 120,
     word: "个",
     pinyin: "gè",
-    meaning: "ลักษณนามทั่วไป",
+    meaning: "คน; อัน; ชิ้น",
     pos: "ลักษณนาม",
     hsk: "HSK1",
     example: "一个学生。",
-    examplePinyin: "Yí gè xuésheng.",
+    examplePinyin: "Yí ge xuéshēng.",
     exampleThai: "นักเรียนหนึ่งคน"
   },
   {
@@ -1325,9 +1326,9 @@
     meaning: "ให้; แก่",
     pos: "คำกริยา / คำบุพบท",
     hsk: "HSK1",
-    example: "我给你一本书。",
-    examplePinyin: "Wǒ gěi nǐ yì běn shū.",
-    exampleThai: "ฉันให้หนังสือหนึ่งเล่มแก่คุณ"
+    example: "给我一本书。",
+    examplePinyin: "Gěi wǒ yì běn shū.",
+    exampleThai: "ให้หนังสือฉันหนึ่งเล่ม"
   },
   {
     id: 122,
@@ -1347,9 +1348,9 @@
     meaning: "คนงาน",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "他是一个工人。",
-    examplePinyin: "Tā shì yí gè gōngrén.",
-    exampleThai: "เขาเป็นคนงานคนหนึ่ง"
+    example: "他是工人。",
+    examplePinyin: "Tā shì gōngrén.",
+    exampleThai: "เขาเป็นคนงาน"
   },
   {
     id: 124,
@@ -1358,9 +1359,9 @@
     meaning: "งาน; ทำงาน",
     pos: "คำนาม / คำกริยา",
     hsk: "HSK1",
-    example: "我每天工作八个小时。",
-    examplePinyin: "Wǒ měitiān gōngzuò bā gè xiǎoshí.",
-    exampleThai: "ฉันทำงานวันละแปดชั่วโมง"
+    example: "我每天工作。",
+    examplePinyin: "Wǒ měitiān gōngzuò.",
+    exampleThai: "ฉันทำงานทุกวัน"
   },
   {
     id: 125,
@@ -1377,12 +1378,12 @@
     id: 126,
     word: "关上",
     pinyin: "guānshàng",
-    meaning: "ปิดให้สนิท",
+    meaning: "ปิดลง; ปิดให้สนิท",
     pos: "คำกริยา",
     hsk: "HSK1",
     example: "请关上窗户。",
     examplePinyin: "Qǐng guānshàng chuānghu.",
-    exampleThai: "กรุณาปิดหน้าต่างให้สนิท"
+    exampleThai: "กรุณาปิดหน้าต่าง"
   },
   {
     id: 127,
@@ -1402,9 +1403,9 @@
     meaning: "ประเทศ",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "中国是我的国家。",
-    examplePinyin: "Zhōngguó shì wǒ de guójiā.",
-    exampleThai: "ประเทศจีนเป็นประเทศของฉัน"
+    example: "中国是一个大国。",
+    examplePinyin: "Zhōngguó shì yí ge dàguó.",
+    exampleThai: "จีนเป็นประเทศใหญ่ประเทศหนึ่ง"
   },
   {
     id: 129,
@@ -1413,9 +1414,9 @@
     meaning: "ประเทศ",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "你来自哪个国家？",
-    examplePinyin: "Nǐ láizì nǎ ge guójiā?",
-    exampleThai: "คุณมาจากประเทศอะไร"
+    example: "我喜欢这个国家。",
+    examplePinyin: "Wǒ xǐhuan zhège guójiā.",
+    exampleThai: "ฉันชอบประเทศนี้"
   },
   {
     id: 130,
@@ -1432,18 +1433,18 @@
     id: 131,
     word: "过",
     pinyin: "guò",
-    meaning: "ผ่าน; ใช้บอกประสบการณ์ว่าเคย",
+    meaning: "ผ่าน; เคย",
     pos: "คำกริยา / คำช่วย",
     hsk: "HSK1",
-    example: "我去过北京。",
-    examplePinyin: "Wǒ qù guo Běijīng.",
-    exampleThai: "ฉันเคยไปปักกิ่ง"
+    example: "我去过中国。",
+    examplePinyin: "Wǒ qù guo Zhōngguó.",
+    exampleThai: "ฉันเคยไปประเทศจีน"
   },
   {
     id: 132,
     word: "还",
     pinyin: "hái",
-    meaning: "ยัง; ยังมี; อีก",
+    meaning: "ยัง; อีก",
     pos: "คำวิเศษณ์",
     hsk: "HSK1",
     example: "我还没吃饭。",
@@ -1454,23 +1455,23 @@
     id: 133,
     word: "还是",
     pinyin: "háishi",
-    meaning: "หรือ; ยังคง",
+    meaning: "หรือว่า; ยังคง",
     pos: "คำสันธาน / คำวิเศษณ์",
     hsk: "HSK1",
-    example: "你喝茶还是喝咖啡？",
-    examplePinyin: "Nǐ hē chá háishi hē kāfēi?",
-    exampleThai: "คุณดื่มชาหรือกาแฟ"
+    example: "你喝茶还是喝水？",
+    examplePinyin: "Nǐ hē chá háishi hē shuǐ?",
+    exampleThai: "คุณดื่มชาหรือน้ำ"
   },
   {
     id: 134,
     word: "还有",
     pinyin: "hái yǒu",
-    meaning: "ยังมี; นอกจากนี้ยังมี",
+    meaning: "ยังมี; และยังมี",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "桌子上还有一本书。",
-    examplePinyin: "Zhuōzi shàng hái yǒu yì běn shū.",
-    exampleThai: "บนโต๊ะยังมีหนังสืออีกหนึ่งเล่ม"
+    example: "我还有一个问题。",
+    examplePinyin: "Wǒ hái yǒu yí ge wèntí.",
+    exampleThai: "ฉันยังมีคำถามอีกหนึ่งข้อ"
   },
   {
     id: 135,
@@ -1498,23 +1499,23 @@
     id: 137,
     word: "汉字",
     pinyin: "Hànzì",
-    meaning: "อักษรจีน; ตัวอักษรจีน",
+    meaning: "อักษรจีน",
     pos: "คำนาม",
     hsk: "HSK1",
     example: "我会写汉字。",
     examplePinyin: "Wǒ huì xiě Hànzì.",
-    exampleThai: "ฉันเขียนตัวอักษรจีนได้"
+    exampleThai: "ฉันเขียนอักษรจีนได้"
   },
   {
     id: 138,
     word: "好",
     pinyin: "hǎo",
-    meaning: "ดี; ดีแล้ว; ชอบ",
+    meaning: "ดี",
     pos: "คำคุณศัพท์",
     hsk: "HSK1",
-    example: "你好！",
-    examplePinyin: "Nǐ hǎo!",
-    exampleThai: "สวัสดี!"
+    example: "你好。",
+    examplePinyin: "Nǐ hǎo.",
+    exampleThai: "สวัสดี"
   },
   {
     id: 139,
@@ -1531,7 +1532,7 @@
     id: 140,
     word: "好看",
     pinyin: "hǎokàn",
-    meaning: "สวย; ดูดี; น่าดู",
+    meaning: "สวย; ดูดี",
     pos: "คำคุณศัพท์",
     hsk: "HSK1",
     example: "这件衣服很好看。",
@@ -1542,7 +1543,7 @@
     id: 141,
     word: "好听",
     pinyin: "hǎotīng",
-    meaning: "เพราะ; ฟังดูดี",
+    meaning: "ไพเราะ; ฟังเพราะ",
     pos: "คำคุณศัพท์",
     hsk: "HSK1",
     example: "这首歌很好听。",
@@ -1553,7 +1554,7 @@
     id: 142,
     word: "好玩儿",
     pinyin: "hǎowánr",
-    meaning: "สนุก; น่าเล่น",
+    meaning: "สนุก",
     pos: "คำคุณศัพท์",
     hsk: "HSK1",
     example: "这里很好玩儿。",
@@ -1567,8 +1568,8 @@
     meaning: "วันที่; หมายเลข",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "今天是几号？",
-    examplePinyin: "Jīntiān shì jǐ hào?",
+    example: "今天几号？",
+    examplePinyin: "Jīntiān jǐ hào?",
     exampleThai: "วันนี้วันที่เท่าไร"
   },
   {
@@ -1578,9 +1579,9 @@
     meaning: "ดื่ม",
     pos: "คำกริยา",
     hsk: "HSK1",
-    example: "我每天喝水。",
-    examplePinyin: "Wǒ měitiān hē shuǐ.",
-    exampleThai: "ฉันดื่มน้ำทุกวัน"
+    example: "我喝牛奶。",
+    examplePinyin: "Wǒ hē niúnǎi.",
+    exampleThai: "ฉันดื่มนม"
   },
   {
     id: 145,
@@ -1589,9 +1590,9 @@
     meaning: "และ; กับ",
     pos: "คำสันธาน / คำบุพบท",
     hsk: "HSK1",
-    example: "我和朋友一起学习。",
-    examplePinyin: "Wǒ hé péngyou yìqǐ xuéxí.",
-    exampleThai: "ฉันเรียนกับเพื่อน"
+    example: "我和妈妈一起去。",
+    examplePinyin: "Wǒ hé māma yìqǐ qù.",
+    exampleThai: "ฉันไปกับแม่"
   },
   {
     id: 146,
@@ -1600,31 +1601,31 @@
     meaning: "มาก",
     pos: "คำวิเศษณ์",
     hsk: "HSK1",
-    example: "今天很冷。",
-    examplePinyin: "Jīntiān hěn lěng.",
-    exampleThai: "วันนี้หนาวมาก"
+    example: "我很好。",
+    examplePinyin: "Wǒ hěn hǎo.",
+    exampleThai: "ฉันสบายดีมาก"
   },
   {
     id: 147,
     word: "后",
     pinyin: "hòu",
     meaning: "หลัง; ด้านหลัง",
-    pos: "คำนาม / คำบอกตำแหน่ง",
+    pos: "คำนาม",
     hsk: "HSK1",
-    example: "我在你后面。",
-    examplePinyin: "Wǒ zài nǐ hòumiàn.",
-    exampleThai: "ฉันอยู่ข้างหลังคุณ"
+    example: "书包在后面。",
+    examplePinyin: "Shūbāo zài hòumiàn.",
+    exampleThai: "กระเป๋าอยู่ด้านหลัง"
   },
   {
     id: 148,
     word: "后边",
     pinyin: "hòubian",
-    meaning: "ด้านหลัง; ข้างหลัง",
+    meaning: "ด้านหลัง",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "学校在商店后边。",
-    examplePinyin: "Xuéxiào zài shāngdiàn hòubian.",
-    exampleThai: "โรงเรียนอยู่ด้านหลังร้านค้า"
+    example: "学校在房子后边。",
+    examplePinyin: "Xuéxiào zài fángzi hòubian.",
+    exampleThai: "โรงเรียนอยู่ด้านหลังบ้าน"
   },
   {
     id: 149,
@@ -1633,9 +1634,9 @@
     meaning: "มะรืนนี้",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "后天是星期六。",
-    examplePinyin: "Hòutiān shì xīngqīliù.",
-    exampleThai: "มะรืนนี้เป็นวันเสาร์"
+    example: "后天是星期日。",
+    examplePinyin: "Hòutiān shì xīngqīrì.",
+    exampleThai: "มะรืนนี้เป็นวันอาทิตย์"
   },
   {
     id: 150,
@@ -1644,8 +1645,3858 @@
     meaning: "ดอกไม้",
     pos: "คำนาม",
     hsk: "HSK1",
-    example: "我喜欢这些花。",
-    examplePinyin: "Wǒ xǐhuan zhèxiē huā.",
-    exampleThai: "ฉันชอบดอกไม้เหล่านี้"
+    example: "这朵花很漂亮。",
+    examplePinyin: "Zhè duǒ huā hěn piàoliang.",
+    exampleThai: "ดอกไม้นี้สวยมาก"
+  },
+  {
+    id: 151,
+    word: "话",
+    pinyin: "huà",
+    meaning: "คำพูด; เรื่องที่พูด",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "请听我说话。",
+    examplePinyin: "Qǐng tīng wǒ shuōhuà.",
+    exampleThai: "กรุณาฟังฉันพูด"
+  },
+  {
+    id: 152,
+    word: "坏",
+    pinyin: "huài",
+    meaning: "เสีย; แย่",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "我的手机坏了。",
+    examplePinyin: "Wǒ de shǒujī huài le.",
+    exampleThai: "โทรศัพท์ของฉันเสียแล้ว"
+  },
+  {
+    id: 153,
+    word: "还",
+    pinyin: "huán",
+    meaning: "คืน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我明天还书。",
+    examplePinyin: "Wǒ míngtiān huán shū.",
+    exampleThai: "พรุ่งนี้ฉันจะคืนหนังสือ"
+  },
+  {
+    id: 154,
+    word: "回",
+    pinyin: "huí",
+    meaning: "กลับ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我回家了。",
+    examplePinyin: "Wǒ huí jiā le.",
+    exampleThai: "ฉันกลับบ้านแล้ว"
+  },
+  {
+    id: 155,
+    word: "回答",
+    pinyin: "huídá",
+    meaning: "ตอบ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请回答我的问题。",
+    examplePinyin: "Qǐng huídá wǒ de wèntí.",
+    exampleThai: "กรุณาตอบคำถามของฉัน"
+  },
+  {
+    id: 156,
+    word: "回到",
+    pinyin: "huídào",
+    meaning: "กลับไปถึง",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我回到家了。",
+    examplePinyin: "Wǒ huídào jiā le.",
+    exampleThai: "ฉันกลับถึงบ้านแล้ว"
+  },
+  {
+    id: 157,
+    word: "回家",
+    pinyin: "huí jiā",
+    meaning: "กลับบ้าน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我晚上回家。",
+    examplePinyin: "Wǒ wǎnshang huí jiā.",
+    exampleThai: "ตอนเย็นฉันกลับบ้าน"
+  },
+  {
+    id: 158,
+    word: "回来",
+    pinyin: "huílái",
+    meaning: "กลับมา",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "你什么时候回来？",
+    examplePinyin: "Nǐ shénme shíhou huílái?",
+    exampleThai: "คุณจะกลับมาเมื่อไร"
+  },
+  {
+    id: 159,
+    word: "回去",
+    pinyin: "huíqù",
+    meaning: "กลับไป",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我先回去。",
+    examplePinyin: "Wǒ xiān huíqù.",
+    exampleThai: "ฉันกลับไปก่อน"
+  },
+  {
+    id: 160,
+    word: "会",
+    pinyin: "huì",
+    meaning: "สามารถ; เป็น; จะ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我会说汉语。",
+    examplePinyin: "Wǒ huì shuō Hànyǔ.",
+    exampleThai: "ฉันพูดภาษาจีนได้"
+  },
+  {
+    id: 161,
+    word: "火车",
+    pinyin: "huǒchē",
+    meaning: "รถไฟ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我坐火车去北京。",
+    examplePinyin: "Wǒ zuò huǒchē qù Běijīng.",
+    exampleThai: "ฉันนั่งรถไฟไปปักกิ่ง"
+  },
+  {
+    id: 162,
+    word: "机场",
+    pinyin: "jīchǎng",
+    meaning: "สนามบิน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我们在机场见。",
+    examplePinyin: "Wǒmen zài jīchǎng jiàn.",
+    exampleThai: "เราเจอกันที่สนามบิน"
+  },
+  {
+    id: 163,
+    word: "机票",
+    pinyin: "jīpiào",
+    meaning: "ตั๋วเครื่องบิน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我买了机票。",
+    examplePinyin: "Wǒ mǎi le jīpiào.",
+    exampleThai: "ฉันซื้อตั๋วเครื่องบินแล้ว"
+  },
+  {
+    id: 164,
+    word: "鸡蛋",
+    pinyin: "jīdàn",
+    meaning: "ไข่ไก่",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我早上吃鸡蛋。",
+    examplePinyin: "Wǒ zǎoshang chī jīdàn.",
+    exampleThai: "ตอนเช้าฉันกินไข่"
+  },
+  {
+    id: 165,
+    word: "几",
+    pinyin: "jǐ",
+    meaning: "กี่; เท่าไร",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "你有几个朋友？",
+    examplePinyin: "Nǐ yǒu jǐ ge péngyou?",
+    exampleThai: "คุณมีเพื่อนกี่คน"
+  },
+  {
+    id: 166,
+    word: "记",
+    pinyin: "jì",
+    meaning: "จำ; จด",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请记下来。",
+    examplePinyin: "Qǐng jì xiàlái.",
+    exampleThai: "กรุณาจดไว้"
+  },
+  {
+    id: 167,
+    word: "记得",
+    pinyin: "jìde",
+    meaning: "จำได้",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我记得你。",
+    examplePinyin: "Wǒ jìde nǐ.",
+    exampleThai: "ฉันจำคุณได้"
+  },
+  {
+    id: 168,
+    word: "记住",
+    pinyin: "jìzhù",
+    meaning: "จำไว้",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请记住这个名字。",
+    examplePinyin: "Qǐng jìzhù zhège míngzi.",
+    exampleThai: "กรุณาจำชื่อนี้ไว้"
+  },
+  {
+    id: 169,
+    word: "家",
+    pinyin: "jiā",
+    meaning: "บ้าน; ครอบครัว",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我家在北京。",
+    examplePinyin: "Wǒ jiā zài Běijīng.",
+    exampleThai: "บ้านของฉันอยู่ปักกิ่ง"
+  },
+  {
+    id: 170,
+    word: "家里",
+    pinyin: "jiā lǐ",
+    meaning: "ที่บ้าน; ในบ้าน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "妈妈在家里。",
+    examplePinyin: "Māma zài jiā lǐ.",
+    exampleThai: "แม่อยู่ที่บ้าน"
+  },
+  {
+    id: 171,
+    word: "家人",
+    pinyin: "jiārén",
+    meaning: "สมาชิกในครอบครัว",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我爱我的家人。",
+    examplePinyin: "Wǒ ài wǒ de jiārén.",
+    exampleThai: "ฉันรักครอบครัวของฉัน"
+  },
+  {
+    id: 172,
+    word: "间",
+    pinyin: "jiān",
+    meaning: "ห้อง; หลัง",
+    pos: "ลักษณนาม",
+    hsk: "HSK1",
+    example: "一间房间。",
+    examplePinyin: "Yì jiān fángjiān.",
+    exampleThai: "ห้องหนึ่งห้อง"
+  },
+  {
+    id: 173,
+    word: "见",
+    pinyin: "jiàn",
+    meaning: "พบ; เจอ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "明天见。",
+    examplePinyin: "Míngtiān jiàn.",
+    exampleThai: "เจอกันพรุ่งนี้"
+  },
+  {
+    id: 174,
+    word: "见面",
+    pinyin: "jiànmiàn",
+    meaning: "พบกัน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我们明天见面。",
+    examplePinyin: "Wǒmen míngtiān jiànmiàn.",
+    exampleThai: "พรุ่งนี้พวกเราพบกัน"
+  },
+  {
+    id: 175,
+    word: "教",
+    pinyin: "jiāo",
+    meaning: "สอน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "老师教汉语。",
+    examplePinyin: "Lǎoshī jiāo Hànyǔ.",
+    exampleThai: "ครูสอนภาษาจีน"
+  },
+  {
+    id: 176,
+    word: "叫",
+    pinyin: "jiào",
+    meaning: "เรียก; ชื่อว่า",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我叫美婷。",
+    examplePinyin: "Wǒ jiào Měitíng.",
+    exampleThai: "ฉันชื่อเหม่ยถิง"
+  },
+  {
+    id: 177,
+    word: "教学楼",
+    pinyin: "jiàoxuélóu",
+    meaning: "อาคารเรียน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "教学楼在学校里。",
+    examplePinyin: "Jiàoxuélóu zài xuéxiào lǐ.",
+    exampleThai: "อาคารเรียนอยู่ในโรงเรียน"
+  },
+  {
+    id: 178,
+    word: "姐姐",
+    pinyin: "jiějie",
+    meaning: "พี่สาว",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我姐姐是学生。",
+    examplePinyin: "Wǒ jiějie shì xuéshēng.",
+    exampleThai: "พี่สาวของฉันเป็นนักเรียน"
+  },
+  {
+    id: 179,
+    word: "介绍",
+    pinyin: "jièshào",
+    meaning: "แนะนำ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我来介绍一下。",
+    examplePinyin: "Wǒ lái jièshào yíxià.",
+    exampleThai: "ฉันขอแนะนำสักหน่อย"
+  },
+  {
+    id: 180,
+    word: "今年",
+    pinyin: "jīnnián",
+    meaning: "ปีนี้",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "今年我二十岁。",
+    examplePinyin: "Jīnnián wǒ èrshí suì.",
+    exampleThai: "ปีนี้ฉันอายุ 20 ปี"
+  },
+  {
+    id: 181,
+    word: "今天",
+    pinyin: "jīntiān",
+    meaning: "วันนี้",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "今天很热。",
+    examplePinyin: "Jīntiān hěn rè.",
+    exampleThai: "วันนี้ร้อนมาก"
+  },
+  {
+    id: 182,
+    word: "进",
+    pinyin: "jìn",
+    meaning: "เข้า",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请进。",
+    examplePinyin: "Qǐng jìn.",
+    exampleThai: "เชิญเข้ามา"
+  },
+  {
+    id: 183,
+    word: "进来",
+    pinyin: "jìnlái",
+    meaning: "เข้ามา",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请进来。",
+    examplePinyin: "Qǐng jìnlái.",
+    exampleThai: "เชิญเข้ามา"
+  },
+  {
+    id: 184,
+    word: "进去",
+    pinyin: "jìnqù",
+    meaning: "เข้าไป",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "你先进去吧。",
+    examplePinyin: "Nǐ xiān jìnqù ba.",
+    exampleThai: "คุณเข้าไปก่อนเถอะ"
+  },
+  {
+    id: 185,
+    word: "九",
+    pinyin: "jiǔ",
+    meaning: "เก้า",
+    pos: "คำบอกจำนวน",
+    hsk: "HSK1",
+    example: "我九点上课。",
+    examplePinyin: "Wǒ jiǔ diǎn shàngkè.",
+    exampleThai: "ฉันเรียนตอนเก้าโมง"
+  },
+  {
+    id: 186,
+    word: "就",
+    pinyin: "jiù",
+    meaning: "ก็; เพียง; แล้ว",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "我马上就来。",
+    examplePinyin: "Wǒ mǎshàng jiù lái.",
+    exampleThai: "ฉันจะมาทันที"
+  },
+  {
+    id: 187,
+    word: "觉得",
+    pinyin: "juéde",
+    meaning: "รู้สึก; คิดว่า",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我觉得很好。",
+    examplePinyin: "Wǒ juéde hěn hǎo.",
+    exampleThai: "ฉันคิดว่าดีมาก"
+  },
+  {
+    id: 188,
+    word: "开",
+    pinyin: "kāi",
+    meaning: "เปิด; ขับ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请开门。",
+    examplePinyin: "Qǐng kāi mén.",
+    exampleThai: "กรุณาเปิดประตู"
+  },
+  {
+    id: 189,
+    word: "开车",
+    pinyin: "kāichē",
+    meaning: "ขับรถ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我会开车。",
+    examplePinyin: "Wǒ huì kāichē.",
+    exampleThai: "ฉันขับรถเป็น"
+  },
+  {
+    id: 190,
+    word: "开会",
+    pinyin: "kāihuì",
+    meaning: "ประชุม",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "老师正在开会。",
+    examplePinyin: "Lǎoshī zhèngzài kāihuì.",
+    exampleThai: "ครูกำลังประชุม"
+  },
+  {
+    id: 191,
+    word: "开玩笑",
+    pinyin: "kāi wánxiào",
+    meaning: "ล้อเล่น",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我在开玩笑。",
+    examplePinyin: "Wǒ zài kāi wánxiào.",
+    exampleThai: "ฉันกำลังล้อเล่น"
+  },
+  {
+    id: 192,
+    word: "看",
+    pinyin: "kàn",
+    meaning: "ดู; อ่าน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我看书。",
+    examplePinyin: "Wǒ kàn shū.",
+    exampleThai: "ฉันอ่านหนังสือ"
+  },
+  {
+    id: 193,
+    word: "看病",
+    pinyin: "kànbìng",
+    meaning: "ตรวจรักษาโรค; ไปหาหมอ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我去医院看病。",
+    examplePinyin: "Wǒ qù yīyuàn kànbìng.",
+    exampleThai: "ฉันไปโรงพยาบาลหาหมอ"
+  },
+  {
+    id: 194,
+    word: "看到",
+    pinyin: "kàndào",
+    meaning: "มองเห็น; เห็น",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我看到他了。",
+    examplePinyin: "Wǒ kàndào tā le.",
+    exampleThai: "ฉันเห็นเขาแล้ว"
+  },
+  {
+    id: 195,
+    word: "看见",
+    pinyin: "kànjiàn",
+    meaning: "มองเห็น; เห็น",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我看见老师了。",
+    examplePinyin: "Wǒ kànjiàn lǎoshī le.",
+    exampleThai: "ฉันเห็นครูแล้ว"
+  },
+  {
+    id: 196,
+    word: "考",
+    pinyin: "kǎo",
+    meaning: "สอบ; ทดสอบ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "明天考汉语。",
+    examplePinyin: "Míngtiān kǎo Hànyǔ.",
+    exampleThai: "พรุ่งนี้สอบภาษาจีน"
+  },
+  {
+    id: 197,
+    word: "考试",
+    pinyin: "kǎoshì",
+    meaning: "สอบ; การสอบ",
+    pos: "คำนาม / คำกริยา",
+    hsk: "HSK1",
+    example: "我明天考试。",
+    examplePinyin: "Wǒ míngtiān kǎoshì.",
+    exampleThai: "พรุ่งนี้ฉันสอบ"
+  },
+  {
+    id: 198,
+    word: "渴",
+    pinyin: "kě",
+    meaning: "กระหาย; หิวน้ำ",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "我很渴。",
+    examplePinyin: "Wǒ hěn kě.",
+    exampleThai: "ฉันกระหายน้ำมาก"
+  },
+  {
+    id: 199,
+    word: "课",
+    pinyin: "kè",
+    meaning: "บทเรียน; คาบเรียน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "今天有汉语课。",
+    examplePinyin: "Jīntiān yǒu Hànyǔ kè.",
+    exampleThai: "วันนี้มีเรียนภาษาจีน"
+  },
+  {
+    id: 200,
+    word: "课本",
+    pinyin: "kèběn",
+    meaning: "หนังสือเรียน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我的课本在桌子上。",
+    examplePinyin: "Wǒ de kèběn zài zhuōzi shàng.",
+    exampleThai: "หนังสือเรียนของฉันอยู่บนโต๊ะ"
+  },
+  {
+    id: 201,
+    word: "课文",
+    pinyin: "kèwén",
+    meaning: "บทเรียนในหนังสือ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我读课文。",
+    examplePinyin: "Wǒ dú kèwén.",
+    exampleThai: "ฉันอ่านบทเรียน"
+  },
+  {
+    id: 202,
+    word: "口",
+    pinyin: "kǒu",
+    meaning: "ปาก; คนในครอบครัว",
+    pos: "ลักษณนาม",
+    hsk: "HSK1",
+    example: "我家有四口人。",
+    examplePinyin: "Wǒ jiā yǒu sì kǒu rén.",
+    exampleThai: "ครอบครัวฉันมีสี่คน"
+  },
+  {
+    id: 203,
+    word: "块",
+    pinyin: "kuài",
+    meaning: "ก้อน; ชิ้น; หยวน",
+    pos: "ลักษณนาม",
+    hsk: "HSK1",
+    example: "给我一块钱。",
+    examplePinyin: "Gěi wǒ yí kuài qián.",
+    exampleThai: "ให้เงินฉันหนึ่งหยวน"
+  },
+  {
+    id: 204,
+    word: "快",
+    pinyin: "kuài",
+    meaning: "เร็ว; ใกล้จะ",
+    pos: "คำคุณศัพท์ / คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "快一点儿。",
+    examplePinyin: "Kuài yìdiǎnr.",
+    exampleThai: "เร็วขึ้นหน่อย"
+  },
+  {
+    id: 205,
+    word: "来",
+    pinyin: "lái",
+    meaning: "มา",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "你什么时候来？",
+    examplePinyin: "Nǐ shénme shíhou lái?",
+    exampleThai: "คุณจะมาเมื่อไร"
+  },
+  {
+    id: 206,
+    word: "来到",
+    pinyin: "láidào",
+    meaning: "มาถึง",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我来到北京。",
+    examplePinyin: "Wǒ láidào Běijīng.",
+    exampleThai: "ฉันมาถึงปักกิ่ง"
+  },
+  {
+    id: 207,
+    word: "老",
+    pinyin: "lǎo",
+    meaning: "แก่; เก่า",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "他是我的老朋友。",
+    examplePinyin: "Tā shì wǒ de lǎo péngyou.",
+    exampleThai: "เขาเป็นเพื่อนเก่าของฉัน"
+  },
+  {
+    id: 208,
+    word: "老人",
+    pinyin: "lǎorén",
+    meaning: "ผู้สูงอายุ; คนแก่",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "那位老人很好。",
+    examplePinyin: "Nà wèi lǎorén hěn hǎo.",
+    exampleThai: "ผู้สูงอายุคนนั้นใจดี"
+  },
+  {
+    id: 209,
+    word: "老师",
+    pinyin: "lǎoshī",
+    meaning: "ครู",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我的老师很好。",
+    examplePinyin: "Wǒ de lǎoshī hěn hǎo.",
+    exampleThai: "ครูของฉันใจดีมาก"
+  },
+  {
+    id: 210,
+    word: "了",
+    pinyin: "le",
+    meaning: "แล้ว",
+    pos: "คำช่วย",
+    hsk: "HSK1",
+    example: "我吃饭了。",
+    examplePinyin: "Wǒ chīfàn le.",
+    exampleThai: "ฉันกินข้าวแล้ว"
+  },
+  {
+    id: 211,
+    word: "累",
+    pinyin: "lèi",
+    meaning: "เหนื่อย",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "我今天很累。",
+    examplePinyin: "Wǒ jīntiān hěn lèi.",
+    exampleThai: "วันนี้ฉันเหนื่อยมาก"
+  },
+  {
+    id: 212,
+    word: "冷",
+    pinyin: "lěng",
+    meaning: "หนาว; เย็น",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "今天很冷。",
+    examplePinyin: "Jīntiān hěn lěng.",
+    exampleThai: "วันนี้หนาวมาก"
+  },
+  {
+    id: 213,
+    word: "里",
+    pinyin: "lǐ",
+    meaning: "ใน; ข้างใน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "书在包里。",
+    examplePinyin: "Shū zài bāo lǐ.",
+    exampleThai: "หนังสืออยู่ในกระเป๋า"
+  },
+  {
+    id: 214,
+    word: "里边",
+    pinyin: "lǐbian",
+    meaning: "ข้างใน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "里面有人。",
+    examplePinyin: "Lǐbian yǒu rén.",
+    exampleThai: "ข้างในมีคน"
+  },
+  {
+    id: 215,
+    word: "两",
+    pinyin: "liǎng",
+    meaning: "สอง",
+    pos: "คำบอกจำนวน",
+    hsk: "HSK1",
+    example: "我有两个哥哥。",
+    examplePinyin: "Wǒ yǒu liǎng ge gēge.",
+    exampleThai: "ฉันมีพี่ชายสองคน"
+  },
+  {
+    id: 216,
+    word: "零",
+    pinyin: "líng",
+    meaning: "ศูนย์",
+    pos: "คำบอกจำนวน",
+    hsk: "HSK1",
+    example: "今天零度。",
+    examplePinyin: "Jīntiān líng dù.",
+    exampleThai: "วันนี้ศูนย์องศา"
+  },
+  {
+    id: 217,
+    word: "六",
+    pinyin: "liù",
+    meaning: "หก",
+    pos: "คำบอกจำนวน",
+    hsk: "HSK1",
+    example: "我六点起床。",
+    examplePinyin: "Wǒ liù diǎn qǐchuáng.",
+    exampleThai: "ฉันตื่นนอนหกโมง"
+  },
+  {
+    id: 218,
+    word: "楼",
+    pinyin: "lóu",
+    meaning: "อาคาร; ชั้น",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我住在三楼。",
+    examplePinyin: "Wǒ zhù zài sān lóu.",
+    exampleThai: "ฉันอยู่ชั้นสาม"
+  },
+  {
+    id: 219,
+    word: "楼上",
+    pinyin: "lóushàng",
+    meaning: "ชั้นบน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "他在楼上。",
+    examplePinyin: "Tā zài lóushàng.",
+    exampleThai: "เขาอยู่ชั้นบน"
+  },
+  {
+    id: 220,
+    word: "楼下",
+    pinyin: "lóuxià",
+    meaning: "ชั้นล่าง",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "妈妈在楼下。",
+    examplePinyin: "Māma zài lóuxià.",
+    exampleThai: "แม่อยู่ชั้นล่าง"
+  },
+  {
+    id: 221,
+    word: "路",
+    pinyin: "lù",
+    meaning: "ถนน; ทาง",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "这条路很长。",
+    examplePinyin: "Zhè tiáo lù hěn cháng.",
+    exampleThai: "ถนนสายนี้ยาวมาก"
+  },
+  {
+    id: 222,
+    word: "路口",
+    pinyin: "lùkǒu",
+    meaning: "ทางแยก",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我在路口等你。",
+    examplePinyin: "Wǒ zài lùkǒu děng nǐ.",
+    exampleThai: "ฉันรอคุณที่ทางแยก"
+  },
+  {
+    id: 223,
+    word: "路上",
+    pinyin: "lùshang",
+    meaning: "บนถนน; ระหว่างทาง",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "路上有很多车。",
+    examplePinyin: "Lùshang yǒu hěn duō chē.",
+    exampleThai: "บนถนนมีรถมากมาย"
+  },
+  {
+    id: 224,
+    word: "妈妈",
+    pinyin: "māma",
+    meaning: "แม่",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我妈妈在家。",
+    examplePinyin: "Wǒ māma zài jiā.",
+    exampleThai: "แม่ของฉันอยู่บ้าน"
+  },
+  {
+    id: 225,
+    word: "马路",
+    pinyin: "mǎlù",
+    meaning: "ถนน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "不要在马路上跑。",
+    examplePinyin: "Bú yào zài mǎlù shàng pǎo.",
+    exampleThai: "อย่าวิ่งบนถนน"
+  },
+  {
+    id: 226,
+    word: "马上",
+    pinyin: "mǎshàng",
+    meaning: "ทันที; เดี๋ยวนี้",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "我马上回来。",
+    examplePinyin: "Wǒ mǎshàng huílái.",
+    exampleThai: "ฉันจะกลับมาทันที"
+  },
+  {
+    id: 227,
+    word: "吗",
+    pinyin: "ma",
+    meaning: "ไหม",
+    pos: "คำช่วย",
+    hsk: "HSK1",
+    example: "你是学生吗？",
+    examplePinyin: "Nǐ shì xuéshēng ma?",
+    exampleThai: "คุณเป็นนักเรียนไหม"
+  },
+  {
+    id: 228,
+    word: "买",
+    pinyin: "mǎi",
+    meaning: "ซื้อ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我想买书。",
+    examplePinyin: "Wǒ xiǎng mǎi shū.",
+    exampleThai: "ฉันอยากซื้อหนังสือ"
+  },
+  {
+    id: 229,
+    word: "慢",
+    pinyin: "màn",
+    meaning: "ช้า",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "请说慢一点儿。",
+    examplePinyin: "Qǐng shuō màn yìdiǎnr.",
+    exampleThai: "กรุณาพูดช้าลงหน่อย"
+  },
+  {
+    id: 230,
+    word: "忙",
+    pinyin: "máng",
+    meaning: "ยุ่ง",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "我今天很忙。",
+    examplePinyin: "Wǒ jīntiān hěn máng.",
+    exampleThai: "วันนี้ฉันยุ่งมาก"
+  },
+  {
+    id: 231,
+    word: "毛",
+    pinyin: "máo",
+    meaning: "เหมา; หน่วยเงิน 0.1 หยวน",
+    pos: "ลักษณนาม",
+    hsk: "HSK1",
+    example: "一块五毛钱。",
+    examplePinyin: "Yí kuài wǔ máo qián.",
+    exampleThai: "หนึ่งหยวนห้าสิบเหมา"
+  },
+  {
+    id: 232,
+    word: "没",
+    pinyin: "méi",
+    meaning: "ไม่; ยังไม่",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "我没吃饭。",
+    examplePinyin: "Wǒ méi chīfàn.",
+    exampleThai: "ฉันยังไม่ได้กินข้าว"
+  },
+  {
+    id: 233,
+    word: "没关系",
+    pinyin: "méi guānxi",
+    meaning: "ไม่เป็นไร",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "对不起。—没关系。",
+    examplePinyin: "Duìbuqǐ. — Méi guānxi.",
+    exampleThai: "ขอโทษ — ไม่เป็นไร"
+  },
+  {
+    id: 234,
+    word: "没什么",
+    pinyin: "méi shénme",
+    meaning: "ไม่มีอะไร; ไม่เป็นไร",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "没什么。",
+    examplePinyin: "Méi shénme.",
+    exampleThai: "ไม่มีอะไร"
+  },
+  {
+    id: 235,
+    word: "没事儿",
+    pinyin: "méi shìr",
+    meaning: "ไม่เป็นไร; ไม่มีอะไร",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "没事儿，你放心吧。",
+    examplePinyin: "Méi shìr, nǐ fàngxīn ba.",
+    exampleThai: "ไม่เป็นไร คุณสบายใจได้"
+  },
+  {
+    id: 236,
+    word: "没有",
+    pinyin: "méiyǒu",
+    meaning: "ไม่มี; ไม่ได้",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我没有钱。",
+    examplePinyin: "Wǒ méiyǒu qián.",
+    exampleThai: "ฉันไม่มีเงิน"
+  },
+  {
+    id: 237,
+    word: "妹妹",
+    pinyin: "mèimei",
+    meaning: "น้องสาว",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我妹妹很可爱。",
+    examplePinyin: "Wǒ mèimei hěn kě'ài.",
+    exampleThai: "น้องสาวของฉันน่ารักมาก"
+  },
+  {
+    id: 238,
+    word: "门",
+    pinyin: "mén",
+    meaning: "ประตู",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "请开门。",
+    examplePinyin: "Qǐng kāi mén.",
+    exampleThai: "กรุณาเปิดประตู"
+  },
+  {
+    id: 239,
+    word: "门口",
+    pinyin: "ménkǒu",
+    meaning: "หน้าประตู; ทางเข้า",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我在门口等你。",
+    examplePinyin: "Wǒ zài ménkǒu děng nǐ.",
+    exampleThai: "ฉันรอคุณอยู่หน้าประตู"
+  },
+  {
+    id: 240,
+    word: "门票",
+    pinyin: "ménpiào",
+    meaning: "บัตรเข้าชม",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "门票多少钱？",
+    examplePinyin: "Ménpiào duōshao qián?",
+    exampleThai: "บัตรเข้าชมราคาเท่าไร"
+  },
+  {
+    id: 241,
+    word: "们",
+    pinyin: "men",
+    meaning: "พวก...; ทั้งหลาย",
+    pos: "คำช่วย",
+    hsk: "HSK1",
+    example: "同学们好。",
+    examplePinyin: "Tóngxuémen hǎo.",
+    exampleThai: "สวัสดีนักเรียนทุกคน"
+  },
+  {
+    id: 242,
+    word: "米饭",
+    pinyin: "mǐfàn",
+    meaning: "ข้าวสวย",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我喜欢吃米饭。",
+    examplePinyin: "Wǒ xǐhuan chī mǐfàn.",
+    exampleThai: "ฉันชอบกินข้าว"
+  },
+  {
+    id: 243,
+    word: "面包",
+    pinyin: "miànbāo",
+    meaning: "ขนมปัง",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我早上吃面包。",
+    examplePinyin: "Wǒ zǎoshang chī miànbāo.",
+    exampleThai: "ตอนเช้าฉันกินขนมปัง"
+  },
+  {
+    id: 244,
+    word: "面条儿",
+    pinyin: "miàntiáor",
+    meaning: "บะหมี่; เส้นก๋วยเตี๋ยว",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我喜欢吃面条儿。",
+    examplePinyin: "Wǒ xǐhuan chī miàntiáor.",
+    exampleThai: "ฉันชอบกินบะหมี่"
+  },
+  {
+    id: 245,
+    word: "名字",
+    pinyin: "míngzi",
+    meaning: "ชื่อ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "你的名字是什么？",
+    examplePinyin: "Nǐ de míngzi shì shénme?",
+    exampleThai: "คุณชื่ออะไร"
+  },
+  {
+    id: 246,
+    word: "明白",
+    pinyin: "míngbai",
+    meaning: "เข้าใจ; รู้เรื่อง",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我明白了。",
+    examplePinyin: "Wǒ míngbai le.",
+    exampleThai: "ฉันเข้าใจแล้ว"
+  },
+  {
+    id: 247,
+    word: "明年",
+    pinyin: "míngnián",
+    meaning: "ปีหน้า",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "明年我去中国。",
+    examplePinyin: "Míngnián wǒ qù Zhōngguó.",
+    exampleThai: "ปีหน้าฉันจะไปจีน"
+  },
+  {
+    id: 248,
+    word: "明天",
+    pinyin: "míngtiān",
+    meaning: "พรุ่งนี้",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "明天见。",
+    examplePinyin: "Míngtiān jiàn.",
+    exampleThai: "เจอกันพรุ่งนี้"
+  },
+  {
+    id: 249,
+    word: "拿",
+    pinyin: "ná",
+    meaning: "ถือ; หยิบ; เอา",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请拿给我。",
+    examplePinyin: "Qǐng ná gěi wǒ.",
+    exampleThai: "กรุณาหยิบมาให้ฉัน"
+  },
+  {
+    id: 250,
+    word: "哪",
+    pinyin: "nǎ",
+    meaning: "ไหน; อันไหน",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "你喜欢哪一个？",
+    examplePinyin: "Nǐ xǐhuan nǎ yí ge?",
+    exampleThai: "คุณชอบอันไหน"
+  },
+  {
+    id: 251,
+    word: "哪里",
+    pinyin: "nǎlǐ",
+    meaning: "ที่ไหน",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "你住在哪里？",
+    examplePinyin: "Nǐ zhù zài nǎlǐ?",
+    exampleThai: "คุณอาศัยอยู่ที่ไหน"
+  },
+  {
+    id: 252,
+    word: "哪儿",
+    pinyin: "nǎr",
+    meaning: "ที่ไหน",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "你去哪儿？",
+    examplePinyin: "Nǐ qù nǎr?",
+    exampleThai: "คุณจะไปไหน"
+  },
+  {
+    id: 253,
+    word: "哪些",
+    pinyin: "nǎxiē",
+    meaning: "เหล่านี้อันไหน; อันไหนบ้าง",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "哪些是你的书？",
+    examplePinyin: "Nǎxiē shì nǐ de shū?",
+    exampleThai: "หนังสือเล่มไหนเป็นของคุณบ้าง"
+  },
+  {
+    id: 254,
+    word: "那",
+    pinyin: "nà",
+    meaning: "นั่น; นั้น",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "那是什么？",
+    examplePinyin: "Nà shì shénme?",
+    exampleThai: "นั่นคืออะไร"
+  },
+  {
+    id: 255,
+    word: "那边",
+    pinyin: "nàbian",
+    meaning: "ด้านนั้น",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我在那边。",
+    examplePinyin: "Wǒ zài nàbian.",
+    exampleThai: "ฉันอยู่ทางนั้น"
+  },
+  {
+    id: 256,
+    word: "那里",
+    pinyin: "nàlǐ",
+    meaning: "ที่นั่น",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "他在那里。",
+    examplePinyin: "Tā zài nàlǐ.",
+    exampleThai: "เขาอยู่ที่นั่น"
+  },
+  {
+    id: 257,
+    word: "那儿",
+    pinyin: "nàr",
+    meaning: "ที่นั่น",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "我的书在那儿。",
+    examplePinyin: "Wǒ de shū zài nàr.",
+    exampleThai: "หนังสือของฉันอยู่ตรงนั้น"
+  },
+  {
+    id: 258,
+    word: "那些",
+    pinyin: "nàxiē",
+    meaning: "เหล่านั้น",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "那些是我的朋友。",
+    examplePinyin: "Nàxiē shì wǒ de péngyou.",
+    exampleThai: "คนเหล่านั้นเป็นเพื่อนของฉัน"
+  },
+  {
+    id: 259,
+    word: "奶",
+    pinyin: "nǎi",
+    meaning: "นม",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我喜欢喝奶。",
+    examplePinyin: "Wǒ xǐhuan hē nǎi.",
+    exampleThai: "ฉันชอบดื่มนม"
+  },
+  {
+    id: 260,
+    word: "奶奶",
+    pinyin: "nǎinai",
+    meaning: "คุณย่า; คุณยาย",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "奶奶住在北京。",
+    examplePinyin: "Nǎinai zhù zài Běijīng.",
+    exampleThai: "คุณย่าอาศัยอยู่ปักกิ่ง"
+  },
+  {
+    id: 261,
+    word: "男",
+    pinyin: "nán",
+    meaning: "ผู้ชาย; เพศชาย",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "他是男的。",
+    examplePinyin: "Tā shì nán de.",
+    exampleThai: "เขาเป็นผู้ชาย"
+  },
+  {
+    id: 262,
+    word: "男孩儿",
+    pinyin: "nánháir",
+    meaning: "เด็กผู้ชาย",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "那个男孩儿很高。",
+    examplePinyin: "Nàge nánháir hěn gāo.",
+    exampleThai: "เด็กผู้ชายคนนั้นสูงมาก"
+  },
+  {
+    id: 263,
+    word: "男朋友",
+    pinyin: "nán péngyou",
+    meaning: "แฟนผู้ชาย",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "她有男朋友。",
+    examplePinyin: "Tā yǒu nán péngyou.",
+    exampleThai: "เธอมีแฟนผู้ชาย"
+  },
+  {
+    id: 264,
+    word: "男人",
+    pinyin: "nánrén",
+    meaning: "ผู้ชาย",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "那个男人是老师。",
+    examplePinyin: "Nàge nánrén shì lǎoshī.",
+    exampleThai: "ผู้ชายคนนั้นเป็นครู"
+  },
+  {
+    id: 265,
+    word: "男生",
+    pinyin: "nánshēng",
+    meaning: "นักเรียนชาย; ผู้ชาย",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "那个男生是我同学。",
+    examplePinyin: "Nàge nánshēng shì wǒ tóngxué.",
+    exampleThai: "นักเรียนชายคนนั้นเป็นเพื่อนร่วมชั้นของฉัน"
+  },
+  {
+    id: 266,
+    word: "南",
+    pinyin: "nán",
+    meaning: "ทิศใต้",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "学校在南边。",
+    examplePinyin: "Xuéxiào zài nánbian.",
+    exampleThai: "โรงเรียนอยู่ทางใต้"
+  },
+  {
+    id: 267,
+    word: "南边",
+    pinyin: "nánbian",
+    meaning: "ด้านใต้",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "商店在南边。",
+    examplePinyin: "Shāngdiàn zài nánbian.",
+    exampleThai: "ร้านค้าอยู่ทางใต้"
+  },
+  {
+    id: 268,
+    word: "难",
+    pinyin: "nán",
+    meaning: "ยาก",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "汉语很难吗？",
+    examplePinyin: "Hànyǔ hěn nán ma?",
+    exampleThai: "ภาษาจีนยากไหม"
+  },
+  {
+    id: 269,
+    word: "呢",
+    pinyin: "ne",
+    meaning: "ล่ะ; นะ",
+    pos: "คำช่วย",
+    hsk: "HSK1",
+    example: "你呢？",
+    examplePinyin: "Nǐ ne?",
+    exampleThai: "แล้วคุณล่ะ"
+  },
+  {
+    id: 270,
+    word: "能",
+    pinyin: "néng",
+    meaning: "สามารถ; ได้",
+    pos: "คำกริยาช่วย",
+    hsk: "HSK1",
+    example: "你能帮我吗？",
+    examplePinyin: "Nǐ néng bāng wǒ ma?",
+    exampleThai: "คุณช่วยฉันได้ไหม"
+  },
+  {
+    id: 271,
+    word: "你",
+    pinyin: "nǐ",
+    meaning: "คุณ; เธอ",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "你好吗？",
+    examplePinyin: "Nǐ hǎo ma?",
+    exampleThai: "คุณสบายดีไหม"
+  },
+  {
+    id: 272,
+    word: "你们",
+    pinyin: "nǐmen",
+    meaning: "พวกคุณ",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "你们好。",
+    examplePinyin: "Nǐmen hǎo.",
+    exampleThai: "สวัสดีพวกคุณ"
+  },
+  {
+    id: 273,
+    word: "年",
+    pinyin: "nián",
+    meaning: "ปี",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "一年有十二个月。",
+    examplePinyin: "Yì nián yǒu shí'èr ge yuè.",
+    exampleThai: "หนึ่งปีมี 12 เดือน"
+  },
+  {
+    id: 274,
+    word: "您",
+    pinyin: "nín",
+    meaning: "คุณ (สุภาพ)",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "您好。",
+    examplePinyin: "Nín hǎo.",
+    exampleThai: "สวัสดีค่ะ/ครับ"
+  },
+  {
+    id: 275,
+    word: "牛奶",
+    pinyin: "niúnǎi",
+    meaning: "นมวัว",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我每天喝牛奶。",
+    examplePinyin: "Wǒ měitiān hē niúnǎi.",
+    exampleThai: "ฉันดื่มนมทุกวัน"
+  },
+  {
+    id: 276,
+    word: "女",
+    pinyin: "nǚ",
+    meaning: "ผู้หญิง; เพศหญิง",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "她是女的。",
+    examplePinyin: "Tā shì nǚ de.",
+    exampleThai: "เธอเป็นผู้หญิง"
+  },
+  {
+    id: 277,
+    word: "女儿",
+    pinyin: "nǚ'ér",
+    meaning: "ลูกสาว",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "她有一个女儿。",
+    examplePinyin: "Tā yǒu yí ge nǚ'ér.",
+    exampleThai: "เธอมีลูกสาวหนึ่งคน"
+  },
+  {
+    id: 278,
+    word: "女孩儿",
+    pinyin: "nǚháir",
+    meaning: "เด็กผู้หญิง",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "那个女孩儿很漂亮。",
+    examplePinyin: "Nàge nǚháir hěn piàoliang.",
+    exampleThai: "เด็กผู้หญิงคนนั้นสวยมาก"
+  },
+  {
+    id: 279,
+    word: "女朋友",
+    pinyin: "nǚ péngyou",
+    meaning: "แฟนผู้หญิง",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "他有女朋友。",
+    examplePinyin: "Tā yǒu nǚ péngyou.",
+    exampleThai: "เขามีแฟนผู้หญิง"
+  },
+  {
+    id: 280,
+    word: "女人",
+    pinyin: "nǚrén",
+    meaning: "ผู้หญิง",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "那个女人是医生。",
+    examplePinyin: "Nàge nǚrén shì yīshēng.",
+    exampleThai: "ผู้หญิงคนนั้นเป็นหมอ"
+  },
+  {
+    id: 281,
+    word: "女生",
+    pinyin: "nǚshēng",
+    meaning: "นักเรียนหญิง; ผู้หญิง",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "她是我的同学。",
+    examplePinyin: "Tā shì wǒ de tóngxué.",
+    exampleThai: "เธอเป็นเพื่อนร่วมชั้นของฉัน"
+  },
+  {
+    id: 282,
+    word: "旁边",
+    pinyin: "pángbiān",
+    meaning: "ข้าง ๆ; ด้านข้าง",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我坐在你旁边。",
+    examplePinyin: "Wǒ zuò zài nǐ pángbiān.",
+    exampleThai: "ฉันนั่งอยู่ข้าง ๆ คุณ"
+  },
+  {
+    id: 283,
+    word: "跑",
+    pinyin: "pǎo",
+    meaning: "วิ่ง",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "孩子们在跑。",
+    examplePinyin: "Háizimen zài pǎo.",
+    exampleThai: "เด็ก ๆ กำลังวิ่ง"
+  },
+  {
+    id: 284,
+    word: "朋友",
+    pinyin: "péngyou",
+    meaning: "เพื่อน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "他是我的朋友。",
+    examplePinyin: "Tā shì wǒ de péngyou.",
+    exampleThai: "เขาเป็นเพื่อนของฉัน"
+  },
+  {
+    id: 285,
+    word: "票",
+    pinyin: "piào",
+    meaning: "ตั๋ว; บัตร",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我的票在哪里？",
+    examplePinyin: "Wǒ de piào zài nǎlǐ?",
+    exampleThai: "ตั๋วของฉันอยู่ที่ไหน"
+  },
+  {
+    id: 286,
+    word: "七",
+    pinyin: "qī",
+    meaning: "เจ็ด",
+    pos: "คำบอกจำนวน",
+    hsk: "HSK1",
+    example: "我七点起床。",
+    examplePinyin: "Wǒ qī diǎn qǐchuáng.",
+    exampleThai: "ฉันตื่นนอนเจ็ดโมง"
+  },
+  {
+    id: 287,
+    word: "起",
+    pinyin: "qǐ",
+    meaning: "ลุกขึ้น",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请起。",
+    examplePinyin: "Qǐng qǐ.",
+    exampleThai: "กรุณาลุก"
+  },
+  {
+    id: 288,
+    word: "起床",
+    pinyin: "qǐchuáng",
+    meaning: "ตื่นนอน; ลุกจากเตียง",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我每天七点起床。",
+    examplePinyin: "Wǒ měitiān qī diǎn qǐchuáng.",
+    exampleThai: "ฉันตื่นนอนตอนเจ็ดโมงทุกวัน"
+  },
+  {
+    id: 289,
+    word: "起来",
+    pinyin: "qǐlái",
+    meaning: "ลุกขึ้น; ขึ้นมา",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "快起来。",
+    examplePinyin: "Kuài qǐlái.",
+    exampleThai: "ลุกขึ้นเร็ว"
+  },
+  {
+    id: 290,
+    word: "汽车",
+    pinyin: "qìchē",
+    meaning: "รถยนต์",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我家有一辆汽车。",
+    examplePinyin: "Wǒ jiā yǒu yí liàng qìchē.",
+    exampleThai: "บ้านฉันมีรถยนต์หนึ่งคัน"
+  },
+  {
+    id: 291,
+    word: "前",
+    pinyin: "qián",
+    meaning: "ด้านหน้า; ก่อน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "学校在前面。",
+    examplePinyin: "Xuéxiào zài qiánmiàn.",
+    exampleThai: "โรงเรียนอยู่ด้านหน้า"
+  },
+  {
+    id: 292,
+    word: "前边",
+    pinyin: "qiánbian",
+    meaning: "ด้านหน้า",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "商店在前边。",
+    examplePinyin: "Shāngdiàn zài qiánbian.",
+    exampleThai: "ร้านค้าอยู่ด้านหน้า"
+  },
+  {
+    id: 293,
+    word: "前天",
+    pinyin: "qiántiān",
+    meaning: "เมื่อวานซืน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "前天下雨了。",
+    examplePinyin: "Qiántiān xià yǔ le.",
+    exampleThai: "เมื่อวานซืนฝนตก"
+  },
+  {
+    id: 294,
+    word: "钱",
+    pinyin: "qián",
+    meaning: "เงิน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我没有钱。",
+    examplePinyin: "Wǒ méiyǒu qián.",
+    exampleThai: "ฉันไม่มีเงิน"
+  },
+  {
+    id: 295,
+    word: "钱包",
+    pinyin: "qiánbāo",
+    meaning: "กระเป๋าสตางค์",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我的钱包在包里。",
+    examplePinyin: "Wǒ de qiánbāo zài bāo lǐ.",
+    exampleThai: "กระเป๋าสตางค์ของฉันอยู่ในกระเป๋า"
+  },
+  {
+    id: 296,
+    word: "请",
+    pinyin: "qǐng",
+    meaning: "เชิญ; กรุณา",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请坐。",
+    examplePinyin: "Qǐng zuò.",
+    exampleThai: "เชิญนั่ง"
+  },
+  {
+    id: 297,
+    word: "请假",
+    pinyin: "qǐngjià",
+    meaning: "ลางาน; ลาเรียน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我今天请假。",
+    examplePinyin: "Wǒ jīntiān qǐngjià.",
+    exampleThai: "วันนี้ฉันลา"
+  },
+  {
+    id: 298,
+    word: "请进",
+    pinyin: "qǐng jìn",
+    meaning: "เชิญเข้ามา",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "老师说：“请进。”",
+    examplePinyin: "Lǎoshī shuō: “Qǐng jìn.”",
+    exampleThai: "ครูพูดว่า “เชิญเข้ามา”"
+  },
+  {
+    id: 299,
+    word: "请问",
+    pinyin: "qǐngwèn",
+    meaning: "ขอถามหน่อย; ขอสอบถาม",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请问，车站在哪里？",
+    examplePinyin: "Qǐngwèn, chēzhàn zài nǎlǐ?",
+    exampleThai: "ขอถามหน่อยค่ะ สถานีรถอยู่ที่ไหน"
+  },
+  {
+    id: 300,
+    word: "请坐",
+    pinyin: "qǐng zuò",
+    meaning: "เชิญนั่ง",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请坐这里。",
+    examplePinyin: "Qǐng zuò zhèlǐ.",
+    exampleThai: "เชิญนั่งตรงนี้"
+  },
+  {
+    id: 301,
+    word: "球",
+    pinyin: "qiú",
+    meaning: "ลูกบอล",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "这是我的球。",
+    examplePinyin: "Zhè shì wǒ de qiú.",
+    exampleThai: "นี่คือลูกบอลของฉัน"
+  },
+  {
+    id: 302,
+    word: "去",
+    pinyin: "qù",
+    meaning: "ไป",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我去学校。",
+    examplePinyin: "Wǒ qù xuéxiào.",
+    exampleThai: "ฉันไปโรงเรียน"
+  },
+  {
+    id: 303,
+    word: "去年",
+    pinyin: "qùnián",
+    meaning: "ปีที่แล้ว",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "去年我在北京。",
+    examplePinyin: "Qùnián wǒ zài Běijīng.",
+    exampleThai: "ปีที่แล้วฉันอยู่ปักกิ่ง"
+  },
+  {
+    id: 304,
+    word: "热",
+    pinyin: "rè",
+    meaning: "ร้อน",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "今天很热。",
+    examplePinyin: "Jīntiān hěn rè.",
+    exampleThai: "วันนี้ร้อนมาก"
+  },
+  {
+    id: 305,
+    word: "人",
+    pinyin: "rén",
+    meaning: "คน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "这里有很多人。",
+    examplePinyin: "Zhèlǐ yǒu hěn duō rén.",
+    exampleThai: "ที่นี่มีคนมากมาย"
+  },
+  {
+    id: 306,
+    word: "认识",
+    pinyin: "rènshi",
+    meaning: "รู้จัก",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "很高兴认识你。",
+    examplePinyin: "Hěn gāoxìng rènshi nǐ.",
+    exampleThai: "ยินดีที่ได้รู้จักคุณ"
+  },
+  {
+    id: 307,
+    word: "认真",
+    pinyin: "rènzhēn",
+    meaning: "ตั้งใจ; จริงจัง",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "他学习很认真。",
+    examplePinyin: "Tā xuéxí hěn rènzhēn.",
+    exampleThai: "เขาเรียนอย่างตั้งใจมาก"
+  },
+  {
+    id: 308,
+    word: "日",
+    pinyin: "rì",
+    meaning: "วัน; วันที่",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "今天是几日？",
+    examplePinyin: "Jīntiān shì jǐ rì?",
+    exampleThai: "วันนี้วันที่เท่าไร"
+  },
+  {
+    id: 309,
+    word: "日期",
+    pinyin: "rìqī",
+    meaning: "วันที่; วันเดือนปี",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "今天的日期是什么？",
+    examplePinyin: "Jīntiān de rìqī shì shénme?",
+    exampleThai: "วันนี้วันที่เท่าไร"
+  },
+  {
+    id: 310,
+    word: "肉",
+    pinyin: "ròu",
+    meaning: "เนื้อสัตว์",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我不吃肉。",
+    examplePinyin: "Wǒ bù chī ròu.",
+    exampleThai: "ฉันไม่กินเนื้อ"
+  },
+  {
+    id: 311,
+    word: "三",
+    pinyin: "sān",
+    meaning: "สาม",
+    pos: "คำบอกจำนวน",
+    hsk: "HSK1",
+    example: "我有三个朋友。",
+    examplePinyin: "Wǒ yǒu sān ge péngyou.",
+    exampleThai: "ฉันมีเพื่อนสามคน"
+  },
+  {
+    id: 312,
+    word: "山",
+    pinyin: "shān",
+    meaning: "ภูเขา",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "那座山很高。",
+    examplePinyin: "Nà zuò shān hěn gāo.",
+    exampleThai: "ภูเขาลูกนั้นสูงมาก"
+  },
+  {
+    id: 313,
+    word: "商场",
+    pinyin: "shāngchǎng",
+    meaning: "ห้างสรรพสินค้า",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我们去商场。",
+    examplePinyin: "Wǒmen qù shāngchǎng.",
+    exampleThai: "พวกเราไปห้าง"
+  },
+  {
+    id: 314,
+    word: "商店",
+    pinyin: "shāngdiàn",
+    meaning: "ร้านค้า",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "商店几点开门？",
+    examplePinyin: "Shāngdiàn jǐ diǎn kāimén?",
+    exampleThai: "ร้านค้าเปิดกี่โมง"
+  },
+  {
+    id: 315,
+    word: "上",
+    pinyin: "shàng",
+    meaning: "ขึ้น; บน",
+    pos: "คำกริยา / คำนาม",
+    hsk: "HSK1",
+    example: "我上楼了。",
+    examplePinyin: "Wǒ shàng lóu le.",
+    exampleThai: "ฉันขึ้นชั้นบนแล้ว"
+  },
+  {
+    id: 316,
+    word: "上班",
+    pinyin: "shàngbān",
+    meaning: "ไปทำงาน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "爸爸每天上班。",
+    examplePinyin: "Bàba měitiān shàngbān.",
+    exampleThai: "พ่อไปทำงานทุกวัน"
+  },
+  {
+    id: 317,
+    word: "上边",
+    pinyin: "shàngbian",
+    meaning: "ด้านบน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "书在上边。",
+    examplePinyin: "Shū zài shàngbian.",
+    exampleThai: "หนังสืออยู่ด้านบน"
+  },
+  {
+    id: 318,
+    word: "上车",
+    pinyin: "shàngchē",
+    meaning: "ขึ้นรถ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请上车。",
+    examplePinyin: "Qǐng shàngchē.",
+    exampleThai: "เชิญขึ้นรถ"
+  },
+  {
+    id: 319,
+    word: "上次",
+    pinyin: "shàng cì",
+    meaning: "ครั้งที่แล้ว",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "上次我没来。",
+    examplePinyin: "Shàng cì wǒ méi lái.",
+    exampleThai: "ครั้งที่แล้วฉันไม่ได้มา"
+  },
+  {
+    id: 320,
+    word: "上课",
+    pinyin: "shàngkè",
+    meaning: "เข้าเรียน; เรียน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我们八点上课。",
+    examplePinyin: "Wǒmen bā diǎn shàngkè.",
+    exampleThai: "พวกเราเรียนตอนแปดโมง"
+  },
+  {
+    id: 321,
+    word: "上网",
+    pinyin: "shàngwǎng",
+    meaning: "เล่นอินเทอร์เน็ต; เข้าอินเทอร์เน็ต",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我晚上上网。",
+    examplePinyin: "Wǒ wǎnshang shàngwǎng.",
+    exampleThai: "ตอนเย็นฉันเล่นอินเทอร์เน็ต"
+  },
+  {
+    id: 322,
+    word: "上午",
+    pinyin: "shàngwǔ",
+    meaning: "ตอนเช้า",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我上午有课。",
+    examplePinyin: "Wǒ shàngwǔ yǒu kè.",
+    exampleThai: "ตอนเช้าฉันมีเรียน"
+  },
+  {
+    id: 323,
+    word: "上学",
+    pinyin: "shàngxué",
+    meaning: "ไปโรงเรียน; เข้าเรียน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "孩子每天上学。",
+    examplePinyin: "Háizi měitiān shàngxué.",
+    exampleThai: "เด็กไปโรงเรียนทุกวัน"
+  },
+  {
+    id: 324,
+    word: "少",
+    pinyin: "shǎo",
+    meaning: "น้อย",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "这里人很少。",
+    examplePinyin: "Zhèlǐ rén hěn shǎo.",
+    exampleThai: "ที่นี่มีคนน้อยมาก"
+  },
+  {
+    id: 325,
+    word: "谁",
+    pinyin: "shéi",
+    meaning: "ใคร",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "那个人是谁？",
+    examplePinyin: "Nàge rén shì shéi?",
+    exampleThai: "คนนั้นคือใคร"
+  },
+  {
+    id: 326,
+    word: "身上",
+    pinyin: "shēnshang",
+    meaning: "บนตัว; ติดตัว",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我身上没有钱。",
+    examplePinyin: "Wǒ shēnshang méiyǒu qián.",
+    exampleThai: "ฉันไม่มีเงินติดตัว"
+  },
+  {
+    id: 327,
+    word: "身体",
+    pinyin: "shēntǐ",
+    meaning: "ร่างกาย; สุขภาพ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "身体很重要。",
+    examplePinyin: "Shēntǐ hěn zhòngyào.",
+    exampleThai: "สุขภาพสำคัญมาก"
+  },
+  {
+    id: 328,
+    word: "什么",
+    pinyin: "shénme",
+    meaning: "อะไร",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "你吃什么？",
+    examplePinyin: "Nǐ chī shénme?",
+    exampleThai: "คุณกินอะไร"
+  },
+  {
+    id: 329,
+    word: "生病",
+    pinyin: "shēngbìng",
+    meaning: "ป่วย",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我今天生病了。",
+    examplePinyin: "Wǒ jīntiān shēngbìng le.",
+    exampleThai: "วันนี้ฉันป่วย"
+  },
+  {
+    id: 330,
+    word: "生气",
+    pinyin: "shēngqì",
+    meaning: "โกรธ",
+    pos: "คำกริยา / คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "不要生气。",
+    examplePinyin: "Bú yào shēngqì.",
+    exampleThai: "อย่าโกรธ"
+  },
+  {
+    id: 331,
+    word: "生日",
+    pinyin: "shēngrì",
+    meaning: "วันเกิด",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "今天是我的生日。",
+    examplePinyin: "Jīntiān shì wǒ de shēngrì.",
+    exampleThai: "วันนี้เป็นวันเกิดของฉัน"
+  },
+  {
+    id: 332,
+    word: "十",
+    pinyin: "shí",
+    meaning: "สิบ",
+    pos: "คำบอกจำนวน",
+    hsk: "HSK1",
+    example: "我十点睡觉。",
+    examplePinyin: "Wǒ shí diǎn shuìjiào.",
+    exampleThai: "ฉันนอนตอนสี่ทุ่ม"
+  },
+  {
+    id: 333,
+    word: "时候",
+    pinyin: "shíhou",
+    meaning: "เวลา; ช่วงเวลา",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "你什么时候回来？",
+    examplePinyin: "Nǐ shénme shíhou huílái?",
+    exampleThai: "คุณจะกลับมาเมื่อไร"
+  },
+  {
+    id: 334,
+    word: "时间",
+    pinyin: "shíjiān",
+    meaning: "เวลา",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我没有时间。",
+    examplePinyin: "Wǒ méiyǒu shíjiān.",
+    exampleThai: "ฉันไม่มีเวลา"
+  },
+  {
+    id: 335,
+    word: "事",
+    pinyin: "shì",
+    meaning: "เรื่อง; ธุระ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我有一件事要说。",
+    examplePinyin: "Wǒ yǒu yí jiàn shì yào shuō.",
+    exampleThai: "ฉันมีเรื่องหนึ่งอยากพูด"
+  },
+  {
+    id: 336,
+    word: "试",
+    pinyin: "shì",
+    meaning: "ลอง; ทดลอง",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "你试一下。",
+    examplePinyin: "Nǐ shì yíxià.",
+    exampleThai: "คุณลองดูหน่อย"
+  },
+  {
+    id: 337,
+    word: "是",
+    pinyin: "shì",
+    meaning: "เป็น; คือ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我是学生。",
+    examplePinyin: "Wǒ shì xuéshēng.",
+    exampleThai: "ฉันเป็นนักเรียน"
+  },
+  {
+    id: 338,
+    word: "是不是",
+    pinyin: "shì bu shì",
+    meaning: "ใช่หรือไม่",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "你是不是老师？",
+    examplePinyin: "Nǐ shì bu shì lǎoshī?",
+    exampleThai: "คุณเป็นครูใช่ไหม"
+  },
+  {
+    id: 339,
+    word: "手",
+    pinyin: "shǒu",
+    meaning: "มือ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我的手很冷。",
+    examplePinyin: "Wǒ de shǒu hěn lěng.",
+    exampleThai: "มือของฉันเย็นมาก"
+  },
+  {
+    id: 340,
+    word: "手机",
+    pinyin: "shǒujī",
+    meaning: "โทรศัพท์มือถือ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我的手机在桌子上。",
+    examplePinyin: "Wǒ de shǒujī zài zhuōzi shàng.",
+    exampleThai: "โทรศัพท์มือถือของฉันอยู่บนโต๊ะ"
+  },
+  {
+    id: 341,
+    word: "书",
+    pinyin: "shū",
+    meaning: "หนังสือ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我喜欢看书。",
+    examplePinyin: "Wǒ xǐhuan kàn shū.",
+    exampleThai: "ฉันชอบอ่านหนังสือ"
+  },
+  {
+    id: 342,
+    word: "书包",
+    pinyin: "shūbāo",
+    meaning: "กระเป๋านักเรียน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我的书在书包里。",
+    examplePinyin: "Wǒ de shū zài shūbāo lǐ.",
+    exampleThai: "หนังสือของฉันอยู่ในกระเป๋านักเรียน"
+  },
+  {
+    id: 343,
+    word: "书店",
+    pinyin: "shūdiàn",
+    meaning: "ร้านหนังสือ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我去书店买书。",
+    examplePinyin: "Wǒ qù shūdiàn mǎi shū.",
+    exampleThai: "ฉันไปร้านหนังสือซื้อหนังสือ"
+  },
+  {
+    id: 344,
+    word: "树",
+    pinyin: "shù",
+    meaning: "ต้นไม้",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "树下有一个人。",
+    examplePinyin: "Shù xià yǒu yí ge rén.",
+    exampleThai: "ใต้ต้นไม้มีคนหนึ่งคน"
+  },
+  {
+    id: 345,
+    word: "水",
+    pinyin: "shuǐ",
+    meaning: "น้ำ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "请给我水。",
+    examplePinyin: "Qǐng gěi wǒ shuǐ.",
+    exampleThai: "กรุณาให้น้ำฉันหน่อย"
+  },
+  {
+    id: 346,
+    word: "水果",
+    pinyin: "shuǐguǒ",
+    meaning: "ผลไม้",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我喜欢吃水果。",
+    examplePinyin: "Wǒ xǐhuan chī shuǐguǒ.",
+    exampleThai: "ฉันชอบกินผลไม้"
+  },
+  {
+    id: 347,
+    word: "睡",
+    pinyin: "shuì",
+    meaning: "นอน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我想睡。",
+    examplePinyin: "Wǒ xiǎng shuì.",
+    exampleThai: "ฉันอยากนอน"
+  },
+  {
+    id: 348,
+    word: "睡觉",
+    pinyin: "shuìjiào",
+    meaning: "นอนหลับ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我晚上十点睡觉。",
+    examplePinyin: "Wǒ wǎnshang shí diǎn shuìjiào.",
+    exampleThai: "ฉันนอนตอนสี่ทุ่ม"
+  },
+  {
+    id: 349,
+    word: "说",
+    pinyin: "shuō",
+    meaning: "พูด",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请说中文。",
+    examplePinyin: "Qǐng shuō Zhōngwén.",
+    exampleThai: "กรุณาพูดภาษาจีน"
+  },
+  {
+    id: 350,
+    word: "说话",
+    pinyin: "shuōhuà",
+    meaning: "พูด; สนทนา",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请不要说话。",
+    examplePinyin: "Qǐng bú yào shuōhuà.",
+    exampleThai: "กรุณาอย่าพูด"
+  },
+  {
+    id: 351,
+    word: "四",
+    pinyin: "sì",
+    meaning: "สี่",
+    pos: "คำบอกจำนวน",
+    hsk: "HSK1",
+    example: "我家有四口人。",
+    examplePinyin: "Wǒ jiā yǒu sì kǒu rén.",
+    exampleThai: "ครอบครัวฉันมีสี่คน"
+  },
+  {
+    id: 352,
+    word: "送",
+    pinyin: "sòng",
+    meaning: "ให้; ส่ง",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我送你回家。",
+    examplePinyin: "Wǒ sòng nǐ huí jiā.",
+    exampleThai: "ฉันไปส่งคุณกลับบ้าน"
+  },
+  {
+    id: 353,
+    word: "岁",
+    pinyin: "suì",
+    meaning: "ขวบ; ปี (อายุ)",
+    pos: "ลักษณนาม",
+    hsk: "HSK1",
+    example: "我二十岁。",
+    examplePinyin: "Wǒ èrshí suì.",
+    exampleThai: "ฉันอายุ 20 ปี"
+  },
+  {
+    id: 354,
+    word: "他",
+    pinyin: "tā",
+    meaning: "เขา (ผู้ชาย)",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "他是我的朋友。",
+    examplePinyin: "Tā shì wǒ de péngyou.",
+    exampleThai: "เขาเป็นเพื่อนของฉัน"
+  },
+  {
+    id: 355,
+    word: "他们",
+    pinyin: "tāmen",
+    meaning: "พวกเขา",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "他们都是学生。",
+    examplePinyin: "Tāmen dōu shì xuéshēng.",
+    exampleThai: "พวกเขาล้วนเป็นนักเรียน"
+  },
+  {
+    id: 356,
+    word: "她",
+    pinyin: "tā",
+    meaning: "เธอ; หล่อน",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "她是老师。",
+    examplePinyin: "Tā shì lǎoshī.",
+    exampleThai: "เธอเป็นครู"
+  },
+  {
+    id: 357,
+    word: "她们",
+    pinyin: "tāmen",
+    meaning: "พวกเธอ",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "她们是我的朋友。",
+    examplePinyin: "Tāmen shì wǒ de péngyou.",
+    exampleThai: "พวกเธอเป็นเพื่อนของฉัน"
+  },
+  {
+    id: 358,
+    word: "太",
+    pinyin: "tài",
+    meaning: "เกินไป; มากเกิน",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "太好了！",
+    examplePinyin: "Tài hǎo le!",
+    exampleThai: "ดีมากเลย"
+  },
+  {
+    id: 359,
+    word: "天",
+    pinyin: "tiān",
+    meaning: "วัน; ท้องฟ้า",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "今天是晴天。",
+    examplePinyin: "Jīntiān shì qíngtiān.",
+    exampleThai: "วันนี้เป็นวันที่ท้องฟ้าแจ่มใส"
+  },
+  {
+    id: 360,
+    word: "天气",
+    pinyin: "tiānqì",
+    meaning: "อากาศ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "今天天气很好。",
+    examplePinyin: "Jīntiān tiānqì hěn hǎo.",
+    exampleThai: "วันนี้อากาศดีมาก"
+  },
+  {
+    id: 361,
+    word: "听",
+    pinyin: "tīng",
+    meaning: "ฟัง",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我喜欢听音乐。",
+    examplePinyin: "Wǒ xǐhuan tīng yīnyuè.",
+    exampleThai: "ฉันชอบฟังเพลง"
+  },
+  {
+    id: 362,
+    word: "听到",
+    pinyin: "tīngdào",
+    meaning: "ได้ยิน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我听到你的声音了。",
+    examplePinyin: "Wǒ tīngdào nǐ de shēngyīn le.",
+    exampleThai: "ฉันได้ยินเสียงคุณแล้ว"
+  },
+  {
+    id: 363,
+    word: "听见",
+    pinyin: "tīngjiàn",
+    meaning: "ได้ยิน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我听见有人说话。",
+    examplePinyin: "Wǒ tīngjiàn yǒu rén shuōhuà.",
+    exampleThai: "ฉันได้ยินว่ามีคนพูด"
+  },
+  {
+    id: 364,
+    word: "听写",
+    pinyin: "tīngxiě",
+    meaning: "เขียนตามคำบอก",
+    pos: "คำกริยา / คำนาม",
+    hsk: "HSK1",
+    example: "今天有听写。",
+    examplePinyin: "Jīntiān yǒu tīngxiě.",
+    exampleThai: "วันนี้มีสอบเขียนตามคำบอก"
+  },
+  {
+    id: 365,
+    word: "同学",
+    pinyin: "tóngxué",
+    meaning: "เพื่อนร่วมชั้น; นักเรียน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "他是我的同学。",
+    examplePinyin: "Tā shì wǒ de tóngxué.",
+    exampleThai: "เขาเป็นเพื่อนร่วมชั้นของฉัน"
+  },
+  {
+    id: 366,
+    word: "图书馆",
+    pinyin: "túshūguǎn",
+    meaning: "ห้องสมุด",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我在图书馆看书。",
+    examplePinyin: "Wǒ zài túshūguǎn kàn shū.",
+    exampleThai: "ฉันอ่านหนังสืออยู่ที่ห้องสมุด"
+  },
+  {
+    id: 367,
+    word: "外",
+    pinyin: "wài",
+    meaning: "ข้างนอก; ภายนอก",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "他在外面。",
+    examplePinyin: "Tā zài wàimiàn.",
+    exampleThai: "เขาอยู่ข้างนอก"
+  },
+  {
+    id: 368,
+    word: "外边",
+    pinyin: "wàibian",
+    meaning: "ด้านนอก",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "外边很冷。",
+    examplePinyin: "Wàibian hěn lěng.",
+    exampleThai: "ข้างนอกหนาวมาก"
+  },
+  {
+    id: 369,
+    word: "外国",
+    pinyin: "wàiguó",
+    meaning: "ต่างประเทศ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我想去外国。",
+    examplePinyin: "Wǒ xiǎng qù wàiguó.",
+    exampleThai: "ฉันอยากไปต่างประเทศ"
+  },
+  {
+    id: 370,
+    word: "外语",
+    pinyin: "wàiyǔ",
+    meaning: "ภาษาต่างประเทศ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我喜欢学外语。",
+    examplePinyin: "Wǒ xǐhuan xué wàiyǔ.",
+    exampleThai: "ฉันชอบเรียนภาษาต่างประเทศ"
+  },
+  {
+    id: 371,
+    word: "玩儿",
+    pinyin: "wánr",
+    meaning: "เล่น; เที่ยว",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我们一起玩儿吧。",
+    examplePinyin: "Wǒmen yìqǐ wánr ba.",
+    exampleThai: "พวกเราเล่นด้วยกันเถอะ"
+  },
+  {
+    id: 372,
+    word: "晚",
+    pinyin: "wǎn",
+    meaning: "สาย; ดึก; ช้า",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "对不起，我来晚了。",
+    examplePinyin: "Duìbuqǐ, wǒ lái wǎn le.",
+    exampleThai: "ขอโทษ ฉันมาสาย"
+  },
+  {
+    id: 373,
+    word: "晚饭",
+    pinyin: "wǎnfàn",
+    meaning: "อาหารเย็น",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我们一起吃晚饭。",
+    examplePinyin: "Wǒmen yìqǐ chī wǎnfàn.",
+    exampleThai: "พวกเรากินอาหารเย็นด้วยกัน"
+  },
+  {
+    id: 374,
+    word: "晚上",
+    pinyin: "wǎnshang",
+    meaning: "ตอนเย็น; กลางคืน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我晚上学习。",
+    examplePinyin: "Wǒ wǎnshang xuéxí.",
+    exampleThai: "ตอนเย็นฉันเรียน"
+  },
+  {
+    id: 375,
+    word: "网上",
+    pinyin: "wǎngshàng",
+    meaning: "บนอินเทอร์เน็ต",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我在网上买东西。",
+    examplePinyin: "Wǒ zài wǎngshàng mǎi dōngxi.",
+    exampleThai: "ฉันซื้อของบนอินเทอร์เน็ต"
+  },
+  {
+    id: 376,
+    word: "网友",
+    pinyin: "wǎngyǒu",
+    meaning: "เพื่อนในอินเทอร์เน็ต",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "他是我的网友。",
+    examplePinyin: "Tā shì wǒ de wǎngyǒu.",
+    exampleThai: "เขาเป็นเพื่อนในอินเทอร์เน็ตของฉัน"
+  },
+  {
+    id: 377,
+    word: "忘",
+    pinyin: "wàng",
+    meaning: "ลืม",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我忘了。",
+    examplePinyin: "Wǒ wàng le.",
+    exampleThai: "ฉันลืมแล้ว"
+  },
+  {
+    id: 378,
+    word: "忘记",
+    pinyin: "wàngjì",
+    meaning: "ลืม",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "不要忘记我。",
+    examplePinyin: "Bú yào wàngjì wǒ.",
+    exampleThai: "อย่าลืมฉัน"
+  },
+  {
+    id: 379,
+    word: "问",
+    pinyin: "wèn",
+    meaning: "ถาม",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我问老师一个问题。",
+    examplePinyin: "Wǒ wèn lǎoshī yí ge wèntí.",
+    exampleThai: "ฉันถามครูหนึ่งคำถาม"
+  },
+  {
+    id: 380,
+    word: "我",
+    pinyin: "wǒ",
+    meaning: "ฉัน; ผม",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "我是学生。",
+    examplePinyin: "Wǒ shì xuéshēng.",
+    exampleThai: "ฉันเป็นนักเรียน"
+  },
+  {
+    id: 381,
+    word: "我们",
+    pinyin: "wǒmen",
+    meaning: "พวกเรา",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "我们一起学习。",
+    examplePinyin: "Wǒmen yìqǐ xuéxí.",
+    exampleThai: "พวกเราเรียนด้วยกัน"
+  },
+  {
+    id: 382,
+    word: "五",
+    pinyin: "wǔ",
+    meaning: "ห้า",
+    pos: "คำบอกจำนวน",
+    hsk: "HSK1",
+    example: "我有五本书。",
+    examplePinyin: "Wǒ yǒu wǔ běn shū.",
+    exampleThai: "ฉันมีหนังสือห้าเล่ม"
+  },
+  {
+    id: 383,
+    word: "午饭",
+    pinyin: "wǔfàn",
+    meaning: "อาหารกลางวัน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我十二点吃午饭。",
+    examplePinyin: "Wǒ shí'èr diǎn chī wǔfàn.",
+    exampleThai: "ฉันกินอาหารกลางวันตอนเที่ยง"
+  },
+  {
+    id: 384,
+    word: "西",
+    pinyin: "xī",
+    meaning: "ทิศตะวันตก",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "学校在西边。",
+    examplePinyin: "Xuéxiào zài xībian.",
+    exampleThai: "โรงเรียนอยู่ทางตะวันตก"
+  },
+  {
+    id: 385,
+    word: "西边",
+    pinyin: "xībian",
+    meaning: "ด้านตะวันตก",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "商店在西边。",
+    examplePinyin: "Shāngdiàn zài xībian.",
+    exampleThai: "ร้านค้าอยู่ทางตะวันตก"
+  },
+  {
+    id: 386,
+    word: "洗",
+    pinyin: "xǐ",
+    meaning: "ล้าง; ซัก",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我洗手。",
+    examplePinyin: "Wǒ xǐ shǒu.",
+    exampleThai: "ฉันล้างมือ"
+  },
+  {
+    id: 387,
+    word: "洗手间",
+    pinyin: "xǐshǒujiān",
+    meaning: "ห้องน้ำ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "洗手间在哪里？",
+    examplePinyin: "Xǐshǒujiān zài nǎlǐ?",
+    exampleThai: "ห้องน้ำอยู่ที่ไหน"
+  },
+  {
+    id: 388,
+    word: "喜欢",
+    pinyin: "xǐhuan",
+    meaning: "ชอบ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我喜欢中文。",
+    examplePinyin: "Wǒ xǐhuan Zhōngwén.",
+    exampleThai: "ฉันชอบภาษาจีน"
+  },
+  {
+    id: 389,
+    word: "下",
+    pinyin: "xià",
+    meaning: "ลง; ด้านล่าง",
+    pos: "คำกริยา / คำนาม",
+    hsk: "HSK1",
+    example: "我下楼了。",
+    examplePinyin: "Wǒ xià lóu le.",
+    exampleThai: "ฉันลงชั้นล่างแล้ว"
+  },
+  {
+    id: 390,
+    word: "下班",
+    pinyin: "xiàbān",
+    meaning: "เลิกงาน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我六点下班。",
+    examplePinyin: "Wǒ liù diǎn xiàbān.",
+    exampleThai: "ฉันเลิกงานหกโมง"
+  },
+  {
+    id: 391,
+    word: "下边",
+    pinyin: "xiàbian",
+    meaning: "ด้านล่าง",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "桌子下边有猫。",
+    examplePinyin: "Zhuōzi xiàbian yǒu māo.",
+    exampleThai: "ใต้โต๊ะมีแมว"
+  },
+  {
+    id: 392,
+    word: "下车",
+    pinyin: "xiàchē",
+    meaning: "ลงจากรถ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "下一站下车。",
+    examplePinyin: "Xià yí zhàn xiàchē.",
+    exampleThai: "ลงรถที่ป้ายถัดไป"
+  },
+  {
+    id: 393,
+    word: "下次",
+    pinyin: "xià cì",
+    meaning: "ครั้งหน้า",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "下次再见。",
+    examplePinyin: "Xià cì zàijiàn.",
+    exampleThai: "เจอกันครั้งหน้า"
+  },
+  {
+    id: 394,
+    word: "下课",
+    pinyin: "xiàkè",
+    meaning: "เลิกเรียน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "什么时候下课？",
+    examplePinyin: "Shénme shíhou xiàkè?",
+    exampleThai: "เลิกเรียนเมื่อไร"
+  },
+  {
+    id: 395,
+    word: "下午",
+    pinyin: "xiàwǔ",
+    meaning: "ตอนบ่าย",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "下午我有课。",
+    examplePinyin: "Xiàwǔ wǒ yǒu kè.",
+    exampleThai: "ตอนบ่ายฉันมีเรียน"
+  },
+  {
+    id: 396,
+    word: "下雨",
+    pinyin: "xiàyǔ",
+    meaning: "ฝนตก",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "今天下雨了。",
+    examplePinyin: "Jīntiān xiàyǔ le.",
+    exampleThai: "วันนี้ฝนตกแล้ว"
+  },
+  {
+    id: 397,
+    word: "先",
+    pinyin: "xiān",
+    meaning: "ก่อน; ก่อนอื่น",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "你先吃吧。",
+    examplePinyin: "Nǐ xiān chī ba.",
+    exampleThai: "คุณกินก่อนเถอะ"
+  },
+  {
+    id: 398,
+    word: "先生",
+    pinyin: "xiānsheng",
+    meaning: "คุณผู้ชาย; นาย; สามี",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "先生，请问洗手间在哪里？",
+    examplePinyin: "Xiānsheng, qǐngwèn xǐshǒujiān zài nǎlǐ?",
+    exampleThai: "คุณผู้ชาย ขอถามหน่อยว่าห้องน้ำอยู่ที่ไหน"
+  },
+  {
+    id: 399,
+    word: "现在",
+    pinyin: "xiànzài",
+    meaning: "ตอนนี้",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "现在几点？",
+    examplePinyin: "Xiànzài jǐ diǎn?",
+    exampleThai: "ตอนนี้กี่โมง"
+  },
+  {
+    id: 400,
+    word: "想",
+    pinyin: "xiǎng",
+    meaning: "อยาก; คิด",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我想喝水。",
+    examplePinyin: "Wǒ xiǎng hē shuǐ.",
+    exampleThai: "ฉันอยากดื่มน้ำ"
+  },
+  {
+    id: 401,
+    word: "小",
+    pinyin: "xiǎo",
+    meaning: "เล็ก",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "我的房间很小。",
+    examplePinyin: "Wǒ de fángjiān hěn xiǎo.",
+    exampleThai: "ห้องของฉันเล็กมาก"
+  },
+  {
+    id: 402,
+    word: "小孩儿",
+    pinyin: "xiǎoháir",
+    meaning: "เด็กเล็ก",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "小孩儿在玩儿。",
+    examplePinyin: "Xiǎoháir zài wánr.",
+    exampleThai: "เด็กกำลังเล่น"
+  },
+  {
+    id: 403,
+    word: "小姐",
+    pinyin: "xiǎojiě",
+    meaning: "คุณผู้หญิง; คุณหนู",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "小姐，请问？",
+    examplePinyin: "Xiǎojiě, qǐngwèn?",
+    exampleThai: "คุณผู้หญิง ขอถามหน่อยค่ะ"
+  },
+  {
+    id: 404,
+    word: "小朋友",
+    pinyin: "xiǎopéngyou",
+    meaning: "เด็ก; หนูน้อย",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "小朋友们很可爱。",
+    examplePinyin: "Xiǎopéngyoumen hěn kě'ài.",
+    exampleThai: "เด็ก ๆ น่ารักมาก"
+  },
+  {
+    id: 405,
+    word: "小时",
+    pinyin: "xiǎoshí",
+    meaning: "ชั่วโมง",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我学习两个小时。",
+    examplePinyin: "Wǒ xuéxí liǎng ge xiǎoshí.",
+    exampleThai: "ฉันเรียนสองชั่วโมง"
+  },
+  {
+    id: 406,
+    word: "小学",
+    pinyin: "xiǎoxué",
+    meaning: "โรงเรียนประถม",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我弟弟上小学。",
+    examplePinyin: "Wǒ dìdi shàng xiǎoxué.",
+    exampleThai: "น้องชายของฉันเรียนประถม"
+  },
+  {
+    id: 407,
+    word: "小学生",
+    pinyin: "xiǎoxuéshēng",
+    meaning: "นักเรียนประถม",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "他是小学生。",
+    examplePinyin: "Tā shì xiǎoxuéshēng.",
+    exampleThai: "เขาเป็นนักเรียนประถม"
+  },
+  {
+    id: 408,
+    word: "笑",
+    pinyin: "xiào",
+    meaning: "หัวเราะ; ยิ้ม",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "她笑了。",
+    examplePinyin: "Tā xiào le.",
+    exampleThai: "เธอยิ้มแล้ว"
+  },
+  {
+    id: 409,
+    word: "写",
+    pinyin: "xiě",
+    meaning: "เขียน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我会写汉字。",
+    examplePinyin: "Wǒ huì xiě Hànzì.",
+    exampleThai: "ฉันเขียนอักษรจีนได้"
+  },
+  {
+    id: 410,
+    word: "谢谢",
+    pinyin: "xièxie",
+    meaning: "ขอบคุณ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "谢谢你的帮助。",
+    examplePinyin: "Xièxie nǐ de bāngzhù.",
+    exampleThai: "ขอบคุณสำหรับความช่วยเหลือ"
+  },
+  {
+    id: 411,
+    word: "新",
+    pinyin: "xīn",
+    meaning: "ใหม่",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "这是我的新书。",
+    examplePinyin: "Zhè shì wǒ de xīn shū.",
+    exampleThai: "นี่คือหนังสือเล่มใหม่ของฉัน"
+  },
+  {
+    id: 412,
+    word: "新年",
+    pinyin: "xīnnián",
+    meaning: "ปีใหม่",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "新年快乐！",
+    examplePinyin: "Xīnnián kuàilè!",
+    exampleThai: "สุขสันต์วันปีใหม่"
+  },
+  {
+    id: 413,
+    word: "星期",
+    pinyin: "xīngqī",
+    meaning: "สัปดาห์; วันในสัปดาห์",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "今天星期几？",
+    examplePinyin: "Jīntiān xīngqī jǐ?",
+    exampleThai: "วันนี้วันอะไร"
+  },
+  {
+    id: 414,
+    word: "星期日",
+    pinyin: "xīngqīrì",
+    meaning: "วันอาทิตย์",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "星期日我休息。",
+    examplePinyin: "Xīngqīrì wǒ xiūxi.",
+    exampleThai: "วันอาทิตย์ฉันพัก"
+  },
+  {
+    id: 415,
+    word: "星期天",
+    pinyin: "xīngqītiān",
+    meaning: "วันอาทิตย์",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "星期天我不上课。",
+    examplePinyin: "Xīngqītiān wǒ bú shàngkè.",
+    exampleThai: "วันอาทิตย์ฉันไม่มีเรียน"
+  },
+  {
+    id: 416,
+    word: "行",
+    pinyin: "xíng",
+    meaning: "ได้; ตกลง; โอเค",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "这样行吗？",
+    examplePinyin: "Zhèyàng xíng ma?",
+    exampleThai: "แบบนี้ได้ไหม"
+  },
+  {
+    id: 417,
+    word: "休息",
+    pinyin: "xiūxi",
+    meaning: "พักผ่อน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我想休息一下。",
+    examplePinyin: "Wǒ xiǎng xiūxi yíxià.",
+    exampleThai: "ฉันอยากพักสักหน่อย"
+  },
+  {
+    id: 418,
+    word: "学",
+    pinyin: "xué",
+    meaning: "เรียน; เรียนรู้",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我学汉语。",
+    examplePinyin: "Wǒ xué Hànyǔ.",
+    exampleThai: "ฉันเรียนภาษาจีน"
+  },
+  {
+    id: 419,
+    word: "学生",
+    pinyin: "xuéshēng",
+    meaning: "นักเรียน; นักศึกษา",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我是学生。",
+    examplePinyin: "Wǒ shì xuéshēng.",
+    exampleThai: "ฉันเป็นนักเรียน"
+  },
+  {
+    id: 420,
+    word: "学习",
+    pinyin: "xuéxí",
+    meaning: "เรียน; ศึกษา",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我每天学习汉语。",
+    examplePinyin: "Wǒ měitiān xuéxí Hànyǔ.",
+    exampleThai: "ฉันเรียนภาษาจีนทุกวัน"
+  },
+  {
+    id: 421,
+    word: "学校",
+    pinyin: "xuéxiào",
+    meaning: "โรงเรียน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我在学校学习。",
+    examplePinyin: "Wǒ zài xuéxiào xuéxí.",
+    exampleThai: "ฉันเรียนอยู่ที่โรงเรียน"
+  },
+  {
+    id: 422,
+    word: "学院",
+    pinyin: "xuéyuàn",
+    meaning: "วิทยาลัย; คณะ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我在学院学习。",
+    examplePinyin: "Wǒ zài xuéyuàn xuéxí.",
+    exampleThai: "ฉันเรียนอยู่ที่วิทยาลัย"
+  },
+  {
+    id: 423,
+    word: "要",
+    pinyin: "yào",
+    meaning: "ต้องการ; จะ; ต้อง",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我要一杯水。",
+    examplePinyin: "Wǒ yào yì bēi shuǐ.",
+    exampleThai: "ฉันต้องการน้ำหนึ่งแก้ว"
+  },
+  {
+    id: 424,
+    word: "爷爷",
+    pinyin: "yéye",
+    meaning: "คุณปู่; คุณตา",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "爷爷喜欢喝茶。",
+    examplePinyin: "Yéye xǐhuan hē chá.",
+    exampleThai: "คุณปู่ชอบดื่มชา"
+  },
+  {
+    id: 425,
+    word: "也",
+    pinyin: "yě",
+    meaning: "ก็; ด้วย",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "我也喜欢中文。",
+    examplePinyin: "Wǒ yě xǐhuan Zhōngwén.",
+    exampleThai: "ฉันก็ชอบภาษาจีนเหมือนกัน"
+  },
+  {
+    id: 426,
+    word: "页",
+    pinyin: "yè",
+    meaning: "หน้า (หนังสือ)",
+    pos: "ลักษณนาม",
+    hsk: "HSK1",
+    example: "请看第一页。",
+    examplePinyin: "Qǐng kàn dì yī yè.",
+    exampleThai: "กรุณาดูหน้าที่หนึ่ง"
+  },
+  {
+    id: 427,
+    word: "一",
+    pinyin: "yī",
+    meaning: "หนึ่ง",
+    pos: "คำบอกจำนวน",
+    hsk: "HSK1",
+    example: "我有一本书。",
+    examplePinyin: "Wǒ yǒu yì běn shū.",
+    exampleThai: "ฉันมีหนังสือหนึ่งเล่ม"
+  },
+  {
+    id: 428,
+    word: "衣服",
+    pinyin: "yīfu",
+    meaning: "เสื้อผ้า",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我的衣服是新的。",
+    examplePinyin: "Wǒ de yīfu shì xīn de.",
+    exampleThai: "เสื้อผ้าของฉันเป็นของใหม่"
+  },
+  {
+    id: 429,
+    word: "医生",
+    pinyin: "yīshēng",
+    meaning: "แพทย์; หมอ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我爸爸是医生。",
+    examplePinyin: "Wǒ bàba shì yīshēng.",
+    exampleThai: "พ่อของฉันเป็นหมอ"
+  },
+  {
+    id: 430,
+    word: "医院",
+    pinyin: "yīyuàn",
+    meaning: "โรงพยาบาล",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "医院在哪里？",
+    examplePinyin: "Yīyuàn zài nǎlǐ?",
+    exampleThai: "โรงพยาบาลอยู่ที่ไหน"
+  },
+  {
+    id: 431,
+    word: "一半",
+    pinyin: "yíbàn",
+    meaning: "ครึ่งหนึ่ง",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我吃了一半。",
+    examplePinyin: "Wǒ chī le yíbàn.",
+    exampleThai: "ฉันกินไปครึ่งหนึ่ง"
+  },
+  {
+    id: 432,
+    word: "一会儿",
+    pinyin: "yíhuìr",
+    meaning: "สักครู่; อีกสักพัก",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "等我一会儿。",
+    examplePinyin: "Děng wǒ yíhuìr.",
+    exampleThai: "รอฉันสักครู่"
+  },
+  {
+    id: 433,
+    word: "一块儿",
+    pinyin: "yíkuàir",
+    meaning: "ด้วยกัน",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "我们一块儿去。",
+    examplePinyin: "Wǒmen yíkuàir qù.",
+    exampleThai: "พวกเราไปด้วยกัน"
+  },
+  {
+    id: 434,
+    word: "一下儿",
+    pinyin: "yíxiàr",
+    meaning: "สักหน่อย; สักครั้ง",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "请等一下儿。",
+    examplePinyin: "Qǐng děng yíxiàr.",
+    exampleThai: "กรุณารอสักหน่อย"
+  },
+  {
+    id: 435,
+    word: "一样",
+    pinyin: "yíyàng",
+    meaning: "เหมือนกัน",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "我们的书一样。",
+    examplePinyin: "Wǒmen de shū yíyàng.",
+    exampleThai: "หนังสือของพวกเราเหมือนกัน"
+  },
+  {
+    id: 436,
+    word: "一边",
+    pinyin: "yìbiān",
+    meaning: "ด้านหนึ่ง; ขณะเดียวกัน",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "我一边吃饭一边看电视。",
+    examplePinyin: "Wǒ yìbiān chīfàn yìbiān kàn diànshì.",
+    exampleThai: "ฉันกินข้าวไปดูทีวีไป"
+  },
+  {
+    id: 437,
+    word: "一点儿",
+    pinyin: "yìdiǎnr",
+    meaning: "เล็กน้อย; นิดหน่อย",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "请慢一点儿。",
+    examplePinyin: "Qǐng màn yìdiǎnr.",
+    exampleThai: "กรุณาช้าลงหน่อย"
+  },
+  {
+    id: 438,
+    word: "一起",
+    pinyin: "yìqǐ",
+    meaning: "ด้วยกัน",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "我们一起学习。",
+    examplePinyin: "Wǒmen yìqǐ xuéxí.",
+    exampleThai: "พวกเราเรียนด้วยกัน"
+  },
+  {
+    id: 439,
+    word: "一些",
+    pinyin: "yìxiē",
+    meaning: "บางส่วน; บางอย่าง; เล็กน้อย",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "我买了一些水果。",
+    examplePinyin: "Wǒ mǎi le yìxiē shuǐguǒ.",
+    exampleThai: "ฉันซื้อผลไม้มาบางส่วน"
+  },
+  {
+    id: 440,
+    word: "用",
+    pinyin: "yòng",
+    meaning: "ใช้",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我用手机学习。",
+    examplePinyin: "Wǒ yòng shǒujī xuéxí.",
+    exampleThai: "ฉันใช้โทรศัพท์มือถือเรียน"
+  },
+  {
+    id: 441,
+    word: "有",
+    pinyin: "yǒu",
+    meaning: "มี",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我有一个哥哥。",
+    examplePinyin: "Wǒ yǒu yí ge gēge.",
+    exampleThai: "ฉันมีพี่ชายหนึ่งคน"
+  },
+  {
+    id: 442,
+    word: "有的",
+    pinyin: "yǒu de",
+    meaning: "บาง...; บางคน",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "有的人喜欢茶。",
+    examplePinyin: "Yǒu de rén xǐhuan chá.",
+    exampleThai: "บางคนชอบชา"
+  },
+  {
+    id: 443,
+    word: "有名",
+    pinyin: "yǒumíng",
+    meaning: "มีชื่อเสียง",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "北京很有名。",
+    examplePinyin: "Běijīng hěn yǒumíng.",
+    exampleThai: "ปักกิ่งมีชื่อเสียงมาก"
+  },
+  {
+    id: 444,
+    word: "有时候",
+    pinyin: "yǒu shíhou",
+    meaning: "บางครั้ง",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "我有时候喝茶。",
+    examplePinyin: "Wǒ yǒu shíhou hē chá.",
+    exampleThai: "บางครั้งฉันดื่มชา"
+  },
+  {
+    id: 445,
+    word: "有一些",
+    pinyin: "yǒu yìxiē",
+    meaning: "มีบางส่วน; มีอยู่บ้าง",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "桌子上有一些书。",
+    examplePinyin: "Zhuōzi shàng yǒu yìxiē shū.",
+    exampleThai: "บนโต๊ะมีหนังสืออยู่บางส่วน"
+  },
+  {
+    id: 446,
+    word: "有用",
+    pinyin: "yǒuyòng",
+    meaning: "มีประโยชน์",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "这个东西很有用。",
+    examplePinyin: "Zhège dōngxi hěn yǒuyòng.",
+    exampleThai: "ของสิ่งนี้มีประโยชน์มาก"
+  },
+  {
+    id: 447,
+    word: "右",
+    pinyin: "yòu",
+    meaning: "ขวา",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "请看右边。",
+    examplePinyin: "Qǐng kàn yòubian.",
+    exampleThai: "กรุณาดูทางขวา"
+  },
+  {
+    id: 448,
+    word: "右边",
+    pinyin: "yòubian",
+    meaning: "ด้านขวา",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "银行在右边。",
+    examplePinyin: "Yínháng zài yòubian.",
+    exampleThai: "ธนาคารอยู่ทางขวา"
+  },
+  {
+    id: 449,
+    word: "雨",
+    pinyin: "yǔ",
+    meaning: "ฝน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "今天有雨。",
+    examplePinyin: "Jīntiān yǒu yǔ.",
+    exampleThai: "วันนี้มีฝน"
+  },
+  {
+    id: 450,
+    word: "元",
+    pinyin: "yuán",
+    meaning: "หยวน",
+    pos: "ลักษณนาม",
+    hsk: "HSK1",
+    example: "这个十元。",
+    examplePinyin: "Zhège shí yuán.",
+    exampleThai: "อันนี้ราคา 10 หยวน"
+  },
+  {
+    id: 451,
+    word: "远",
+    pinyin: "yuǎn",
+    meaning: "ไกล",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "学校很远。",
+    examplePinyin: "Xuéxiào hěn yuǎn.",
+    exampleThai: "โรงเรียนอยู่ไกลมาก"
+  },
+  {
+    id: 452,
+    word: "月",
+    pinyin: "yuè",
+    meaning: "เดือน; พระจันทร์",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "一年有十二个月。",
+    examplePinyin: "Yì nián yǒu shí'èr ge yuè.",
+    exampleThai: "หนึ่งปีมี 12 เดือน"
+  },
+  {
+    id: 453,
+    word: "再",
+    pinyin: "zài",
+    meaning: "อีกครั้ง; แล้วค่อย",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "再见。",
+    examplePinyin: "Zàijiàn.",
+    exampleThai: "ลาก่อน; แล้วพบกันใหม่"
+  },
+  {
+    id: 454,
+    word: "再见",
+    pinyin: "zàijiàn",
+    meaning: "ลาก่อน; แล้วพบกันใหม่",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "明天再见。",
+    examplePinyin: "Míngtiān zàijiàn.",
+    exampleThai: "พรุ่งนี้พบกันใหม่"
+  },
+  {
+    id: 455,
+    word: "在",
+    pinyin: "zài",
+    meaning: "อยู่; ที่; กำลัง",
+    pos: "คำกริยา / คำบุพบท",
+    hsk: "HSK1",
+    example: "我在学校。",
+    examplePinyin: "Wǒ zài xuéxiào.",
+    exampleThai: "ฉันอยู่ที่โรงเรียน"
+  },
+  {
+    id: 456,
+    word: "在家",
+    pinyin: "zài jiā",
+    meaning: "อยู่บ้าน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "今天我在家。",
+    examplePinyin: "Jīntiān wǒ zài jiā.",
+    exampleThai: "วันนี้ฉันอยู่บ้าน"
+  },
+  {
+    id: 457,
+    word: "早",
+    pinyin: "zǎo",
+    meaning: "เช้า; เร็ว",
+    pos: "คำคุณศัพท์ / คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "你来得很早。",
+    examplePinyin: "Nǐ lái de hěn zǎo.",
+    exampleThai: "คุณมาเร็วมาก"
+  },
+  {
+    id: 458,
+    word: "早饭",
+    pinyin: "zǎofàn",
+    meaning: "อาหารเช้า",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我吃早饭了。",
+    examplePinyin: "Wǒ chī zǎofàn le.",
+    exampleThai: "ฉันกินอาหารเช้าแล้ว"
+  },
+  {
+    id: 459,
+    word: "早上",
+    pinyin: "zǎoshang",
+    meaning: "ตอนเช้า",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我早上喝牛奶。",
+    examplePinyin: "Wǒ zǎoshang hē niúnǎi.",
+    exampleThai: "ตอนเช้าฉันดื่มนม"
+  },
+  {
+    id: 460,
+    word: "怎么",
+    pinyin: "zěnme",
+    meaning: "อย่างไร; ทำไม",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "这个怎么说？",
+    examplePinyin: "Zhège zěnme shuō?",
+    exampleThai: "อันนี้พูดว่าอย่างไร"
+  },
+  {
+    id: 461,
+    word: "站",
+    pinyin: "zhàn",
+    meaning: "สถานี; ป้าย",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "下一站到了。",
+    examplePinyin: "Xià yí zhàn dào le.",
+    exampleThai: "ถึงสถานีถัดไปแล้ว"
+  },
+  {
+    id: 462,
+    word: "找",
+    pinyin: "zhǎo",
+    meaning: "หา",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我在找我的手机。",
+    examplePinyin: "Wǒ zài zhǎo wǒ de shǒujī.",
+    exampleThai: "ฉันกำลังหาโทรศัพท์มือถือของฉัน"
+  },
+  {
+    id: 463,
+    word: "找到",
+    pinyin: "zhǎodào",
+    meaning: "หาเจอ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我找到书了。",
+    examplePinyin: "Wǒ zhǎodào shū le.",
+    exampleThai: "ฉันหาหนังสือเจอแล้ว"
+  },
+  {
+    id: 464,
+    word: "这",
+    pinyin: "zhè",
+    meaning: "นี้; นี่",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "这是什么？",
+    examplePinyin: "Zhè shì shénme?",
+    exampleThai: "นี่คืออะไร"
+  },
+  {
+    id: 465,
+    word: "这边",
+    pinyin: "zhèbian",
+    meaning: "ด้านนี้; ทางนี้",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "请来这边。",
+    examplePinyin: "Qǐng lái zhèbian.",
+    exampleThai: "เชิญมาทางนี้"
+  },
+  {
+    id: 466,
+    word: "这里",
+    pinyin: "zhèlǐ",
+    meaning: "ที่นี่",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "我在这里。",
+    examplePinyin: "Wǒ zài zhèlǐ.",
+    exampleThai: "ฉันอยู่ที่นี่"
+  },
+  {
+    id: 467,
+    word: "这儿",
+    pinyin: "zhèr",
+    meaning: "ที่นี่",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "你坐这儿。",
+    examplePinyin: "Nǐ zuò zhèr.",
+    exampleThai: "คุณนั่งตรงนี้"
+  },
+  {
+    id: 468,
+    word: "这些",
+    pinyin: "zhèxiē",
+    meaning: "เหล่านี้",
+    pos: "คำสรรพนาม",
+    hsk: "HSK1",
+    example: "这些都是我的书。",
+    examplePinyin: "Zhèxiē dōu shì wǒ de shū.",
+    exampleThai: "หนังสือเหล่านี้เป็นของฉันทั้งหมด"
+  },
+  {
+    id: 469,
+    word: "着",
+    pinyin: "zhe",
+    meaning: "อยู่ในสภาพ; กำลัง...อยู่",
+    pos: "คำช่วย",
+    hsk: "HSK1",
+    example: "门开着。",
+    examplePinyin: "Mén kāizhe.",
+    exampleThai: "ประตูเปิดอยู่"
+  },
+  {
+    id: 470,
+    word: "真",
+    pinyin: "zhēn",
+    meaning: "จริง; ช่าง...จริง ๆ",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "你真好。",
+    examplePinyin: "Nǐ zhēn hǎo.",
+    exampleThai: "คุณช่างดีจริง ๆ"
+  },
+  {
+    id: 471,
+    word: "真的",
+    pinyin: "zhēn de",
+    meaning: "จริง ๆ; จริง",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "我真的很喜欢。",
+    examplePinyin: "Wǒ zhēn de hěn xǐhuan.",
+    exampleThai: "ฉันชอบจริง ๆ"
+  },
+  {
+    id: 472,
+    word: "正",
+    pinyin: "zhèng",
+    meaning: "กำลัง; พอดี",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "他正在吃饭。",
+    examplePinyin: "Tā zhèngzài chīfàn.",
+    exampleThai: "เขากำลังกินข้าว"
+  },
+  {
+    id: 473,
+    word: "正在",
+    pinyin: "zhèngzài",
+    meaning: "กำลัง...อยู่",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "我正在学习。",
+    examplePinyin: "Wǒ zhèngzài xuéxí.",
+    exampleThai: "ฉันกำลังเรียนอยู่"
+  },
+  {
+    id: 474,
+    word: "知道",
+    pinyin: "zhīdào",
+    meaning: "รู้",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我知道了。",
+    examplePinyin: "Wǒ zhīdào le.",
+    exampleThai: "ฉันรู้แล้ว"
+  },
+  {
+    id: 475,
+    word: "知识",
+    pinyin: "zhīshi",
+    meaning: "ความรู้",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "学习知识很重要。",
+    examplePinyin: "Xuéxí zhīshi hěn zhòngyào.",
+    exampleThai: "การเรียนรู้ความรู้เป็นสิ่งสำคัญ"
+  },
+  {
+    id: 476,
+    word: "中",
+    pinyin: "zhōng",
+    meaning: "กลาง; ใน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "房间中有一个人。",
+    examplePinyin: "Fángjiān zhōng yǒu yí ge rén.",
+    exampleThai: "ในห้องมีคนหนึ่งคน"
+  },
+  {
+    id: 477,
+    word: "中国",
+    pinyin: "Zhōngguó",
+    meaning: "ประเทศจีน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我喜欢中国。",
+    examplePinyin: "Wǒ xǐhuan Zhōngguó.",
+    exampleThai: "ฉันชอบประเทศจีน"
+  },
+  {
+    id: 478,
+    word: "中间",
+    pinyin: "zhōngjiān",
+    meaning: "ตรงกลาง",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我坐在中间。",
+    examplePinyin: "Wǒ zuò zài zhōngjiān.",
+    exampleThai: "ฉันนั่งอยู่ตรงกลาง"
+  },
+  {
+    id: 479,
+    word: "中文",
+    pinyin: "Zhōngwén",
+    meaning: "ภาษาจีน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我学习中文。",
+    examplePinyin: "Wǒ xuéxí Zhōngwén.",
+    exampleThai: "ฉันเรียนภาษาจีน"
+  },
+  {
+    id: 480,
+    word: "中午",
+    pinyin: "zhōngwǔ",
+    meaning: "ตอนเที่ยง",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "我中午吃米饭。",
+    examplePinyin: "Wǒ zhōngwǔ chī mǐfàn.",
+    exampleThai: "ตอนเที่ยงฉันกินข้าว"
+  },
+  {
+    id: 481,
+    word: "中学",
+    pinyin: "zhōngxué",
+    meaning: "โรงเรียนมัธยม",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "他在中学学习。",
+    examplePinyin: "Tā zài zhōngxué xuéxí.",
+    exampleThai: "เขาเรียนอยู่โรงเรียนมัธยม"
+  },
+  {
+    id: 482,
+    word: "中学生",
+    pinyin: "zhōngxuéshēng",
+    meaning: "นักเรียนมัธยม",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "他是中学生。",
+    examplePinyin: "Tā shì zhōngxuéshēng.",
+    exampleThai: "เขาเป็นนักเรียนมัธยม"
+  },
+  {
+    id: 483,
+    word: "重",
+    pinyin: "zhòng",
+    meaning: "หนัก",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "这个包很重。",
+    examplePinyin: "Zhège bāo hěn zhòng.",
+    exampleThai: "กระเป๋าใบนี้หนักมาก"
+  },
+  {
+    id: 484,
+    word: "重要",
+    pinyin: "zhòngyào",
+    meaning: "สำคัญ",
+    pos: "คำคุณศัพท์",
+    hsk: "HSK1",
+    example: "学习很重要。",
+    examplePinyin: "Xuéxí hěn zhòngyào.",
+    exampleThai: "การเรียนสำคัญมาก"
+  },
+  {
+    id: 485,
+    word: "住",
+    pinyin: "zhù",
+    meaning: "อาศัย; พัก",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我住在北京。",
+    examplePinyin: "Wǒ zhù zài Běijīng.",
+    exampleThai: "ฉันอาศัยอยู่ปักกิ่ง"
+  },
+  {
+    id: 486,
+    word: "准备",
+    pinyin: "zhǔnbèi",
+    meaning: "เตรียม",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我准备好了。",
+    examplePinyin: "Wǒ zhǔnbèi hǎo le.",
+    exampleThai: "ฉันเตรียมพร้อมแล้ว"
+  },
+  {
+    id: 487,
+    word: "桌子",
+    pinyin: "zhuōzi",
+    meaning: "โต๊ะ",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "书在桌子上。",
+    examplePinyin: "Shū zài zhuōzi shàng.",
+    exampleThai: "หนังสืออยู่บนโต๊ะ"
+  },
+  {
+    id: 488,
+    word: "字",
+    pinyin: "zì",
+    meaning: "ตัวอักษร",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "这个字怎么读？",
+    examplePinyin: "Zhège zì zěnme dú?",
+    exampleThai: "ตัวอักษรตัวนี้อ่านว่าอย่างไร"
+  },
+  {
+    id: 489,
+    word: "子",
+    pinyin: "zi",
+    meaning: "คำเติมท้ายคำนาม",
+    pos: "คำช่วย",
+    hsk: "HSK1",
+    example: "桌子上有书。",
+    examplePinyin: "Zhuōzi shàng yǒu shū.",
+    exampleThai: "บนโต๊ะมีหนังสือ"
+  },
+  {
+    id: 490,
+    word: "走",
+    pinyin: "zǒu",
+    meaning: "เดิน; ไป",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我们走吧。",
+    examplePinyin: "Wǒmen zǒu ba.",
+    exampleThai: "พวกเราไปกันเถอะ"
+  },
+  {
+    id: 491,
+    word: "走路",
+    pinyin: "zǒulù",
+    meaning: "เดิน",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我每天走路上学。",
+    examplePinyin: "Wǒ měitiān zǒulù shàngxué.",
+    exampleThai: "ฉันเดินไปโรงเรียนทุกวัน"
+  },
+  {
+    id: 492,
+    word: "最",
+    pinyin: "zuì",
+    meaning: "ที่สุด",
+    pos: "คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "我最喜欢这个。",
+    examplePinyin: "Wǒ zuì xǐhuan zhège.",
+    exampleThai: "ฉันชอบอันนี้ที่สุด"
+  },
+  {
+    id: 493,
+    word: "最好",
+    pinyin: "zuìhǎo",
+    meaning: "ดีที่สุด; ควรจะ",
+    pos: "คำคุณศัพท์ / คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "这个最好。",
+    examplePinyin: "Zhège zuì hǎo.",
+    exampleThai: "อันนี้ดีที่สุด"
+  },
+  {
+    id: 494,
+    word: "最后",
+    pinyin: "zuìhòu",
+    meaning: "สุดท้าย",
+    pos: "คำนาม / คำวิเศษณ์",
+    hsk: "HSK1",
+    example: "他最后来了。",
+    examplePinyin: "Tā zuìhòu lái le.",
+    exampleThai: "สุดท้ายเขาก็มา"
+  },
+  {
+    id: 495,
+    word: "昨天",
+    pinyin: "zuótiān",
+    meaning: "เมื่อวาน",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "昨天下雨了。",
+    examplePinyin: "Zuótiān xiàyǔ le.",
+    exampleThai: "เมื่อวานฝนตก"
+  },
+  {
+    id: 496,
+    word: "左",
+    pinyin: "zuǒ",
+    meaning: "ซ้าย",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "请看左边。",
+    examplePinyin: "Qǐng kàn zuǒbian.",
+    exampleThai: "กรุณาดูทางซ้าย"
+  },
+  {
+    id: 497,
+    word: "左边",
+    pinyin: "zuǒbian",
+    meaning: "ด้านซ้าย",
+    pos: "คำนาม",
+    hsk: "HSK1",
+    example: "银行在左边。",
+    examplePinyin: "Yínháng zài zuǒbian.",
+    exampleThai: "ธนาคารอยู่ทางซ้าย"
+  },
+  {
+    id: 498,
+    word: "坐",
+    pinyin: "zuò",
+    meaning: "นั่ง; โดยสาร",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请坐。",
+    examplePinyin: "Qǐng zuò.",
+    exampleThai: "เชิญนั่ง"
+  },
+  {
+    id: 499,
+    word: "坐下",
+    pinyin: "zuòxià",
+    meaning: "นั่งลง",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "请坐下。",
+    examplePinyin: "Qǐng zuòxià.",
+    exampleThai: "กรุณานั่งลง"
+  },
+  {
+    id: 500,
+    word: "做",
+    pinyin: "zuò",
+    meaning: "ทำ",
+    pos: "คำกริยา",
+    hsk: "HSK1",
+    example: "我在做作业。",
+    examplePinyin: "Wǒ zài zuò zuòyè.",
+    exampleThai: "ฉันกำลังทำการบ้าน"
   }
 ];
