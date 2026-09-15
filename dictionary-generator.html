@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dictionary.js Generator | ก็แค่จีน</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:"Noto Sans Thai","Noto Sans SC",Arial,sans-serif;
+  background:linear-gradient(135deg,#eef7ff,#fffaf2);
+  color:#334155;
+}
+
+button,input,textarea,select{font:inherit}
+
+.navbar{
+  background:rgba(255,255,255,.96);
+  border-bottom:1px solid #dbeafe;
+  padding:15px 20px;
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter:blur(10px);
+}
+
+.nav-inner{
+  max-width:1250px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.brand{
+  font-size:20px;
+  font-weight:900;
+  color:#2563eb;
+}
+
+.brand small{
+  display:block;
+  font-size:11px;
+  color:#94a3b8;
+  font-weight:500;
+}
+
+.badge{
+  background:#eff6ff;
+  color:#2563eb;
+  padding:7px 13px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.container{
+  max-width:1250px;
+  margin:auto;
+  padding:28px 16px 60px;
+}
+
+.hero{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  margin:0 0 8px;
+  color:#1e3a8a;
+  font-size:clamp(26px,4vw,38px);
+}
+
+.hero p{
+  margin:0;
+  color:#64748b;
+}
+
+.card{
+  background:rgba(255,255,255,.96);
+  border:1px solid #e2e8f0;
+  border-radius:20px;
+  padding:20px;
+  margin-bottom:20px;
+  box-shadow:0 8px 30px rgba(30,64,175,.06);
+}
+
+.title{
+  font-size:19px;
+  font-weight:900;
+  color:#1e40af;
+  margin-bottom:15px;
+}
+
+.settings{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+label.main-label{
+  display:block;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:6px;
+  color:#475569;
+}
+
+input,textarea,select{
+  width:100%;
+  border:1px solid #cbd5e1;
+  border-radius:11px;
+  padding:10px 12px;
+  outline:none;
+  background:#fff;
+  color:#334155;
+}
+
+input:focus,textarea:focus,select:focus{
+  border-color:#60a5fa;
+  box-shadow:0 0 0 3px rgba(96,165,250,.13);
+}
+
+.tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:16px;
+}
+
+.tab{
+  border:1px solid #bfdbfe;
+  background:#eff6ff;
+  color:#2563eb;
+  border-radius:11px;
+  padding:10px 15px;
+  cursor:pointer;
+  font-weight:800;
+}
+
+.tab.active{
+  background:#2563eb;
+  color:#fff;
+}
+
+.method{
+  display:none;
+}
+
+.method.active{
+  display:block;
+}
+
+.info{
+  background:#f8fafc;
+  border-radius:11px;
+  padding:11px 14px;
+  margin-bottom:12px;
+  color:#64748b;
+  font-size:13px;
+  line-height:1.7;
+}
+
+code{
+  background:#e2e8f0;
+  padding:2px 5px;
+  border-radius:4px;
+}
+
+#pasteText{
+  min-height:270px;
+  resize:vertical;
+  line-height:1.8;
+  font-family:"Noto Sans SC","Noto Sans Thai",sans-serif;
+}
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:13px;
+}
+
+button{
+  border:0;
+  border-radius:11px;
+  padding:10px 15px;
+  cursor:pointer;
+  font-weight:800;
+  transition:.18s;
+}
+
+button:hover{
+  transform:translateY(-1px);
+}
+
+.primary{background:#2563eb;color:#fff}
+.primary:hover{background:#1d4ed8}
+
+.blue{background:#dbeafe;color:#1d4ed8}
+.green{background:#dcfce7;color:#15803d}
+.red{background:#fee2e2;color:#dc2626}
+.gray{background:#f1f5f9;color:#475569}
+.orange{background:#ffedd5;color:#c2410c}
+
+.manual-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.word-row{
+  border:1px solid #dbeafe;
+  background:#fafdff;
+  border-radius:15px;
+  padding:14px;
+  position:relative;
+}
+
+.row-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.row-number{
+  font-size:13px;
+  font-weight:900;
+  color:#2563eb;
+}
+
+.row-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+.remove-row{
+  padding:6px 9px;
+  font-size:12px;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-bottom:15px;
+}
+
+.stat{
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+  border-radius:14px;
+  text-align:center;
+  padding:13px;
+}
+
+.stat-number{
+  color:#2563eb;
+  font-size:24px;
+  font-weight:900;
+}
+
+.stat-label{
+  font-size:11px;
+  color:#64748b;
+}
+
+.table-wrap{
+  overflow:auto;
+  max-height:500px;
+  border:1px solid #e2e8f0;
+  border-radius:13px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:1000px;
+}
+
+th,td{
+  padding:9px 10px;
+  border-bottom:1px solid #e2e8f0;
+  font-size:12px;
+  text-align:left;
+  vertical-align:top;
+}
+
+th{
+  background:#eff6ff;
+  color:#1e40af;
+  position:sticky;
+  top:0;
+}
+
+.word-cell{
+  font-size:18px;
+  font-weight:900;
+  color:#1e3a8a;
+}
+
+.ok{color:#15803d;font-weight:800}
+.warn{color:#d97706;font-weight:800}
+.dup{color:#dc2626;font-weight:800}
+
+.code-wrap{
+  position:relative;
+}
+
+#outputCode{
+  min-height:500px;
+  resize:vertical;
+  background:#0f172a;
+  color:#e2e8f0;
+  border:0;
+  border-radius:12px;
+  font-family:Consolas,Monaco,monospace;
+  font-size:13px;
+  line-height:1.65;
+  padding:17px;
+}
+
+.copy-top{
+  position:absolute;
+  right:9px;
+  top:9px;
+  background:#334155;
+  color:#fff;
+  z-index:2;
+  font-size:12px;
+}
+
+.empty{
+  padding:30px;
+  text-align:center;
+  color:#94a3b8;
+}
+
+.footer{
+  text-align:center;
+  color:#94a3b8;
+  font-size:12px;
+  padding:20px;
+}
+
+.hidden{display:none!important}
+
+@media(max-width:800px){
+  .settings{
+    grid-template-columns:1fr;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .row-grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
+  .badge{
+    display:none;
+  }
+
+  .card{
+    padding:15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="brand">
+      💙 ก็แค่จีน
+      <small>Dictionary.js Generator</small>
+    </div>
+
+    <div class="badge">
+      เครื่องมือสร้างฐานข้อมูลคำศัพท์
+    </div>
+  </div>
+</nav>
+
+
+<main class="container">
+
+<section class="hero">
+  <h1>📚 Dictionary.js Generator</h1>
+  <p>เพิ่มคำศัพท์หลายวิธี แล้วสร้าง dictionary.js ได้ในหน้าเดียว</p>
+</section>
+
+
+<!-- SETTINGS -->
+<section class="card">
+
+  <div class="title">⚙️ ตั้งค่า</div>
+
+  <div class="settings">
+
+    <div>
+      <label class="main-label">ID เริ่มต้น</label>
+      <input id="startId" type="number" value="151" min="1">
+    </div>
+
+    <div>
+      <label class="main-label">ระดับ HSK</label>
+      <select id="hskLevel">
+        <option>HSK1</option>
+        <option>HSK2</option>
+        <option>HSK3</option>
+        <option>HSK4</option>
+        <option>HSK5</option>
+        <option>HSK6</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="main-label">ชื่อไฟล์</label>
+      <input id="fileName" value="dictionary.js">
+    </div>
+
+  </div>
+
+  <div class="actions">
+
+    <label style="display:flex;align-items:center;gap:6px;font-size:13px">
+      <input id="removeDuplicates" type="checkbox" checked style="width:auto">
+      ลบคำซ้ำ
+    </label>
+
+  </div>
+
+</section>
+
+
+<!-- ADD DATA -->
+<section class="card">
+
+  <div class="title">➕ เพิ่มข้อมูลคำศัพท์</div>
+
+  <div class="tabs">
+
+    <button
+      class="tab active"
+      onclick="switchMethod('pasteSimple',this)"
+    >
+      📝 วางรายการคำศัพท์
+    </button>
+
+    <button
+      class="tab"
+      onclick="switchMethod('pastePipe',this)"
+    >
+      📋 วางข้อมูลแบบ |
+    </button>
+
+    <button
+      class="tab"
+      onclick="switchMethod('manual',this)"
+    >
+      ➕ เพิ่มทีละคำ
+    </button>
+
+  </div>
+
+
+  <!-- SIMPLE -->
+  <div id="pasteSimple" class="method active">
+
+    <div class="info">
+      ใส่คำศัพท์ <strong>1 คำต่อ 1 บรรทัด</strong><br>
+      เช่น <code>爱</code> หรือ <code>白(形)</code><br>
+      ระบบจะทำความสะอาดคำ เช่น
+      <code>爸爸爸 → 爸爸</code>
+    </div>
+
+    <textarea
+      id="simpleText"
+      placeholder="爱&#10;爱好&#10;八&#10;爸爸爸&#10;吧&#10;白(形)&#10;白天"
+    ></textarea>
+
+    <div class="actions">
+
+      <button class="primary" onclick="addSimpleData()">
+        ➕ เพิ่มเข้ารายการ
+      </button>
+
+      <button class="gray" onclick="loadSimpleExample()">
+        🧪 ตัวอย่าง
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- PIPE -->
+  <div id="pastePipe" class="method">
+
+    <div class="info">
+
+      รูปแบบ:
+      <code>
+        คำศัพท์ | พินอิน | คำแปล | ชนิดคำ | ตัวอย่าง | พินอินตัวอย่าง | แปลตัวอย่าง
+      </code>
+
+      <br><br>
+
+      ตัวอย่าง:
+      <br>
+
+      <code>
+        爱 | ài | รัก; ชอบ | 动 | 我爱你。 | Wǒ ài nǐ. | ฉันรักคุณ
+      </code>
+
+    </div>
+
+    <textarea
+      id="pipeText"
+      placeholder="爱 | ài | รัก; ชอบ | 动 | 我爱你。 | Wǒ ài nǐ. | ฉันรักคุณ&#10;爱好 | àihào | งานอดิเรก | 名 | 我的爱好是看书。 | Wǒ de àihào shì kàn shū. | งานอดิเรกของฉันคืออ่านหนังสือ"
+    ></textarea>
+
+    <div class="actions">
+
+      <button class="primary" onclick="addPipeData()">
+        ➕ เพิ่มเข้ารายการ
+      </button>
+
+      <button class="gray" onclick="loadPipeExample()">
+        🧪 ตัวอย่าง
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- MANUAL -->
+  <div id="manual" class="method">
+
+    <div class="info">
+      เพิ่มคำศัพท์ทีละคำได้ที่นี่
+      กรอกเฉพาะข้อมูลที่มีได้เลยค่ะ
+      ช่องที่เว้นไว้จะกลายเป็นค่าว่างใน dictionary.js
+    </div>
+
+    <div id="manualList" class="manual-list"></div>
+
+    <div class="actions">
+
+      <button class="blue" onclick="addManualRow()">
+        ➕ เพิ่มคำศัพท์
+      </button>
+
+      <button class="primary" onclick="addManualData()">
+        ✨ เพิ่มข้อมูลเข้ารายการ
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CURRENT DATA -->
+<section class="card">
+
+  <div class="title">📦 รายการที่กำลังสร้าง</div>
+
+  <div class="stats">
+
+    <div class="stat">
+      <div id="totalCount" class="stat-number">0</div>
+      <div class="stat-label">ทั้งหมด</div>
+    </div>
+
+    <div class="stat">
+      <div id="completeCount" class="stat-number">0</div>
+      <div class="stat-label">ข้อมูลครบ</div>
+    </div>
+
+    <div class="stat">
+      <div id="duplicateCount" class="stat-number">0</div>
+      <div class="stat-label">คำซ้ำ</div>
+    </div>
+
+    <div class="stat">
+      <div id="warningCount" class="stat-number">0</div>
+      <div class="stat-label">ต้องตรวจสอบ</div>
+    </div>
+
+  </div>
+
+  <div id="dataTable">
+    <div class="empty">
+      ยังไม่มีคำศัพท์<br>
+      เลือกวิธีเพิ่มข้อมูลด้านบนได้เลยค่ะ 💕
+    </div>
+  </div>
+
+</section>
+
+
+<!-- OUTPUT -->
+<section class="card">
+
+  <div class="title">💻 dictionary.js</div>
+
+  <div class="code-wrap">
+
+    <button class="copy-top" onclick="copyCode()">
+      📋 คัดลอก
+    </button>
+
+    <textarea
+      id="outputCode"
+      readonly
+      placeholder="// กด “สร้าง dictionary.js” แล้วโค้ดจะแสดงตรงนี้"
+    ></textarea>
+
+  </div>
+
+  <div class="actions">
+
+    <button class="primary" onclick="generateJS()">
+      ✨ สร้าง dictionary.js
+    </button>
+
+    <button class="green" onclick="downloadJS()">
+      ⬇️ ดาวน์โหลด dictionary.js
+    </button>
+
+    <button class="blue" onclick="copyCode()">
+      📋 คัดลอกโค้ด
+    </button>
+
+    <button class="red" onclick="clearAll()">
+      🗑️ ล้างทั้งหมด
+    </button>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<div class="footer">
+  💙 Dictionary.js Generator · ก็แค่จีน by ครูพี่เหม่ยถิง
+</div>
+
+
+<script>
+
+/* =====================================================
+   DATA
+===================================================== */
+
+let dictionaryData = [];
+
+let currentMethod = "pasteSimple";
+
+
+/* =====================================================
+   KNOWN CLEANING
+===================================================== */
+
+const knownFixes = {
+  "爸爸爸":"爸爸",
+  "弟弟弟":"弟弟",
+  "哥哥哥":"哥哥",
+  "姐姐姐":"姐姐",
+  "妈妈妈":"妈妈"
+};
+
+
+/* =====================================================
+   SWITCH METHOD
+===================================================== */
+
+function switchMethod(method,button){
+
+  currentMethod = method;
+
+  document.querySelectorAll(".method")
+    .forEach(el => el.classList.remove("active"));
+
+  document.getElementById(method)
+    .classList.add("active");
+
+  document.querySelectorAll(".tab")
+    .forEach(el => el.classList.remove("active"));
+
+  button.classList.add("active");
+
+}
+
+
+/* =====================================================
+   CLEAN WORD
+===================================================== */
+
+function cleanWord(text){
+
+  let word = String(text || "").trim();
+
+  if(!word) return "";
+
+  if(knownFixes[word]){
+    word = knownFixes[word];
+  }
+
+  return word;
+}
+
+
+/* =====================================================
+   EXTRACT (POS)
+===================================================== */
+
+function extractAnnotation(text){
+
+  const result = {
+    word:text.trim(),
+    pos:""
+  };
+
+  const match =
+    text.trim().match(/^(.+?)\(([^()]*)\)$/);
+
+  if(!match){
+    return result;
+  }
+
+  result.word = match[1].trim();
+
+  const annotation = match[2].trim();
+
+  result.pos = convertPOS(annotation);
+
+  return result;
+}
+
+
+/* =====================================================
+   POS
+===================================================== */
+
+function convertPOS(pos){
+
+  if(!pos) return "";
+
+  const map = {
+
+    "名":"คำนาม",
+    "名词":"คำนาม",
+
+    "动":"คำกริยา",
+    "动词":"คำกริยา",
+
+    "形":"คำคุณศัพท์",
+    "形容词":"คำคุณศัพท์",
+
+    "副":"คำวิเศษณ์",
+    "副词":"คำวิเศษณ์",
+
+    "代":"คำสรรพนาม",
+    "代词":"คำสรรพนาม",
+
+    "量":"ลักษณนาม",
+    "量词":"ลักษณนาม",
+
+    "数":"คำบอกจำนวน",
+    "数词":"คำบอกจำนวน",
+
+    "介":"คำบุพบท",
+    "介词":"คำบุพบท",
+
+    "助":"คำช่วย",
+    "助词":"คำช่วย",
+
+    "连":"คำสันธาน",
+    "连词":"คำสันธาน",
+
+    "叹":"คำอุทาน",
+    "叹词":"คำอุทาน"
+  };
+
+  return pos
+    .split(/[、,，\/]/)
+    .map(x => map[x.trim()] || x.trim())
+    .filter(Boolean)
+    .join(" / ");
+}
+
+
+/* =====================================================
+   NEW OBJECT
+===================================================== */
+
+function makeItem(
+  word,
+  pinyin="",
+  meaning="",
+  pos="",
+  example="",
+  examplePinyin="",
+  exampleThai=""
+){
+
+  const parsed = extractAnnotation(word);
+
+  word = cleanWord(parsed.word);
+
+  if(!pos){
+    pos = parsed.pos;
+  }
+
+  return {
+
+    word:word,
+
+    pinyin:String(pinyin || "").trim(),
+
+    meaning:String(meaning || "").trim(),
+
+    pos:convertPOS(pos),
+
+    hsk:document.getElementById("hskLevel").value,
+
+    example:String(example || "").trim(),
+
+    examplePinyin:String(examplePinyin || "").trim(),
+
+    exampleThai:String(exampleThai || "").trim()
+
+  };
+}
+
+
+/* =====================================================
+   ADD SIMPLE
+===================================================== */
+
+function addSimpleData(){
+
+  const text =
+    document.getElementById("simpleText").value.trim();
+
+  if(!text){
+    alert("กรุณาวางรายการคำศัพท์ก่อนค่ะ 💕");
+    return;
+  }
+
+  const lines =
+    text.split(/\r?\n/)
+      .map(x => x.trim())
+      .filter(Boolean);
+
+  let added = 0;
+
+  lines.forEach(line => {
+
+    const item = makeItem(line);
+
+    if(item.word){
+
+      dictionaryData.push(item);
+
+      added++;
+
+    }
+
+  });
+
+  document.getElementById("simpleText").value = "";
+
+  updatePreview();
+
+  alert(`เพิ่มคำศัพท์แล้ว ${added} คำค่ะ 💙`);
+
+}
+
+
+/* =====================================================
+   ADD PIPE
+===================================================== */
+
+function addPipeData(){
+
+  const text =
+    document.getElementById("pipeText").value.trim();
+
+  if(!text){
+    alert("กรุณาวางข้อมูลแบบ | ก่อนค่ะ 💕");
+    return;
+  }
+
+  const lines =
+    text.split(/\r?\n/)
+      .map(x => x.trim())
+      .filter(Boolean);
+
+  let added = 0;
+
+  lines.forEach(line => {
+
+    const p = line.split("|").map(x => x.trim());
+
+    const item = makeItem(
+
+      p[0] || "",
+      p[1] || "",
+      p[2] || "",
+      p[3] || "",
+      p[4] || "",
+      p[5] || "",
+      p[6] || ""
+
+    );
+
+    if(item.word){
+
+      dictionaryData.push(item);
+
+      added++;
+
+    }
+
+  });
+
+  document.getElementById("pipeText").value = "";
+
+  updatePreview();
+
+  alert(`เพิ่มข้อมูลแล้ว ${added} คำค่ะ 💙`);
+
+}
+
+
+/* =====================================================
+   MANUAL ROW
+===================================================== */
+
+function addManualRow(){
+
+  const list =
+    document.getElementById("manualList");
+
+  const number =
+    list.children.length + 1;
+
+  const row =
+    document.createElement("div");
+
+  row.className = "word-row";
+
+  row.innerHTML = `
+
+    <div class="row-head">
+
+      <div class="row-number">
+        คำที่ ${number}
+      </div>
+
+      <button
+        class="red remove-row"
+        onclick="this.closest('.word-row').remove(); renumberRows();"
+      >
+        🗑️ ลบ
+      </button>
+
+    </div>
+
+
+    <div class="row-grid">
+
+      <div>
+        <label class="main-label">คำศัพท์ *</label>
+        <input class="f-word" placeholder="例如：爱">
+      </div>
+
+      <div>
+        <label class="main-label">พินอิน</label>
+        <input class="f-pinyin" placeholder="ài">
+      </div>
+
+      <div>
+        <label class="main-label">คำแปล</label>
+        <input class="f-meaning" placeholder="รัก; ชอบ">
+      </div>
+
+      <div>
+        <label class="main-label">ชนิดคำ</label>
+        <input class="f-pos" placeholder="คำกริยา หรือ 动">
+      </div>
+
+      <div class="full">
+        <label class="main-label">ตัวอย่างประโยค</label>
+        <input class="f-example" placeholder="我爱你。">
+      </div>
+
+      <div class="full">
+        <label class="main-label">พินอินตัวอย่าง</label>
+        <input class="f-example-pinyin" placeholder="Wǒ ài nǐ.">
+      </div>
+
+      <div class="full">
+        <label class="main-label">แปลตัวอย่าง</label>
+        <input class="f-example-thai" placeholder="ฉันรักคุณ">
+      </div>
+
+    </div>
+  `;
+
+  list.appendChild(row);
+
+}
+
+
+/* =====================================================
+   RENUMBER
+===================================================== */
+
+function renumberRows(){
+
+  document.querySelectorAll(".word-row")
+    .forEach((row,index)=>{
+
+      const label =
+        row.querySelector(".row-number");
+
+      if(label){
+        label.textContent =
+          `คำที่ ${index+1}`;
+      }
+
+    });
+
+}
+
+
+/* =====================================================
+   ADD MANUAL DATA
+===================================================== */
+
+function addManualData(){
+
+  const rows =
+    document.querySelectorAll(".word-row");
+
+  if(!rows.length){
+
+    addManualRow();
+
+    alert("เพิ่มช่องกรอกคำศัพท์แล้วค่ะ 💕");
+
+    return;
+
+  }
+
+  let added = 0;
+
+  rows.forEach(row => {
+
+    const word =
+      row.querySelector(".f-word").value.trim();
+
+    if(!word) return;
+
+    const item = makeItem(
+
+      word,
+
+      row.querySelector(".f-pinyin").value,
+
+      row.querySelector(".f-meaning").value,
+
+      row.querySelector(".f-pos").value,
+
+      row.querySelector(".f-example").value,
+
+      row.querySelector(".f-example-pinyin").value,
+
+      row.querySelector(".f-example-thai").value
+
+    );
+
+    dictionaryData.push(item);
+
+    added++;
+
+  });
+
+
+  document.getElementById("manualList").innerHTML = "";
+
+  addManualRow();
+
+  updatePreview();
+
+  alert(`เพิ่มข้อมูลแล้ว ${added} คำค่ะ 💙`);
+
+}
+
+
+/* =====================================================
+   DUPLICATE KEY
+===================================================== */
+
+function getKey(item){
+
+  return (
+    item.word.trim() +
+    "|" +
+    item.pinyin.trim()
+  );
+
+}
+
+
+/* =====================================================
+   PREPARE DATA
+===================================================== */
+
+function prepareData(){
+
+  let data =
+    dictionaryData.map(x => ({...x}));
+
+  const duplicateKeys = new Set();
+
+  const seen = new Set();
+
+  data.forEach(item => {
+
+    const key = getKey(item);
+
+    if(seen.has(key)){
+
+      duplicateKeys.add(key);
+
+      item._duplicate = true;
+
+    }else{
+
+      seen.add(key);
+
+      item._duplicate = false;
+
+    }
+
+  });
+
+
+  if(
+    document.getElementById("removeDuplicates").checked
+  ){
+
+    const unique = [];
+
+    const used = new Set();
+
+    data.forEach(item => {
+
+      const key = getKey(item);
+
+      if(used.has(key)) return;
+
+      used.add(key);
+
+      unique.push(item);
+
+    });
+
+    data = unique;
+
+  }
+
+
+  return {
+    data,
+    duplicateCount:duplicateKeys.size
+  };
+
+}
+
+
+/* =====================================================
+   UPDATE PREVIEW
+===================================================== */
+
+function updatePreview(){
+
+  const result = prepareData();
+
+  const data = result.data;
+
+  document.getElementById("totalCount").textContent =
+    data.length;
+
+  const complete =
+    data.filter(item =>
+      item.word &&
+      item.pinyin &&
+      item.meaning
+    ).length;
+
+  document.getElementById("completeCount").textContent =
+    complete;
+
+  document.getElementById("duplicateCount").textContent =
+    result.duplicateCount;
+
+  const warnings =
+    data.filter(item =>
+      !item.word ||
+      !item.pinyin ||
+      !item.meaning
+    ).length;
+
+  document.getElementById("warningCount").textContent =
+    warnings;
+
+
+  renderTable(data);
+
+}
+
+
+/* =====================================================
+   RENDER TABLE
+===================================================== */
+
+function renderTable(data){
+
+  const container =
+    document.getElementById("dataTable");
+
+  if(!data.length){
+
+    container.innerHTML = `
+      <div class="empty">
+        ยังไม่มีคำศัพท์ 💕
+      </div>
+    `;
+
+    return;
+
+  }
+
+
+  const startId =
+    parseInt(
+      document.getElementById("startId").value,
+      10
+    ) || 1;
+
+
+  let html = `
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>ID</th>
+            <th>คำศัพท์</th>
+            <th>พินอิน</th>
+            <th>คำแปล</th>
+            <th>ชนิดคำ</th>
+            <th>HSK</th>
+            <th>ตัวอย่าง</th>
+            <th>สถานะ</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+  `;
+
+
+  data.forEach((item,index)=>{
+
+    let status;
+
+    if(item._duplicate){
+
+      status =
+        `<span class="dup">❌ ซ้ำ</span>`;
+
+    }else if(
+      !item.pinyin ||
+      !item.meaning
+    ){
+
+      status =
+        `<span class="warn">⚠️ ข้อมูลไม่ครบ</span>`;
+
+    }else{
+
+      status =
+        `<span class="ok">✅ พร้อมใช้</span>`;
+
+    }
+
+
+    html += `
+
+      <tr>
+
+        <td>${startId + index}</td>
+
+        <td class="word-cell">
+          ${escapeHTML(item.word)}
+        </td>
+
+        <td>
+          ${escapeHTML(item.pinyin)}
+        </td>
+
+        <td>
+          ${escapeHTML(item.meaning)}
+        </td>
+
+        <td>
+          ${escapeHTML(item.pos)}
+        </td>
+
+        <td>
+          ${escapeHTML(item.hsk)}
+        </td>
+
+        <td>
+          ${escapeHTML(item.example)}
+        </td>
+
+        <td>
+          ${status}
+        </td>
+
+      </tr>
+
+    `;
+
+  });
+
+
+  html += `
+        </tbody>
+      </table>
+
+    </div>
+  `;
+
+
+  container.innerHTML = html;
+
+}
+
+
+/* =====================================================
+   BUILD JS
+===================================================== */
+
+function generateJS(){
+
+  const result = prepareData();
+
+  const data = result.data;
+
+  if(!data.length){
+
+    alert("ยังไม่มีข้อมูลคำศัพท์ค่ะ 💕");
+
+    return;
+
+  }
+
+
+  const startId =
+    parseInt(
+      document.getElementById("startId").value,
+      10
+    ) || 1;
+
+
+  const lines = [];
+
+  lines.push("const dictionary = [");
+
+
+  data.forEach((item,index)=>{
+
+    const id =
+      startId + index;
+
+    lines.push("  {");
+
+    lines.push(`    id: ${id},`);
+
+    lines.push(
+      `    word: ${jsString(item.word)},`
+    );
+
+    lines.push(
+      `    pinyin: ${jsString(item.pinyin)},`
+    );
+
+    lines.push(
+      `    meaning: ${jsString(item.meaning)},`
+    );
+
+    lines.push(
+      `    pos: ${jsString(item.pos)},`
+    );
+
+    lines.push(
+      `    hsk: ${jsString(item.hsk)},`
+    );
+
+    lines.push(
+      `    example: ${jsString(item.example)},`
+    );
+
+    lines.push(
+      `    examplePinyin: ${jsString(item.examplePinyin)},`
+    );
+
+    lines.push(
+      `    exampleThai: ${jsString(item.exampleThai)}`
+    );
+
+    lines.push(
+      index === data.length-1
+        ? "  }"
+        : "  },"
+    );
+
+  });
+
+
+  lines.push("];");
+  lines.push("");
+  lines.push("window.dictionary = dictionary;");
+
+
+  document.getElementById("outputCode").value =
+    lines.join("\n");
+
+
+  document.getElementById("outputCode")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+}
+
+
+/* =====================================================
+   JS STRING
+===================================================== */
+
+function jsString(value){
+
+  return JSON.stringify(value || "");
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value){
+
+  return String(value || "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   COPY
+===================================================== */
+
+async function copyCode(){
+
+  const code =
+    document.getElementById("outputCode").value;
+
+  if(!code){
+
+    alert("ยังไม่มีโค้ดค่ะ 💕");
+
+    return;
+
+  }
+
+
+  try{
+
+    await navigator.clipboard.writeText(code);
+
+    alert("คัดลอก dictionary.js แล้วค่ะ 💙");
+
+  }catch(e){
+
+    const textarea =
+      document.getElementById("outputCode");
+
+    textarea.select();
+
+    document.execCommand("copy");
+
+    alert("คัดลอก dictionary.js แล้วค่ะ 💙");
+
+  }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD
+===================================================== */
+
+function downloadJS(){
+
+  const code =
+    document.getElementById("outputCode").value;
+
+  if(!code){
+
+    generateJS();
+
+  }
+
+
+  const finalCode =
+    document.getElementById("outputCode").value;
+
+  if(!finalCode) return;
+
+
+  let fileName =
+    document.getElementById("fileName").value.trim();
+
+  if(!fileName){
+
+    fileName = "dictionary.js";
+
+  }
+
+  if(!fileName.toLowerCase().endsWith(".js")){
+
+    fileName += ".js";
+
+  }
+
+
+  const blob =
+    new Blob(
+      [finalCode],
+      {
+        type:"application/javascript;charset=utf-8"
+      }
+    );
+
+
+  const url =
+    URL.createObjectURL(blob);
+
+
+  const a =
+    document.createElement("a");
+
+  a.href = url;
+  a.download = fileName;
+
+  document.body.appendChild(a);
+
+  a.click();
+
+  a.remove();
+
+  URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   SIMPLE EXAMPLE
+===================================================== */
+
+function loadSimpleExample(){
+
+  document.getElementById("simpleText").value =
+`爱
+爱好
+八
+爸爸爸
+吧
+白(形)
+白天
+百
+班
+半
+半年
+半天
+帮
+帮忙
+包
+包子`;
+
+}
+
+
+/* =====================================================
+   PIPE EXAMPLE
+===================================================== */
+
+function loadPipeExample(){
+
+  document.getElementById("pipeText").value =
+`爱 | ài | รัก; ชอบ | 动 | 我爱你。 | Wǒ ài nǐ. | ฉันรักคุณ
+爱好 | àihào | งานอดิเรก; สิ่งที่ชอบ | 名 | 我的爱好是看书。 | Wǒ de àihào shì kàn shū. | งานอดิเรกของฉันคืออ่านหนังสือ
+八 | bā | แปด | 数 | 我有八本书。 | Wǒ yǒu bā běn shū. | ฉันมีหนังสือแปดเล่ม`;
+
+}
+
+
+/* =====================================================
+   CLEAR
+===================================================== */
+
+function clearAll(){
+
+  if(
+    !confirm("ต้องการล้างข้อมูลทั้งหมดใช่ไหมคะ?")
+  ){
+    return;
+  }
+
+
+  dictionaryData = [];
+
+  document.getElementById("simpleText").value = "";
+
+  document.getElementById("pipeText").value = "";
+
+  document.getElementById("outputCode").value = "";
+
+  document.getElementById("manualList").innerHTML = "";
+
+  document.getElementById("totalCount").textContent = "0";
+
+  document.getElementById("completeCount").textContent = "0";
+
+  document.getElementById("duplicateCount").textContent = "0";
+
+  document.getElementById("warningCount").textContent = "0";
+
+  renderTable([]);
+
+}
+
+
+/* =====================================================
+   START WITH ONE MANUAL ROW
+===================================================== */
+
+addManualRow();
+
+</script>
+
+</body>
+</html>
