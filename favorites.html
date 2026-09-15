@@ -9,7 +9,11 @@ name="viewport"
 content="width=device-width, initial-scale=1.0"
 
 
-<style> * { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: "Noto Sans Thai", "Noto Sans", Arial, sans-serif; background: linear-gradient( 135deg, #f8fbff, #fff3f7 ); color: #333; min-height: 100vh; } nav { background: rgba(255,255,255,.96); border-bottom: 1px solid #e5edf7; padding: 15px 6%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); } .logo { text-decoration: none; color: #2775d7; font-size: 20px; font-weight: 800; } .nav-links { display: flex; gap: 8px; flex-wrap: wrap; } .nav-links a { text-decoration: none; color: #555; padding: 8px 14px; border-radius: 20px; transition: .2s; } .nav-links a:hover, .nav-links a.active { background: #eaf3ff; color: #2775d7; } .favorite-link { color: #d94468 !important; background: #fff0f4; } .container { max-width: 1100px; margin: auto; padding: 40px 20px 60px; } .page-header { text-align: center; margin-bottom: 30px; } .heart { font-size: 48px; margin-bottom: 8px; } .page-header h1 { color: #d94468; font-size: 34px; margin-bottom: 8px; } .page-header p { color: #777; line-height: 1.7; } .favorite-count { display: inline-block; margin-top: 12px; background: #fff0f4; color: #d94468; padding: 7px 15px; border-radius: 20px; font-size: 14px; } .actions { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; } .back-button { display: inline-block; text-decoration: none; color: #2775d7; background: white; border: 1px solid #e2ebf5; padding: 10px 17px; border-radius: 22px; transition: .2s; } .back-button:hover { background: #eaf3ff; } .clear-button { border: none; background: #fff0f4; color: #d94468; padding: 10px 17px; border-radius: 22px; cursor: pointer; font-family: inherit; transition: .2s; } .clear-button:hover { background: #ffe0e8; } .word-grid { display: grid; grid-template-columns: repeat( auto-fill, minmax(230px, 1fr) ); gap: 15px; } .word-card { background: white; border: 1px solid #e9e5e8; border-radius: 20px; padding: 20px; cursor: pointer; position: relative; box-shadow: 0 8px 22px rgba(80,50,70,.06); transition: .2s; } .word-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(80,50,70,.12); } .remove-button { position: absolute; top: 12px; right: 12px; width: 35px; height: 35px; border: none; border-radius: 50%; background: #fff0f4; cursor: pointer; font-size: 17px; z-index: 2; transition: .2s; } .remove-button:hover { background: #ffe0e8; transform: scale(1.05); } .word-chinese { font-family: "Noto Sans SC", "Noto Sans", sans-serif; font-size: 40px; font-weight: 700; color: #2269c4; padding-right: 35px; margin-bottom: 5px; } .word-pinyin { color: #777; margin-bottom: 10px; font-size: 15px; } .word-meaning { color: #444; line-height: 1.5; min-height: 45px; } .word-bottom { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 15px; } .tag { background: #edf6ff; color: #2775d7; padding: 4px 9px; border-radius: 12px; font-size: 12px; } .empty { background: white; border-radius: 25px; padding: 65px 20px; text-align: center; box-shadow: 0 10px 30px rgba(80,50,70,.07); } .empty-icon { font-size: 60px; margin-bottom: 15px; } .empty h2 { color: #d94468; margin-bottom: 10px; } .empty p { color: #888; line-height: 1.7; margin-bottom: 20px; } .empty a { display: inline-block; text-decoration: none; background: #2775d7; color: white; padding: 11px 20px; border-radius: 22px; transition: .2s; } .empty a:hover { background: #1d5fb5; } .loading { grid-column: 1 / -1; background: white; border-radius: 25px; padding: 60px 20px; text-align: center; color: #888; } .error { grid-column: 1 / -1; background: #fff5f5; border: 1px solid #ffd5d5; border-radius: 20px; padding: 30px 20px; text-align: center; color: #c75b6b; line-height: 1.8; } footer { text-align: center; color: #888; padding: 30px 20px; font-size: 14px; } @media (max-width: 650px) { nav { flex-direction: column; gap: 10px; } .nav-links { justify-content: center; } .container { padding: 30px 15px 50px; } .page-header h1 { font-size: 29px; } .word-grid { grid-template-columns: repeat(2, 1fr); } .word-card { padding: 15px; } .word-chinese { font-size: 32px; } } @media (max-width: 430px) { .word-grid { grid-template-columns: 1fr; } .actions { flex-direction: column; align-items: stretch; } .back-button, .clear-button { text-align: center; width: 100%; } } </style>
+
+
+<title>คำศัพท์ที่ชอบ | ก็แค่จีน</title>
+
+<style> * { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: "Noto Sans Thai", "Noto Sans", Arial, sans-serif; background: linear-gradient( 135deg, #f8fbff, #fff3f7 ); color: #333; min-height: 100vh; } nav { background: rgba(255,255,255,.96); border-bottom: 1px solid #e5edf7; padding: 15px 6%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); } .logo { text-decoration: none; color: #2775d7; font-size: 20px; font-weight: 800; } .nav-links { display: flex; gap: 8px; flex-wrap: wrap; } .nav-links a { text-decoration: none; color: #555; padding: 8px 14px; border-radius: 20px; transition: .2s; } .nav-links a:hover, .nav-links a.active { background: #eaf3ff; color: #2775d7; } .favorite-link { color: #d94468 !important; background: #fff0f4; } .container { max-width: 1100px; margin: auto; padding: 40px 20px 60px; } .page-header { text-align: center; margin-bottom: 30px; } .heart { font-size: 48px; margin-bottom: 8px; } .page-header h1 { color: #d94468; font-size: 34px; margin-bottom: 8px; } .page-header p { color: #777; line-height: 1.7; } .favorite-count { display: inline-block; margin-top: 12px; background: #fff0f4; color: #d94468; padding: 7px 15px; border-radius: 20px; font-size: 14px; } .actions { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; } .back-button { display: inline-block; text-decoration: none; color: #2775d7; background: white; border: 1px solid #e2ebf5; padding: 10px 17px; border-radius: 22px; transition: .2s; } .back-button:hover { background: #eaf3ff; } .clear-button { border: none; background: #fff0f4; color: #d94468; padding: 10px 17px; border-radius: 22px; cursor: pointer; font-family: inherit; transition: .2s; } .clear-button:hover { background: #ffe0e8; } .word-grid { display: grid; grid-template-columns: repeat( auto-fill, minmax(230px, 1fr) ); gap: 15px; } .word-card { background: white; border: 1px solid #e9e5e8; border-radius: 20px; padding: 20px; position: relative; box-shadow: 0 8px 22px rgba(80,50,70,.06); transition: .2s; } .word-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(80,50,70,.12); } .remove-button { position: absolute; top: 12px; right: 12px; width: 35px; height: 35px; border: none; border-radius: 50%; background: #fff0f4; cursor: pointer; font-size: 17px; z-index: 2; transition: .2s; } .remove-button:hover { background: #ffe0e8; transform: scale(1.05); } .word-chinese { font-family: "Noto Sans SC", "Noto Sans", sans-serif; font-size: 40px; font-weight: 700; color: #2269c4; padding-right: 35px; margin-bottom: 5px; } .word-pinyin { color: #777; margin-bottom: 10px; font-size: 15px; } .word-meaning { color: #444; line-height: 1.5; min-height: 45px; } .word-bottom { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 15px; margin-bottom: 15px; } .tag { background: #edf6ff; color: #2775d7; padding: 4px 9px; border-radius: 12px; font-size: 12px; } /* ปุ่มดูรายละเอียด */ .view-button { display: block; width: 100%; text-align: center; text-decoration: none; background: #2775d7; color: white; padding: 10px 15px; border-radius: 20px; font-size: 14px; transition: .2s; } .view-button:hover { background: #155bb0; transform: translateY(-1px); } .empty { background: white; border-radius: 25px; padding: 65px 20px; text-align: center; box-shadow: 0 10px 30px rgba(80,50,70,.07); } .empty-icon { font-size: 60px; margin-bottom: 15px; } .empty h2 { color: #d94468; margin-bottom: 10px; } .empty p { color: #888; line-height: 1.7; margin-bottom: 20px; } .empty a { display: inline-block; text-decoration: none; background: #2775d7; color: white; padding: 11px 20px; border-radius: 22px; transition: .2s; } .empty a:hover { background: #1d5fb5; } .loading { grid-column: 1 / -1; background: white; border-radius: 25px; padding: 60px 20px; text-align: center; color: #888; } .error { grid-column: 1 / -1; background: #fff5f5; border: 1px solid #ffd5d5; border-radius: 20px; padding: 30px 20px; text-align: center; color: #c75b6b; line-height: 1.8; } footer { text-align: center; color: #888; padding: 30px 20px; font-size: 14px; } @media (max-width: 650px) { nav { flex-direction: column; gap: 10px; } .nav-links { justify-content: center; } .container { padding: 30px 15px 50px; } .page-header h1 { font-size: 29px; } .word-grid { grid-template-columns: repeat(2, 1fr); } .word-card { padding: 15px; } .word-chinese { font-size: 32px; } } @media (max-width: 430px) { .word-grid { grid-template-columns: 1fr; } .actions { flex-direction: column; align-items: stretch; } .back-button, .clear-button { text-align: center; width: 100%; } } </style>
 
 </head>
 
@@ -34,9 +38,11 @@ class="logo"
   หน้าแรก
 </a>
 
+
 <a href="dictionary.html">
   พจนานุกรม
 </a>
+
 
 <a
   href="favorites.html"
@@ -49,6 +55,9 @@ class="logo"
 
 </nav>
 
+
+
+
 <main class="container">
 
 <div class="page-header">
@@ -57,14 +66,17 @@ class="logo"
   ❤️
 </div>
 
+
 <h1>
   คำศัพท์ที่ฉันชอบ
 </h1>
+
 
 <p>
   รวมคำศัพท์ที่คุณกดบันทึกไว้
   เพื่อกลับมาทบทวนได้ง่าย ๆ
 </p>
+
 
 <div
   class="favorite-count"
@@ -74,6 +86,9 @@ class="logo"
 </div>
 
 </div>
+
+
+
 
 <div class="actions">
 
@@ -94,6 +109,9 @@ class="logo"
 
 </div>
 
+
+
+
 <div class="word-grid" id="wordGrid" >
 
 <div class="loading">
@@ -104,12 +122,22 @@ class="logo"
 
 </main>
 
-<footer> © 2026 ก็แค่จีน by ครูพี่เหม่ยถิง 💙🇨🇳 </footer>
 
-<!-- โหลดฐานข้อมูลคำศัพท์ -->
+
+
+<footer>
+
+© 2026 ก็แค่จีน by ครูพี่เหม่ยถิง 💙🇨🇳
+
+</footer>
+
+
+
+
+<!-- ========================= DICTIONARY ========================= -->
 
 <script src="./data/dictionary.js"></script>
 
-<script> const FAVORITE_KEY = "chineseDictionaryFavorites"; const wordGrid = document.getElementById( "wordGrid" ); const favoriteCount = document.getElementById( "favoriteCount" ); /* ------------------------- ตรวจสอบ Dictionary ------------------------- */ const dictionaryData = Array.isArray(window.dictionary) ? window.dictionary : []; console.log( "Favorites - dictionary:", dictionaryData ); /* ------------------------- Favorite ------------------------- */ function getFavorites() { try { const data = JSON.parse( localStorage.getItem( FAVORITE_KEY ) ); return Array.isArray(data) ? data.map(Number) : []; } catch { return []; } } function saveFavorites( favorites ) { localStorage.setItem( FAVORITE_KEY, JSON.stringify(favorites) ); } /* ------------------------- Escape HTML ------------------------- */ function escapeHTML(value) { return String(value ?? "") .replace( /&/g, "&amp;" ) .replace( /</g, "&lt;" ) .replace( />/g, "&gt;" ) .replace( /"/g, "&quot;" ) .replace( /'/g, "&#039;" ); } /* ------------------------- Render Favorites ------------------------- */ function renderFavorites() { const favoriteIds = getFavorites(); const favoriteWords = favoriteIds .map( id => dictionaryData.find( item => Number(item.id) === Number(id) ) ) .filter(Boolean); favoriteCount.textContent = `${favoriteWords.length} คำ`; wordGrid.innerHTML = ""; /* ไม่มีคำที่ชอบ */ if (!favoriteWords.length) { wordGrid.innerHTML = ` <div class="empty" style="grid-column:1/-1;" > <div class="empty-icon"> 💗 </div> <h2> ยังไม่มีคำศัพท์ที่ชอบ </h2> <p> ไปเลือกคำศัพท์ที่อยากทบทวน แล้วกด ♡ เพื่อเพิ่มลงในรายการได้นะคะ </p> <a href="dictionary.html"> ไปเลือกคำศัพท์ </a> </div> `; return; } /* แสดงคำศัพท์ */ favoriteWords.forEach( item => { const card = document.createElement( "div" ); card.className = "word-card"; card.innerHTML = ` <button class="remove-button" title="นำออกจากคำที่ชอบ" aria-label="นำออกจากคำที่ชอบ" > ❤️ </button> <div class="word-chinese"> ${escapeHTML( item.word )} </div> <div class="word-pinyin"> ${escapeHTML( item.pinyin )} </div> <div class="word-meaning"> ${escapeHTML( item.meaning )} </div> <div class="word-bottom"> ${ item.hsk ? ` <span class="tag"> ${escapeHTML(item.hsk)} </span> ` : "" } ${ item.pos ? ` <span class="tag"> ${escapeHTML(item.pos)} </span> ` : "" } </div> `; /* ------------------------- ลบ Favorite ------------------------- */ const removeButton = card.querySelector( ".remove-button" ); removeButton.addEventListener( "click", event => { event.preventDefault(); event.stopPropagation(); const newFavorites = getFavorites() .filter( id => Number(id) !== Number(item.id) ); saveFavorites( newFavorites ); renderFavorites(); } ); /* ------------------------- เปิดหน้ารายละเอียด ------------------------- */ card.addEventListener( "click", () => { window.location.href = `word.html?id=${encodeURIComponent( item.id )}`; } ); wordGrid.appendChild( card ); } ); } /* ------------------------- Clear All ------------------------- */ document .getElementById( "clearButton" ) .addEventListener( "click", () => { const favorites = getFavorites(); if (!favorites.length) { alert( "ตอนนี้ยังไม่มีคำศัพท์ที่ชอบค่ะ" ); return; } const confirmed = confirm( "ต้องการลบคำศัพท์ที่ชอบทั้งหมดหรือไม่?" ); if (!confirmed) { return; } localStorage.removeItem( FAVORITE_KEY ); renderFavorites(); } ); /* ------------------------- Start ------------------------- */ if (!Array.isArray(window.dictionary)) { wordGrid.innerHTML = ` <div class="error"> <strong> ⚠️ ไม่สามารถโหลดฐานข้อมูลคำศัพท์ได้ </strong> <br> กรุณาตรวจสอบว่าไฟล์ <strong> data/dictionary.js </strong> อยู่ในโฟลเดอร์ที่ถูกต้อง </div> `; } else { renderFavorites(); } </script>
+<script> const FAVORITE_KEY = "chineseDictionaryFavorites"; const wordGrid = document.getElementById( "wordGrid" ); const favoriteCount = document.getElementById( "favoriteCount" ); /* ========================= ตรวจสอบ Dictionary ========================= */ if ( !Array.isArray( window.dictionary ) ) { wordGrid.innerHTML = ` <div class="error"> <strong> ⚠️ ไม่สามารถโหลดฐานข้อมูลคำศัพท์ได้ </strong> <br><br> กรุณาตรวจสอบไฟล์ <strong> data/dictionary.js </strong> </div> `; console.error( "window.dictionary ไม่ใช่ Array", window.dictionary ); } else { const dictionaryData = window.dictionary; console.log( "Dictionary:", dictionaryData ); /* ========================= Get Favorites ========================= */ function getFavorites() { try { const data = JSON.parse( localStorage.getItem( FAVORITE_KEY ) ); if ( !Array.isArray(data) ) { return []; } return data.map( id => String(id).trim() ); } catch { return []; } } /* ========================= Save Favorites ========================= */ function saveFavorites( favorites ) { localStorage.setItem( FAVORITE_KEY, JSON.stringify( favorites ) ); } /* ========================= Escape ========================= */ function escapeHTML( value ) { return String( value ?? "" ) .replace( /&/g, "&amp;" ) .replace( /</g, "&lt;" ) .replace( />/g, "&gt;" ) .replace( /"/g, "&quot;" ) .replace( /'/g, "&#039;" ); } /* ========================= Render ========================= */ function renderFavorites() { const favoriteIds = getFavorites(); const favoriteWords = favoriteIds .map( id => dictionaryData.find( item => String( item.id ).trim() === String(id).trim() ) ) .filter(Boolean); favoriteCount.textContent = `${favoriteWords.length} คำ`; wordGrid.innerHTML = ""; /* ไม่มีคำโปรด */ if ( favoriteWords.length === 0 ) { wordGrid.innerHTML = ` <div class="empty" style="grid-column:1/-1;" > <div class="empty-icon"> 💗 </div> <h2> ยังไม่มีคำศัพท์ที่ชอบ </h2> <p> ไปเลือกคำศัพท์ที่อยากทบทวน แล้วกด ♡ เพื่อเพิ่มลงในรายการได้นะคะ </p> <a href="dictionary.html" > ไปเลือกคำศัพท์ </a> </div> `; return; } /* แสดงคำศัพท์ */ favoriteWords.forEach( item => { const card = document.createElement( "div" ); card.className = "word-card"; const itemId = String( item.id ).trim(); card.innerHTML = ` <button class="remove-button" title="นำออกจากคำที่ชอบ" aria-label="นำออกจากคำที่ชอบ" > ❤️ </button> <div class="word-chinese"> ${escapeHTML( item.word )} </div> <div class="word-pinyin"> ${escapeHTML( item.pinyin )} </div> <div class="word-meaning"> ${escapeHTML( item.meaning )} </div> <div class="word-bottom"> ${ item.hsk ? ` <span class="tag"> ${escapeHTML( item.hsk )} </span> ` : "" } ${ item.pos ? ` <span class="tag"> ${escapeHTML( item.pos )} </span> ` : "" } </div> <a href="word.html?id=${encodeURIComponent(itemId)}" class="view-button" > 📖 ดูคำศัพท์ </a> `; /* ลบคำโปรด */ const removeButton = card.querySelector( ".remove-button" ); removeButton.addEventListener( "click", event => { event.preventDefault(); event.stopPropagation(); const newFavorites = getFavorites().filter( id => String(id).trim() !== itemId ); saveFavorites( newFavorites ); renderFavorites(); } ); wordGrid.appendChild( card ); } ); } /* ========================= Clear All ========================= */ document .getElementById( "clearButton" ) .addEventListener( "click", () => { const favorites = getFavorites(); if ( favorites.length === 0 ) { alert( "ตอนนี้ยังไม่มีคำศัพท์ที่ชอบค่ะ" ); return; } const confirmed = confirm( "ต้องการลบคำศัพท์ที่ชอบทั้งหมดหรือไม่?" ); if ( !confirmed ) { return; } localStorage.removeItem( FAVORITE_KEY ); renderFavorites(); } ); /* ========================= Start ========================= */ renderFavorites(); } </script>
 
 </body> </html>
