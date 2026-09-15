@@ -1,495 +1,308 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ก็แค่จีน | เว็บเรียนภาษาจีน</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>เรียนภาษาจีน | Learn Chinese</title>
 
-  <style>
+<style>
     * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
 
     body {
-      font-family: "Noto Sans Thai", Arial, sans-serif;
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top left, #dff2ff 0, transparent 35%),
-        radial-gradient(circle at bottom right, #fff0cf 0, transparent 35%),
-        linear-gradient(135deg, #f7fbff, #fffaf1);
-      color: #24415c;
+        font-family: "Arial", "Tahoma", sans-serif;
+        background: linear-gradient(135deg, #f8fbff, #eef6ff);
+        color: #333;
+        min-height: 100vh;
     }
 
     /* Navbar */
     .navbar {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 18px rgba(41, 93, 140, 0.08);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .nav-inner {
-      max-width: 1100px;
-      margin: auto;
-      padding: 16px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+        background: white;
+        padding: 16px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        position: sticky;
+        top: 0;
+        z-index: 100;
     }
 
     .logo {
-      font-size: 22px;
-      font-weight: 700;
-      color: #2878b8;
-      text-decoration: none;
+        font-size: 22px;
+        font-weight: bold;
+        color: #3b82c4;
     }
 
     .logo span {
-      color: #e5a640;
-    }
-
-    .nav-text {
-      font-size: 14px;
-      color: #6a7e8f;
+        color: #f28b9c;
     }
 
     /* Hero */
     .hero {
-      max-width: 1100px;
-      margin: auto;
-      padding: 70px 24px 35px;
-      text-align: center;
+        text-align: center;
+        padding: 60px 20px 35px;
     }
 
-    .hero-badge {
-      display: inline-block;
-      padding: 7px 16px;
-      border-radius: 999px;
-      background: #e5f4ff;
-      color: #2878b8;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 18px;
+    .hero .chinese {
+        font-size: 42px;
+        font-weight: bold;
+        color: #3b82c4;
+        margin-bottom: 10px;
     }
 
     .hero h1 {
-      font-size: clamp(32px, 5vw, 52px);
-      line-height: 1.25;
-      margin-bottom: 15px;
-      color: #204d70;
-    }
-
-    .hero h1 span {
-      color: #e6a23c;
+        font-size: 30px;
+        margin-bottom: 12px;
     }
 
     .hero p {
-      max-width: 650px;
-      margin: auto;
-      font-size: 17px;
-      line-height: 1.8;
-      color: #63798c;
+        color: #777;
+        font-size: 16px;
+        line-height: 1.7;
     }
 
-    /* Main */
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 25px 24px 70px;
+    /* Menu */
+    .menu-container {
+        max-width: 1050px;
+        margin: 20px auto 60px;
+        padding: 0 20px;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
 
-    .section-title {
-      margin-bottom: 20px;
+    .menu-card {
+        background: white;
+        border-radius: 25px;
+        padding: 35px 30px;
+        text-decoration: none;
+        color: #333;
+
+        display: flex;
+        align-items: center;
+        gap: 22px;
+
+        box-shadow: 0 8px 25px rgba(70, 130, 180, 0.10);
+        border: 2px solid transparent;
+
+        transition: 0.25s;
     }
 
-    .section-title h2 {
-      font-size: 26px;
-      color: #244f72;
-      margin-bottom: 5px;
+    .menu-card:hover {
+        transform: translateY(-6px);
+        border-color: #9fd3f5;
+        box-shadow: 0 12px 30px rgba(70, 130, 180, 0.18);
     }
 
-    .section-title p {
-      color: #778b9b;
-      font-size: 14px;
+    .icon {
+        width: 75px;
+        height: 75px;
+        border-radius: 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 40px;
+        flex-shrink: 0;
     }
 
-    .main-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 25px;
+    .blue {
+        background: #e5f4ff;
     }
 
-    .category-card {
-      background: rgba(255, 255, 255, 0.93);
-      border: 1px solid rgba(84, 153, 204, 0.13);
-      border-radius: 26px;
-      padding: 28px;
-      box-shadow: 0 15px 40px rgba(50, 98, 135, 0.09);
+    .pink {
+        background: #fff0f4;
     }
 
-    .category-header {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      margin-bottom: 24px;
+    .yellow {
+        background: #fff8dc;
     }
 
-    .icon-box {
-      width: 60px;
-      height: 60px;
-      border-radius: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      flex-shrink: 0;
-      background: linear-gradient(145deg, #e7f5ff, #fff3dc);
+    .red {
+        background: #ffecef;
     }
 
-    .category-header h3 {
-      font-size: 22px;
-      color: #244f72;
-      margin-bottom: 3px;
+    .card-text h2 {
+        font-size: 21px;
+        margin-bottom: 7px;
     }
 
-    .category-header p {
-      color: #7890a2;
-      font-size: 14px;
-    }
-
-    /* File buttons */
-    .file-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .menu-btn {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      border-radius: 18px;
-      padding: 18px 20px;
-      background: #f8fcff;
-      border: 1px solid #dceefa;
-      transition: 0.25s ease;
-      color: #28526f;
-    }
-
-    .menu-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(42, 104, 147, 0.12);
-      border-color: #9ed1f2;
-      background: #ffffff;
-    }
-
-    .menu-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .small-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 13px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #eaf6ff;
-      font-size: 21px;
-    }
-
-    .menu-text strong {
-      display: block;
-      font-size: 16px;
-      margin-bottom: 2px;
-    }
-
-    .menu-text span {
-      display: block;
-      font-size: 13px;
-      color: #8598a7;
+    .card-text p {
+        color: #888;
+        font-size: 14px;
+        line-height: 1.6;
     }
 
     .arrow {
-      font-size: 22px;
-      color: #73a9cc;
-    }
-
-    /* Dictionary */
-    .dictionary-card {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background:
-        linear-gradient(160deg, rgba(229, 245, 255, 0.96), rgba(255, 247, 229, 0.96));
-    }
-
-    .dictionary-content {
-      text-align: center;
-      padding: 20px 5px;
-    }
-
-    .dictionary-icon {
-      width: 95px;
-      height: 95px;
-      margin: 5px auto 25px;
-      border-radius: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 48px;
-      background: white;
-      box-shadow: 0 10px 30px rgba(49, 103, 145, 0.12);
-    }
-
-    .dictionary-content h3 {
-      font-size: 24px;
-      color: #234f72;
-      margin-bottom: 10px;
-    }
-
-    .dictionary-content p {
-      font-size: 14px;
-      color: #70889a;
-      line-height: 1.8;
-    }
-
-    .dictionary-btn {
-      display: block;
-      width: 100%;
-      padding: 15px;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #3496d4, #2574b0);
-      color: white;
-      font-weight: 600;
-      transition: 0.25s ease;
-      box-shadow: 0 8px 20px rgba(37, 116, 176, 0.2);
-    }
-
-    .dictionary-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 25px rgba(37, 116, 176, 0.28);
-    }
-
-    /* Coming soon */
-    .extra-section {
-      margin-top: 30px;
-      border-radius: 24px;
-      padding: 24px;
-      text-align: center;
-      background: rgba(255,255,255,0.65);
-      border: 1px dashed #c7ddea;
-      color: #6c8293;
-    }
-
-    .extra-section strong {
-      color: #346d96;
+        margin-left: auto;
+        font-size: 24px;
+        color: #aaa;
     }
 
     /* Footer */
     footer {
-      text-align: center;
-      padding: 25px 20px 35px;
-      color: #8496a4;
-      font-size: 13px;
+        text-align: center;
+        padding: 25px;
+        background: white;
+        color: #999;
+        font-size: 13px;
     }
 
-    @media (max-width: 850px) {
-      .main-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 50px;
-      }
-
-      .dictionary-card {
-        min-height: 330px;
-      }
+    footer strong {
+        color: #3b82c4;
     }
 
-    @media (max-width: 520px) {
-      .nav-inner {
-        padding: 14px 18px;
-      }
+    /* Mobile */
+    @media (max-width: 700px) {
 
-      .nav-text {
-        display: none;
-      }
+        .navbar {
+            padding: 14px 20px;
+        }
 
-      .hero {
-        padding: 45px 18px 25px;
-      }
+        .logo {
+            font-size: 19px;
+        }
 
-      .container {
-        padding: 20px 15px 50px;
-      }
+        .hero {
+            padding: 40px 20px 25px;
+        }
 
-      .category-card {
-        padding: 20px;
-        border-radius: 22px;
-      }
+        .hero .chinese {
+            font-size: 34px;
+        }
 
-      .category-header {
-        align-items: flex-start;
-      }
+        .hero h1 {
+            font-size: 25px;
+        }
 
-      .menu-btn {
-        padding: 15px;
-      }
+        .menu-container {
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
 
-      .menu-text strong {
-        font-size: 15px;
-      }
+        .menu-card {
+            padding: 25px 20px;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            font-size: 32px;
+        }
+
+        .card-text h2 {
+            font-size: 18px;
+        }
     }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <nav class="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="logo">🐼 ก็แค่<span>จีน</span></a>
-      <div class="nav-text">เรียนจีนง่าย ๆ ในที่เดียว 🇨🇳</div>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">
+        学中文 <span>♡</span>
     </div>
-  </nav>
+</nav>
 
-  <header class="hero">
-    <div class="hero-badge">🇨🇳 Chinese Learning Hub</div>
 
-    <h1>
-      รวมแหล่งเรียน <span>ภาษาจีน</span><br>
-      ไว้ให้แล้วในที่เดียว
-    </h1>
+<!-- Hero -->
+<section class="hero">
+
+    <div class="chinese">一起学中文 🇨🇳</div>
+
+    <h1>เรียนภาษาจีนไปด้วยกัน</h1>
 
     <p>
-      หนังสือเรียน ข้อสอบ HSK และพจนานุกรมจีน–ไทย
-      สำหรับใช้ทบทวนคำศัพท์ ฝึกทำข้อสอบ และเรียนภาษาจีนด้วยตัวเอง
+        รวมหนังสือ แบบฝึกหัด ข้อสอบ และเครื่องมือ<br>
+        สำหรับคนที่อยากเรียนภาษาจีนแบบง่าย ๆ 💕
     </p>
-  </header>
 
-  <main class="container">
+</section>
 
-    <div class="section-title">
-      <h2>📚 เลือกเมนู</h2>
-      <p>กดเลือกหมวดที่ต้องการใช้งานได้เลย</p>
-    </div>
 
-    <div class="main-grid">
+<!-- Main Menu -->
+<main class="menu-container">
 
-      <!-- หนังสือ / ข้อสอบ -->
-      <section class="category-card">
+    <!-- 1 -->
+    <a href="book.html" class="menu-card"> <div class="icon blue"> 📖 </div> <div class="card-text"> <h2>หนังสือเรียนจีน</h2> <p> รวมหนังสือและบทเรียนภาษาจีน สำหรับใช้เรียนและทบทวน </p> </div> <div class="arrow">›</div> </a>
 
-        <div class="category-header">
-          <div class="icon-box">📖</div>
 
-          <div>
-            <h3>ไฟล์เรียนภาษาจีน</h3>
-            <p>หนังสือเรียนและไฟล์ข้อสอบสำหรับฝึกภาษาจีน</p>
-          </div>
+    <!-- 2 -->
+    <a href="hsk.html" class="menu-card">
+
+        <div class="icon pink">
+            📝
         </div>
 
-        <div class="file-list">
-
-          <a href="hsk-exam.html" class="menu-btn">
-            <div class="menu-left">
-              <div class="small-icon">📝</div>
-
-              <div class="menu-text">
-                <strong>ไฟล์ข้อสอบ HSK 1–6</strong>
-                <span>รวมข้อสอบสำหรับฝึกทำ HSK ทุกระดับ</span>
-              </div>
-            </div>
-
-            <div class="arrow">›</div>
-          </a>
-
-
-          <a href="hanyujiaocheng.html" class="menu-btn">
-            <div class="menu-left">
-              <div class="small-icon">📘</div>
-
-              <div class="menu-text">
-                <strong>หนังสือ 汉语教程 Hanyu Jiaocheng</strong>
-                <span>หนังสือเรียนภาษาจีนชุด Hanyu Jiaocheng</span>
-              </div>
-            </div>
-
-            <div class="arrow">›</div>
-          </a>
-
-
-          <a href="hsk-standard-course.html" class="menu-btn">
-            <div class="menu-left">
-              <div class="small-icon">📕</div>
-
-              <div class="menu-text">
-                <strong>HSK Standard Course 1–6</strong>
-                <span>หนังสือเตรียมสอบ HSK Standard Course</span>
-              </div>
-            </div>
-
-            <div class="arrow">›</div>
-          </a>
-
+        <div class="card-text">
+            <h2>ไฟล์ข้อสอบ HSK</h2>
+            <p>
+                รวมแบบฝึกหัดและข้อสอบ HSK
+                สำหรับฝึกทำก่อนสอบ
+            </p>
         </div>
 
-      </section>
+        <div class="arrow">›</div>
+
+    </a>
 
 
-      <!-- Dictionary -->
-      <section class="category-card dictionary-card">
+    <!-- 3 -->
+    <a href="dictionary.html" class="menu-card">
 
-        <div class="dictionary-content">
-
-          <div class="dictionary-icon">中泰</div>
-
-          <h3>พจนานุกรมจีน–ไทย</h3>
-
-          <p>
-            ค้นหาคำศัพท์ภาษาจีน<br>
-            พร้อมพินอิน คำแปลไทย และข้อมูลคำศัพท์
-          </p>
-
+        <div class="icon yellow">
+            🔎
         </div>
 
-        <a href="dictionary.html" class="dictionary-btn">
-          🔍 เปิดพจนานุกรมจีน–ไทย
-        </a>
+        <div class="card-text">
+            <h2>พจนานุกรมจีน–ไทย</h2>
+            <p>
+                ค้นหาคำศัพท์จีน พร้อมพินอิน
+                คำแปล ชนิดคำ และตัวอย่างประโยค
+            </p>
+        </div>
 
-      </section>
+        <div class="arrow">›</div>
 
-    </div>
-
-
-    <div class="extra-section">
-      🐼 <strong>กำลังพัฒนาเพิ่มเติม</strong><br>
-      ในอนาคตสามารถเพิ่มแฟลชการ์ด HSK แบบฝึกอ่าน เกมคำศัพท์
-      และบทเรียนภาษาจีนลงในหน้าเว็บนี้ได้
-    </div>
-
-  </main>
+    </a>
 
 
-  <footer>
-    © 2026 ก็แค่จีน by ครูพี่เหม่ยถิง · เรียนจีนแบบน่ารัก ๆ 🇨🇳
-  </footer>
+    <!-- 4 -->
+    <a href="favorites.html" class="menu-card">
 
-</body>
-</html>
+        <div class="icon red">
+            ❤️
+        </div>
+
+        <div class="card-text">
+            <h2>คำศัพท์ที่ชอบ</h2>
+            <p>
+                เก็บคำศัพท์ที่ชอบไว้
+                เพื่อกลับมาทบทวนได้ง่าย ๆ
+            </p>
+        </div>
+
+        <div class="arrow">›</div>
+
+    </a>
+
+</main>
+
+
+<footer>
+    © 2026 <strong>เรียนจีน</strong> · เรียนภาษาจีนไปด้วยกัน 🇨🇳
+    <br>
+    <span class="creator">
+        สร้างโดย <strong>ก็แค่จีน by ครูพี่เหม่ยถิง</strong>
+    </span>
+</footer>
