@@ -1,639 +1,696 @@
 <!DOCTYPE html>
-
 <html lang="th">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
-พจนานุกรมจีน-ไทย |
-ก็แค่จีน by ครูพี่เหม่ยถิง
+พจนานุกรมจีน–ไทย | ก็แค่จีน by ครูพี่เหม่ยถิง
 </title>
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
-rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
+rel="stylesheet"
+>
 
 <style>
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  margin: 0;
+    font-family:
+        "Noto Sans Thai",
+        "Noto Sans SC",
+        sans-serif;
 
-  font-family:
-    "Noto Sans Thai",
-    "Noto Sans SC",
-    sans-serif;
+    background:
+        linear-gradient(
+            180deg,
+            #f5faff 0%,
+            #ffffff 55%,
+            #f8fbff 100%
+        );
 
-  background:
-    linear-gradient(
-      180deg,
-      #f5faff 0%,
-      #ffffff 55%,
-      #f8fbff 100%
-    );
-
-  color: #26354a;
+    color: #26354a;
+    min-height: 100vh;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+    color: inherit;
+    text-decoration: none;
 }
 
 
-/* ================================
-NAVBAR
-================================ */
+/* ========================================
+   NAVBAR
+======================================== */
 
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 
-  background:
-    rgba(255,255,255,.96);
+    background: rgba(255,255,255,.96);
 
-  border-bottom:
-    1px solid #e5eef8;
+    border-bottom:
+        1px solid #e5eef8;
 
-  box-shadow:
-    0 2px 12px
-    rgba(55,100,150,.06);
+    box-shadow:
+        0 2px 12px
+        rgba(55,100,150,.06);
 }
 
 .nav-inner {
-  max-width: 1150px;
-  margin: auto;
+    max-width: 1150px;
+    min-height: 68px;
 
-  min-height: 68px;
+    margin: auto;
+    padding: 10px 20px;
 
-  padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 20px;
+    gap: 20px;
 }
 
 .logo {
-  font-weight: 700;
-  color: #3787c8;
-  font-size: 19px;
-  white-space: nowrap;
+    color: #3787c8;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    white-space: nowrap;
 }
 
 .logo span {
-  display: block;
+    display: block;
 
-  font-size: 11px;
-  color: #91a5b8;
-  font-weight: 500;
+    margin-top: 2px;
+
+    color: #91a5b8;
+
+    font-size: 11px;
+    font-weight: 500;
 }
 
 .nav-links {
-  display: flex;
-  gap: 8px;
+    display: flex;
+    gap: 8px;
 }
 
 .nav-links a {
-  padding: 9px 14px;
+    padding: 9px 14px;
 
-  border-radius: 12px;
+    border-radius: 12px;
 
-  color: #63778c;
+    color: #63778c;
 
-  font-size: 14px;
+    font-size: 14px;
+
+    transition: .2s;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  background: #eaf5ff;
-  color: #2582c5;
+    background: #eaf5ff;
+    color: #2582c5;
 }
 
 
-/* ================================
-HERO
-================================ */
+/* ========================================
+   HERO
+======================================== */
 
 .hero {
-  max-width: 1050px;
+    max-width: 1050px;
 
-  margin: 35px auto 20px;
+    margin: 35px auto 20px;
 
-  padding: 0 20px;
+    padding: 0 20px;
 
-  text-align: center;
+    text-align: center;
 }
 
 .hero h1 {
-  margin: 0;
+    margin: 0;
 
-  color: #287fbe;
+    color: #287fbe;
 
-  font-size:
-    clamp(28px,5vw,40px);
+    font-size:
+        clamp(28px, 5vw, 40px);
 }
 
-.hero p {
-  margin: 8px 0 0;
+.hero > p {
+    margin-top: 8px;
 
-  color: #8293a5;
+    color: #8293a5;
 
-  font-size: 14px;
+    font-size: 14px;
+
+    line-height: 1.7;
 }
 
 
-/* ================================
-SEARCH
-================================ */
+/* ========================================
+   SEARCH
+======================================== */
 
 .search-box {
-  max-width: 760px;
+    max-width: 760px;
 
-  margin: 25px auto 0;
+    margin: 25px auto 0;
 
-  position: relative;
+    position: relative;
+}
+
+.search-area {
+    position: relative;
 }
 
 .search-box input {
-  width: 100%;
+    width: 100%;
+    height: 56px;
 
-  height: 56px;
+    border:
+        2px solid #dcecf9;
 
-  border:
-    2px solid #dcecf9;
+    border-radius: 18px;
 
-  border-radius: 18px;
+    padding:
+        0 22px 0 52px;
 
-  padding:
-    0 22px 0 52px;
+    outline: none;
 
-  outline: none;
+    background: #fff;
 
-  background: #fff;
+    font-family: inherit;
+    font-size: 16px;
 
-  font-family: inherit;
-
-  font-size: 16px;
-
-  transition: .2s;
+    transition: .2s;
 }
 
 .search-box input:focus {
-  border-color: #8fc8ec;
+    border-color: #8fc8ec;
 
-  box-shadow:
-    0 0 0 4px
-    rgba(76,155,208,.08);
+    box-shadow:
+        0 0 0 4px
+        rgba(76,155,208,.08);
 }
 
 .search-icon {
-  position: absolute;
+    position: absolute;
 
-  left: 19px;
-  top: 17px;
+    left: 19px;
+    top: 50%;
 
-  font-size: 21px;
+    transform: translateY(-50%);
 
-  pointer-events: none;
+    font-size: 21px;
+
+    pointer-events: none;
 }
 
 
-/* ================================
-ADD WORD BUTTON
-================================ */
+/* ========================================
+   ADD WORD
+======================================== */
 
 .add-btn {
-  width: 100%;
+    width: 100%;
 
-  margin-top: 12px;
+    margin-top: 12px;
 
-  padding: 13px;
+    padding: 13px;
 
-  border: 0;
+    border: 0;
+    border-radius: 14px;
 
-  border-radius: 14px;
+    background:
+        linear-gradient(
+            135deg,
+            #ff91ae,
+            #f47f9d
+        );
 
-  background:
-    linear-gradient(
-      135deg,
-      #ff91ae,
-      #f47f9d
-    );
+    color: white;
 
-  color: white;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
 
-  font-family: inherit;
+    cursor: pointer;
 
-  font-weight: 700;
-
-  font-size: 15px;
-
-  cursor: pointer;
-
-  transition: .2s;
+    transition: .2s;
 }
 
 .add-btn:hover {
-  transform: translateY(-2px);
+    transform: translateY(-2px);
 
-  box-shadow:
-    0 7px 18px
-    rgba(244,127,157,.22);
+    box-shadow:
+        0 7px 18px
+        rgba(244,127,157,.22);
+}
+
+.add-info {
+    margin-top: 10px;
+
+    color: #91a2b2;
+
+    font-size: 12px;
+
+    line-height: 1.7;
 }
 
 
-/* ================================
-CONTAINER
-================================ */
+/* ========================================
+   MAIN
+======================================== */
 
 .container {
-  max-width: 1150px;
+    max-width: 1150px;
 
-  margin: auto;
+    margin: auto;
 
-  padding:
-    0 20px 45px;
+    padding:
+        0 20px 45px;
 }
 
 
-/* ================================
-FILTER
-================================ */
+/* ========================================
+   FILTER
+======================================== */
 
 .filter-card {
-  background: #fff;
+    margin-top: 20px;
 
-  border:
-    1px solid #e5eef8;
+    padding: 20px;
 
-  border-radius: 20px;
+    background: #fff;
 
-  padding: 20px;
+    border:
+        1px solid #e5eef8;
 
-  margin-top: 20px;
+    border-radius: 20px;
 }
 
 .filter-title {
-  font-size: 14px;
+    margin-bottom: 12px;
 
-  font-weight: 700;
+    color: #62798f;
 
-  color: #62798f;
-
-  margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .letters {
-  display: grid;
+    display: grid;
 
-  grid-template-columns:
-    repeat(26,1fr);
+    grid-template-columns:
+        repeat(27, 1fr);
 
-  gap: 5px;
+    gap: 5px;
 }
 
 .letter-btn,
 .hsk-btn {
-  border:
-    1px solid #dcebf7;
+    border:
+        1px solid #dcebf7;
 
-  background: #f8fcff;
+    background: #f8fcff;
 
-  color: #5e7790;
+    color: #5e7790;
 
-  cursor: pointer;
+    font-family: inherit;
 
-  font-family: inherit;
+    cursor: pointer;
+
+    transition: .15s;
 }
 
 .letter-btn {
-  height: 34px;
+    height: 34px;
 
-  border-radius: 9px;
+    border-radius: 9px;
 
-  font-size: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
 
-  font-weight: 600;
+.letter-btn:first-child {
+    grid-column:
+        span 2;
 }
 
 .letter-btn:hover,
 .letter-btn.active,
 .hsk-btn:hover,
 .hsk-btn.active {
-  background: #4c9bd0;
+    background: #4c9bd0;
 
-  color: white;
+    border-color: #4c9bd0;
+
+    color: white;
 }
 
 .hsk-buttons {
-  display: flex;
+    display: flex;
+    flex-wrap: wrap;
 
-  flex-wrap: wrap;
-
-  gap: 8px;
+    gap: 8px;
 }
 
 .hsk-btn {
-  padding: 8px 16px;
+    padding: 8px 16px;
 
-  border-radius: 11px;
+    border-radius: 11px;
 
-  font-size: 13px;
-
-  font-weight: 600;
+    font-size: 13px;
+    font-weight: 600;
 }
 
 
-/* ================================
-RESULT BAR
-================================ */
+/* ========================================
+   RESULT BAR
+======================================== */
 
 .result-bar {
-  margin:
-    22px 2px 14px;
+    margin:
+        22px 2px 14px;
 
-  display: flex;
+    display: flex;
 
-  justify-content:
-    space-between;
+    align-items: center;
+    justify-content: space-between;
 
-  color: #7c8fa2;
+    gap: 10px;
 
-  font-size: 13px;
+    color: #7c8fa2;
+
+    font-size: 13px;
 }
 
 #resultCount {
-  color: #3688c3;
+    color: #3688c3;
 
-  font-weight: 700;
+    font-weight: 700;
 }
 
 
-/* ================================
-WORD GRID
-================================ */
+/* ========================================
+   WORD GRID
+======================================== */
 
 .word-grid {
-  display: grid;
+    display: grid;
 
-  grid-template-columns:
-    repeat(4,minmax(0,1fr));
+    grid-template-columns:
+        repeat(4, minmax(0,1fr));
 
-  gap: 15px;
+    gap: 15px;
 }
 
 .word-card {
-  position: relative;
+    position: relative;
 
-  background: #fff;
+    min-height: 185px;
 
-  border:
-    1px solid #e3edf6;
+    padding: 19px;
 
-  border-radius: 18px;
+    background: #fff;
 
-  padding: 19px;
+    border:
+        1px solid #e3edf6;
 
-  min-height: 185px;
+    border-radius: 18px;
 
-  box-shadow:
-    0 5px 18px
-    rgba(50,100,150,.055);
+    box-shadow:
+        0 5px 18px
+        rgba(50,100,150,.055);
 
-  transition: .2s;
+    transition: .2s;
 }
 
 .word-card:hover {
-  transform: translateY(-3px);
+    transform: translateY(-3px);
 
-  box-shadow:
-    0 9px 24px
-    rgba(50,100,150,.09);
+    box-shadow:
+        0 9px 24px
+        rgba(50,100,150,.09);
+}
+
+.word-card > a {
+    display: block;
+
+    height: 100%;
 }
 
 .word {
-  font-family:
-    "Noto Sans SC";
+    padding-right: 35px;
 
-  font-size: 31px;
+    color: #287fbe;
 
-  font-weight: 700;
+    font-family:
+        "Noto Sans SC",
+        sans-serif;
 
-  color: #287fbe;
+    font-size: 31px;
+    font-weight: 700;
+
+    line-height: 1.35;
 }
 
 .pinyin {
-  margin-top: 6px;
+    margin-top: 6px;
 
-  font-size: 14px;
+    color: #6f91a8;
 
-  color: #6f91a8;
+    font-size: 14px;
 }
 
 .meaning {
-  margin-top: 9px;
+    margin-top: 9px;
 
-  color: #44586d;
+    color: #44586d;
 
-  font-size: 14px;
+    font-size: 14px;
 
-  line-height: 1.6;
+    line-height: 1.6;
 }
 
 .card-bottom {
-  display: flex;
+    margin-top: 14px;
 
-  justify-content:
-    space-between;
+    display: flex;
 
-  margin-top: 11px;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
 }
 
 .hsk-tag {
-  padding:
-    4px 9px;
+    padding:
+        4px 9px;
 
-  border-radius: 8px;
+    border-radius: 8px;
 
-  background: #eef8ff;
+    background: #eef8ff;
 
-  color: #3b8dc5;
+    color: #3b8dc5;
 
-  font-size: 11px;
+    font-size: 11px;
+    font-weight: 700;
 
-  font-weight: 700;
+    white-space: nowrap;
 }
 
 .pos {
-  color: #9aa9b7;
+    overflow: hidden;
 
-  font-size: 11px;
+    color: #9aa9b7;
+
+    font-size: 11px;
+
+    text-align: right;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
-/* ================================
-FAVORITE
-================================ */
+/* ========================================
+   FAVORITE
+======================================== */
 
 .favorite-btn {
-  position: absolute;
+    position: absolute;
 
-  right: 13px;
-  top: 13px;
+    right: 13px;
+    top: 13px;
 
-  width: 34px;
-  height: 34px;
+    z-index: 5;
 
-  border: 0;
+    width: 34px;
+    height: 34px;
 
-  border-radius: 50%;
+    border: 0;
 
-  background: #f5f9fc;
+    border-radius: 50%;
 
-  color: #aabac8;
+    background: #f5f9fc;
 
-  cursor: pointer;
+    color: #aabac8;
 
-  font-size: 18px;
+    font-size: 18px;
 
-  z-index: 2;
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.favorite-btn:hover {
+    background: #fff0f4;
+    color: #e96889;
 }
 
 .favorite-btn.active {
-  background: #fff0f4;
-
-  color: #e96889;
+    background: #fff0f4;
+    color: #e96889;
 }
 
 
-/* ================================
-EMPTY
-================================ */
+/* ========================================
+   EMPTY / ERROR
+======================================== */
 
 .empty {
-  grid-column: 1/-1;
+    grid-column: 1 / -1;
 
-  background: #fff;
+    padding: 50px 20px;
 
-  border:
-    1px dashed #d6e6f2;
+    background: #fff;
 
-  border-radius: 20px;
+    border:
+        1px dashed #d6e6f2;
 
-  padding: 50px 20px;
+    border-radius: 20px;
 
-  text-align: center;
+    color: #91a2b2;
 
-  color: #91a2b2;
+    text-align: center;
+
+    line-height: 1.8;
 }
 
 
-/* ================================
-ADD WORD INFO
-================================ */
-
-.add-info {
-  max-width: 760px;
-
-  margin:
-    10px auto 0;
-
-  color: #91a2b2;
-
-  font-size: 12px;
-
-  line-height: 1.6;
-
-  text-align: center;
-}
-
-
-/* ================================
-FOOTER
-================================ */
+/* ========================================
+   FOOTER
+======================================== */
 
 footer {
-  padding: 28px 20px;
+    padding: 28px 20px;
 
-  text-align: center;
+    background: white;
 
-  color: #9aabba;
+    border-top:
+        1px solid #e9f1f7;
 
-  font-size: 12px;
+    color: #9aabba;
 
-  border-top:
-    1px solid #e9f1f7;
+    font-size: 12px;
 
-  background: white;
+    text-align: center;
 }
 
 
-/* ================================
-RESPONSIVE
-================================ */
+/* ========================================
+   RESPONSIVE
+======================================== */
 
-@media(max-width:900px) {
+@media (max-width: 1000px) {
 
-  .letters {
-    grid-template-columns:
-      repeat(13,1fr);
-  }
+    .letters {
+        grid-template-columns:
+            repeat(14,1fr);
+    }
 
-  .word-grid {
-    grid-template-columns:
-      repeat(3,1fr);
-  }
-
-}
-
-
-@media(max-width:650px) {
-
-  .nav-inner {
-    flex-direction: column;
-  }
-
-  .letters {
-    grid-template-columns:
-      repeat(7,1fr);
-  }
-
-  .word-grid {
-    grid-template-columns:
-      repeat(2,1fr);
-  }
+    .word-grid {
+        grid-template-columns:
+            repeat(3,1fr);
+    }
 
 }
 
 
-@media(max-width:390px) {
+@media (max-width: 700px) {
 
-  .word-grid {
-    grid-template-columns: 1fr;
-  }
+    .nav-inner {
+        flex-direction: column;
 
-  .result-bar {
-    flex-direction: column;
+        align-items: flex-start;
 
-    gap: 5px;
-  }
+        gap: 8px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        overflow-x: auto;
+    }
+
+    .nav-links a {
+        white-space: nowrap;
+    }
+
+    .hero {
+        margin-top: 25px;
+    }
+
+    .letters {
+        grid-template-columns:
+            repeat(7,1fr);
+    }
+
+    .letter-btn:first-child {
+        grid-column:
+            span 2;
+    }
+
+    .word-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .container,
+    .hero {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .word-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .result-bar {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
 
 }
 
@@ -641,261 +698,267 @@ RESPONSIVE
 
 </head>
 
+
 <body>
 
-<!-- ================================
-NAVBAR
-================================ -->
+
+<!-- ========================================
+     NAVBAR
+======================================== -->
 
 <nav class="navbar">
 
-<div class="nav-inner">
+    <div class="nav-inner">
 
-<a
-href="index.html"
-class="logo">
+        <a
+        href="index.html"
+        class="logo">
 
-ก็แค่จีน by ครูพี่เหม่ยถิง
+            ก็แค่จีน by ครูพี่เหม่ยถิง
 
-<span>
-เรียนจีนให้เข้าใจ ใช้ได้จริง 💙
-</span>
+            <span>
+                เรียนจีนให้เข้าใจ ใช้ได้จริง 💙
+            </span>
 
-</a>
+        </a>
 
-<div class="nav-links">
 
-<a href="index.html">
-หน้าแรก
-</a>
+        <div class="nav-links">
 
-<a
-href="dictionary.html"
-class="active">
+            <a href="index.html">
+                หน้าแรก
+            </a>
 
-พจนานุกรม
+            <a
+            href="dictionary.html"
+            class="active">
+                พจนานุกรม
+            </a>
 
-</a>
+            <a href="favorites.html">
+                ❤️ คำโปรด
+            </a>
 
-<a href="favorites.html">
+        </div>
 
-❤️ คำโปรด
-
-</a>
-
-</div>
-
-</div>
+    </div>
 
 </nav>
 
-<!-- ================================
-HERO
-================================ -->
+
+
+<!-- ========================================
+     HERO
+======================================== -->
 
 <section class="hero">
 
-<h1>
-📖 พจนานุกรมจีน–ไทย
-</h1>
+    <h1>
+        📖 พจนานุกรมจีน–ไทย
+    </h1>
 
-<p>
-ค้นหาคำศัพท์จีน พร้อมพินอิน คำแปล ชนิดคำ และตัวอย่างประโยค
-</p>
+    <p>
+        ค้นหาคำศัพท์จีน พร้อมพินอิน คำแปล ชนิดคำ และตัวอย่างประโยค
+    </p>
 
-<div class="search-box">
 
-<span class="search-icon">
-🔍
-</span>
+    <div class="search-box">
 
-<input
-id="searchInput"
-type="text"
-placeholder="ค้นหา เช่น 爱 / ai / รัก..."
-autocomplete="off"
+        <div class="search-area">
 
->
+            <span class="search-icon">
+                🔍
+            </span>
 
-<button
-class="add-btn"
-id="openAddWord">
+            <input
+            id="searchInput"
+            type="text"
+            placeholder="ค้นหา เช่น 爱 / ai / รัก..."
+            autocomplete="off">
 
-➕ เพิ่มคำศัพท์
+        </div>
 
-</button>
 
-<p class="add-info">
+        <button
+        class="add-btn"
+        id="openAddWord"
+        type="button">
 
-ไม่พบคำศัพท์ที่ต้องการ?
-ส่งคำศัพท์ให้แอดมินตรวจสอบได้ค่ะ 💕 <br>
+            ➕ เพิ่มคำศัพท์
 
-หลังส่งข้อมูล คำศัพท์จะผ่านการตรวจสอบก่อนนำขึ้นเว็บไซต์
+        </button>
 
-</p>
 
-</div>
+        <p class="add-info">
+
+            ไม่พบคำศัพท์ที่ต้องการ?
+            ส่งคำศัพท์ให้แอดมินตรวจสอบได้ค่ะ 💕
+
+            <br>
+
+            หลังส่งข้อมูล คำศัพท์จะผ่านการตรวจสอบ
+            ก่อนนำขึ้นเว็บไซต์
+
+        </p>
+
+    </div>
 
 </section>
 
-<!-- ================================
-MAIN
-================================ -->
+
+
+<!-- ========================================
+     MAIN
+======================================== -->
 
 <main class="container">
 
-<section class="filter-card">
 
-<div class="filter-title">
-🔤 เลือกตัวอักษร
-</div>
+    <!-- FILTER -->
 
-<div
-class="letters"
-id="letterButtons">
-</div>
+    <section class="filter-card">
 
-<div
-class="filter-title"
-style="margin-top:20px">
+        <div class="filter-title">
+            🔤 เลือกตัวอักษร
+        </div>
 
-📚 ระดับ HSK
+        <div
+        class="letters"
+        id="letterButtons">
+        </div>
 
-</div>
 
-<div class="hsk-buttons">
+        <div
+        class="filter-title"
+        style="margin-top:20px;">
 
-<button
-class="hsk-btn active"
-data-hsk="ALL">
+            📚 ระดับ HSK
 
-ทั้งหมด
+        </div>
 
-</button>
 
-<button
-class="hsk-btn"
-data-hsk="HSK1">
+        <div class="hsk-buttons">
 
-HSK1
+            <button
+            class="hsk-btn active"
+            data-hsk="ALL"
+            type="button">
+                ทั้งหมด
+            </button>
 
-</button>
+            <button
+            class="hsk-btn"
+            data-hsk="HSK1"
+            type="button">
+                HSK1
+            </button>
 
-<button
-class="hsk-btn"
-data-hsk="HSK2">
+            <button
+            class="hsk-btn"
+            data-hsk="HSK2"
+            type="button">
+                HSK2
+            </button>
 
-HSK2
+            <button
+            class="hsk-btn"
+            data-hsk="HSK3"
+            type="button">
+                HSK3
+            </button>
 
-</button>
+            <button
+            class="hsk-btn"
+            data-hsk="HSK4"
+            type="button">
+                HSK4
+            </button>
 
-<button
-class="hsk-btn"
-data-hsk="HSK3">
+            <button
+            class="hsk-btn"
+            data-hsk="HSK5"
+            type="button">
+                HSK5
+            </button>
 
-HSK3
+            <button
+            class="hsk-btn"
+            data-hsk="HSK6"
+            type="button">
+                HSK6
+            </button>
 
-</button>
+        </div>
 
-<button
-class="hsk-btn"
-data-hsk="HSK4">
+    </section>
 
-HSK4
 
-</button>
 
-<button
-class="hsk-btn"
-data-hsk="HSK5">
+    <!-- RESULT -->
 
-HSK5
+    <div class="result-bar">
 
-</button>
+        <div>
+            พบ
+            <span id="resultCount">
+                0
+            </span>
+            คำ
+        </div>
 
-<button
-class="hsk-btn"
-data-hsk="HSK6">
+        <div>
+            กดที่คำศัพท์เพื่อดูรายละเอียด 📚
+        </div>
 
-HSK6
+    </div>
 
-</button>
 
-</div>
 
-</section>
+    <!-- WORD GRID -->
 
-<!-- ================================
-RESULT
-================================ -->
+    <section
+    class="word-grid"
+    id="wordGrid">
 
-<div class="result-bar">
+        <div class="empty">
+            ⏳ กำลังโหลดคำศัพท์...
+        </div>
 
-<div>
+    </section>
 
-พบ <span id="resultCount">
-0 </span>
-คำ
-
-</div>
-
-<div>
-
-กดที่คำศัพท์เพื่อดูรายละเอียด 📚
-
-</div>
-
-</div>
-
-<!-- ================================
-WORD GRID
-================================ -->
-
-<section
-class="word-grid"
-id="wordGrid">
-
-<div class="empty">
-
-⏳ กำลังโหลดคำศัพท์...
-
-</div>
-
-</section>
 
 </main>
 
-<!-- ================================
-FOOTER
-================================ -->
+
 
 <footer>
 
-© ก็แค่จีน by ครูพี่เหม่ยถิง
-· Chinese–Thai Dictionary 💙
+    © ก็แค่จีน by ครูพี่เหม่ยถิง
+    · Chinese–Thai Dictionary 💙
 
 </footer>
 
-<!-- ================================
-DICTIONARY DATA
-================================ -->
+
+
+<!-- ========================================
+     DICTIONARY DATA
+======================================== -->
 
 <script src="./data/dictionary.js"></script>
 
+
 <script>
 
+/* ========================================
+   SETTINGS
+======================================== */
+
 const FAVORITE_KEY =
-"chineseDictionaryFavorites";
+    "chineseDictionaryFavorites";
 
-
-/*
-================================
-GOOGLE FORM
-================================
-*/
 
 const GOOGLE_FORM_URL =
-"https://forms.gle/QK2QEqGGWuZbfubdA";
+    "https://forms.gle/QK2QEqGGWuZbfubdA";
 
 
 let dictionaryData = [];
@@ -905,737 +968,1009 @@ let currentLetter = "ALL";
 let currentHSK = "ALL";
 
 
+
+/* ========================================
+   ELEMENTS
+======================================== */
+
 const searchInput =
-document.getElementById(
-  "searchInput"
-);
+    document.getElementById(
+        "searchInput"
+    );
 
 
 const wordGrid =
-document.getElementById(
-  "wordGrid"
-);
+    document.getElementById(
+        "wordGrid"
+    );
 
 
 const resultCount =
-document.getElementById(
-  "resultCount"
-);
+    document.getElementById(
+        "resultCount"
+    );
 
 
 const letterButtons =
-document.getElementById(
-  "letterButtons"
-);
+    document.getElementById(
+        "letterButtons"
+    );
 
 
+
+/* ========================================
+   NORMALIZE HSK
+======================================== */
 
 /*
-================================
-LOAD DICTIONARY.JS
-================================
+รองรับข้อมูลหลายรูปแบบ เช่น
+
+HSK2
+HSK 2
+hsk2
+hsk 2
+2
+
+ทั้งหมดจะถูกแปลงเป็น HSK2
 */
+
+function normalizeHSK(value) {
+
+    let hsk =
+        String(
+            value ?? ""
+        )
+        .trim()
+        .toUpperCase()
+        .replace(/\s+/g, "");
+
+
+    if (!hsk) {
+        return "";
+    }
+
+
+    if (/^[1-6]$/.test(hsk)) {
+
+        return "HSK" + hsk;
+
+    }
+
+
+    const match =
+        hsk.match(
+            /^HSK([1-6])$/
+        );
+
+
+    if (match) {
+
+        return "HSK" + match[1];
+
+    }
+
+
+    return hsk;
+
+}
+
+
+
+/* ========================================
+   NORMALIZE DATA
+======================================== */
+
+function normalizeDictionaryItem(
+    item,
+    index
+) {
+
+    return {
+
+        ...item,
+
+        id:
+            item.id ??
+            index + 1,
+
+        word:
+            String(
+                item.word ?? ""
+            ).trim(),
+
+        pinyin:
+            String(
+                item.pinyin ?? ""
+            ).trim(),
+
+        meaning:
+            String(
+                item.meaning ?? ""
+            ).trim(),
+
+        hsk:
+            normalizeHSK(
+                item.hsk
+            ),
+
+        pos:
+            String(
+                item.pos ?? ""
+            ).trim(),
+
+        example:
+            String(
+                item.example ?? ""
+            ).trim(),
+
+        examplePinyin:
+            String(
+                item.examplePinyin ?? ""
+            ).trim(),
+
+        exampleThai:
+            String(
+                item.exampleThai ??
+                item.exampleMeaning ??
+                ""
+            ).trim()
+
+    };
+
+}
+
+
+
+/* ========================================
+   LOAD DICTIONARY
+======================================== */
 
 function loadDictionary() {
 
-  try {
+    try {
 
-    if (
-      Array.isArray(
-        window.dictionary
-      )
-    ) {
+        let source = null;
 
-      dictionaryData =
-        window.dictionary;
+
+        if (
+            Array.isArray(
+                window.dictionary
+            )
+        ) {
+
+            source =
+                window.dictionary;
+
+        }
+
+
+        else if (
+            Array.isArray(
+                window.dictionaryData
+            )
+        ) {
+
+            source =
+                window.dictionaryData;
+
+        }
+
+
+        else {
+
+            throw new Error(
+                "ไม่พบข้อมูลคำศัพท์ใน dictionary.js"
+            );
+
+        }
+
+
+        dictionaryData =
+            source
+            .filter(
+                item =>
+                    item &&
+                    typeof item === "object"
+            )
+            .map(
+                normalizeDictionaryItem
+            );
+
+
+        console.log(
+            "โหลดคำศัพท์ทั้งหมด:",
+            dictionaryData.length
+        );
+
+
+        console.log(
+            "จำนวน HSK1:",
+            dictionaryData.filter(
+                item =>
+                    item.hsk === "HSK1"
+            ).length
+        );
+
+
+        console.log(
+            "จำนวน HSK2:",
+            dictionaryData.filter(
+                item =>
+                    item.hsk === "HSK2"
+            ).length
+        );
+
+
+        createLetterButtons();
+
+        renderWords();
+
 
     }
 
-    else if (
-      Array.isArray(
-        window.dictionaryData
-      )
-    ) {
+    catch (error) {
 
-      dictionaryData =
-        window.dictionaryData;
+        console.error(
+            "Dictionary error:",
+            error
+        );
+
+
+        resultCount.textContent =
+            "0";
+
+
+        wordGrid.innerHTML = `
+
+            <div class="empty">
+
+                ⚠️ โหลดข้อมูลคำศัพท์ไม่สำเร็จ
+
+                <br><br>
+
+                กรุณาตรวจสอบไฟล์
+
+                <br>
+
+                <b>
+                    data/dictionary.js
+                </b>
+
+            </div>
+
+        `;
 
     }
-
-    else {
-
-      throw new Error(
-        "ไม่พบข้อมูล dictionary"
-      );
-
-    }
-
-
-    createLetterButtons();
-
-    renderWords();
-
-
-  } catch(error) {
-
-    console.error(error);
-
-
-    wordGrid.innerHTML = `
-
-      <div class="empty">
-
-        ⚠️ โหลดข้อมูลคำศัพท์ไม่สำเร็จ
-
-        <br><br>
-
-        กรุณาตรวจสอบไฟล์
-
-        <br>
-
-        <b>
-        data/dictionary.js
-        </b>
-
-      </div>
-
-    `;
-
-  }
 
 }
 
 
 
-/*
-================================
-FAVORITES
-================================
-*/
+/* ========================================
+   FAVORITES
+======================================== */
 
 function getFavorites() {
 
-  try {
+    try {
 
-    return JSON.parse(
-      localStorage.getItem(
-        FAVORITE_KEY
-      )
-    ) || [];
+        const data =
+            JSON.parse(
+                localStorage.getItem(
+                    FAVORITE_KEY
+                )
+            );
 
-  } catch {
 
-    return [];
+        return Array.isArray(data)
+            ? data.map(Number)
+            : [];
 
-  }
+    }
+
+    catch {
+
+        return [];
+
+    }
 
 }
 
 
 
-function saveFavorites(data) {
+function saveFavorites(
+    favorites
+) {
 
-  localStorage.setItem(
-    FAVORITE_KEY,
-    JSON.stringify(data)
-  );
+    localStorage.setItem(
+        FAVORITE_KEY,
+        JSON.stringify(
+            favorites
+        )
+    );
+
+}
+
+
+
+function isFavorite(
+    id
+) {
+
+    return getFavorites()
+        .includes(
+            Number(id)
+        );
 
 }
 
 
 
 function toggleFavorite(
-  id,
-  event
+    id,
+    event
 ) {
 
-  event.preventDefault();
+    event.preventDefault();
 
-  event.stopPropagation();
-
-
-  id = Number(id);
+    event.stopPropagation();
 
 
-  let favorites =
-    getFavorites();
+    id =
+        Number(id);
 
 
-  if (
-    favorites.includes(id)
-  ) {
-
-    favorites =
-      favorites.filter(
-        item =>
-          item !== id
-      );
-
-  }
-
-  else {
-
-    favorites.push(id);
-
-  }
+    let favorites =
+        getFavorites();
 
 
-  saveFavorites(
-    favorites
-  );
+    if (
+        favorites.includes(id)
+    ) {
+
+        favorites =
+            favorites.filter(
+                favoriteId =>
+                    favoriteId !== id
+            );
+
+    }
+
+    else {
+
+        favorites.push(id);
+
+    }
 
 
-  renderWords();
-
-}
-
-
-
-function isFavorite(id) {
-
-  return getFavorites()
-    .includes(
-      Number(id)
+    saveFavorites(
+        favorites
     );
 
-}
-
-
-
-/*
-================================
-GET FIRST LETTER
-================================
-*/
-
-function getFirstLetter(
-  pinyin
-) {
-
-  if (!pinyin) {
-
-    return "";
-
-  }
-
-
-  const first =
-    String(pinyin)
-      .trim()
-      .toLowerCase()
-      .charAt(0);
-
-
-  return /^[a-z]$/.test(first)
-    ? first.toUpperCase()
-    : "";
-
-}
-
-
-
-/*
-================================
-LETTER BUTTONS
-================================
-*/
-
-function createLetterButtons() {
-
-  letterButtons.innerHTML = "";
-
-
-  const all =
-    document.createElement(
-      "button"
-    );
-
-
-  all.className =
-    "letter-btn active";
-
-
-  all.textContent =
-    "ทั้งหมด";
-
-
-  all.dataset.letter =
-    "ALL";
-
-
-  all.onclick = () => {
-
-    currentLetter =
-      "ALL";
-
-
-    updateLetters();
 
     renderWords();
 
-  };
-
-
-  letterButtons.appendChild(
-    all
-  );
+}
 
 
 
-  "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    .split("")
-    .forEach(
-      letter => {
+/* ========================================
+   PINYIN FIRST LETTER
+======================================== */
 
-        const btn =
-          document.createElement(
+function getFirstLetter(
+    pinyin
+) {
+
+    if (!pinyin) {
+        return "";
+    }
+
+
+    const first =
+        String(pinyin)
+        .trim()
+        .toLowerCase()
+        .charAt(0);
+
+
+    return /^[a-z]$/.test(first)
+        ? first.toUpperCase()
+        : "";
+
+}
+
+
+
+/* ========================================
+   CREATE A-Z BUTTONS
+======================================== */
+
+function createLetterButtons() {
+
+    letterButtons.innerHTML =
+        "";
+
+
+    const allButton =
+        document.createElement(
             "button"
-          );
-
-
-        btn.className =
-          "letter-btn";
-
-
-        btn.textContent =
-          letter;
-
-
-        btn.dataset.letter =
-          letter;
-
-
-        btn.onclick = () => {
-
-          currentLetter =
-            letter;
-
-
-          updateLetters();
-
-          renderWords();
-
-        };
-
-
-        letterButtons.appendChild(
-          btn
         );
 
-      }
+
+    allButton.type =
+        "button";
+
+
+    allButton.className =
+        "letter-btn active";
+
+
+    allButton.textContent =
+        "ทั้งหมด";
+
+
+    allButton.dataset.letter =
+        "ALL";
+
+
+    allButton.addEventListener(
+        "click",
+        () => {
+
+            currentLetter =
+                "ALL";
+
+
+            updateLetterButtons();
+
+            renderWords();
+
+        }
     );
+
+
+    letterButtons.appendChild(
+        allButton
+    );
+
+
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        .split("")
+        .forEach(
+            letter => {
+
+                const button =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                button.type =
+                    "button";
+
+
+                button.className =
+                    "letter-btn";
+
+
+                button.textContent =
+                    letter;
+
+
+                button.dataset.letter =
+                    letter;
+
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        currentLetter =
+                            letter;
+
+
+                        updateLetterButtons();
+
+                        renderWords();
+
+                    }
+                );
+
+
+                letterButtons
+                    .appendChild(
+                        button
+                    );
+
+            }
+        );
 
 }
 
 
 
-function updateLetters() {
+/* ========================================
+   UPDATE LETTER BUTTONS
+======================================== */
 
-  document
-    .querySelectorAll(
-      ".letter-btn"
-    )
-    .forEach(
-      btn => {
+function updateLetterButtons() {
 
-        btn.classList.toggle(
-          "active",
+    document
+        .querySelectorAll(
+            ".letter-btn"
+        )
+        .forEach(
+            button => {
 
-          btn.dataset.letter
-          === currentLetter
+                button.classList.toggle(
+
+                    "active",
+
+                    button.dataset.letter
+                    === currentLetter
+
+                );
+
+            }
         );
-
-      }
-    );
 
 }
 
 
 
-/*
-================================
-FILTER
-================================
-*/
+/* ========================================
+   FILTER WORDS
+======================================== */
 
 function getFilteredWords() {
 
-  const keyword =
-    searchInput.value
-      .trim()
-      .toLowerCase();
+    const keyword =
+        searchInput.value
+        .trim()
+        .toLowerCase();
 
 
-  return dictionaryData.filter(
-    item => {
+    return dictionaryData.filter(
+        item => {
 
 
-      const word =
-        String(
-          item.word || ""
-        ).toLowerCase();
+            /* SEARCH */
+
+            const word =
+                String(
+                    item.word || ""
+                )
+                .toLowerCase();
 
 
-      const pinyin =
-        String(
-          item.pinyin || ""
-        ).toLowerCase();
+            const pinyin =
+                String(
+                    item.pinyin || ""
+                )
+                .toLowerCase();
 
 
-      const meaning =
-        String(
-          item.meaning || ""
-        ).toLowerCase();
+            const meaning =
+                String(
+                    item.meaning || ""
+                )
+                .toLowerCase();
 
 
-      const search =
-        !keyword ||
-
-        word.includes(
-          keyword
-        ) ||
-
-        pinyin.includes(
-          keyword
-        ) ||
-
-        meaning.includes(
-          keyword
-        );
+            const example =
+                String(
+                    item.example || ""
+                )
+                .toLowerCase();
 
 
-      const letter =
-        currentLetter === "ALL" ||
+            const searchMatch =
 
-        getFirstLetter(
-          item.pinyin
-        )
-        === currentLetter;
+                !keyword ||
 
+                word.includes(
+                    keyword
+                ) ||
 
-      const hsk =
-        currentHSK === "ALL" ||
+                pinyin.includes(
+                    keyword
+                ) ||
 
-        String(
-          item.hsk || ""
-        )
-        .toUpperCase()
-        === currentHSK;
+                meaning.includes(
+                    keyword
+                ) ||
 
-
-      return (
-        search &&
-        letter &&
-        hsk
-      );
-
-    }
-  );
-
-}
+                example.includes(
+                    keyword
+                );
 
 
 
-/*
-================================
-ESCAPE HTML
-================================
-*/
+            /* LETTER */
 
-function escapeHTML(
-  value
-) {
+            const letterMatch =
 
-  return String(
-    value || ""
-  )
-    .replace(
-      /&/g,
-      "&amp;"
-    )
-    .replace(
-      /</g,
-      "&lt;"
-    )
-    .replace(
-      />/g,
-      "&gt;"
-    )
-    .replace(
-      /"/g,
-      "&quot;"
-    )
-    .replace(
-      /'/g,
-      "&#039;"
+                currentLetter ===
+                "ALL" ||
+
+                getFirstLetter(
+                    item.pinyin
+                ) === currentLetter;
+
+
+
+            /* HSK */
+
+            const itemHSK =
+                normalizeHSK(
+                    item.hsk
+                );
+
+
+            const selectedHSK =
+                normalizeHSK(
+                    currentHSK
+                );
+
+
+            const hskMatch =
+
+                currentHSK ===
+                "ALL" ||
+
+                itemHSK ===
+                selectedHSK;
+
+
+
+            return (
+                searchMatch &&
+                letterMatch &&
+                hskMatch
+            );
+
+        }
     );
 
 }
 
 
 
-/*
-================================
-RENDER WORDS
-================================
-*/
+/* ========================================
+   ESCAPE HTML
+======================================== */
+
+function escapeHTML(
+    value
+) {
+
+    return String(
+        value ?? ""
+    )
+
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+
+    .replace(
+        /</g,
+        "&lt;"
+    )
+
+    .replace(
+        />/g,
+        "&gt;"
+    )
+
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+
+    .replace(
+        /'/g,
+        "&#039;"
+    );
+
+}
+
+
+
+/* ========================================
+   RENDER WORDS
+======================================== */
 
 function renderWords() {
 
-  const words =
-    getFilteredWords();
+    const words =
+        getFilteredWords();
 
 
-  resultCount.textContent =
-    words.length;
+    resultCount.textContent =
+        words.length;
 
 
-  wordGrid.innerHTML = "";
+    wordGrid.innerHTML =
+        "";
 
 
-  if (
-    !words.length
-  ) {
+    if (
+        words.length === 0
+    ) {
 
-    wordGrid.innerHTML = `
+        wordGrid.innerHTML = `
 
-      <div class="empty">
+            <div class="empty">
 
-        🔎
+                🔎
 
-        <br><br>
+                <br><br>
 
-        ไม่พบคำศัพท์
+                ไม่พบคำศัพท์
 
-        <br>
+                <br>
 
-        ลองค้นหาด้วยคำอื่นดูนะคะ 💕
+                ลองค้นหาหรือเลือกตัวกรองอื่นดูนะคะ 💕
 
-      </div>
+            </div>
 
-    `;
+        `;
 
-    return;
 
-  }
-
-
-
-  words.forEach(
-    item => {
-
-      const card =
-        document.createElement(
-          "article"
-        );
-
-
-      card.className =
-        "word-card";
-
-
-      const favorite =
-        isFavorite(
-          item.id
-        );
-
-
-      card.innerHTML = `
-
-        <button
-
-          class="
-            favorite-btn
-            ${favorite ? "active" : ""}
-          "
-
-          title="เพิ่มคำโปรด"
-
-          type="button">
-
-          ${favorite ? "♥" : "♡"}
-
-        </button>
-
-
-        <a
-          href="
-            word.html?id=
-            ${encodeURIComponent(item.id)}
-          ">
-
-
-          <div class="word">
-
-            ${escapeHTML(
-              item.word
-            )}
-
-          </div>
-
-
-          <div class="pinyin">
-
-            ${escapeHTML(
-              item.pinyin
-            )}
-
-          </div>
-
-
-          <div class="meaning">
-
-            ${escapeHTML(
-              item.meaning
-            )}
-
-          </div>
-
-
-          <div class="card-bottom">
-
-
-            <span class="hsk-tag">
-
-              ${escapeHTML(
-                item.hsk ||
-                "ไม่ระบุ"
-              )}
-
-            </span>
-
-
-            <span class="pos">
-
-              ${escapeHTML(
-                item.pos ||
-                ""
-              )}
-
-            </span>
-
-
-          </div>
-
-
-        </a>
-
-      `;
-
-
-      card
-        .querySelector(
-          ".favorite-btn"
-        )
-        .onclick =
-        event =>
-          toggleFavorite(
-            item.id,
-            event
-          );
-
-
-      wordGrid.appendChild(
-        card
-      );
+        return;
 
     }
-  );
+
+
+
+    words.forEach(
+        item => {
+
+
+            const card =
+                document.createElement(
+                    "article"
+                );
+
+
+            card.className =
+                "word-card";
+
+
+            const favorite =
+                isFavorite(
+                    item.id
+                );
+
+
+            card.innerHTML = `
+
+
+                <button
+
+                    class="
+                        favorite-btn
+                        ${favorite ? "active" : ""}
+                    "
+
+                    type="button"
+
+                    title="
+                        ${favorite
+                            ? "นำออกจากคำโปรด"
+                            : "เพิ่มคำโปรด"
+                        }
+                    "
+
+                    aria-label="
+                        ${favorite
+                            ? "นำออกจากคำโปรด"
+                            : "เพิ่มคำโปรด"
+                        }
+                    "
+
+                >
+
+                    ${favorite
+                        ? "♥"
+                        : "♡"
+                    }
+
+                </button>
+
+
+
+                <a
+                href="word.html?id=${encodeURIComponent(item.id)}">
+
+
+                    <div class="word">
+
+                        ${escapeHTML(
+                            item.word
+                        )}
+
+                    </div>
+
+
+                    <div class="pinyin">
+
+                        ${escapeHTML(
+                            item.pinyin
+                        )}
+
+                    </div>
+
+
+                    <div class="meaning">
+
+                        ${escapeHTML(
+                            item.meaning
+                        )}
+
+                    </div>
+
+
+                    <div class="card-bottom">
+
+
+                        <span class="hsk-tag">
+
+                            ${escapeHTML(
+                                item.hsk ||
+                                "ไม่ระบุ"
+                            )}
+
+                        </span>
+
+
+                        <span class="pos">
+
+                            ${escapeHTML(
+                                item.pos ||
+                                ""
+                            )}
+
+                        </span>
+
+
+                    </div>
+
+
+                </a>
+
+            `;
+
+
+
+            const favoriteButton =
+                card.querySelector(
+                    ".favorite-btn"
+                );
+
+
+            favoriteButton
+                .addEventListener(
+                    "click",
+                    event => {
+
+                        toggleFavorite(
+                            item.id,
+                            event
+                        );
+
+                    }
+                );
+
+
+            wordGrid.appendChild(
+                card
+            );
+
+        }
+    );
 
 }
 
 
 
-/*
-================================
-SEARCH
-================================
-*/
+/* ========================================
+   SEARCH
+======================================== */
 
 searchInput
-  .addEventListener(
-    "input",
-    renderWords
-  );
-
-
-
-/*
-================================
-HSK FILTER
-================================
-*/
-
-document
-  .querySelectorAll(
-    ".hsk-btn"
-  )
-  .forEach(
-    btn => {
-
-      btn.onclick = () => {
-
-        currentHSK =
-          btn.dataset.hsk;
-
-
-        document
-          .querySelectorAll(
-            ".hsk-btn"
-          )
-          .forEach(
-            x =>
-              x.classList
-                .remove(
-                  "active"
-                )
-          );
-
-
-        btn.classList.add(
-          "active"
-        );
-
-
-        renderWords();
-
-      };
-
-    }
-  );
-
-
-
-/*
-================================
-GOOGLE FORM
-================================
-*/
-
-document
-  .getElementById(
-    "openAddWord"
-  )
-  .onclick = () => {
-
-    window.open(
-      GOOGLE_FORM_URL,
-      "_blank"
+    .addEventListener(
+        "input",
+        renderWords
     );
 
-  };
+
+
+/* ========================================
+   HSK FILTER
+======================================== */
+
+document
+    .querySelectorAll(
+        ".hsk-btn"
+    )
+    .forEach(
+        button => {
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+
+                    currentHSK =
+                        button.dataset.hsk;
+
+
+                    document
+                        .querySelectorAll(
+                            ".hsk-btn"
+                        )
+                        .forEach(
+                            item => {
+
+                                item.classList
+                                    .remove(
+                                        "active"
+                                    );
+
+                            }
+                        );
+
+
+                    button.classList.add(
+                        "active"
+                    );
+
+
+                    renderWords();
+
+                }
+            );
+
+
+        }
+    );
 
 
 
-/*
-================================
-START
-================================
-*/
+/* ========================================
+   GOOGLE FORM
+======================================== */
+
+document
+    .getElementById(
+        "openAddWord"
+    )
+    .addEventListener(
+        "click",
+        () => {
+
+            window.open(
+                GOOGLE_FORM_URL,
+                "_blank"
+            );
+
+        }
+    );
+
+
+
+/* ========================================
+   START
+======================================== */
 
 loadDictionary();
 
 </script>
+
 
 </body>
 
