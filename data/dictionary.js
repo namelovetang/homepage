@@ -1,4 +1,4 @@
-window.dictionary = [
+const dictionary = [
 {
     id: 1,
     word: "爱",
@@ -5500,7 +5500,8 @@ window.dictionary = [
     exampleThai: "ฉันกำลังทำการบ้าน"
   }
 ];
-{
+const dictionary = [
+  {
     id: 501,
     word: "啊",
     pinyin: "a",
