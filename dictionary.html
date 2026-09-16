@@ -2,19 +2,28 @@
 <html lang="th">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>
 พจนานุกรมจีน–ไทย | ก็แค่จีน by ครูพี่เหม่ยถิง
 </title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
-rel="stylesheet"
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
 >
 
 <style>
@@ -26,6 +35,7 @@ rel="stylesheet"
 }
 
 body {
+
     font-family:
         "Noto Sans Thai",
         "Noto Sans SC",
@@ -40,7 +50,13 @@ body {
         );
 
     color: #26354a;
+
     min-height: 100vh;
+}
+
+button,
+input {
+    font-family: inherit;
 }
 
 a {
@@ -49,16 +65,20 @@ a {
 }
 
 
-/* ========================================
+/* ================================
    NAVBAR
-======================================== */
+================================ */
 
 .navbar {
+
     position: sticky;
+
     top: 0;
+
     z-index: 100;
 
-    background: rgba(255,255,255,.96);
+    background:
+        rgba(255,255,255,.96);
 
     border-bottom:
         1px solid #e5eef8;
@@ -69,29 +89,37 @@ a {
 }
 
 .nav-inner {
+
     max-width: 1150px;
+
     min-height: 68px;
 
     margin: auto;
+
     padding: 10px 20px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
 }
 
 .logo {
+
     color: #3787c8;
 
     font-size: 19px;
+
     font-weight: 700;
 
     white-space: nowrap;
 }
 
 .logo span {
+
     display: block;
 
     margin-top: 2px;
@@ -99,15 +127,19 @@ a {
     color: #91a5b8;
 
     font-size: 11px;
+
     font-weight: 500;
 }
 
 .nav-links {
+
     display: flex;
+
     gap: 8px;
 }
 
 .nav-links a {
+
     padding: 9px 14px;
 
     border-radius: 12px;
@@ -121,16 +153,19 @@ a {
 
 .nav-links a:hover,
 .nav-links a.active {
+
     background: #eaf5ff;
+
     color: #2582c5;
 }
 
 
-/* ========================================
+/* ================================
    HERO
-======================================== */
+================================ */
 
 .hero {
+
     max-width: 1050px;
 
     margin: 35px auto 20px;
@@ -141,7 +176,6 @@ a {
 }
 
 .hero h1 {
-    margin: 0;
 
     color: #287fbe;
 
@@ -150,6 +184,7 @@ a {
 }
 
 .hero > p {
+
     margin-top: 8px;
 
     color: #8293a5;
@@ -160,24 +195,26 @@ a {
 }
 
 
-/* ========================================
+/* ================================
    SEARCH
-======================================== */
+================================ */
 
 .search-box {
+
     max-width: 760px;
 
     margin: 25px auto 0;
-
-    position: relative;
 }
 
 .search-area {
+
     position: relative;
 }
 
 .search-box input {
+
     width: 100%;
+
     height: 56px;
 
     border:
@@ -190,15 +227,15 @@ a {
 
     outline: none;
 
-    background: #fff;
+    background: white;
 
-    font-family: inherit;
     font-size: 16px;
 
     transition: .2s;
 }
 
 .search-box input:focus {
+
     border-color: #8fc8ec;
 
     box-shadow:
@@ -207,12 +244,15 @@ a {
 }
 
 .search-icon {
+
     position: absolute;
 
     left: 19px;
+
     top: 50%;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     font-size: 21px;
 
@@ -220,11 +260,12 @@ a {
 }
 
 
-/* ========================================
-   ADD WORD
-======================================== */
+/* ================================
+   ADD
+================================ */
 
 .add-btn {
+
     width: 100%;
 
     margin-top: 12px;
@@ -232,6 +273,7 @@ a {
     padding: 13px;
 
     border: 0;
+
     border-radius: 14px;
 
     background:
@@ -243,8 +285,8 @@ a {
 
     color: white;
 
-    font-family: inherit;
     font-size: 15px;
+
     font-weight: 700;
 
     cursor: pointer;
@@ -253,7 +295,9 @@ a {
 }
 
 .add-btn:hover {
-    transform: translateY(-2px);
+
+    transform:
+        translateY(-2px);
 
     box-shadow:
         0 7px 18px
@@ -261,6 +305,7 @@ a {
 }
 
 .add-info {
+
     margin-top: 10px;
 
     color: #91a2b2;
@@ -271,11 +316,12 @@ a {
 }
 
 
-/* ========================================
+/* ================================
    MAIN
-======================================== */
+================================ */
 
 .container {
+
     max-width: 1150px;
 
     margin: auto;
@@ -285,16 +331,17 @@ a {
 }
 
 
-/* ========================================
+/* ================================
    FILTER
-======================================== */
+================================ */
 
 .filter-card {
+
     margin-top: 20px;
 
     padding: 20px;
 
-    background: #fff;
+    background: white;
 
     border:
         1px solid #e5eef8;
@@ -303,57 +350,51 @@ a {
 }
 
 .filter-title {
+
     margin-bottom: 12px;
 
     color: #62798f;
 
     font-size: 14px;
+
     font-weight: 700;
 }
 
 .letters {
+
     display: grid;
 
     grid-template-columns:
-        repeat(27, 1fr);
+        repeat(14,1fr);
 
-    gap: 5px;
+    gap: 6px;
 }
 
-.letter-btn,
-.hsk-btn {
+.letter-btn {
+
+    height: 35px;
+
     border:
         1px solid #dcebf7;
+
+    border-radius: 9px;
 
     background: #f8fcff;
 
     color: #5e7790;
 
-    font-family: inherit;
+    font-size: 12px;
+
+    font-weight: 600;
 
     cursor: pointer;
 
     transition: .15s;
 }
 
-.letter-btn {
-    height: 34px;
-
-    border-radius: 9px;
-
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.letter-btn:first-child {
-    grid-column:
-        span 2;
-}
-
 .letter-btn:hover,
-.letter-btn.active,
-.hsk-btn:hover,
-.hsk-btn.active {
+.letter-btn.active {
+
     background: #4c9bd0;
 
     border-color: #4c9bd0;
@@ -362,36 +403,59 @@ a {
 }
 
 .hsk-buttons {
+
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 8px;
 }
 
 .hsk-btn {
+
     padding: 8px 16px;
+
+    border:
+        1px solid #dcebf7;
 
     border-radius: 11px;
 
+    background: #f8fcff;
+
+    color: #5e7790;
+
     font-size: 13px;
+
     font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .15s;
+}
+
+.hsk-btn:hover,
+.hsk-btn.active {
+
+    background: #4c9bd0;
+
+    border-color: #4c9bd0;
+
+    color: white;
 }
 
 
-/* ========================================
-   RESULT BAR
-======================================== */
+/* ================================
+   RESULT
+================================ */
 
 .result-bar {
+
     margin:
         22px 2px 14px;
 
     display: flex;
 
-    align-items: center;
     justify-content: space-between;
-
-    gap: 10px;
 
     color: #7c8fa2;
 
@@ -399,33 +463,36 @@ a {
 }
 
 #resultCount {
+
     color: #3688c3;
 
     font-weight: 700;
 }
 
 
-/* ========================================
+/* ================================
    WORD GRID
-======================================== */
+================================ */
 
 .word-grid {
+
     display: grid;
 
     grid-template-columns:
-        repeat(4, minmax(0,1fr));
+        repeat(4,minmax(0,1fr));
 
     gap: 15px;
 }
 
 .word-card {
+
     position: relative;
 
     min-height: 185px;
 
     padding: 19px;
 
-    background: #fff;
+    background: white;
 
     border:
         1px solid #e3edf6;
@@ -440,7 +507,9 @@ a {
 }
 
 .word-card:hover {
-    transform: translateY(-3px);
+
+    transform:
+        translateY(-3px);
 
     box-shadow:
         0 9px 24px
@@ -448,12 +517,14 @@ a {
 }
 
 .word-card > a {
+
     display: block;
 
     height: 100%;
 }
 
 .word {
+
     padding-right: 35px;
 
     color: #287fbe;
@@ -463,12 +534,14 @@ a {
         sans-serif;
 
     font-size: 31px;
+
     font-weight: 700;
 
     line-height: 1.35;
 }
 
 .pinyin {
+
     margin-top: 6px;
 
     color: #6f91a8;
@@ -477,6 +550,7 @@ a {
 }
 
 .meaning {
+
     margin-top: 9px;
 
     color: #44586d;
@@ -487,17 +561,20 @@ a {
 }
 
 .card-bottom {
+
     margin-top: 14px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 10px;
 }
 
 .hsk-tag {
+
     padding:
         4px 9px;
 
@@ -508,12 +585,12 @@ a {
     color: #3b8dc5;
 
     font-size: 11px;
-    font-weight: 700;
 
-    white-space: nowrap;
+    font-weight: 700;
 }
 
 .pos {
+
     overflow: hidden;
 
     color: #9aa9b7;
@@ -523,23 +600,27 @@ a {
     text-align: right;
 
     text-overflow: ellipsis;
+
     white-space: nowrap;
 }
 
 
-/* ========================================
+/* ================================
    FAVORITE
-======================================== */
+================================ */
 
 .favorite-btn {
+
     position: absolute;
 
     right: 13px;
+
     top: 13px;
 
     z-index: 5;
 
     width: 34px;
+
     height: 34px;
 
     border: 0;
@@ -558,26 +639,31 @@ a {
 }
 
 .favorite-btn:hover {
+
     background: #fff0f4;
+
     color: #e96889;
 }
 
 .favorite-btn.active {
+
     background: #fff0f4;
+
     color: #e96889;
 }
 
 
-/* ========================================
-   EMPTY / ERROR
-======================================== */
+/* ================================
+   EMPTY
+================================ */
 
 .empty {
+
     grid-column: 1 / -1;
 
     padding: 50px 20px;
 
-    background: #fff;
+    background: white;
 
     border:
         1px dashed #d6e6f2;
@@ -592,11 +678,12 @@ a {
 }
 
 
-/* ========================================
+/* ================================
    FOOTER
-======================================== */
+================================ */
 
 footer {
+
     padding: 28px 20px;
 
     background: white;
@@ -612,28 +699,24 @@ footer {
 }
 
 
-/* ========================================
+/* ================================
    RESPONSIVE
-======================================== */
+================================ */
 
-@media (max-width: 1000px) {
-
-    .letters {
-        grid-template-columns:
-            repeat(14,1fr);
-    }
+@media(max-width:1000px) {
 
     .word-grid {
+
         grid-template-columns:
             repeat(3,1fr);
     }
 
 }
 
-
-@media (max-width: 700px) {
+@media(max-width:700px) {
 
     .nav-inner {
+
         flex-direction: column;
 
         align-items: flex-start;
@@ -642,54 +725,46 @@ footer {
     }
 
     .nav-links {
+
         width: 100%;
 
         overflow-x: auto;
     }
 
-    .nav-links a {
-        white-space: nowrap;
-    }
-
-    .hero {
-        margin-top: 25px;
-    }
-
     .letters {
+
         grid-template-columns:
             repeat(7,1fr);
     }
 
-    .letter-btn:first-child {
-        grid-column:
-            span 2;
-    }
-
     .word-grid {
+
         grid-template-columns:
             repeat(2,1fr);
     }
 
+    .result-bar {
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
 }
 
-
-@media (max-width: 430px) {
+@media(max-width:430px) {
 
     .container,
     .hero {
+
         padding-left: 14px;
+
         padding-right: 14px;
     }
 
     .word-grid {
-        grid-template-columns:
-            1fr;
-    }
 
-    .result-bar {
-        flex-direction: column;
-
-        align-items: flex-start;
+        grid-template-columns: 1fr;
     }
 
 }
@@ -702,17 +777,14 @@ footer {
 <body>
 
 
-<!-- ========================================
-     NAVBAR
-======================================== -->
-
 <nav class="navbar">
 
     <div class="nav-inner">
 
         <a
-        href="index.html"
-        class="logo">
+            href="index.html"
+            class="logo"
+        >
 
             ก็แค่จีน by ครูพี่เหม่ยถิง
 
@@ -730,8 +802,9 @@ footer {
             </a>
 
             <a
-            href="dictionary.html"
-            class="active">
+                href="dictionary.html"
+                class="active"
+            >
                 พจนานุกรม
             </a>
 
@@ -745,11 +818,6 @@ footer {
 
 </nav>
 
-
-
-<!-- ========================================
-     HERO
-======================================== -->
 
 <section class="hero">
 
@@ -771,18 +839,20 @@ footer {
             </span>
 
             <input
-            id="searchInput"
-            type="text"
-            placeholder="ค้นหา เช่น 爱 / ai / รัก..."
-            autocomplete="off">
+                id="searchInput"
+                type="text"
+                placeholder="ค้นหา เช่น 爱 / ai / รัก..."
+                autocomplete="off"
+            >
 
         </div>
 
 
         <button
-        class="add-btn"
-        id="openAddWord"
-        type="button">
+            class="add-btn"
+            id="openAddWord"
+            type="button"
+        >
 
             ➕ เพิ่มคำศัพท์
 
@@ -806,15 +876,8 @@ footer {
 </section>
 
 
-
-<!-- ========================================
-     MAIN
-======================================== -->
-
 <main class="container">
 
-
-    <!-- FILTER -->
 
     <section class="filter-card">
 
@@ -823,68 +886,74 @@ footer {
         </div>
 
         <div
-        class="letters"
-        id="letterButtons">
-        </div>
+            class="letters"
+            id="letterButtons"
+        ></div>
 
 
         <div
-        class="filter-title"
-        style="margin-top:20px;">
-
+            class="filter-title"
+            style="margin-top:20px;"
+        >
             📚 ระดับ HSK
-
         </div>
 
 
         <div class="hsk-buttons">
 
             <button
-            class="hsk-btn active"
-            data-hsk="ALL"
-            type="button">
+                class="hsk-btn active"
+                data-hsk="ALL"
+                type="button"
+            >
                 ทั้งหมด
             </button>
 
             <button
-            class="hsk-btn"
-            data-hsk="HSK1"
-            type="button">
+                class="hsk-btn"
+                data-hsk="HSK1"
+                type="button"
+            >
                 HSK1
             </button>
 
             <button
-            class="hsk-btn"
-            data-hsk="HSK2"
-            type="button">
+                class="hsk-btn"
+                data-hsk="HSK2"
+                type="button"
+            >
                 HSK2
             </button>
 
             <button
-            class="hsk-btn"
-            data-hsk="HSK3"
-            type="button">
+                class="hsk-btn"
+                data-hsk="HSK3"
+                type="button"
+            >
                 HSK3
             </button>
 
             <button
-            class="hsk-btn"
-            data-hsk="HSK4"
-            type="button">
+                class="hsk-btn"
+                data-hsk="HSK4"
+                type="button"
+            >
                 HSK4
             </button>
 
             <button
-            class="hsk-btn"
-            data-hsk="HSK5"
-            type="button">
+                class="hsk-btn"
+                data-hsk="HSK5"
+                type="button"
+            >
                 HSK5
             </button>
 
             <button
-            class="hsk-btn"
-            data-hsk="HSK6"
-            type="button">
+                class="hsk-btn"
+                data-hsk="HSK6"
+                type="button"
+            >
                 HSK6
             </button>
 
@@ -893,17 +962,14 @@ footer {
     </section>
 
 
-
-    <!-- RESULT -->
-
     <div class="result-bar">
 
         <div>
+
             พบ
-            <span id="resultCount">
-                0
-            </span>
+            <span id="resultCount">0</span>
             คำ
+
         </div>
 
         <div>
@@ -913,12 +979,10 @@ footer {
     </div>
 
 
-
-    <!-- WORD GRID -->
-
     <section
-    class="word-grid"
-    id="wordGrid">
+        class="word-grid"
+        id="wordGrid"
+    >
 
         <div class="empty">
             ⏳ กำลังโหลดคำศัพท์...
@@ -930,36 +994,30 @@ footer {
 </main>
 
 
-
 <footer>
 
-    © ก็แค่จีน by ครูพี่เหม่ยถิง
+    © 2026 ก็แค่จีน by ครูพี่เหม่ยถิง
     · Chinese–Thai Dictionary 💙
 
 </footer>
 
 
-
-<!-- ========================================
-     DICTIONARY DATA
-======================================== -->
+<!--
+    สำคัญ:
+    dictionary.js ที่ Generator สร้าง
+    ต้องอยู่ที่ data/dictionary.js
+-->
 
 <script src="./data/dictionary.js"></script>
 
 
 <script>
 
-/* ========================================
-   SETTINGS
-======================================== */
-
 const FAVORITE_KEY =
     "chineseDictionaryFavorites";
 
-
 const GOOGLE_FORM_URL =
     "https://forms.gle/QK2QEqGGWuZbfubdA";
-
 
 let dictionaryData = [];
 
@@ -968,102 +1026,55 @@ let currentLetter = "ALL";
 let currentHSK = "ALL";
 
 
-
-/* ========================================
-   ELEMENTS
-======================================== */
-
 const searchInput =
-    document.getElementById(
-        "searchInput"
-    );
-
+    document.getElementById("searchInput");
 
 const wordGrid =
-    document.getElementById(
-        "wordGrid"
-    );
-
+    document.getElementById("wordGrid");
 
 const resultCount =
-    document.getElementById(
-        "resultCount"
-    );
-
+    document.getElementById("resultCount");
 
 const letterButtons =
-    document.getElementById(
-        "letterButtons"
-    );
-
+    document.getElementById("letterButtons");
 
 
 /* ========================================
-   NORMALIZE HSK
+   HSK
 ======================================== */
-
-/*
-รองรับข้อมูลหลายรูปแบบ เช่น
-
-HSK2
-HSK 2
-hsk2
-hsk 2
-2
-
-ทั้งหมดจะถูกแปลงเป็น HSK2
-*/
 
 function normalizeHSK(value) {
 
     let hsk =
-        String(
-            value ?? ""
-        )
+        String(value ?? "")
         .trim()
         .toUpperCase()
-        .replace(/\s+/g, "");
-
+        .replace(/\s+/g,"");
 
     if (!hsk) {
         return "";
     }
 
-
     if (/^[1-6]$/.test(hsk)) {
-
         return "HSK" + hsk;
-
     }
-
 
     const match =
-        hsk.match(
-            /^HSK([1-6])$/
-        );
-
+        hsk.match(/^HSK([1-6])$/);
 
     if (match) {
-
         return "HSK" + match[1];
-
     }
 
-
     return hsk;
-
 }
 
 
-
 /* ========================================
-   NORMALIZE DATA
+   NORMALIZE ITEM
 ======================================== */
 
-function normalizeDictionaryItem(
-    item,
-    index
-) {
+function normalizeDictionaryItem(item,index) {
 
     return {
 
@@ -1074,39 +1085,25 @@ function normalizeDictionaryItem(
             index + 1,
 
         word:
-            String(
-                item.word ?? ""
-            ).trim(),
+            String(item.word ?? "").trim(),
 
         pinyin:
-            String(
-                item.pinyin ?? ""
-            ).trim(),
+            String(item.pinyin ?? "").trim(),
 
         meaning:
-            String(
-                item.meaning ?? ""
-            ).trim(),
-
-        hsk:
-            normalizeHSK(
-                item.hsk
-            ),
+            String(item.meaning ?? "").trim(),
 
         pos:
-            String(
-                item.pos ?? ""
-            ).trim(),
+            String(item.pos ?? "").trim(),
+
+        hsk:
+            normalizeHSK(item.hsk),
 
         example:
-            String(
-                item.example ?? ""
-            ).trim(),
+            String(item.example ?? "").trim(),
 
         examplePinyin:
-            String(
-                item.examplePinyin ?? ""
-            ).trim(),
+            String(item.examplePinyin ?? "").trim(),
 
         exampleThai:
             String(
@@ -1120,9 +1117,8 @@ function normalizeDictionaryItem(
 }
 
 
-
 /* ========================================
-   LOAD DICTIONARY
+   LOAD
 ======================================== */
 
 function loadDictionary() {
@@ -1131,35 +1127,26 @@ function loadDictionary() {
 
         let source = null;
 
-
         if (
-            Array.isArray(
-                window.dictionary
-            )
+            Array.isArray(window.dictionary)
         ) {
 
             source =
                 window.dictionary;
 
         }
-
-
         else if (
-            Array.isArray(
-                window.dictionaryData
-            )
+            Array.isArray(window.dictionaryData)
         ) {
 
             source =
                 window.dictionaryData;
 
         }
-
-
         else {
 
             throw new Error(
-                "ไม่พบข้อมูลคำศัพท์ใน dictionary.js"
+                "ไม่พบข้อมูล dictionary"
             );
 
         }
@@ -1177,48 +1164,15 @@ function loadDictionary() {
             );
 
 
-        console.log(
-            "โหลดคำศัพท์ทั้งหมด:",
-            dictionaryData.length
-        );
-
-
-        console.log(
-            "จำนวน HSK1:",
-            dictionaryData.filter(
-                item =>
-                    item.hsk === "HSK1"
-            ).length
-        );
-
-
-        console.log(
-            "จำนวน HSK2:",
-            dictionaryData.filter(
-                item =>
-                    item.hsk === "HSK2"
-            ).length
-        );
-
-
         createLetterButtons();
 
         renderWords();
 
-
     }
 
-    catch (error) {
+    catch(error) {
 
-        console.error(
-            "Dictionary error:",
-            error
-        );
-
-
-        resultCount.textContent =
-            "0";
-
+        console.error(error);
 
         wordGrid.innerHTML = `
 
@@ -1245,7 +1199,6 @@ function loadDictionary() {
 }
 
 
-
 /* ========================================
    FAVORITES
 ======================================== */
@@ -1261,13 +1214,11 @@ function getFavorites() {
                 )
             );
 
-
         return Array.isArray(data)
             ? data.map(Number)
             : [];
 
     }
-
     catch {
 
         return [];
@@ -1277,52 +1228,34 @@ function getFavorites() {
 }
 
 
-
-function saveFavorites(
-    favorites
-) {
+function saveFavorites(list) {
 
     localStorage.setItem(
         FAVORITE_KEY,
-        JSON.stringify(
-            favorites
-        )
+        JSON.stringify(list)
     );
 
 }
 
 
-
-function isFavorite(
-    id
-) {
+function isFavorite(id) {
 
     return getFavorites()
-        .includes(
-            Number(id)
-        );
+        .includes(Number(id));
 
 }
 
 
-
-function toggleFavorite(
-    id,
-    event
-) {
+function toggleFavorite(id,event) {
 
     event.preventDefault();
 
     event.stopPropagation();
 
-
-    id =
-        Number(id);
-
+    id = Number(id);
 
     let favorites =
         getFavorites();
-
 
     if (
         favorites.includes(id)
@@ -1330,49 +1263,38 @@ function toggleFavorite(
 
         favorites =
             favorites.filter(
-                favoriteId =>
-                    favoriteId !== id
+                x => x !== id
             );
 
     }
-
     else {
 
         favorites.push(id);
 
     }
 
-
-    saveFavorites(
-        favorites
-    );
-
+    saveFavorites(favorites);
 
     renderWords();
 
 }
 
 
-
 /* ========================================
-   PINYIN FIRST LETTER
+   LETTER
 ======================================== */
 
-function getFirstLetter(
-    pinyin
-) {
+function getFirstLetter(pinyin) {
 
     if (!pinyin) {
         return "";
     }
-
 
     const first =
         String(pinyin)
         .trim()
         .toLowerCase()
         .charAt(0);
-
 
     return /^[a-z]$/.test(first)
         ? first.toUpperCase()
@@ -1381,46 +1303,33 @@ function getFirstLetter(
 }
 
 
-
 /* ========================================
-   CREATE A-Z BUTTONS
+   LETTER BUTTONS
 ======================================== */
 
 function createLetterButtons() {
 
-    letterButtons.innerHTML =
-        "";
+    letterButtons.innerHTML = "";
 
+    const all =
+        document.createElement("button");
 
-    const allButton =
-        document.createElement(
-            "button"
-        );
+    all.type = "button";
 
-
-    allButton.type =
-        "button";
-
-
-    allButton.className =
+    all.className =
         "letter-btn active";
 
-
-    allButton.textContent =
+    all.textContent =
         "ทั้งหมด";
 
-
-    allButton.dataset.letter =
+    all.dataset.letter =
         "ALL";
 
-
-    allButton.addEventListener(
+    all.addEventListener(
         "click",
         () => {
 
-            currentLetter =
-                "ALL";
-
+            currentLetter = "ALL";
 
             updateLetterButtons();
 
@@ -1429,98 +1338,70 @@ function createLetterButtons() {
         }
     );
 
-
-    letterButtons.appendChild(
-        allButton
-    );
+    letterButtons.appendChild(all);
 
 
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        .split("")
-        .forEach(
-            letter => {
+    .split("")
+    .forEach(letter => {
 
-                const button =
-                    document.createElement(
-                        "button"
-                    );
+        const button =
+            document.createElement("button");
 
+        button.type = "button";
 
-                button.type =
-                    "button";
+        button.className =
+            "letter-btn";
 
+        button.textContent =
+            letter;
 
-                button.className =
-                    "letter-btn";
+        button.dataset.letter =
+            letter;
 
+        button.addEventListener(
+            "click",
+            () => {
 
-                button.textContent =
+                currentLetter =
                     letter;
 
+                updateLetterButtons();
 
-                button.dataset.letter =
-                    letter;
-
-
-                button.addEventListener(
-                    "click",
-                    () => {
-
-                        currentLetter =
-                            letter;
-
-
-                        updateLetterButtons();
-
-                        renderWords();
-
-                    }
-                );
-
-
-                letterButtons
-                    .appendChild(
-                        button
-                    );
+                renderWords();
 
             }
         );
 
+        letterButtons.appendChild(button);
+
+    });
+
 }
 
 
-
 /* ========================================
-   UPDATE LETTER BUTTONS
+   UPDATE LETTER
 ======================================== */
 
 function updateLetterButtons() {
 
     document
-        .querySelectorAll(
-            ".letter-btn"
-        )
-        .forEach(
-            button => {
+    .querySelectorAll(".letter-btn")
+    .forEach(button => {
 
-                button.classList.toggle(
-
-                    "active",
-
-                    button.dataset.letter
-                    === currentLetter
-
-                );
-
-            }
+        button.classList.toggle(
+            "active",
+            button.dataset.letter === currentLetter
         );
+
+    });
 
 }
 
 
-
 /* ========================================
-   FILTER WORDS
+   FILTER
 ======================================== */
 
 function getFilteredWords() {
@@ -1531,155 +1412,89 @@ function getFilteredWords() {
         .toLowerCase();
 
 
-    return dictionaryData.filter(
-        item => {
+    return dictionaryData.filter(item => {
+
+        const word =
+            item.word.toLowerCase();
+
+        const pinyin =
+            item.pinyin.toLowerCase();
+
+        const meaning =
+            item.meaning.toLowerCase();
+
+        const example =
+            item.example.toLowerCase();
+
+        const exampleThai =
+            item.exampleThai.toLowerCase();
 
 
-            /* SEARCH */
+        const searchMatch =
 
-            const word =
-                String(
-                    item.word || ""
-                )
-                .toLowerCase();
+            !keyword ||
 
+            word.includes(keyword) ||
 
-            const pinyin =
-                String(
-                    item.pinyin || ""
-                )
-                .toLowerCase();
+            pinyin.includes(keyword) ||
 
+            meaning.includes(keyword) ||
 
-            const meaning =
-                String(
-                    item.meaning || ""
-                )
-                .toLowerCase();
+            example.includes(keyword) ||
+
+            exampleThai.includes(keyword);
 
 
-            const example =
-                String(
-                    item.example || ""
-                )
-                .toLowerCase();
+        const letterMatch =
+
+            currentLetter === "ALL" ||
+
+            getFirstLetter(item.pinyin)
+            === currentLetter;
 
 
-            const searchMatch =
+        const hskMatch =
 
-                !keyword ||
+            currentHSK === "ALL" ||
 
-                word.includes(
-                    keyword
-                ) ||
-
-                pinyin.includes(
-                    keyword
-                ) ||
-
-                meaning.includes(
-                    keyword
-                ) ||
-
-                example.includes(
-                    keyword
-                );
+            normalizeHSK(item.hsk)
+            === normalizeHSK(currentHSK);
 
 
+        return (
+            searchMatch &&
+            letterMatch &&
+            hskMatch
+        );
 
-            /* LETTER */
-
-            const letterMatch =
-
-                currentLetter ===
-                "ALL" ||
-
-                getFirstLetter(
-                    item.pinyin
-                ) === currentLetter;
-
-
-
-            /* HSK */
-
-            const itemHSK =
-                normalizeHSK(
-                    item.hsk
-                );
-
-
-            const selectedHSK =
-                normalizeHSK(
-                    currentHSK
-                );
-
-
-            const hskMatch =
-
-                currentHSK ===
-                "ALL" ||
-
-                itemHSK ===
-                selectedHSK;
-
-
-
-            return (
-                searchMatch &&
-                letterMatch &&
-                hskMatch
-            );
-
-        }
-    );
+    });
 
 }
 
 
-
 /* ========================================
-   ESCAPE HTML
+   ESCAPE
 ======================================== */
 
-function escapeHTML(
-    value
-) {
+function escapeHTML(value) {
 
-    return String(
-        value ?? ""
-    )
+    return String(value ?? "")
 
-    .replace(
-        /&/g,
-        "&amp;"
-    )
+        .replace(/&/g,"&amp;")
 
-    .replace(
-        /</g,
-        "&lt;"
-    )
+        .replace(/</g,"&lt;")
 
-    .replace(
-        />/g,
-        "&gt;"
-    )
+        .replace(/>/g,"&gt;")
 
-    .replace(
-        /"/g,
-        "&quot;"
-    )
+        .replace(/"/g,"&quot;")
 
-    .replace(
-        /'/g,
-        "&#039;"
-    );
+        .replace(/'/g,"&#039;");
 
 }
 
 
-
 /* ========================================
-   RENDER WORDS
+   RENDER
 ======================================== */
 
 function renderWords() {
@@ -1687,18 +1502,13 @@ function renderWords() {
     const words =
         getFilteredWords();
 
-
     resultCount.textContent =
-        words.length;
+        words.length.toLocaleString();
+
+    wordGrid.innerHTML = "";
 
 
-    wordGrid.innerHTML =
-        "";
-
-
-    if (
-        words.length === 0
-    ) {
+    if (!words.length) {
 
         wordGrid.innerHTML = `
 
@@ -1712,233 +1522,158 @@ function renderWords() {
 
                 <br>
 
-                ลองค้นหาหรือเลือกตัวกรองอื่นดูนะคะ 💕
+                ลองค้นหาหรือเปลี่ยนตัวกรองดูนะคะ 💕
 
             </div>
 
         `;
-
 
         return;
 
     }
 
 
+    words.forEach(item => {
 
-    words.forEach(
-        item => {
+        const card =
+            document.createElement("article");
 
-
-            const card =
-                document.createElement(
-                    "article"
-                );
+        card.className =
+            "word-card";
 
 
-            card.className =
-                "word-card";
+        const favorite =
+            isFavorite(item.id);
 
 
-            const favorite =
-                isFavorite(
-                    item.id
-                );
+        card.innerHTML = `
+
+            <button
+                class="favorite-btn ${
+                    favorite ? "active" : ""
+                }"
+                type="button"
+                aria-label="เพิ่มคำโปรด"
+            >
+
+                ${favorite ? "♥" : "♡"}
+
+            </button>
 
 
-            card.innerHTML = `
+            <a
+                href="word.html?id=${
+                    encodeURIComponent(item.id)
+                }"
+            >
+
+                <div class="word">
+
+                    ${escapeHTML(item.word)}
+
+                </div>
 
 
-                <button
+                <div class="pinyin">
 
-                    class="
-                        favorite-btn
-                        ${favorite ? "active" : ""}
-                    "
+                    ${escapeHTML(item.pinyin)}
 
-                    type="button"
-
-                    title="
-                        ${favorite
-                            ? "นำออกจากคำโปรด"
-                            : "เพิ่มคำโปรด"
-                        }
-                    "
-
-                    aria-label="
-                        ${favorite
-                            ? "นำออกจากคำโปรด"
-                            : "เพิ่มคำโปรด"
-                        }
-                    "
-
-                >
-
-                    ${favorite
-                        ? "♥"
-                        : "♡"
-                    }
-
-                </button>
+                </div>
 
 
+                <div class="meaning">
 
-                <a
-                href="word.html?id=${encodeURIComponent(item.id)}">
+                    ${escapeHTML(item.meaning)}
+
+                </div>
 
 
-                    <div class="word">
+                <div class="card-bottom">
+
+                    <span class="hsk-tag">
 
                         ${escapeHTML(
-                            item.word
+                            item.hsk || "ไม่ระบุ"
                         )}
 
-                    </div>
+                    </span>
 
 
-                    <div class="pinyin">
+                    <span class="pos">
 
-                        ${escapeHTML(
-                            item.pinyin
-                        )}
+                        ${escapeHTML(item.pos)}
 
-                    </div>
+                    </span>
 
+                </div>
 
-                    <div class="meaning">
+            </a>
 
-                        ${escapeHTML(
-                            item.meaning
-                        )}
-
-                    </div>
+        `;
 
 
-                    <div class="card-bottom">
+        card
+        .querySelector(".favorite-btn")
+        .addEventListener(
+            "click",
+            event =>
+                toggleFavorite(
+                    item.id,
+                    event
+                )
+        );
 
 
-                        <span class="hsk-tag">
+        wordGrid.appendChild(card);
 
-                            ${escapeHTML(
-                                item.hsk ||
-                                "ไม่ระบุ"
-                            )}
-
-                        </span>
-
-
-                        <span class="pos">
-
-                            ${escapeHTML(
-                                item.pos ||
-                                ""
-                            )}
-
-                        </span>
-
-
-                    </div>
-
-
-                </a>
-
-            `;
-
-
-
-            const favoriteButton =
-                card.querySelector(
-                    ".favorite-btn"
-                );
-
-
-            favoriteButton
-                .addEventListener(
-                    "click",
-                    event => {
-
-                        toggleFavorite(
-                            item.id,
-                            event
-                        );
-
-                    }
-                );
-
-
-            wordGrid.appendChild(
-                card
-            );
-
-        }
-    );
+    });
 
 }
-
 
 
 /* ========================================
    SEARCH
 ======================================== */
 
-searchInput
-    .addEventListener(
-        "input",
-        renderWords
-    );
-
+searchInput.addEventListener(
+    "input",
+    renderWords
+);
 
 
 /* ========================================
-   HSK FILTER
+   HSK
 ======================================== */
 
 document
-    .querySelectorAll(
-        ".hsk-btn"
-    )
-    .forEach(
-        button => {
+.querySelectorAll(".hsk-btn")
+.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            currentHSK =
+                button.dataset.hsk;
 
 
-            button.addEventListener(
-                "click",
-                () => {
+            document
+            .querySelectorAll(".hsk-btn")
+            .forEach(btn => {
+
+                btn.classList.remove("active");
+
+            });
 
 
-                    currentHSK =
-                        button.dataset.hsk;
+            button.classList.add("active");
 
-
-                    document
-                        .querySelectorAll(
-                            ".hsk-btn"
-                        )
-                        .forEach(
-                            item => {
-
-                                item.classList
-                                    .remove(
-                                        "active"
-                                    );
-
-                            }
-                        );
-
-
-                    button.classList.add(
-                        "active"
-                    );
-
-
-                    renderWords();
-
-                }
-            );
-
+            renderWords();
 
         }
     );
 
+});
 
 
 /* ========================================
@@ -1946,21 +1681,18 @@ document
 ======================================== */
 
 document
-    .getElementById(
-        "openAddWord"
-    )
-    .addEventListener(
-        "click",
-        () => {
+.getElementById("openAddWord")
+.addEventListener(
+    "click",
+    () => {
 
-            window.open(
-                GOOGLE_FORM_URL,
-                "_blank"
-            );
+        window.open(
+            GOOGLE_FORM_URL,
+            "_blank"
+        );
 
-        }
-    );
-
+    }
+);
 
 
 /* ========================================
@@ -1971,7 +1703,5 @@ loadDictionary();
 
 </script>
 
-
 </body>
-
 </html>
