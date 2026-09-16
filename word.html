@@ -1,328 +1,446 @@
 <!DOCTYPE html>
-
 <html lang="th">
 
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-<title>คำศัพท์จีน | ก็แค่จีน</title>
+<title>คำศัพท์ | ก็แค่จีน</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
-rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
 
 <style>
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  margin: 0;
 
-  font-family:
-    "Noto Sans Thai",
-    "Noto Sans SC",
-    sans-serif;
+    font-family:
+        "Noto Sans Thai",
+        "Noto Sans SC",
+        sans-serif;
 
-  background:
-    linear-gradient(
-      180deg,
-      #f5faff,
-      #ffffff
-    );
+    background:
+        linear-gradient(
+            180deg,
+            #f5faff,
+            #ffffff
+        );
 
-  color: #26354a;
+    color: #26354a;
+
+    min-height: 100vh;
+}
+
+button {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 
-/* =========================
-   NAVBAR
-========================= */
+/* NAV */
 
 .navbar {
-  background: #ffffff;
-  border-bottom: 1px solid #e5eef8;
+
+    background: rgba(255,255,255,.96);
+
+    border-bottom:
+        1px solid #e5eef8;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 10;
 }
 
 .nav-inner {
-  max-width: 1000px;
-  margin: auto;
-  padding: 16px 20px;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+    max-width: 1000px;
+
+    margin: auto;
+
+    min-height: 68px;
+
+    padding: 10px 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
 }
 
 .logo {
-  color: #287fbe;
-  font-weight: 700;
-  line-height: 1.4;
+
+    color: #3787c8;
+
+    font-weight: 700;
+
+    font-size: 18px;
 }
 
-.logo span {
-  display: block;
-  font-size: 11px;
-  color: #9aabba;
-  font-weight: 500;
+.logo small {
+
+    display: block;
+
+    color: #91a5b8;
+
+    font-size: 11px;
 }
 
-.home {
-  color: #63778c;
-  text-decoration: none;
-  white-space: nowrap;
+.back {
+
+    padding: 9px 14px;
+
+    border-radius: 12px;
+
+    background: #eaf5ff;
+
+    color: #2582c5;
+
+    font-size: 13px;
 }
 
-.home:hover {
-  color: #287fbe;
-}
 
-
-/* =========================
-   CONTAINER
-========================= */
+/* MAIN */
 
 .container {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 20px;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 35px 20px 60px;
 }
 
 
-/* =========================
-   CARD
-========================= */
+/* CARD */
 
-.card {
-  background: #ffffff;
+.detail-card {
 
-  border: 1px solid #e3edf6;
-  border-radius: 25px;
+    background: white;
 
-  padding: 40px;
+    border:
+        1px solid #e3edf6;
 
-  text-align: center;
+    border-radius: 25px;
 
-  box-shadow:
-    0 8px 30px
-    rgba(50,100,150,.08);
+    padding: 35px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(50,100,150,.08);
 }
 
 
-/* =========================
-   WORD
-========================= */
+/* TOP */
+
+.top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
 
 .word {
-  font-family: "Noto Sans SC", sans-serif;
 
-  font-size: 70px;
-  font-weight: 700;
+    color: #287fbe;
 
-  color: #287fbe;
+    font-family:
+        "Noto Sans SC",
+        sans-serif;
 
-  line-height: 1.2;
+    font-size: 70px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
 }
 
 .pinyin {
-  margin-top: 10px;
 
-  color: #6f91a8;
+    margin-top: 8px;
 
-  font-size: 20px;
+    color: #6f91a8;
+
+    font-size: 20px;
 }
 
 .meaning {
-  margin-top: 15px;
 
-  font-size: 21px;
+    margin-top: 15px;
 
-  color: #44586d;
+    color: #344d65;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+}
+
+.hsk {
+
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding: 6px 12px;
+
+    border-radius: 9px;
+
+    background: #eef8ff;
+
+    color: #3b8dc5;
+
+    font-size: 13px;
+
+    font-weight: 700;
 }
 
 
-/* =========================
-   INFO
-========================= */
+/* FAVORITE */
 
-.info {
-  margin-top: 30px;
+.favorite {
 
-  text-align: left;
+    width: 50px;
 
-  padding: 20px;
+    height: 50px;
 
-  background: #f8fcff;
+    border: 0;
 
-  border-radius: 18px;
+    border-radius: 50%;
+
+    background: #f5f9fc;
+
+    color: #aabac8;
+
+    font-size: 26px;
+
+    cursor: pointer;
 }
 
-.info-title {
-  color: #287fbe;
+.favorite.active {
 
-  font-weight: 700;
+    background: #fff0f4;
 
-  margin-bottom: 8px;
-}
-
-.info-row {
-  margin-top: 6px;
+    color: #e96889;
 }
 
 
-/* =========================
-   EXAMPLE
-========================= */
+/* POS */
+
+.pos-box {
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    background: #f8fcff;
+
+    border-radius: 15px;
+
+    color: #61778c;
+
+    font-size: 14px;
+}
+
+
+/* AUDIO */
+
+.audio-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 22px;
+}
+
+.audio-btn {
+
+    border: 0;
+
+    padding: 11px 15px;
+
+    border-radius: 12px;
+
+    background: #eaf5ff;
+
+    color: #287fbe;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* EXAMPLE */
 
 .example {
-  margin-top: 25px;
 
-  text-align: left;
+    margin-top: 30px;
+
+    padding: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4faff,
+            #fffaf1
+        );
+
+    border-radius: 18px;
+}
+
+.example-title {
+
+    color: #287fbe;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    margin-bottom: 14px;
 }
 
 .example-cn {
-  font-family: "Noto Sans SC", sans-serif;
 
-  font-size: 22px;
+    font-family:
+        "Noto Sans SC",
+        sans-serif;
 
-  line-height: 1.6;
+    font-size: 23px;
+
+    line-height: 1.7;
+
+    color: #334b61;
 }
 
 .example-pinyin {
-  color: #6f91a8;
 
-  margin-top: 5px;
+    margin-top: 7px;
+
+    color: #718ba1;
+
+    font-size: 14px;
+
+    line-height: 1.7;
 }
 
-.example-th {
-  color: #536b80;
+.example-thai {
 
-  margin-top: 5px;
-}
+    margin-top: 8px;
 
+    color: #52677b;
 
-/* =========================
-   AUDIO
-========================= */
+    font-size: 14px;
 
-.audio-btn {
-  margin-top: 25px;
-
-  padding: 11px 22px;
-
-  border: 0;
-
-  border-radius: 14px;
-
-  background: #eaf6ff;
-
-  color: #287fbe;
-
-  font-family: inherit;
-
-  font-weight: 700;
-
-  cursor: pointer;
-}
-
-.audio-btn:hover {
-  background: #dff1ff;
+    line-height: 1.7;
 }
 
 
-/* =========================
-   FAVORITE
-========================= */
+/* NAV WORD */
 
-.favorite {
-  margin-top: 15px;
+.word-navigation {
 
-  padding: 12px 25px;
+    display: flex;
 
-  border: 0;
+    justify-content: space-between;
 
-  border-radius: 14px;
+    gap: 10px;
 
-  background: #fff0f4;
-
-  color: #e96889;
-
-  font-family: inherit;
-
-  font-weight: 700;
-
-  cursor: pointer;
+    margin-top: 25px;
 }
 
-.favorite:hover {
-  background: #ffe4eb;
+.nav-word-btn {
+
+    flex: 1;
+
+    border: 1px solid #dcebf7;
+
+    background: #f8fcff;
+
+    color: #3688c3;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
 }
 
 
-/* =========================
-   ERROR
-========================= */
+/* ERROR */
 
 .error {
-  text-align: center;
 
-  color: #c95f5f;
+    text-align: center;
 
-  line-height: 1.8;
+    padding: 70px 20px;
+
+    color: #8da0b1;
+
+    line-height: 1.8;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
-.footer {
-  text-align: center;
+footer {
 
-  color: #9aabba;
+    padding: 25px;
 
-  font-size: 13px;
+    text-align: center;
 
-  margin: 30px 0 40px;
+    color: #9aabba;
+
+    font-size: 12px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
-@media (max-width: 600px) {
+@media(max-width:600px) {
 
-  .nav-inner {
-    padding: 14px 15px;
-  }
+    .detail-card {
 
-  .container {
-    margin: 25px auto;
-    padding: 15px;
-  }
+        padding: 23px;
+    }
 
-  .card {
-    padding: 30px 20px;
-    border-radius: 20px;
-  }
+    .word {
 
-  .word {
-    font-size: 55px;
-  }
+        font-size: 52px;
+    }
 
-  .pinyin {
-    font-size: 18px;
-  }
+    .pinyin {
 
-  .meaning {
-    font-size: 19px;
-  }
+        font-size: 17px;
+    }
+
+    .meaning {
+
+        font-size: 16px;
+    }
 
 }
 
@@ -330,468 +448,556 @@ body {
 
 </head>
 
+
 <body>
 
-<!-- =========================
-     NAVBAR
-========================= -->
 
 <nav class="navbar">
 
-  <div class="nav-inner">
+    <div class="nav-inner">
 
-```
-<div class="logo">
+        <a
+            href="index.html"
+            class="logo"
+        >
 
-  ก็แค่จีน by ครูพี่เหม่ยถิง
+            ก็แค่จีน
 
-  <span>
-    เรียนจีนให้เข้าใจ ใช้ได้จริง 💙
-  </span>
+            <small>
+                by ครูพี่เหม่ยถิง
+            </small>
 
-</div>
+        </a>
 
 
-<a
-  href="dictionary.html"
-  class="home">
+        <a
+            href="dictionary.html"
+            class="back"
+        >
+            ← พจนานุกรม
+        </a>
 
-  ← กลับพจนานุกรม
-
-</a>
-```
-
-  </div>
+    </div>
 
 </nav>
 
-<!-- =========================
-     CONTENT
-========================= -->
 
-<main class="container">
+<main
+    class="container"
+    id="app"
+>
 
-  <div
-    id="content"
-    class="card">
-
-```
-กำลังโหลด...
-```
-
-  </div>
+    <div class="error">
+        ⏳ กำลังโหลดคำศัพท์...
+    </div>
 
 </main>
 
-<div class="footer">
 
-© ก็แค่จีน by ครูพี่เหม่ยถิง · Chinese–Thai Dictionary 💙
+<footer>
 
-</div>
+    © 2026 ก็แค่จีน by ครูพี่เหม่ยถิง 💙
 
-<!-- =========================
-     DICTIONARY DATA
-========================= -->
+</footer>
+
 
 <script src="./data/dictionary.js"></script>
 
+
 <script>
 
-/* =========================
-   FAVORITE
-========================= */
-
 const FAVORITE_KEY =
-  "chineseDictionaryFavorites";
+    "chineseDictionaryFavorites";
 
+
+let dictionaryData = [];
+
+
+/* ========================================
+   ESCAPE
+======================================== */
+
+function escapeHTML(value) {
+
+    return String(value ?? "")
+
+        .replace(/&/g,"&amp;")
+
+        .replace(/</g,"&lt;")
+
+        .replace(/>/g,"&gt;")
+
+        .replace(/"/g,"&quot;")
+
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* ========================================
+   FAVORITES
+======================================== */
 
 function getFavorites() {
 
-  try {
+    try {
 
-    return JSON.parse(
-      localStorage.getItem(
-        FAVORITE_KEY
-      )
-    ) || [];
+        const data =
+            JSON.parse(
+                localStorage.getItem(
+                    FAVORITE_KEY
+                )
+            );
 
-  } catch {
+        return Array.isArray(data)
+            ? data.map(Number)
+            : [];
 
-    return [];
+    }
+    catch {
 
-  }
+        return [];
+
+    }
 
 }
 
 
 function saveFavorites(data) {
 
-  localStorage.setItem(
-    FAVORITE_KEY,
-    JSON.stringify(data)
-  );
+    localStorage.setItem(
+        FAVORITE_KEY,
+        JSON.stringify(data)
+    );
+
+}
+
+
+function isFavorite(id) {
+
+    return getFavorites()
+        .includes(Number(id));
 
 }
 
 
 function toggleFavorite(id) {
 
-  id = Number(id);
+    let list =
+        getFavorites();
 
-  let favorites =
-    getFavorites();
+    id = Number(id);
 
+    if (list.includes(id)) {
 
-  if (favorites.includes(id)) {
+        list =
+            list.filter(
+                x => x !== id
+            );
 
-    favorites =
-      favorites.filter(
-        x => x !== id
-      );
+    }
+    else {
 
-  } else {
+        list.push(id);
 
-    favorites.push(id);
+    }
 
-  }
+    saveFavorites(list);
 
-
-  saveFavorites(favorites);
-
-  renderButton(id);
+    render();
 
 }
 
 
-function renderButton(id) {
+/* ========================================
+   SPEECH
+======================================== */
 
-  const btn =
-    document.getElementById(
-      "favoriteBtn"
+function speak(text, lang = "zh-CN") {
+
+    if (!text) {
+        return;
+    }
+
+    if (!("speechSynthesis" in window)) {
+
+        alert(
+            "เบราว์เซอร์นี้ไม่รองรับการอ่านออกเสียง"
+        );
+
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const utterance =
+        new SpeechSynthesisUtterance(text);
+
+    utterance.lang = lang;
+
+    utterance.rate = .8;
+
+    window.speechSynthesis.speak(
+        utterance
     );
 
-  if (!btn) return;
-
-
-  const active =
-    getFavorites()
-      .includes(Number(id));
-
-
-  btn.textContent =
-    active
-      ? "♥ อยู่ในคำโปรด"
-      : "♡ เพิ่มในคำโปรด";
-
 }
 
 
-/* =========================
-   ESCAPE HTML
-========================= */
+/* ========================================
+   GET ID
+======================================== */
 
-function escapeHTML(value) {
-
-  return String(value || "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-
-}
-
-
-/* =========================
-   PLAY AUDIO
-========================= */
-
-function playAudio(text) {
-
-  if (!text) return;
-
-  if (!("speechSynthesis" in window)) {
-
-    alert("เบราว์เซอร์นี้ไม่รองรับการอ่านออกเสียง");
-
-    return;
-
-  }
-
-
-  speechSynthesis.cancel();
-
-
-  const utterance =
-    new SpeechSynthesisUtterance(text);
-
-
-  utterance.lang = "zh-CN";
-
-  utterance.rate = 0.8;
-
-  utterance.pitch = 1;
-
-
-  speechSynthesis.speak(
-    utterance
-  );
-
-}
-
-
-/* =========================
-   LOAD WORD
-========================= */
-
-function loadWord() {
-
-  const params =
+const params =
     new URLSearchParams(
-      location.search
+        window.location.search
     );
 
-
-  const id =
+const requestedId =
     Number(
-      params.get("id")
+        params.get("id")
     );
 
 
-  const content =
-    document.getElementById(
-      "content"
-    );
+/* ========================================
+   LOAD
+======================================== */
 
+function loadDictionary() {
 
-  /* ไม่มี ID */
+    if (
+        Array.isArray(window.dictionary)
+    ) {
 
-  if (!id) {
+        dictionaryData =
+            window.dictionary;
 
-    content.innerHTML = `
+    }
+    else if (
+        Array.isArray(window.dictionaryData)
+    ) {
 
-      <div class="error">
+        dictionaryData =
+            window.dictionaryData;
 
-        <div style="font-size:40px;">
-          🔎
-        </div>
+    }
+    else {
 
-        <strong>
-          ไม่พบคำศัพท์
-        </strong>
+        showError(
+            "ไม่พบข้อมูล dictionary.js"
+        );
 
-        <br>
+        return;
+    }
 
-        กรุณากลับไปเลือกคำศัพท์จากพจนานุกรม
 
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  /* ตรวจสอบ dictionary */
-
-  const data =
-    window.dictionary || [];
-
-
-  const word =
-    data.find(
-      item =>
-        Number(item.id) === id
-    );
-
-
-  /* ไม่พบคำศัพท์ */
-
-  if (!word) {
-
-    content.innerHTML = `
-
-      <div class="error">
-
-        <div style="font-size:40px;">
-          😢
-        </div>
-
-        <strong>
-          ไม่พบข้อมูลคำศัพท์
-        </strong>
-
-        <br>
-
-        ไม่พบคำศัพท์หมายเลข ${id}
-
-        <br><br>
-
-        <a
-          href="dictionary.html"
-          style="
-            color:#287fbe;
-            text-decoration:none;
-            font-weight:700;
-          ">
-
-          ← กลับไปพจนานุกรม
-
-        </a>
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  /* =========================
-     RENDER
-  ========================= */
-
-  content.innerHTML = `
-
-    <div class="word">
-
-      ${escapeHTML(word.word)}
-
-    </div>
-
-
-    <div class="pinyin">
-
-      ${escapeHTML(word.pinyin)}
-
-    </div>
-
-
-    <div class="meaning">
-
-      ${escapeHTML(word.meaning)}
-
-    </div>
-
-
-    <div class="info">
-
-      <div class="info-title">
-
-        📚 ข้อมูลคำศัพท์
-
-      </div>
-
-
-      <div class="info-row">
-
-        <strong>
-          ชนิดคำ：
-        </strong>
-
-        ${escapeHTML(word.pos || "-")}
-
-      </div>
-
-
-      <div class="info-row">
-
-        <strong>
-          ระดับ：
-        </strong>
-
-        ${escapeHTML(word.hsk || "-")}
-
-      </div>
-
-    </div>
-
-
-    <div class="example">
-
-      <div class="info-title">
-
-        💬 ตัวอย่างประโยค
-
-      </div>
-
-
-      <div class="example-cn">
-
-        ${escapeHTML(
-          word.example || "-"
-        )}
-
-      </div>
-
-
-      ${
-        word.examplePinyin
-          ? `
-            <div class="example-pinyin">
-              ${escapeHTML(
-                word.examplePinyin
-              )}
-            </div>
-          `
-          : ""
-      }
-
-
-      ${
-        word.exampleMeaning
-          ? `
-            <div class="example-th">
-              ${escapeHTML(
-                word.exampleMeaning
-              )}
-            </div>
-          `
-          : ""
-      }
-
-    </div>
-
-
-    <button
-      class="audio-btn"
-      onclick="playAudio('${String(word.word || "").replace(/'/g, "\\'")}')">
-
-      🔊 ฟังเสียง
-
-    </button>
-
-
-    <br>
-
-
-    <button
-      id="favoriteBtn"
-      class="favorite"
-      onclick="toggleFavorite(${Number(word.id)})">
-
-      ♡ เพิ่มในคำโปรด
-
-    </button>
-
-  `;
-
-
-  renderButton(word.id);
+    render();
 
 }
 
 
-/* =========================
-   START
-========================= */
+/* ========================================
+   ERROR
+======================================== */
 
-loadWord();
+function showError(message) {
+
+    document.getElementById("app")
+        .innerHTML = `
+
+            <div class="error">
+
+                ⚠️ ${escapeHTML(message)}
+
+                <br><br>
+
+                <a
+                    href="dictionary.html"
+                    style="color:#3688c3;"
+                >
+                    ← กลับพจนานุกรม
+                </a>
+
+            </div>
+
+        `;
+
+}
+
+
+/* ========================================
+   RENDER
+======================================== */
+
+function render() {
+
+    const index =
+        dictionaryData.findIndex(
+            item =>
+                Number(item.id) === requestedId
+        );
+
+
+    if (index === -1) {
+
+        showError(
+            "ไม่พบคำศัพท์ที่ต้องการ"
+        );
+
+        return;
+
+    }
+
+
+    const item =
+        dictionaryData[index];
+
+
+    const favorite =
+        isFavorite(item.id);
+
+
+    const previous =
+        dictionaryData[index - 1];
+
+    const next =
+        dictionaryData[index + 1];
+
+
+    document.title =
+        `${item.word} ${item.pinyin || ""} | ก็แค่จีน`;
+
+
+    document.getElementById("app")
+        .innerHTML = `
+
+        <article class="detail-card">
+
+            <div class="top">
+
+                <div>
+
+                    <div class="word">
+                        ${escapeHTML(item.word)}
+                    </div>
+
+                    <div class="pinyin">
+                        ${escapeHTML(item.pinyin)}
+                    </div>
+
+                    <div class="meaning">
+                        ${escapeHTML(item.meaning)}
+                    </div>
+
+                    <span class="hsk">
+                        ${escapeHTML(
+                            item.hsk || "ไม่ระบุ"
+                        )}
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="
+                        favorite
+                        ${favorite ? "active" : ""}
+                    "
+                    id="favoriteBtn"
+                    type="button"
+                >
+
+                    ${favorite ? "♥" : "♡"}
+
+                </button>
+
+            </div>
+
+
+            ${
+                item.pos
+                ? `
+                    <div class="pos-box">
+
+                        🏷️
+                        <b>ชนิดคำ:</b>
+                        ${escapeHTML(item.pos)}
+
+                    </div>
+                `
+                : ""
+            }
+
+
+            <div class="audio-buttons">
+
+                <button
+                    class="audio-btn"
+                    id="wordAudio"
+                    type="button"
+                >
+                    🔊 ฟังคำศัพท์
+                </button>
+
+
+                ${
+                    item.example
+                    ? `
+                        <button
+                            class="audio-btn"
+                            id="exampleAudio"
+                            type="button"
+                        >
+                            🔊 ฟังประโยค
+                        </button>
+                    `
+                    : ""
+                }
+
+            </div>
+
+
+            ${
+                item.example
+                ? `
+
+                    <div class="example">
+
+                        <div class="example-title">
+                            💬 ตัวอย่างประโยค
+                        </div>
+
+
+                        <div class="example-cn">
+                            ${escapeHTML(item.example)}
+                        </div>
+
+
+                        ${
+                            item.examplePinyin
+                            ? `
+                                <div class="example-pinyin">
+                                    ${escapeHTML(
+                                        item.examplePinyin
+                                    )}
+                                </div>
+                            `
+                            : ""
+                        }
+
+
+                        ${
+                            item.exampleThai
+                            ? `
+                                <div class="example-thai">
+                                    ${escapeHTML(
+                                        item.exampleThai
+                                    )}
+                                </div>
+                            `
+                            : ""
+                        }
+
+                    </div>
+
+                `
+                : ""
+            }
+
+
+            <div class="word-navigation">
+
+                ${
+                    previous
+                    ? `
+                        <button
+                            class="nav-word-btn"
+                            onclick="
+                                location.href =
+                                'word.html?id=${encodeURIComponent(previous.id)}'
+                            "
+                        >
+                            ← ${escapeHTML(previous.word)}
+                        </button>
+                    `
+                    : `
+                        <button
+                            class="nav-word-btn"
+                            disabled
+                        >
+                            ← คำแรก
+                        </button>
+                    `
+                }
+
+
+                ${
+                    next
+                    ? `
+                        <button
+                            class="nav-word-btn"
+                            onclick="
+                                location.href =
+                                'word.html?id=${encodeURIComponent(next.id)}'
+                            "
+                        >
+                            ${escapeHTML(next.word)} →
+                        </button>
+                    `
+                    : `
+                        <button
+                            class="nav-word-btn"
+                            disabled
+                        >
+                            คำสุดท้าย →
+                        </button>
+                    `
+                }
+
+            </div>
+
+        </article>
+
+    `;
+
+
+    document
+        .getElementById("favoriteBtn")
+        .addEventListener(
+            "click",
+            () => toggleFavorite(item.id)
+        );
+
+
+    document
+        .getElementById("wordAudio")
+        .addEventListener(
+            "click",
+            () => speak(item.word)
+        );
+
+
+    if (item.example) {
+
+        document
+            .getElementById("exampleAudio")
+            .addEventListener(
+                "click",
+                () => speak(item.example)
+            );
+
+    }
+
+}
+
+
+/* ========================================
+   START
+======================================== */
+
+loadDictionary();
 
 </script>
 
 </body>
-
 </html>
