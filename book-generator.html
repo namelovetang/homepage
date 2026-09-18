@@ -1,0 +1,1910 @@
+```html
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Book Generator | ก็แค่จีน</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, "Noto Sans Thai", sans-serif;
+        background: linear-gradient(135deg, #eef7ff, #fff8ef);
+        color: #334155;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .navbar {
+        background: rgba(255,255,255,.95);
+        border-bottom: 1px solid #e2e8f0;
+        padding: 14px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+        font-weight: bold;
+        color: #2563eb;
+        text-decoration: none;
+    }
+
+    .home-btn {
+        text-decoration: none;
+        background: #eff6ff;
+        color: #2563eb;
+        padding: 9px 15px;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .home-btn:hover {
+        background: #dbeafe;
+    }
+
+    /* =========================
+       CONTAINER
+    ========================= */
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 30px 18px 60px;
+    }
+
+    .page-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .page-header .emoji {
+        font-size: 50px;
+        margin-bottom: 5px;
+    }
+
+    .page-header h1 {
+        margin: 0;
+        color: #1e3a8a;
+        font-size: 32px;
+    }
+
+    .page-header p {
+        margin-top: 8px;
+        color: #64748b;
+    }
+
+    /* =========================
+       CARD
+    ========================= */
+
+    .panel {
+        background: rgba(255,255,255,.95);
+        border-radius: 22px;
+        padding: 24px;
+        margin-bottom: 22px;
+        box-shadow: 0 8px 30px rgba(15,23,42,.07);
+        border: 1px solid #e5e7eb;
+    }
+
+    .panel-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #1e3a8a;
+        margin-bottom: 18px;
+    }
+
+    /* =========================
+       INFO
+    ========================= */
+
+    .info-box {
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        border-radius: 15px;
+        padding: 16px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    .info-box strong {
+        color: #1d4ed8;
+    }
+
+    /* =========================
+       BULK INPUT
+    ========================= */
+
+    textarea {
+        width: 100%;
+        min-height: 180px;
+        resize: vertical;
+        border: 2px solid #dbeafe;
+        border-radius: 15px;
+        padding: 15px;
+        font-size: 14px;
+        line-height: 1.7;
+        outline: none;
+        font-family: Arial, "Noto Sans Thai", sans-serif;
+        background: #fbfdff;
+    }
+
+    textarea:focus {
+        border-color: #60a5fa;
+        background: #fff;
+    }
+
+    .format-example {
+        margin-top: 10px;
+        background: #f8fafc;
+        border-radius: 12px;
+        padding: 12px;
+        font-size: 13px;
+        color: #475569;
+        overflow-x: auto;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    button {
+        border: 0;
+        cursor: pointer;
+        border-radius: 12px;
+        padding: 11px 17px;
+        font-size: 14px;
+        font-weight: bold;
+        transition: .2s;
+    }
+
+    button:hover {
+        transform: translateY(-1px);
+    }
+
+    .btn-primary {
+        background: #2563eb;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background: #1d4ed8;
+    }
+
+    .btn-success {
+        background: #16a34a;
+        color: white;
+    }
+
+    .btn-success:hover {
+        background: #15803d;
+    }
+
+    .btn-warning {
+        background: #f59e0b;
+        color: white;
+    }
+
+    .btn-danger {
+        background: #fee2e2;
+        color: #dc2626;
+    }
+
+    .btn-secondary {
+        background: #f1f5f9;
+        color: #334155;
+    }
+
+    .btn-purple {
+        background: #7c3aed;
+        color: white;
+    }
+
+    /* =========================
+       BOOK FORM
+    ========================= */
+
+    .book-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .field.full {
+        grid-column: 1 / -1;
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: bold;
+        color: #475569;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 11px 13px;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        outline: none;
+        font-size: 14px;
+        background: white;
+    }
+
+    input:focus,
+    select:focus {
+        border-color: #60a5fa;
+    }
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-bottom: 22px;
+    }
+
+    .stat {
+        background: white;
+        border-radius: 18px;
+        padding: 18px;
+        text-align: center;
+        border: 1px solid #e5e7eb;
+    }
+
+    .stat-number {
+        font-size: 28px;
+        font-weight: bold;
+        color: #2563eb;
+    }
+
+    .stat-label {
+        margin-top: 5px;
+        font-size: 13px;
+        color: #64748b;
+    }
+
+    /* =========================
+       BOOK LIST
+    ========================= */
+
+    .book-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .book-item {
+        border: 1px solid #e2e8f0;
+        border-radius: 17px;
+        padding: 17px;
+        background: #fff;
+    }
+
+    .book-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .book-title {
+        font-weight: bold;
+        font-size: 17px;
+        color: #1e3a8a;
+    }
+
+    .book-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 8px;
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 4px 9px;
+        border-radius: 999px;
+        font-size: 12px;
+        background: #eff6ff;
+        color: #2563eb;
+    }
+
+    .tag.green {
+        background: #dcfce7;
+        color: #15803d;
+    }
+
+    .tag.orange {
+        background: #fef3c7;
+        color: #b45309;
+    }
+
+    .tag.purple {
+        background: #ede9fe;
+        color: #6d28d9;
+    }
+
+    .drive-id {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #64748b;
+        word-break: break-all;
+    }
+
+    .download-url {
+        margin-top: 9px;
+        background: #f8fafc;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: monospace;
+        font-size: 12px;
+        word-break: break-all;
+        color: #475569;
+    }
+
+    .book-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 13px;
+    }
+
+    .book-actions button {
+        padding: 8px 11px;
+        font-size: 12px;
+    }
+
+    /* =========================
+       EMPTY
+    ========================= */
+
+    .empty {
+        text-align: center;
+        padding: 45px 20px;
+        color: #94a3b8;
+    }
+
+    .empty-icon {
+        font-size: 45px;
+        margin-bottom: 10px;
+    }
+
+    /* =========================
+       STATUS
+    ========================= */
+
+    .status {
+        margin-top: 15px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        display: none;
+        font-size: 14px;
+    }
+
+    .status.show {
+        display: block;
+    }
+
+    .status.success {
+        background: #dcfce7;
+        color: #166534;
+    }
+
+    .status.error {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+    .status.warning {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+    /* =========================
+       EXPORT
+    ========================= */
+
+    .export-box {
+        background: #f8fafc;
+        border-radius: 17px;
+        padding: 18px;
+    }
+
+    .export-preview {
+        width: 100%;
+        min-height: 220px;
+        margin-top: 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 12px;
+        padding: 13px;
+        font-family: monospace;
+        font-size: 12px;
+        background: #0f172a;
+        color: #e2e8f0;
+        resize: vertical;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 800px) {
+        .stats {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .book-form {
+            grid-template-columns: 1fr;
+        }
+
+        .field.full {
+            grid-column: auto;
+        }
+    }
+
+    @media (max-width: 550px) {
+        .container {
+            padding: 20px 12px 40px;
+        }
+
+        .panel {
+            padding: 17px;
+            border-radius: 17px;
+        }
+
+        .page-header h1 {
+            font-size: 25px;
+        }
+
+        .stats {
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+        }
+
+        .stat {
+            padding: 13px 8px;
+        }
+
+        .stat-number {
+            font-size: 23px;
+        }
+
+        .book-top {
+            flex-direction: column;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+    <div class="nav-inner">
+
+        <a href="../index.html" class="logo">
+            📚 ก็แค่จีน
+        </a>
+
+        <a href="../books.html" class="home-btn">
+            ← หน้าหนังสือ
+        </a>
+
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="page-header">
+
+        <div class="emoji">📥</div>
+
+        <h1>ระบบสร้างลิงก์ดาวน์โหลดหนังสือ</h1>
+
+        <p>
+            Google Drive → Direct Download Link
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         INFO
+    ========================= -->
+
+    <div class="panel">
+
+        <div class="info-box">
+
+            <strong>วิธีใช้</strong><br>
+
+            1. ตั้งค่าไฟล์ Google Drive เป็น
+            <b>Anyone with the link → Viewer</b><br>
+
+            2. วางลิงก์ Google Drive หลายไฟล์ลงในช่องด้านล่าง
+            <br>
+
+            3. ระบบจะดึง File ID ให้อัตโนมัติ
+            <br>
+
+            4. กด <b>สร้างรายการ</b>
+            <br>
+
+            5. กรอกข้อมูลหนังสือ
+            <br>
+
+            6. กด Export เพื่อนำข้อมูลไปใช้กับ <b>books.html</b>
+
+        </div>
+
+
+        <div class="panel-title">
+            🔗 วางลิงก์ Google Drive หลายไฟล์
+        </div>
+
+        <textarea
+            id="driveInput"
+            placeholder="วาง Google Drive ทีละบรรทัด เช่น
+
+https://drive.google.com/file/d/1AbCdEfGhIjKlMn/view?usp=sharing
+https://drive.google.com/file/d/2BcDeFgHiJkLmNo/view?usp=sharing
+https://drive.google.com/file/d/3CdEfGhIjKlMnOp/view?usp=sharing"></textarea>
+
+        <div class="format-example">
+
+            ระบบรองรับตัวอย่างลิงก์:
+
+            <br><br>
+
+            <b>แบบที่ 1</b><br>
+            https://drive.google.com/file/d/FILE_ID/view?usp=sharing
+
+            <br><br>
+
+            <b>แบบที่ 2</b><br>
+            https://drive.google.com/open?id=FILE_ID
+
+            <br><br>
+
+            <b>Direct Download ที่ระบบสร้าง</b><br>
+            https://drive.google.com/uc?export=download&id=FILE_ID
+
+        </div>
+
+
+        <div class="button-row">
+
+            <button
+                class="btn-primary"
+                onclick="createFromDriveLinks()">
+                ⚡ สร้างรายการ
+            </button>
+
+            <button
+                class="btn-secondary"
+                onclick="clearInput()">
+                🗑️ ล้างช่อง
+            </button>
+
+        </div>
+
+
+        <div id="inputStatus" class="status"></div>
+
+    </div>
+
+
+    <!-- =========================
+         STATS
+    ========================= -->
+
+    <div class="stats">
+
+        <div class="stat">
+            <div
+                class="stat-number"
+                id="totalCount">
+                0
+            </div>
+
+            <div class="stat-label">
+                ไฟล์ทั้งหมด
+            </div>
+        </div>
+
+
+        <div class="stat">
+            <div
+                class="stat-number"
+                id="hskCount">
+                0
+            </div>
+
+            <div class="stat-label">
+                หนังสือ HSK
+            </div>
+        </div>
+
+
+        <div class="stat">
+            <div
+                class="stat-number"
+                id="textbookCount">
+                0
+            </div>
+
+            <div class="stat-label">
+                Textbook
+            </div>
+        </div>
+
+
+        <div class="stat">
+            <div
+                class="stat-number"
+                id="workbookCount">
+                0
+            </div>
+
+            <div class="stat-label">
+                Workbook
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         DEFAULT INFORMATION
+    ========================= -->
+
+    <div class="panel">
+
+        <div class="panel-title">
+            ⚙️ ข้อมูลเริ่มต้นสำหรับไฟล์ที่เพิ่ม
+        </div>
+
+        <div class="book-form">
+
+            <div class="field">
+
+                <label>
+                    หมวดหมู่
+                </label>
+
+                <select id="defaultCategory">
+
+                    <option value="汉语教程">
+                        汉语教程
+                    </option>
+
+                    <option value="HSK Standard Course">
+                        HSK Standard Course
+                    </option>
+
+                    <option value="其他">
+                        อื่น ๆ
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    HSK
+                </label>
+
+                <select id="defaultHsk">
+
+                    <option value="">
+                        ไม่ระบุ
+                    </option>
+
+                    <option value="HSK1">
+                        HSK1
+                    </option>
+
+                    <option value="HSK2">
+                        HSK2
+                    </option>
+
+                    <option value="HSK3">
+                        HSK3
+                    </option>
+
+                    <option value="HSK4">
+                        HSK4
+                    </option>
+
+                    <option value="HSK5">
+                        HSK5
+                    </option>
+
+                    <option value="HSK6">
+                        HSK6
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    ประเภท
+                </label>
+
+                <select id="defaultType">
+
+                    <option value="Textbook">
+                        Textbook
+                    </option>
+
+                    <option value="Workbook">
+                        Workbook
+                    </option>
+
+                    <option value="PDF">
+                        PDF
+                    </option>
+
+                    <option value="อื่น ๆ">
+                        อื่น ๆ
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Emoji
+                </label>
+
+                <input
+                    id="defaultEmoji"
+                    value="📘"
+                    placeholder="📘">
+
+            </div>
+
+
+            <div class="field full">
+
+                <label>
+                    ชื่อหนังสือเริ่มต้น
+                </label>
+
+                <input
+                    id="defaultTitle"
+                    placeholder="ถ้าไม่กรอก ระบบจะใช้ชื่อไฟล์">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         BOOK LIST
+    ========================= -->
+
+    <div class="panel">
+
+        <div class="panel-title">
+            📚 รายการหนังสือ
+        </div>
+
+        <div id="bookList" class="book-list">
+
+            <div class="empty">
+
+                <div class="empty-icon">
+                    📚
+                </div>
+
+                <div>
+                    ยังไม่มีไฟล์
+                </div>
+
+                <small>
+                    วางลิงก์ Google Drive ด้านบนเพื่อเริ่มต้น
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         EXPORT
+    ========================= -->
+
+    <div class="panel">
+
+        <div class="panel-title">
+            📦 Export ข้อมูล
+        </div>
+
+        <div class="export-box">
+
+            <p>
+                เมื่อเพิ่มข้อมูลเรียบร้อยแล้ว
+                สามารถ Export เป็นไฟล์สำหรับใช้กับ
+                <b>books.html</b>
+            </p>
+
+
+            <div class="button-row">
+
+                <button
+                    class="btn-success"
+                    onclick="downloadJS()">
+                    📥 Export books.js
+                </button>
+
+
+                <button
+                    class="btn-purple"
+                    onclick="downloadJSON()">
+                    📄 Export books.json
+                </button>
+
+
+                <button
+                    class="btn-secondary"
+                    onclick="copyJS()">
+                    📋 คัดลอก books.js
+                </button>
+
+            </div>
+
+
+            <textarea
+                id="exportPreview"
+                class="export-preview"
+                readonly
+                placeholder="ตัวอย่าง books.js จะแสดงตรงนี้"></textarea>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   DATA
+========================================================= */
+
+let books = [];
+
+
+/* =========================================================
+   GET FILE ID FROM GOOGLE DRIVE URL
+========================================================= */
+
+function extractDriveFileId(url) {
+
+    if (!url) {
+        return null;
+    }
+
+    url = url.trim();
+
+    /*
+       /file/d/FILE_ID/view
+    */
+
+    let match = url.match(
+        /\/file\/d\/([a-zA-Z0-9_-]+)/
+    );
+
+    if (match) {
+        return match[1];
+    }
+
+
+    /*
+       ?id=FILE_ID
+    */
+
+    match = url.match(
+        /[?&]id=([a-zA-Z0-9_-]+)/
+    );
+
+    if (match) {
+        return match[1];
+    }
+
+
+    /*
+       /open?id=FILE_ID
+    */
+
+    match = url.match(
+        /\/open\?id=([a-zA-Z0-9_-]+)/
+    );
+
+    if (match) {
+        return match[1];
+    }
+
+
+    /*
+       uc?id=FILE_ID
+    */
+
+    match = url.match(
+        /\/uc\?(?:[^#]*&)?id=([a-zA-Z0-9_-]+)/
+    );
+
+    if (match) {
+        return match[1];
+    }
+
+
+    return null;
+}
+
+
+/* =========================================================
+   CREATE DIRECT DOWNLOAD LINK
+========================================================= */
+
+function createDownloadUrl(fileId) {
+
+    return `https://drive.google.com/uc?export=download&id=${fileId}`;
+
+}
+
+
+/* =========================================================
+   CREATE VIEW URL
+========================================================= */
+
+function createViewUrl(fileId) {
+
+    return `https://drive.google.com/file/d/${fileId}/view`;
+
+}
+
+
+/* =========================================================
+   GET FILE NAME FROM URL
+========================================================= */
+
+function getFileNameFromUrl(url, index) {
+
+    try {
+
+        const fileId = extractDriveFileId(url);
+
+        if (fileId) {
+
+            return `หนังสือ ${index + 1}`;
+
+        }
+
+    } catch (error) {}
+
+    return `หนังสือ ${index + 1}`;
+
+}
+
+
+/* =========================================================
+   CREATE BOOKS FROM MULTIPLE LINKS
+========================================================= */
+
+function createFromDriveLinks() {
+
+    const input =
+        document.getElementById("driveInput").value.trim();
+
+    if (!input) {
+
+        showStatus(
+            "inputStatus",
+            "กรุณาวางลิงก์ Google Drive ก่อน",
+            "error"
+        );
+
+        return;
+    }
+
+
+    const lines = input
+        .split(/\r?\n/)
+        .map(line => line.trim())
+        .filter(Boolean);
+
+
+    const category =
+        document.getElementById("defaultCategory").value;
+
+    const hsk =
+        document.getElementById("defaultHsk").value;
+
+    const type =
+        document.getElementById("defaultType").value;
+
+    const emoji =
+        document.getElementById("defaultEmoji").value.trim() || "📘";
+
+    const defaultTitle =
+        document.getElementById("defaultTitle").value.trim();
+
+
+    let added = 0;
+    let duplicate = 0;
+    let invalid = 0;
+
+
+    lines.forEach((url, index) => {
+
+        const fileId =
+            extractDriveFileId(url);
+
+        if (!fileId) {
+
+            invalid++;
+
+            return;
+        }
+
+
+        /*
+           ป้องกันไฟล์ซ้ำ
+        */
+
+        const alreadyExists =
+            books.some(book =>
+                book.fileId === fileId
+            );
+
+
+        if (alreadyExists) {
+
+            duplicate++;
+
+            return;
+        }
+
+
+        const id =
+            getNextId();
+
+
+        const title =
+            defaultTitle
+                ? (
+                    lines.length === 1
+                        ? defaultTitle
+                        : `${defaultTitle} ${index + 1}`
+                )
+                : getFileNameFromUrl(url, index);
+
+
+        const book = {
+
+            id: id,
+
+            category: category,
+
+            group: "",
+
+            hsk: hsk,
+
+            title: title,
+
+            subtitle: "",
+
+            type: type,
+
+            emoji: emoji,
+
+            color: "",
+
+            driveUrl: url,
+
+            fileId: fileId,
+
+            downloadUrl:
+                createDownloadUrl(fileId),
+
+            viewUrl:
+                createViewUrl(fileId),
+
+            active: true
+
+        };
+
+
+        books.push(book);
+
+        added++;
+
+    });
+
+
+    renderBooks();
+
+    updateStats();
+
+    updateExportPreview();
+
+
+    let message =
+        `เพิ่มสำเร็จ ${added} ไฟล์`;
+
+    if (duplicate > 0) {
+        message +=
+            ` · ซ้ำ ${duplicate} ไฟล์`;
+    }
+
+    if (invalid > 0) {
+        message +=
+            ` · ลิงก์ไม่ถูกต้อง ${invalid} รายการ`;
+    }
+
+
+    showStatus(
+        "inputStatus",
+        message,
+        invalid > 0 ? "warning" : "success"
+    );
+
+}
+
+
+/* =========================================================
+   NEXT ID
+========================================================= */
+
+function getNextId() {
+
+    if (books.length === 0) {
+        return 1;
+    }
+
+
+    const numbers =
+        books
+            .map(book => Number(book.id))
+            .filter(Number.isFinite);
+
+
+    if (numbers.length === 0) {
+        return 1;
+    }
+
+
+    return Math.max(...numbers) + 1;
+
+}
+
+
+/* =========================================================
+   RENDER BOOKS
+========================================================= */
+
+function renderBooks() {
+
+    const container =
+        document.getElementById("bookList");
+
+
+    if (books.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="empty">
+
+                <div class="empty-icon">
+                    📚
+                </div>
+
+                <div>
+                    ยังไม่มีไฟล์
+                </div>
+
+                <small>
+                    วางลิงก์ Google Drive ด้านบนเพื่อเริ่มต้น
+                </small>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    container.innerHTML =
+        books.map((book, index) => {
+
+            return `
+
+                <div class="book-item">
+
+                    <div class="book-top">
+
+                        <div>
+
+                            <div class="book-title">
+
+                                ${escapeHtml(book.emoji || "📘")}
+
+                                ${escapeHtml(book.title)}
+
+                            </div>
+
+
+                            <div class="book-meta">
+
+                                <span class="tag">
+                                    ID ${escapeHtml(book.id)}
+                                </span>
+
+                                <span class="tag">
+                                    ${escapeHtml(book.category || "ไม่ระบุ")}
+                                </span>
+
+                                ${
+                                    book.hsk
+                                    ? `
+                                        <span class="tag purple">
+                                            ${escapeHtml(book.hsk)}
+                                        </span>
+                                    `
+                                    : ""
+                                }
+
+                                <span class="tag green">
+                                    ${escapeHtml(book.type || "PDF")}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="btn-danger"
+                            onclick="removeBook(${index})">
+
+                            🗑️ ลบ
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="drive-id">
+
+                        <b>FILE_ID:</b>
+
+                        ${escapeHtml(book.fileId)}
+
+                    </div>
+
+
+                    <div class="download-url">
+
+                        ${escapeHtml(book.downloadUrl)}
+
+                    </div>
+
+
+                    <div class="book-actions">
+
+                        <button
+                            class="btn-primary"
+                            onclick="copyText('${escapeJs(book.downloadUrl)}')">
+
+                            📋 คัดลอกลิงก์ดาวน์โหลด
+
+                        </button>
+
+
+                        <button
+                            class="btn-success"
+                            onclick="openUrl('${escapeJs(book.downloadUrl)}')">
+
+                            📥 ดาวน์โหลด
+
+                        </button>
+
+
+                        <button
+                            class="btn-secondary"
+                            onclick="openUrl('${escapeJs(book.viewUrl)}')">
+
+                            👀 เปิด Google Drive
+
+                        </button>
+
+
+                        <button
+                            class="btn-warning"
+                            onclick="editBook(${index})">
+
+                            ✏️ แก้ไข
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }).join("");
+
+}
+
+
+/* =========================================================
+   EDIT BOOK
+========================================================= */
+
+function editBook(index) {
+
+    const book = books[index];
+
+    if (!book) {
+        return;
+    }
+
+
+    const title =
+        prompt(
+            "ชื่อหนังสือ",
+            book.title || ""
+        );
+
+
+    if (title === null) {
+        return;
+    }
+
+
+    const category =
+        prompt(
+            "หมวดหมู่",
+            book.category || ""
+        );
+
+
+    if (category === null) {
+        return;
+    }
+
+
+    const hsk =
+        prompt(
+            "HSK เช่น HSK1 / HSK2 หรือเว้นว่าง",
+            book.hsk || ""
+        );
+
+
+    if (hsk === null) {
+        return;
+    }
+
+
+    const type =
+        prompt(
+            "ประเภท เช่น Textbook / Workbook / PDF",
+            book.type || ""
+        );
+
+
+    if (type === null) {
+        return;
+    }
+
+
+    book.title = title.trim();
+
+    book.category = category.trim();
+
+    book.hsk = normalizeHsk(hsk);
+
+    book.type = type.trim();
+
+
+    renderBooks();
+
+    updateStats();
+
+    updateExportPreview();
+
+}
+
+
+/* =========================================================
+   NORMALIZE HSK
+========================================================= */
+
+function normalizeHsk(value) {
+
+    value =
+        String(value || "")
+        .trim()
+        .toUpperCase();
+
+
+    if (!value) {
+        return "";
+    }
+
+
+    if (/^HSK[1-6]$/.test(value)) {
+        return value;
+    }
+
+
+    if (/^[1-6]$/.test(value)) {
+        return `HSK${value}`;
+    }
+
+
+    return value;
+
+}
+
+
+/* =========================================================
+   REMOVE BOOK
+========================================================= */
+
+function removeBook(index) {
+
+    if (!books[index]) {
+        return;
+    }
+
+
+    const confirmed =
+        confirm(
+            `ต้องการลบ "${books[index].title}" หรือไม่?`
+        );
+
+
+    if (!confirmed) {
+        return;
+    }
+
+
+    books.splice(index, 1);
+
+
+    renderBooks();
+
+    updateStats();
+
+    updateExportPreview();
+
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+function updateStats() {
+
+    document.getElementById("totalCount")
+        .textContent = books.length;
+
+
+    document.getElementById("hskCount")
+        .textContent =
+            books.filter(book =>
+                /^HSK[1-6]$/.test(book.hsk)
+            ).length;
+
+
+    document.getElementById("textbookCount")
+        .textContent =
+            books.filter(book =>
+                String(book.type)
+                    .toLowerCase() === "textbook"
+            ).length;
+
+
+    document.getElementById("workbookCount")
+        .textContent =
+            books.filter(book =>
+                String(book.type)
+                    .toLowerCase() === "workbook"
+            ).length;
+
+}
+
+
+/* =========================================================
+   GENERATE JS
+========================================================= */
+
+function generateJS() {
+
+    const json =
+        JSON.stringify(
+            books,
+            null,
+            4
+        );
+
+
+    return `/* =====================================================
+   BOOK DATABASE
+   Generated by ก็แค่จีน Book Generator
+   © 2026 ก็แค่จีน by ครูพี่เหม่ยถิง
+===================================================== */
+
+const books = ${json};
+
+if (typeof window !== "undefined") {
+    window.books = books;
+}
+`;
+
+}
+
+
+/* =========================================================
+   GENERATE JSON
+========================================================= */
+
+function generateJSON() {
+
+    return JSON.stringify(
+        books,
+        null,
+        4
+    );
+
+}
+
+
+/* =========================================================
+   UPDATE PREVIEW
+========================================================= */
+
+function updateExportPreview() {
+
+    document.getElementById("exportPreview")
+        .value = generateJS();
+
+}
+
+
+/* =========================================================
+   DOWNLOAD JS
+========================================================= */
+
+function downloadJS() {
+
+    if (books.length === 0) {
+
+        alert(
+            "ยังไม่มีข้อมูลสำหรับ Export"
+        );
+
+        return;
+    }
+
+
+    const content =
+        generateJS();
+
+
+    downloadFile(
+        "books.js",
+        content,
+        "application/javascript"
+    );
+
+}
+
+
+/* =========================================================
+   DOWNLOAD JSON
+========================================================= */
+
+function downloadJSON() {
+
+    if (books.length === 0) {
+
+        alert(
+            "ยังไม่มีข้อมูลสำหรับ Export"
+        );
+
+        return;
+    }
+
+
+    const content =
+        generateJSON();
+
+
+    downloadFile(
+        "books.json",
+        content,
+        "application/json"
+    );
+
+}
+
+
+/* =========================================================
+   COPY JS
+========================================================= */
+
+async function copyJS() {
+
+    if (books.length === 0) {
+
+        alert(
+            "ยังไม่มีข้อมูลสำหรับคัดลอก"
+        );
+
+        return;
+    }
+
+
+    const content =
+        generateJS();
+
+
+    await copyText(content);
+
+
+    showStatus(
+        "inputStatus",
+        "คัดลอก books.js เรียบร้อยแล้ว",
+        "success"
+    );
+
+}
+
+
+/* =========================================================
+   DOWNLOAD FILE
+========================================================= */
+
+function downloadFile(
+    filename,
+    content,
+    mime
+) {
+
+    const blob =
+        new Blob(
+            [content],
+            { type: mime }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const a =
+        document.createElement("a");
+
+
+    a.href = url;
+
+    a.download = filename;
+
+    document.body.appendChild(a);
+
+    a.click();
+
+    a.remove();
+
+
+    setTimeout(() => {
+
+        URL.revokeObjectURL(url);
+
+    }, 1000);
+
+}
+
+
+/* =========================================================
+   COPY TEXT
+========================================================= */
+
+async function copyText(text) {
+
+    try {
+
+        await navigator.clipboard.writeText(text);
+
+        alert(
+            "คัดลอกเรียบร้อยแล้ว"
+        );
+
+    } catch (error) {
+
+        const textarea =
+            document.createElement("textarea");
+
+        textarea.value = text;
+
+        document.body.appendChild(textarea);
+
+        textarea.select();
+
+        document.execCommand("copy");
+
+        textarea.remove();
+
+        alert(
+            "คัดลอกเรียบร้อยแล้ว"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   OPEN URL
+========================================================= */
+
+function openUrl(url) {
+
+    window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+    );
+
+}
+
+
+/* =========================================================
+   CLEAR INPUT
+========================================================= */
+
+function clearInput() {
+
+    document.getElementById("driveInput")
+        .value = "";
+
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+function showStatus(
+    id,
+    message,
+    type
+) {
+
+    const element =
+        document.getElementById(id);
+
+
+    element.textContent =
+        message;
+
+
+    element.className =
+        `status show ${type}`;
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHtml(value) {
+
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =========================================================
+   ESCAPE JS
+========================================================= */
+
+function escapeJs(value) {
+
+    return String(value ?? "")
+        .replace(/\\/g, "\\\\")
+        .replace(/'/g, "\\'")
+        .replace(/\r/g, "\\r")
+        .replace(/\n/g, "\\n");
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+renderBooks();
+
+updateStats();
+
+updateExportPreview();
+
+</script>
+
+</body>
+</html>
+```
