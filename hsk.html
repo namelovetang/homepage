@@ -1,371 +1,780 @@
 <!DOCTYPE html>
 <html lang="th">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title></title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>ไฟล์ข้อสอบ HSK | ก็แค่จีน</title>
 
 <style>
+
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: "Noto Sans Thai", "Noto Sans", Arial, sans-serif;
-  background: linear-gradient(135deg, #eef7ff, #fff7fb);
-  color: #334155;
+
+    margin: 0;
+
+    font-family:
+        "Noto Sans Thai",
+        "Noto Sans",
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef7ff,
+            #fff7fb
+        );
+
+    color: #334155;
 }
+
 
 /* =========================
    NAVBAR
 ========================= */
 
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid #e5e7eb;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    background:
+        rgba(255,255,255,0.92);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom:
+        1px solid #e5e7eb;
 }
 
 .navbar-inner {
-  max-width: 1100px;
-  margin: auto;
-  padding: 14px 20px;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 14px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
 }
 
 .logo {
-  font-size: 22px;
-  font-weight: 800;
-  color: #2563eb;
-  text-decoration: none;
-  white-space: nowrap;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    color: #2563eb;
+
+    text-decoration: none;
+
+    white-space: nowrap;
 }
 
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
 }
 
 .nav-links a {
-  text-decoration: none;
-  color: #475569;
-  font-size: 14px;
-  font-weight: 600;
 
-  padding: 9px 13px;
-  border-radius: 12px;
+    text-decoration: none;
 
-  transition: 0.2s;
+    color: #475569;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    padding: 9px 13px;
+
+    border-radius: 12px;
+
+    transition: 0.2s;
 }
 
 .nav-links a:hover {
-  background: #eff6ff;
-  color: #2563eb;
+
+    background: #eff6ff;
+
+    color: #2563eb;
 }
 
 .nav-links a.active {
-  background: #dbeafe;
-  color: #2563eb;
+
+    background: #dbeafe;
+
+    color: #2563eb;
 }
+
 
 /* =========================
    CONTAINER
 ========================= */
 
 .container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px 70px;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 40px 20px 70px;
 }
+
 
 /* =========================
    HERO
 ========================= */
 
 .hero {
-  text-align: center;
-  padding: 25px 10px 35px;
+
+    text-align: center;
+
+    padding: 25px 10px 35px;
 }
 
 .hero-icon {
-  font-size: 55px;
-  margin-bottom: 10px;
+
+    font-size: 55px;
+
+    margin-bottom: 10px;
 }
 
 .hero h1 {
-  margin: 0 0 12px;
-  font-size: 38px;
-  color: #1e40af;
+
+    margin: 0 0 12px;
+
+    font-size: 38px;
+
+    color: #1e40af;
 }
 
 .hero p {
-  margin: 0 auto;
-  max-width: 700px;
-  line-height: 1.8;
-  color: #64748b;
-  font-size: 16px;
+
+    margin: 0 auto;
+
+    max-width: 750px;
+
+    line-height: 1.8;
+
+    color: #64748b;
+
+    font-size: 16px;
 }
 
+
 /* =========================
-   FILTER
+   FILTER BOX
 ========================= */
 
 .filter-box {
-  background: rgba(255,255,255,0.85);
-  border: 1px solid #e5e7eb;
-  border-radius: 22px;
-  padding: 18px;
 
-  box-shadow: 0 8px 25px rgba(59,130,246,0.08);
+    background:
+        rgba(255,255,255,0.88);
 
-  margin-bottom: 25px;
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 22px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(59,130,246,0.08);
+
+    margin-bottom: 20px;
 }
 
 .filter-title {
-  text-align: center;
-  font-size: 15px;
-  font-weight: 700;
-  color: #475569;
-  margin-bottom: 12px;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    color: #475569;
+
+    margin-bottom: 13px;
 }
 
 .filters {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
 }
 
 .filter-btn {
-  border: none;
-  background: #f1f5f9;
-  color: #475569;
 
-  padding: 9px 16px;
-  border-radius: 12px;
+    border: none;
 
-  font-size: 14px;
-  font-weight: 700;
+    background: #f1f5f9;
 
-  cursor: pointer;
-  transition: 0.2s;
+    color: #475569;
+
+    padding: 10px 17px;
+
+    border-radius: 13px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
 .filter-btn:hover {
-  background: #dbeafe;
-  color: #2563eb;
+
+    background: #dbeafe;
+
+    color: #2563eb;
 }
 
 .filter-btn.active {
-  background: #2563eb;
-  color: white;
+
+    background: #2563eb;
+
+    color: white;
 }
 
+
 /* =========================
-   RESULT INFO
+   DESCRIPTION
+========================= */
+
+.version-description {
+
+    text-align: center;
+
+    margin: 0 auto 22px;
+
+    max-width: 800px;
+
+    background:
+        rgba(255,255,255,0.65);
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    padding: 12px 16px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   LEVEL
+========================= */
+
+.level-box {
+
+    background:
+        rgba(255,255,255,0.85);
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 22px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(59,130,246,0.06);
+
+    margin-bottom: 25px;
+}
+
+.level-title {
+
+    text-align: center;
+
+    color: #475569;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+.level-filters {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.level-btn {
+
+    border: none;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    padding: 9px 15px;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.level-btn:hover {
+
+    background: #e0f2fe;
+
+    color: #0369a1;
+}
+
+.level-btn.active {
+
+    background: #0ea5e9;
+
+    color: white;
+}
+
+
+/* =========================
+   RESULT
 ========================= */
 
 .result-info {
-  text-align: center;
-  color: #64748b;
-  font-size: 14px;
-  margin-bottom: 20px;
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
 }
 
+
 /* =========================
-   HSK GRID
+   GRID
 ========================= */
 
 .hsk-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
 }
+
 
 /* =========================
    CARD
 ========================= */
 
 .hsk-card {
-  background: rgba(255,255,255,0.95);
 
-  border: 1px solid #e5e7eb;
-  border-radius: 24px;
+    background:
+        rgba(255,255,255,0.95);
 
-  padding: 22px;
+    border:
+        1px solid #e5e7eb;
 
-  box-shadow: 0 10px 30px rgba(15,23,42,0.07);
+    border-radius: 24px;
 
-  transition: 0.25s;
+    padding: 22px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(15,23,42,0.07);
+
+    transition: 0.25s;
 }
 
 .hsk-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(37,99,235,0.12);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(37,99,235,0.12);
 }
 
 .hsk-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
 }
 
 .hsk-icon {
-  width: 58px;
-  height: 58px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 58px;
 
-  background: #eff6ff;
-  border-radius: 18px;
+    height: 58px;
 
-  font-size: 30px;
-  flex-shrink: 0;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eff6ff;
+
+    border-radius: 18px;
+
+    font-size: 30px;
+
+    flex-shrink: 0;
 }
 
 .hsk-info h2 {
-  margin: 0 0 4px;
-  color: #1e40af;
-  font-size: 25px;
+
+    margin: 0 0 4px;
+
+    color: #1e40af;
+
+    font-size: 25px;
 }
 
 .hsk-info p {
-  margin: 0;
-  color: #64748b;
-  font-size: 14px;
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 13px;
 }
+
+
+/* =========================
+   BADGE
+========================= */
+
+.version-badge {
+
+    display: inline-block;
+
+    margin-top: 6px;
+
+    padding: 4px 8px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   SET
+========================= */
+
+.set-title {
+
+    margin: 4px 0 10px;
+
+    color: #475569;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
 
 /* =========================
    FILE LIST
 ========================= */
 
 .file-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
 }
 
 .file-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
 
-  background: #f8fafc;
+    display: flex;
 
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
+    align-items: center;
 
-  padding: 13px 14px;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    background: #f8fafc;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    padding: 13px 14px;
 }
 
 .file-row strong {
-  display: block;
-  color: #334155;
-  font-size: 14px;
-  margin-bottom: 3px;
+
+    display: block;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    margin-bottom: 3px;
 }
 
 .file-row span {
-  display: block;
-  color: #94a3b8;
-  font-size: 12px;
+
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 12px;
 }
 
+
 /* =========================
-   DOWNLOAD BUTTON
+   BUTTON
 ========================= */
 
 .file-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 
-  text-decoration: none;
+    display: inline-flex;
 
-  background: #2563eb;
-  color: white;
+    align-items: center;
 
-  padding: 9px 13px;
-  border-radius: 11px;
+    justify-content: center;
 
-  font-size: 12px;
-  font-weight: 700;
+    text-decoration: none;
 
-  white-space: nowrap;
+    background: #2563eb;
 
-  transition: 0.2s;
+    color: white;
+
+    padding: 9px 13px;
+
+    border-radius: 11px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: 0.2s;
 }
 
 .file-button:hover {
-  background: #1d4ed8;
-  transform: translateY(-1px);
+
+    background: #1d4ed8;
+
+    transform:
+        translateY(-1px);
 }
 
 .file-button.disabled {
-  background: #cbd5e1;
-  color: #f8fafc;
-  cursor: not-allowed;
-  pointer-events: none;
+
+    background: #cbd5e1;
+
+    color: #f8fafc;
+
+    cursor: not-allowed;
+
+    pointer-events: none;
 }
+
 
 /* =========================
    NOTE
 ========================= */
 
 .note {
-  margin-top: 25px;
 
-  background: #fff7ed;
-  border: 1px solid #fed7aa;
+    margin-top: 25px;
 
-  border-radius: 18px;
+    background: #fff7ed;
 
-  padding: 17px 18px;
+    border:
+        1px solid #fed7aa;
 
-  color: #9a3412;
-  font-size: 13px;
-  line-height: 1.8;
+    border-radius: 18px;
+
+    padding: 17px 18px;
+
+    color: #9a3412;
+
+    font-size: 13px;
+
+    line-height: 1.8;
 }
 
 .note strong {
-  color: #c2410c;
+
+    color: #c2410c;
 }
+
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty {
+
+    display: none;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,0.9);
+
+    border:
+        1px dashed #cbd5e1;
+
+    border-radius: 20px;
+
+    padding: 35px 20px;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.empty.show {
+
+    display: block;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading {
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,0.9);
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    color: #64748b;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error-box {
+
+    display: none;
+
+    text-align: center;
+
+    background: #fff1f2;
+
+    border:
+        1px solid #fecdd3;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    color: #be123c;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.error-box.show {
+
+    display: block;
+}
+
 
 /* =========================
    FOOTER
 ========================= */
 
 footer {
-  text-align: center;
 
-  padding: 25px 20px;
+    text-align: center;
 
-  color: #94a3b8;
-  font-size: 13px;
+    padding: 25px 20px;
+
+    color: #94a3b8;
+
+    font-size: 13px;
 }
 
-/* =========================
-   HIDDEN
-========================= */
-
-.hsk-card.hidden {
-  display: none;
-}
 
 /* =========================
    RESPONSIVE
@@ -373,88 +782,147 @@ footer {
 
 @media (max-width: 800px) {
 
-  .navbar-inner {
-    flex-direction: column;
-    align-items: center;
-  }
+    .navbar-inner {
 
-  .nav-links {
-    justify-content: center;
-  }
+        flex-direction: column;
 
-  .hsk-grid {
-    grid-template-columns: 1fr;
-  }
+        align-items: center;
+    }
 
-  .hero h1 {
-    font-size: 32px;
-  }
+    .nav-links {
 
+        justify-content: center;
+    }
+
+    .hsk-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+
+        font-size: 32px;
+    }
 }
+
 
 @media (max-width: 550px) {
 
-  .container {
-    padding: 25px 13px 50px;
-  }
+    .container {
 
-  .navbar-inner {
-    padding: 12px 10px;
-  }
+        padding:
+            25px 13px 50px;
+    }
 
-  .nav-links {
-    gap: 4px;
-  }
+    .navbar-inner {
 
-  .nav-links a {
-    font-size: 12px;
-    padding: 7px 9px;
-  }
+        padding:
+            12px 10px;
+    }
 
-  .hero-icon {
-    font-size: 45px;
-  }
+    .nav-links {
 
-  .hero h1 {
-    font-size: 28px;
-  }
+        gap: 4px;
+    }
 
-  .hero p {
-    font-size: 14px;
-  }
+    .nav-links a {
 
-  .hsk-card {
-    padding: 17px;
-  }
+        font-size: 12px;
 
-  .hsk-header {
-    gap: 11px;
-  }
+        padding:
+            7px 9px;
+    }
 
-  .hsk-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 25px;
-  }
+    .hero-icon {
 
-  .hsk-info h2 {
-    font-size: 21px;
-  }
+        font-size: 45px;
+    }
 
-  .file-row {
-    align-items: flex-start;
-    flex-direction: column;
-  }
+    .hero h1 {
 
-  .file-button {
-    width: 100%;
-  }
+        font-size: 28px;
+    }
+
+    .hero p {
+
+        font-size: 14px;
+    }
+
+    .filter-box,
+    .level-box {
+
+        padding: 15px;
+    }
+
+    .hsk-card {
+
+        padding: 17px;
+    }
+
+    .hsk-header {
+
+        gap: 11px;
+    }
+
+    .hsk-icon {
+
+        width: 50px;
+
+        height: 50px;
+
+        font-size: 25px;
+    }
+
+    .hsk-info h2 {
+
+        font-size: 21px;
+    }
+
+    .file-row {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .file-button {
+
+        width: 100%;
+    }
 
 }
+
+
+/* =========================
+   MULTIPLE SETS
+========================= */
+
+.exam-set {
+
+    margin-bottom: 18px;
+
+    padding-bottom: 15px;
+
+    border-bottom:
+        1px dashed #e2e8f0;
+}
+
+.exam-set:last-child {
+
+    border-bottom: none;
+
+    margin-bottom: 0;
+
+    padding-bottom: 0;
+}
+
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- =========================
      NAVBAR
@@ -462,35 +930,43 @@ footer {
 
 <nav class="navbar">
 
-  <div class="navbar-inner">
+    <div class="navbar-inner">
 
-    <a href="index.html" class="logo">
-      ก็แค่จีน 🇨🇳
-    </a>
+        <a
+            href="../index.html"
+            class="logo"
+        >
+            ก็แค่จีน 🇨🇳
+        </a>
 
-    <div class="nav-links">
 
-      <a href="index.html">
-        หน้าแรก
-      </a>
+        <div class="nav-links">
 
-      <a href="hsk.html" class="active">
-        📚 ไฟล์ข้อสอบ HSK
-      </a>
+            <a href="../index.html">
+                หน้าแรก
+            </a>
 
-      <a href="dictionary.html">
-        📖 พจนานุกรม
-      </a>
+            <a
+                href="hsk.html"
+                class="active"
+            >
+                📚 ไฟล์ข้อสอบ HSK
+            </a>
 
-      <a href="favorites.html">
-        ❤️ คำที่ชอบ
-      </a>
+            <a href="../dictionary.html">
+                📖 พจนานุกรม
+            </a>
+
+            <a href="../favorites.html">
+                ❤️ คำที่ชอบ
+            </a>
+
+        </div>
 
     </div>
 
-  </div>
-
 </nav>
+
 
 
 <!-- =========================
@@ -499,681 +975,280 @@ footer {
 
 <main class="container">
 
-  <!-- HERO -->
 
-  <section class="hero">
+    <!-- HERO -->
 
-    <div class="hero-icon">
-      📚🇨🇳
-    </div>
+    <section class="hero">
 
-    <h1>
-      ไฟล์ข้อสอบ HSK
-    </h1>
-
-    <p>
-      รวมไฟล์ข้อสอบ HSK สำหรับฝึกทำข้อสอบ
-      ตั้งแต่ระดับ HSK1–HSK6 และ HSK7-9
-      พร้อมไฟล์เฉลยและ Listening
-    </p>
-
-  </section>
-
-
-  <!-- =========================
-       FILTER
-  ========================= -->
-
-  <section class="filter-box">
-
-    <div class="filter-title">
-      เลือกระดับ HSK
-    </div>
-
-    <div class="filters">
-
-      <button
-        class="filter-btn active"
-        data-filter="ALL">
-        ALL
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="HSK1">
-        HSK1
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="HSK2">
-        HSK2
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="HSK3">
-        HSK3
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="HSK4">
-        HSK4
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="HSK5">
-        HSK5
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="HSK6">
-        HSK6
-      </button>
-
-      <button
-        class="filter-btn"
-        data-filter="HSK7-9">
-        HSK7-9
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       RESULT INFO
-  ========================= -->
-
-  <div class="result-info" id="resultInfo">
-    📚 แสดงทั้งหมด 7 ระดับ
-    <br>
-    📥 เลือกไฟล์ที่ต้องการ
-  </div>
-
-
-  <!-- =========================
-       HSK CARDS
-  ========================= -->
-
-  <section class="hsk-grid" id="hskGrid">
-
-
-    <!-- =====================
-         HSK1
-    ====================== -->
-
-    <div class="hsk-card" data-level="HSK1">
-
-      <div class="hsk-header">
-
-        <div class="hsk-icon">
-          🌱
+        <div class="hero-icon">
+            📚🇨🇳
         </div>
 
-        <div class="hsk-info">
+        <h1>
+            ไฟล์ข้อสอบ HSK
+        </h1>
 
-          <h2>
-            HSK1
-          </h2>
+        <p>
+            รวมไฟล์ข้อสอบ HSK สำหรับฝึกทำข้อสอบ
+            ทั้งฉบับเก่าและ HSK 3.0
+            พร้อมไฟล์ข้อสอบ เฉลย และ Listening
+        </p>
 
-          <p>
-            ระดับเริ่มต้น
-          </p>
+    </section>
+
+
+
+    <!-- =========================
+         VERSION FILTER
+    ========================= -->
+
+    <section class="filter-box">
+
+        <div class="filter-title">
+            📚 เลือกฉบับข้อสอบ
+        </div>
+
+        <div class="filters">
+
+            <button
+                class="filter-btn active"
+                data-version="ALL"
+            >
+                ทั้งหมด
+            </button>
+
+            <button
+                class="filter-btn"
+                data-version="OLD"
+            >
+                📘 HSK ฉบับเก่า
+            </button>
+
+            <button
+                class="filter-btn"
+                data-version="3.0"
+            >
+                📗 HSK 3.0
+            </button>
 
         </div>
 
-      </div>
+    </section>
 
 
-      <div class="file-list">
 
-        <div class="file-row">
+    <!-- =========================
+         DESCRIPTION
+    ========================= -->
 
-          <div>
-            <strong>📝 ข้อสอบ HSK1</strong>
-            <span>ไฟล์ข้อสอบ</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-
-        <div class="file-row">
-
-          <div>
-            <strong>✅ เฉลย HSK1</strong>
-            <span>ไฟล์เฉลยข้อสอบ</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-
-        <div class="file-row">
-
-          <div>
-            <strong>🎧 Listening HSK1</strong>
-            <span>ไฟล์สำหรับฝึกฟัง</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-      </div>
-
+    <div
+        class="version-description"
+        id="versionDescription"
+    >
+        📚 <strong>ทั้งหมด</strong>
+        —
+        รวมข้อสอบ HSK ฉบับเก่าและ HSK 3.0
     </div>
 
 
-    <!-- =====================
-         HSK2
-    ====================== -->
 
-    <div class="hsk-card" data-level="HSK2">
+    <!-- =========================
+         LEVEL FILTER
+    ========================= -->
 
-      <div class="hsk-header">
+    <section class="level-box">
 
-        <div class="hsk-icon">
-          🌿
+        <div class="level-title">
+            🎯 เลือกระดับ HSK
         </div>
 
-        <div class="hsk-info">
+        <div
+            class="level-filters"
+            id="levelFilters"
+        >
 
-          <h2>
-            HSK2
-          </h2>
+            <button
+                class="level-btn active"
+                data-level="ALL"
+            >
+                ALL
+            </button>
 
-          <p>
-            ระดับพื้นฐาน
-          </p>
+            <button
+                class="level-btn"
+                data-level="HSK1"
+            >
+                HSK1
+            </button>
+
+            <button
+                class="level-btn"
+                data-level="HSK2"
+            >
+                HSK2
+            </button>
+
+            <button
+                class="level-btn"
+                data-level="HSK3"
+            >
+                HSK3
+            </button>
+
+            <button
+                class="level-btn"
+                data-level="HSK4"
+            >
+                HSK4
+            </button>
+
+            <button
+                class="level-btn"
+                data-level="HSK5"
+            >
+                HSK5
+            </button>
+
+            <button
+                class="level-btn"
+                data-level="HSK6"
+            >
+                HSK6
+            </button>
+
+            <button
+                class="level-btn"
+                data-level="HSK7-9"
+            >
+                HSK7–9
+            </button>
 
         </div>
 
-      </div>
+    </section>
 
 
-      <div class="file-list">
 
-        <div class="file-row">
+    <!-- =========================
+         RESULT
+========================= -->
 
-          <div>
-            <strong>📝 ข้อสอบ HSK2</strong>
-            <span>ไฟล์ข้อสอบ</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
+    <div
+        class="result-info"
+        id="resultInfo"
+    >
+        ⏳ กำลังโหลดข้อมูลข้อสอบ...
+    </div>
 
 
-        <div class="file-row">
 
-          <div>
-            <strong>✅ เฉลย HSK2</strong>
-            <span>ไฟล์เฉลยข้อสอบ</span>
-          </div>
+    <!-- =========================
+         ERROR
+========================= -->
 
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
+    <div
+        class="error-box"
+        id="errorBox"
+    >
 
-        </div>
+        ❌ <strong>โหลดข้อมูลข้อสอบไม่สำเร็จ</strong>
 
+        <br>
 
-        <div class="file-row">
+        กรุณาตรวจสอบว่าไฟล์
 
-          <div>
-            <strong>🎧 Listening HSK2</strong>
-            <span>ไฟล์สำหรับฝึกฟัง</span>
-          </div>
+        <b>exam-data.js</b>
 
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
+        อยู่โฟลเดอร์เดียวกับ
 
-        </div>
+        <b>hsk.html</b>
 
-      </div>
+        <br><br>
+
+        หากเพิ่งเพิ่มข้อมูล
+        ให้ลองรีเฟรชหน้าเว็บอีกครั้ง
 
     </div>
 
 
-    <!-- =====================
-         HSK3
-    ====================== -->
 
-    <div class="hsk-card" data-level="HSK3">
+    <!-- =========================
+         LOADING
+========================= -->
 
-      <div class="hsk-header">
+    <div
+        class="loading"
+        id="loadingBox"
+    >
 
-        <div class="hsk-icon">
-          🌳
-        </div>
-
-        <div class="hsk-info">
-
-          <h2>
-            HSK3
-          </h2>
-
-          <p>
-            ระดับกลางต้น
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="file-list">
-
-        <div class="file-row">
-
-          <div>
-            <strong>📝 ข้อสอบ HSK3</strong>
-            <span>ไฟล์ข้อสอบ</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-
-        <div class="file-row">
-
-          <div>
-            <strong>✅ เฉลย HSK3</strong>
-            <span>ไฟล์เฉลยข้อสอบ</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-
-        <div class="file-row">
-
-          <div>
-            <strong>🎧 Listening HSK3</strong>
-            <span>ไฟล์สำหรับฝึกฟัง</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-      </div>
+        📚 กำลังโหลดข้อมูลข้อสอบ...
 
     </div>
 
 
-    <!-- =====================
-         HSK4
-    ====================== -->
 
-    <div class="hsk-card" data-level="HSK4">
+    <!-- =========================
+         HSK GRID
+========================= -->
 
-      <div class="hsk-header">
-
-        <div class="hsk-icon">
-          🌸
-        </div>
-
-        <div class="hsk-info">
-
-          <h2>
-            HSK4
-          </h2>
-
-          <p>
-            ระดับกลาง
-          </p>
-
-        </div>
-
-      </div>
+    <section
+        class="hsk-grid"
+        id="hskGrid"
+    >
+    </section>
 
 
-      <div class="file-list">
 
-        <div class="file-row">
+    <!-- =========================
+         EMPTY
+========================= -->
 
-          <div>
-            <strong>📝 ข้อสอบ HSK4</strong>
-            <span>ไฟล์ข้อสอบ</span>
-          </div>
+    <div
+        class="empty"
+        id="emptyMessage"
+    >
 
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-
-        <div class="file-row">
-
-          <div>
-            <strong>✅ เฉลย HSK4</strong>
-            <span>ไฟล์เฉลยข้อสอบ</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-
-        <div class="file-row">
-
-          <div>
-            <strong>🎧 Listening HSK4</strong>
-            <span>ไฟล์สำหรับฝึกฟัง</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-      </div>
+        🔍 ไม่พบข้อสอบตามตัวกรองที่เลือก
 
     </div>
 
 
-    <!-- =====================
-         HSK5
-    ====================== -->
 
-    <div class="hsk-card" data-level="HSK5">
+    <!-- =========================
+         NOTE
+========================= -->
 
-      <div class="hsk-header">
+    <div class="note">
 
-        <div class="hsk-icon">
-          🌺
-        </div>
+        <strong>💡 หมายเหตุ</strong>
 
-        <div class="hsk-info">
+        <br>
 
-          <h2>
-            HSK5
-          </h2>
+        ระบบแยกข้อสอบออกเป็น
+        <strong>HSK ฉบับเก่า</strong>
+        และ
+        <strong>HSK 3.0</strong>
+        เพื่อป้องกันการสับสนระหว่างรูปแบบข้อสอบ
 
-          <p>
-            ระดับกลางสูง
-          </p>
+        <br>
 
-        </div>
+        HSK 3.0 มีระดับ
+        <strong>HSK1–HSK6</strong>
+        และ
+        <strong>HSK7–9</strong>
+        ซึ่งจัดเป็นระดับเดียวในระบบนี้
 
-      </div>
+        <br>
 
-
-      <div class="file-list">
-
-        <div class="file-row">
-
-          <div>
-            <strong>📝 ข้อสอบ HSK5</strong>
-            <span>ไฟล์ข้อสอบ</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-
-        <div class="file-row">
-
-          <div>
-            <strong>✅ เฉลย HSK5</strong>
-            <span>ไฟล์เฉลยข้อสอบ</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-
-        <div class="file-row">
-
-          <div>
-            <strong>🎧 Listening HSK5</strong>
-            <span>ไฟล์สำหรับฝึกฟัง</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-      </div>
+        สามารถเพิ่มชุดข้อสอบใหม่ได้เรื่อย ๆ
+        โดยไม่ต้องแก้ไขหน้า
+        <strong>hsk.html</strong>
 
     </div>
-
-
-    <!-- =====================
-         HSK6
-    ====================== -->
-
-    <div class="hsk-card" data-level="HSK6">
-
-      <div class="hsk-header">
-
-        <div class="hsk-icon">
-          🌟
-        </div>
-
-        <div class="hsk-info">
-
-          <h2>
-            HSK6
-          </h2>
-
-          <p>
-            ระดับสูง
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="file-list">
-
-        <div class="file-row">
-
-          <div>
-            <strong>📝 ข้อสอบ HSK6</strong>
-            <span>ไฟล์ข้อสอบ</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-
-        <div class="file-row">
-
-          <div>
-            <strong>✅ เฉลย HSK6</strong>
-            <span>ไฟล์เฉลยข้อสอบ</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-
-        <div class="file-row">
-
-          <div>
-            <strong>🎧 Listening HSK6</strong>
-            <span>ไฟล์สำหรับฝึกฟัง</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- =====================
-         HSK7-9
-    ====================== -->
-
-    <div class="hsk-card" data-level="HSK7-9">
-
-      <div class="hsk-header">
-
-        <div class="hsk-icon">
-          👑
-        </div>
-
-        <div class="hsk-info">
-
-          <h2>
-            HSK7-9
-          </h2>
-
-          <p>
-            ระดับสูงมาก · รวม HSK7–9
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="file-list">
-
-        <div class="file-row">
-
-          <div>
-            <strong>📝 ข้อสอบ HSK7-9</strong>
-            <span>ไฟล์ข้อสอบระดับ HSK7–9</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-
-        <div class="file-row">
-
-          <div>
-            <strong>✅ เฉลย HSK7-9</strong>
-            <span>ไฟล์เฉลยข้อสอบ</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-
-        <div class="file-row">
-
-          <div>
-            <strong>🎧 Listening HSK7-9</strong>
-            <span>ไฟล์สำหรับฝึกฟัง</span>
-          </div>
-
-          <a
-            href="#"
-            class="file-button disabled">
-            📥 ยังไม่มีไฟล์
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-  </section>
 
 
 </main>
+
 
 
 <!-- =========================
@@ -1181,96 +1256,1001 @@ footer {
 ========================= -->
 
 <footer>
-  © ก็แค่จีน by ครูพี่เหม่ยถิง 🇨🇳
+
+    © ก็แค่จีน by ครูพี่เหม่ยถิง 🇨🇳
+
 </footer>
+
+
+
+<!-- =====================================================
+     โหลด exam-data.js จากโฟลเดอร์เดียวกัน
+===================================================== -->
+
+<script src="exam-data.js"></script>
 
 
 <script>
 
-/* =========================
-   HSK FILTER
-========================= */
+/* =====================================================
+   ELEMENTS
+===================================================== */
 
-const filterButtons =
-  document.querySelectorAll(".filter-btn");
+const versionButtons =
+    document.querySelectorAll(".filter-btn");
 
-const hskCards =
-  document.querySelectorAll(".hsk-card");
+const levelButtons =
+    document.querySelectorAll(".level-btn");
+
+const hskGrid =
+    document.getElementById("hskGrid");
 
 const resultInfo =
-  document.getElementById("resultInfo");
+    document.getElementById("resultInfo");
+
+const versionDescription =
+    document.getElementById("versionDescription");
+
+const emptyMessage =
+    document.getElementById("emptyMessage");
+
+const loadingBox =
+    document.getElementById("loadingBox");
+
+const errorBox =
+    document.getElementById("errorBox");
 
 
-filterButtons.forEach(button => {
+/* =====================================================
+   DATA
+===================================================== */
 
-  button.addEventListener("click", () => {
-
-    const filter =
-      button.dataset.filter;
-
-
-    /* เปลี่ยนปุ่ม active */
-
-    filterButtons.forEach(btn => {
-      btn.classList.remove("active");
-    });
-
-    button.classList.add("active");
+let examData = [];
 
 
-    /* กรองการ์ด */
+/* =====================================================
+   FILTER
+===================================================== */
 
-    let visibleCount = 0;
+let currentVersion = "ALL";
 
-    hskCards.forEach(card => {
-
-      const level =
-        card.dataset.level;
-
-      if (
-        filter === "ALL" ||
-        level === filter
-      ) {
-
-        card.classList.remove("hidden");
-
-        visibleCount++;
-
-      } else {
-
-        card.classList.add("hidden");
-
-      }
-
-    });
+let currentLevel = "ALL";
 
 
-    /* เปลี่ยนข้อความด้านบน */
+/* =====================================================
+   ตรวจข้อมูลจาก exam-data.js
+===================================================== */
 
-    if (filter === "ALL") {
+function loadExamData() {
 
-      resultInfo.innerHTML =
-        "📚 แสดงทั้งหมด 7 ระดับ" +
-        "<br>" +
-        "📥 เลือกไฟล์ที่ต้องการ";
+    if (
+        typeof window.examData !== "undefined" &&
+        Array.isArray(window.examData)
+    ) {
 
-    } else {
-
-      resultInfo.innerHTML =
-        "📚 แสดงระดับ " +
-        "<strong>" +
-        filter +
-        "</strong>" +
-        "<br>" +
-        "📥 เลือกไฟล์ที่ต้องการ";
+        examData =
+            window.examData;
 
     }
 
-  });
+    else {
+
+        if (
+            typeof window.exams !== "undefined" &&
+            Array.isArray(window.exams)
+        ) {
+
+            examData =
+                window.exams;
+
+        }
+
+        else {
+
+            throw new Error(
+                "ไม่พบตัวแปร examData ใน exam-data.js"
+            );
+
+        }
+
+    }
+
+
+    if (!Array.isArray(examData)) {
+
+        throw new Error(
+            "examData ไม่ใช่ Array"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+function getLevelIcon(level) {
+
+    const icons = {
+
+        "HSK1": "🌱",
+
+        "HSK2": "🌿",
+
+        "HSK3": "🌳",
+
+        "HSK4": "🌸",
+
+        "HSK5": "🌺",
+
+        "HSK6": "🌟",
+
+        "HSK7-9": "👑"
+
+    };
+
+    return icons[level] || "📚";
+
+}
+
+
+/* =====================================================
+   LEVEL DESCRIPTION
+===================================================== */
+
+function getLevelDescription(level) {
+
+    const descriptions = {
+
+        "HSK1":
+            "ระดับเริ่มต้น",
+
+        "HSK2":
+            "ระดับพื้นฐาน",
+
+        "HSK3":
+            "ระดับกลางต้น",
+
+        "HSK4":
+            "ระดับกลาง",
+
+        "HSK5":
+            "ระดับกลางสูง",
+
+        "HSK6":
+            "ระดับสูง",
+
+        "HSK7-9":
+            "ระดับสูงมาก · รวม HSK7–9"
+
+    };
+
+    return descriptions[level] || "";
+
+}
+
+
+/* =====================================================
+   VERSION NAME
+===================================================== */
+
+function getVersionName(version) {
+
+    if (version === "OLD") {
+
+        return "HSK ฉบับเก่า";
+
+    }
+
+    if (version === "3.0") {
+
+        return "HSK 3.0";
+
+    }
+
+    return version || "";
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHtml(value) {
+
+    return String(value ?? "")
+
+        .replace(/&/g, "&amp;")
+
+        .replace(/</g, "&lt;")
+
+        .replace(/>/g, "&gt;")
+
+        .replace(/"/g, "&quot;")
+
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =====================================================
+   VALID URL
+===================================================== */
+
+function hasLink(url) {
+
+    return (
+        typeof url === "string" &&
+        url.trim() !== "" &&
+        url.trim() !== "#"
+    );
+
+}
+
+
+/* =====================================================
+   FILE BUTTON
+===================================================== */
+
+function createFileRow(
+    icon,
+    title,
+    description,
+    url
+) {
+
+    const active =
+        hasLink(url);
+
+
+    return `
+
+        <div class="file-row">
+
+            <div>
+
+                <strong>
+                    ${icon}
+                    ${escapeHtml(title)}
+                </strong>
+
+                <span>
+                    ${escapeHtml(description)}
+                </span>
+
+            </div>
+
+
+            ${
+                active
+
+                ?
+
+                `
+                <a
+                    href="${escapeHtml(url)}"
+                    class="file-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    📥 ดาวน์โหลด
+                </a>
+                `
+
+                :
+
+                `
+                <a
+                    href="#"
+                    class="file-button disabled"
+                >
+                    📥 ยังไม่มีไฟล์
+                </a>
+                `
+            }
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   GROUP DATA
+===================================================== */
+
+function groupExamData() {
+
+    const groups = {};
+
+
+    examData.forEach(item => {
+
+        if (!item) {
+            return;
+        }
+
+
+        const version =
+            item.version || "OLD";
+
+        const level =
+            item.level || "HSK1";
+
+        const key =
+            version + "||" + level;
+
+
+        if (!groups[key]) {
+
+            groups[key] = {
+
+                version:
+                    version,
+
+                level:
+                    level,
+
+                sets: []
+
+            };
+
+        }
+
+
+        groups[key].sets.push(item);
+
+    });
+
+
+    return Object.values(groups);
+
+}
+
+
+/* =====================================================
+   SORT
+===================================================== */
+
+function levelNumber(level) {
+
+    if (level === "HSK7-9") {
+
+        return 7;
+
+    }
+
+
+    const match =
+        String(level)
+            .match(/\d+/);
+
+
+    return match
+        ? Number(match[0])
+        : 99;
+
+}
+
+
+function sortGroups(groups) {
+
+    groups.sort((a, b) => {
+
+        if (a.version !== b.version) {
+
+            if (a.version === "OLD") {
+
+                return -1;
+
+            }
+
+            if (b.version === "OLD") {
+
+                return 1;
+
+            }
+
+        }
+
+
+        return (
+            levelNumber(a.level)
+            -
+            levelNumber(b.level)
+        );
+
+    });
+
+
+    groups.forEach(group => {
+
+        group.sets.sort((a, b) => {
+
+            return String(a.set || "")
+                .localeCompare(
+                    String(b.set || ""),
+                    "th",
+                    {
+                        numeric: true
+                    }
+                );
+
+        });
+
+    });
+
+
+    return groups;
+
+}
+
+
+/* =====================================================
+   CREATE CARD
+===================================================== */
+
+function createCard(group) {
+
+    const version =
+        group.version;
+
+    const level =
+        group.level;
+
+
+    let setsHtml = "";
+
+
+    group.sets.forEach(item => {
+
+        setsHtml += `
+
+            <div class="exam-set">
+
+                <div class="set-title">
+
+                    📂
+                    ${escapeHtml(
+                        item.set || "ชุดที่ 1"
+                    )}
+
+                </div>
+
+
+                <div class="file-list">
+
+                    ${createFileRow(
+
+                        "📝",
+
+                        "ข้อสอบ " + level,
+
+                        version === "3.0"
+                            ? "HSK 3.0 · " +
+                              (item.set || "")
+                            : "ไฟล์ข้อสอบ",
+
+                        item.exam
+
+                    )}
+
+
+                    ${createFileRow(
+
+                        "✅",
+
+                        "เฉลย " + level,
+
+                        "ไฟล์เฉลยข้อสอบ",
+
+                        item.answer
+
+                    )}
+
+
+                    ${createFileRow(
+
+                        "🎧",
+
+                        "Listening " + level,
+
+                        "ไฟล์สำหรับฝึกฟัง",
+
+                        item.listening
+
+                    )}
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    return `
+
+        <div
+            class="hsk-card"
+            data-version="${escapeHtml(version)}"
+            data-level="${escapeHtml(level)}"
+        >
+
+            <div class="hsk-header">
+
+                <div class="hsk-icon">
+
+                    ${getLevelIcon(level)}
+
+                </div>
+
+
+                <div class="hsk-info">
+
+                    <h2>
+                        ${escapeHtml(level)}
+                    </h2>
+
+                    <p>
+                        ${escapeHtml(
+                            getLevelDescription(level)
+                        )}
+                    </p>
+
+                    <span class="version-badge">
+
+                        ${escapeHtml(
+                            getVersionName(version)
+                        )}
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            ${setsHtml}
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   RENDER
+===================================================== */
+
+function renderCards() {
+
+    hskGrid.innerHTML = "";
+
+
+    let groups =
+        groupExamData();
+
+
+    groups =
+        sortGroups(groups);
+
+
+    let visibleGroups = 0;
+
+
+    groups.forEach(group => {
+
+        const versionMatch =
+            currentVersion === "ALL" ||
+            group.version === currentVersion;
+
+
+        const levelMatch =
+            currentLevel === "ALL" ||
+            group.level === currentLevel;
+
+
+        if (
+            versionMatch &&
+            levelMatch
+        ) {
+
+            hskGrid.insertAdjacentHTML(
+                "beforeend",
+                createCard(group)
+            );
+
+            visibleGroups++;
+
+        }
+
+    });
+
+
+    if (visibleGroups === 0) {
+
+        emptyMessage.classList.add("show");
+
+    }
+
+    else {
+
+        emptyMessage.classList.remove("show");
+
+    }
+
+
+    updateResultInfo(
+        visibleGroups
+    );
+
+}
+
+
+/* =====================================================
+   RESULT INFO
+===================================================== */
+
+function updateResultInfo(
+    visibleGroups
+) {
+
+    let versionText =
+        "ทุกฉบับ";
+
+
+    if (
+        currentVersion === "OLD"
+    ) {
+
+        versionText =
+            "HSK ฉบับเก่า";
+
+    }
+
+
+    if (
+        currentVersion === "3.0"
+    ) {
+
+        versionText =
+            "HSK 3.0";
+
+    }
+
+
+    let levelText =
+        "ทุกระดับ";
+
+
+    if (
+        currentLevel !== "ALL"
+    ) {
+
+        levelText =
+            currentLevel;
+
+    }
+
+
+    const totalSets =
+        examData.filter(item => {
+
+            if (!item) {
+                return false;
+            }
+
+
+            const versionMatch =
+                currentVersion === "ALL" ||
+                item.version === currentVersion;
+
+
+            const levelMatch =
+                currentLevel === "ALL" ||
+                item.level === currentLevel;
+
+
+            return (
+                versionMatch &&
+                levelMatch
+            );
+
+        }).length;
+
+
+    resultInfo.innerHTML =
+
+        "📚 แสดง <strong>" +
+        visibleGroups +
+        "</strong> ระดับ" +
+
+        "<br>" +
+
+        "📂 มีข้อสอบทั้งหมด <strong>" +
+        totalSets +
+        "</strong> ชุด" +
+
+        "<br>" +
+
+        "📖 " +
+        versionText +
+        " · " +
+        levelText +
+
+        "<br>" +
+
+        "📥 เลือกไฟล์ที่ต้องการ";
+
+}
+
+
+/* =====================================================
+   VERSION DESCRIPTION
+===================================================== */
+
+function updateVersionDescription() {
+
+    if (
+        currentVersion === "OLD"
+    ) {
+
+        versionDescription.innerHTML =
+
+            "📘 <strong>HSK ฉบับเก่า</strong> — " +
+
+            "รวมข้อสอบ HSK1–HSK6 ตามระบบเดิม";
+
+        return;
+
+    }
+
+
+    if (
+        currentVersion === "3.0"
+    ) {
+
+        versionDescription.innerHTML =
+
+            "📗 <strong>HSK 3.0</strong> — " +
+
+            "รวม HSK1–HSK6 และ HSK7–9";
+
+        return;
+
+    }
+
+
+    versionDescription.innerHTML =
+
+        "📚 <strong>ทั้งหมด</strong> — " +
+
+        "รวมข้อสอบ HSK ฉบับเก่าและ HSK 3.0";
+
+}
+
+
+/* =====================================================
+   LEVEL BUTTON
+===================================================== */
+
+function updateLevelButtons() {
+
+    levelButtons.forEach(button => {
+
+        const level =
+            button.dataset.level;
+
+
+        if (
+            level === "HSK7-9" &&
+            currentVersion === "OLD"
+        ) {
+
+            button.style.display =
+                "none";
+
+        }
+
+        else {
+
+            button.style.display =
+                "inline-flex";
+
+        }
+
+    });
+
+
+    if (
+        currentVersion === "OLD" &&
+        currentLevel === "HSK7-9"
+    ) {
+
+        currentLevel = "ALL";
+
+
+        levelButtons.forEach(button => {
+
+            button.classList.remove(
+                "active"
+            );
+
+
+            if (
+                button.dataset.level === "ALL"
+            ) {
+
+                button.classList.add(
+                    "active"
+                );
+
+            }
+
+        });
+
+    }
+
+}
+
+
+/* =====================================================
+   VERSION CLICK
+===================================================== */
+
+versionButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            currentVersion =
+                button.dataset.version;
+
+
+            versionButtons.forEach(btn => {
+
+                btn.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+            button.classList.add(
+                "active"
+            );
+
+
+            currentLevel =
+                "ALL";
+
+
+            levelButtons.forEach(btn => {
+
+                btn.classList.remove(
+                    "active"
+                );
+
+
+                if (
+                    btn.dataset.level ===
+                    "ALL"
+                ) {
+
+                    btn.classList.add(
+                        "active"
+                    );
+
+                }
+
+            });
+
+
+            updateLevelButtons();
+
+            updateVersionDescription();
+
+            renderCards();
+
+        }
+    );
 
 });
+
+
+/* =====================================================
+   LEVEL CLICK
+===================================================== */
+
+levelButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            const level =
+                button.dataset.level;
+
+
+            if (
+                currentVersion === "OLD" &&
+                level === "HSK7-9"
+            ) {
+
+                return;
+
+            }
+
+
+            currentLevel =
+                level;
+
+
+            levelButtons.forEach(btn => {
+
+                btn.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+            button.classList.add(
+                "active"
+            );
+
+
+            renderCards();
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   START
+===================================================== */
+
+try {
+
+    loadExamData();
+
+    loadingBox.style.display =
+        "none";
+
+    updateLevelButtons();
+
+    renderCards();
+
+}
+
+catch (error) {
+
+    console.error(error);
+
+    loadingBox.style.display =
+        "none";
+
+    errorBox.classList.add(
+        "show"
+    );
+
+    resultInfo.innerHTML =
+        "⚠️ ไม่สามารถโหลดข้อมูลข้อสอบได้";
+
+}
 
 </script>
 
 </body>
+
 </html>
