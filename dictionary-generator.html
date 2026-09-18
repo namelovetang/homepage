@@ -2,888 +2,819 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dictionary Generator | ก็แค่จีน</title>
-
-<style>
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, "Noto Sans Thai", sans-serif;
-    background: linear-gradient(135deg, #eef7ff, #fff8e8);
-    color: #333;
-}
-
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar {
-    background: white;
-    border-bottom: 1px solid #e5e5e5;
-    padding: 16px 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.brand {
-    font-size: 22px;
-    font-weight: bold;
-    color: #333;
-}
-
-.brand span {
-    color: #4b8ef7;
-}
-
-/* =========================
-   CONTAINER
-========================= */
-
-.container {
-    width: min(1100px, 94%);
-    margin: 30px auto 50px;
-}
-
-.hero {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.hero h1 {
-    margin: 0 0 8px;
-    font-size: 32px;
-}
-
-.hero p {
-    margin: 0;
-    color: #777;
-}
-
-/* =========================
-   CARD
-========================= */
-
-.card {
-    background: rgba(255,255,255,.96);
-    border-radius: 20px;
-    padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.07);
-}
-
-.card h2 {
-    margin-top: 0;
-    font-size: 21px;
-}
-
-.step {
-    display: inline-block;
-    background: #4b8ef7;
-    color: white;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    margin-right: 8px;
-    font-size: 14px;
-}
-
-/* =========================
-   UPLOAD
-========================= */
-
-.upload-box {
-    border: 2px dashed #9fc4ff;
-    background: #f7fbff;
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-}
-
-input[type="file"] {
-    display: none;
-}
-
-.file-label {
-    display: inline-block;
-    background: #4b8ef7;
-    color: white;
-    padding: 12px 22px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: .2s;
-}
-
-.file-label:hover {
-    background: #367ce7;
-}
-
-.file-name {
-    margin-top: 12px;
-    color: #666;
-    font-size: 14px;
-}
-
-/* =========================
-   STATISTICS
-========================= */
-
-.stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.stat {
-    background: #f7faff;
-    border-radius: 15px;
-    padding: 18px;
-    border: 1px solid #e4edff;
-}
-
-.stat-title {
-    color: #777;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-.stat-value {
-    font-size: 28px;
-    font-weight: bold;
-    color: #347ce8;
-}
-
-/* =========================
-   HSK
-========================= */
-
-.hsk-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.hsk-btn {
-    border: 2px solid #d9e7ff;
-    background: white;
-    border-radius: 12px;
-    padding: 13px 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: .2s;
-}
-
-.hsk-btn:hover {
-    border-color: #4b8ef7;
-}
-
-.hsk-btn.active {
-    background: #4b8ef7;
-    color: white;
-    border-color: #4b8ef7;
-}
-
-.hsk-btn small {
-    font-weight: normal;
-}
-
-/* =========================
-   TEXTAREA
-========================= */
-
-textarea {
-    width: 100%;
-    min-height: 250px;
-    resize: vertical;
-    border: 2px solid #e2e8f0;
-    border-radius: 15px;
-    padding: 15px;
-    font-family: Arial, "Noto Sans Thai", sans-serif;
-    font-size: 15px;
-    line-height: 1.7;
-    outline: none;
-}
-
-textarea:focus {
-    border-color: #4b8ef7;
-}
-
-/* =========================
-   FORMAT HELP
-========================= */
-
-.format-help {
-    background: #fff9e9;
-    border: 1px solid #f3df9e;
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 15px;
-    line-height: 1.8;
-    font-size: 14px;
-}
-
-.format-example {
-    background: white;
-    padding: 10px;
-    border-radius: 8px;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-    color: #444;
-    margin-top: 5px;
-}
-
-/* =========================
-   BUTTON
-========================= */
-
-.button-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.main-btn {
-    border: none;
-    border-radius: 11px;
-    padding: 13px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 15px;
-    transition: .2s;
-}
-
-.main-btn:hover {
-    transform: translateY(-1px);
-}
-
-.btn-add {
-    background: #4b8ef7;
-    color: white;
-}
-
-.btn-add:hover {
-    background: #347ce8;
-}
-
-.btn-build {
-    background: #333;
-    color: white;
-}
-
-.btn-build:hover {
-    background: #111;
-}
-
-.btn-download {
-    background: #35a66f;
-    color: white;
-}
-
-.btn-download:hover {
-    background: #278957;
-}
-
-.btn-copy {
-    background: #7c5cff;
-    color: white;
-}
-
-.btn-copy:hover {
-    background: #6547e8;
-}
-
-.btn-clear {
-    background: #eee;
-    color: #555;
-}
-
-.btn-clear:hover {
-    background: #ddd;
-}
-
-/* =========================
-   MESSAGE
-========================= */
-
-.message {
-    margin-top: 15px;
-    padding: 12px 15px;
-    border-radius: 10px;
-    display: none;
-    line-height: 1.6;
-    white-space: pre-line;
-}
-
-.message.success {
-    display: block;
-    background: #eaf8f0;
-    color: #197245;
-    border: 1px solid #bce7cf;
-}
-
-.message.error {
-    display: block;
-    background: #fff0f0;
-    color: #b42318;
-    border: 1px solid #f3c1c1;
-}
-
-.message.warning {
-    display: block;
-    background: #fff8e5;
-    color: #8a6500;
-    border: 1px solid #eedb9b;
-}
-
-/* =========================
-   PREVIEW
-========================= */
-
-.preview-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.badge {
-    display: inline-block;
-    background: #edf4ff;
-    color: #347ce8;
-    border-radius: 20px;
-    padding: 7px 13px;
-    font-size: 14px;
-}
-
-.table-wrap {
-    overflow-x: auto;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 950px;
-    background: white;
-}
-
-th {
-    background: #f4f7fb;
-    text-align: left;
-    padding: 12px;
-    font-size: 14px;
-    white-space: nowrap;
-}
-
-td {
-    padding: 11px 12px;
-    border-top: 1px solid #eee;
-    font-size: 14px;
-    vertical-align: top;
-}
-
-tr:hover td {
-    background: #fafcff;
-}
-
-.empty {
-    text-align: center;
-    color: #999;
-    padding: 30px;
-}
-
-/* =========================
-   DOWNLOAD
-========================= */
-
-.download-area {
-    display: none;
-    background: #eefaf4;
-    border: 1px solid #bfe8d0;
-    border-radius: 15px;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-.download-area.show {
-    display: block;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-    text-align: center;
-    color: #888;
-    padding: 25px;
-    font-size: 14px;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
-    .stats {
-        grid-template-columns: 1fr;
-    }
-
-    .hsk-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .card {
-        padding: 18px;
-    }
-
-    .hero h1 {
-        font-size: 26px;
-    }
-
-    .navbar {
-        padding: 14px;
-    }
-
-    .brand {
-        font-size: 18px;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dictionary Generator | ก็แค่จีน</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, "Noto Sans Thai", sans-serif;
+            background: linear-gradient(135deg, #eaf6ff, #fff8e8);
+            color: #263238;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #dceaf3;
+            padding: 16px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-inner {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .brand {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1976d2;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: #1976d2;
+            background: #eef7ff;
+            padding: 9px 14px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 16px 50px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #1565c0;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #607d8b;
+            margin-bottom: 28px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 18px;
+            padding: 22px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #1565c0;
+            font-size: 20px;
+        }
+
+        .step {
+            display: inline-block;
+            background: #1976d2;
+            color: white;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .upload-area {
+            border: 2px dashed #90caf9;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            background: #f8fcff;
+        }
+
+        input[type="file"] {
+            margin-top: 15px;
+            max-width: 100%;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            background: #f4faff;
+            border: 1px solid #d8edf9;
+            border-radius: 14px;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 28px;
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #607d8b;
+            font-size: 14px;
+        }
+
+        .status {
+            margin-top: 15px;
+            padding: 12px 15px;
+            border-radius: 10px;
+            display: none;
+            white-space: pre-line;
+            line-height: 1.6;
+        }
+
+        .status.success {
+            display: block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
+        }
+
+        .status.error {
+            display: block;
+            background: #ffebee;
+            color: #c62828;
+            border: 1px solid #ef9a9a;
+        }
+
+        .status.info {
+            display: block;
+            background: #e3f2fd;
+            color: #1565c0;
+            border: 1px solid #90caf9;
+        }
+
+        .hsk-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .hsk-btn {
+            border: 2px solid #90caf9;
+            background: white;
+            color: #1565c0;
+            padding: 10px 18px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .hsk-btn:hover {
+            background: #e3f2fd;
+        }
+
+        .hsk-btn.active {
+            background: #1976d2;
+            color: white;
+            border-color: #1976d2;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 230px;
+            resize: vertical;
+            border: 1px solid #b0bec5;
+            border-radius: 12px;
+            padding: 15px;
+            font-family: Consolas, monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            outline: none;
+        }
+
+        textarea:focus {
+            border-color: #1976d2;
+            box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+        }
+
+        .format-box {
+            background: #fffaf0;
+            border: 1px solid #ffe0a3;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .format-box code {
+            font-family: Consolas, monospace;
+            color: #6d4c41;
+            white-space: nowrap;
+        }
+
+        .format-label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #795548;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 11px;
+            padding: 11px 17px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: #1976d2;
+            color: white;
+        }
+
+        .btn-success {
+            background: #43a047;
+            color: white;
+        }
+
+        .btn-warning {
+            background: #fb8c00;
+            color: white;
+        }
+
+        .btn-danger {
+            background: #e53935;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #eceff1;
+            color: #37474f;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            max-height: 500px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1000px;
+            background: white;
+        }
+
+        th,
+        td {
+            border-bottom: 1px solid #eeeeee;
+            padding: 9px 10px;
+            text-align: left;
+            vertical-align: top;
+            font-size: 13px;
+        }
+
+        th {
+            background: #e3f2fd;
+            color: #1565c0;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        tr:hover td {
+            background: #fafcff;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .duplicate {
+            background: #ffebee !important;
+        }
+
+        .new-row {
+            background: #f1f8e9 !important;
+        }
+
+        .empty {
+            text-align: center;
+            color: #90a4ae;
+            padding: 25px;
+        }
+
+        .code-output {
+            width: 100%;
+            min-height: 320px;
+            font-family: Consolas, monospace;
+            font-size: 13px;
+            background: #263238;
+            color: #eceff1;
+            border: none;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border: 1px solid #ffcc80;
+            color: #e65100;
+            padding: 13px 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+
+        .success-box {
+            background: #e8f5e9;
+            border: 1px solid #a5d6a7;
+            color: #2e7d32;
+            padding: 13px 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            color: #1565c0;
+            padding: 13px 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .small-text {
+            color: #78909c;
+            font-size: 13px;
+        }
+
+        footer {
+            text-align: center;
+            color: #78909c;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 16px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            .navbar-inner {
+                flex-direction: column;
+            }
+
+            .brand {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- =========================
-     NAVBAR
-========================= -->
-
 <nav class="navbar">
+    <div class="navbar-inner">
 
-    <div class="brand">
-        🐼 <span>ก็แค่จีน</span> · Dictionary Generator
+        <div class="brand">
+            🐼 ก็แค่จีน · Dictionary Generator
+        </div>
+
+        <a
+            href="../dictionary.html"
+            class="back-btn"
+        >
+            ← กลับหน้าพจนานุกรม
+        </a>
+
     </div>
-
 </nav>
 
 
-<div class="container">
+<main class="container">
 
-    <!-- =========================
-         HERO
-    ========================= -->
+    <h1>📚 Dictionary Generator</h1>
 
-    <div class="hero">
-
-        <h1>📚 Dictionary Generator</h1>
-
-        <p>
-            เพิ่มคำศัพท์ลงใน dictionary.js ได้ง่าย ๆ
-        </p>
-
-    </div>
+    <p class="subtitle">
+        เพิ่มคำศัพท์ HSK ลงใน
+        <strong>data/dictionary.js</strong>
+        อัตโนมัติ
+    </p>
 
 
-    <!-- =========================
+    <!-- =====================================================
          STEP 1
-    ========================= -->
+    ====================================================== -->
 
-    <div class="card">
+    <section class="card">
 
         <h2>
             <span class="step">1</span>
-            📂 โหลด dictionary.js เดิม
+            โหลด dictionary.js เดิม
         </h2>
 
-        <div class="upload-box">
+        <div class="upload-area">
 
-            <label
-                class="file-label"
-                for="dictionaryFile"
-            >
-                📂 เลือกไฟล์ dictionary.js
-            </label>
+            <div style="font-size:42px;">
+                📂
+            </div>
+
+            <p>
+                เลือกไฟล์
+                <strong>dictionary.js</strong>
+                เดิมของคุณ
+            </p>
 
             <input
                 type="file"
-                id="dictionaryFile"
-                accept=".js"
+                id="fileInput"
+                accept=".js,.txt"
             >
 
             <div
-                class="file-name"
-                id="fileName"
-            >
-                ยังไม่ได้เลือกไฟล์
+                id="fileStatus"
+                class="status"
+            ></div>
+
+        </div>
+
+
+        <div
+            id="statsBox"
+            class="stats hidden"
+        >
+
+            <div class="stat">
+
+                <span
+                    class="stat-number"
+                    id="originalCount"
+                >
+                    0
+                </span>
+
+                <span class="stat-label">
+                    คำเดิม
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span
+                    class="stat-number"
+                    id="maxId"
+                >
+                    0
+                </span>
+
+                <span class="stat-label">
+                    ID สูงสุดเดิม
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span
+                    class="stat-number"
+                    id="newCount"
+                >
+                    0
+                </span>
+
+                <span class="stat-label">
+                    คำใหม่
+                </span>
+
             </div>
 
         </div>
 
-        <div
-            id="loadMessage"
-            class="message"
-        ></div>
-
-    </div>
+    </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          STEP 2
-    ========================= -->
+    ====================================================== -->
 
-    <div class="card">
+    <section class="card">
 
         <h2>
             <span class="step">2</span>
-            📊 ข้อมูลเดิม
+            ข้อมูลคำศัพท์เดิม
         </h2>
 
-        <div class="stats">
-
-            <div class="stat">
-
-                <div class="stat-title">
-                    จำนวนคำทั้งหมด
-                </div>
-
-                <div
-                    class="stat-value"
-                    id="totalWords"
-                >
-                    0
-                </div>
-
-            </div>
-
-
-            <div class="stat">
-
-                <div class="stat-title">
-                    ID ล่าสุด / ID สูงสุด
-                </div>
-
-                <div
-                    class="stat-value"
-                    id="lastId"
-                >
-                    0
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="hsk-grid">
-
-            <button
-                class="hsk-btn"
-                data-stat="HSK1"
-            >
-                HSK1<br>
-                <small id="countHSK1">0</small>
-            </button>
-
-            <button
-                class="hsk-btn"
-                data-stat="HSK2"
-            >
-                HSK2<br>
-                <small id="countHSK2">0</small>
-            </button>
-
-            <button
-                class="hsk-btn"
-                data-stat="HSK3"
-            >
-                HSK3<br>
-                <small id="countHSK3">0</small>
-            </button>
-
-            <button
-                class="hsk-btn"
-                data-stat="HSK4"
-            >
-                HSK4<br>
-                <small id="countHSK4">0</small>
-            </button>
-
-            <button
-                class="hsk-btn"
-                data-stat="HSK5"
-            >
-                HSK5<br>
-                <small id="countHSK5">0</small>
-            </button>
-
-            <button
-                class="hsk-btn"
-                data-stat="HSK6"
-            >
-                HSK6<br>
-                <small id="countHSK6">0</small>
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
-         STEP 3
-    ========================= -->
-
-    <div class="card">
-
-        <h2>
-            <span class="step">3</span>
-            🎯 เลือกระดับ HSK
-        </h2>
-
-        <div class="hsk-grid">
-
-            <button
-                class="hsk-btn level-btn active"
-                data-level="HSK1"
-            >
-                HSK1
-            </button>
-
-            <button
-                class="hsk-btn level-btn"
-                data-level="HSK2"
-            >
-                HSK2
-            </button>
-
-            <button
-                class="hsk-btn level-btn"
-                data-level="HSK3"
-            >
-                HSK3
-            </button>
-
-            <button
-                class="hsk-btn level-btn"
-                data-level="HSK4"
-            >
-                HSK4
-            </button>
-
-            <button
-                class="hsk-btn level-btn"
-                data-level="HSK5"
-            >
-                HSK5
-            </button>
-
-            <button
-                class="hsk-btn level-btn"
-                data-level="HSK6"
-            >
-                HSK6
-            </button>
-
-        </div>
-
-        <p>
-            ระดับที่เลือก:
-            <strong id="selectedLevel">
-                HSK1
-            </strong>
-        </p>
-
-    </div>
-
-
-    <!-- =========================
-         STEP 4
-    ========================= -->
-
-    <div class="card">
-
-        <h2>
-            <span class="step">4</span>
-            📝 วางคำศัพท์ใหม่
-        </h2>
-
-
-        <div class="format-help">
-
-            <strong>
-                รูปแบบข้อมูล:
-            </strong>
-
-            <div class="format-example">
-                汉字 | pinyin | คำแปล | ชนิดคำ | ตัวอย่างประโยค | example pinyin | คำแปลตัวอย่าง
-            </div>
-
-
-            <br>
-
-
-            <strong>
-                ตัวอย่าง:
-            </strong>
-
-            <div class="format-example">
-                做客 | zuòkè | ไปเป็นแขก, เยือน | v. | 到朋友家里做客。 | Dào péngyou jiālǐ zuòkè. | ไปเป็นแขกที่บ้านของเพื่อน
-            </div>
-
-
-            <br>
-
-
-            สามารถวางหลายคำได้
-            โดยให้ <strong>1 คำต่อ 1 บรรทัด</strong>
-
-        </div>
-
-
-        <textarea
-            id="wordInput"
-            placeholder="วางคำศัพท์ที่นี่...
-
-ตัวอย่าง:
-
-做客 | zuòkè | ไปเป็นแขก, เยือน | v. | 到朋友家里做客。 | Dào péngyou jiālǐ zuòkè. | ไปเป็นแขกที่บ้านของเพื่อน
-
-坐 | zuò | นั่ง | v. | 请坐。 | Qǐng zuò. | เชิญนั่ง
-
-昨天 | zuótiān | เมื่อวาน | n. | 昨天我去了学校。 | Zuótiān wǒ qù le xuéxiào. | เมื่อวานฉันไปโรงเรียน"
-        ></textarea>
-
-
-        <div class="button-row">
-
-            <button
-                class="main-btn btn-add"
-                id="addBtn"
-            >
-                ➕ เพิ่มต่ออัตโนมัติ
-            </button>
-
-
-            <button
-                class="main-btn btn-clear"
-                id="clearInputBtn"
-            >
-                🗑️ ล้างข้อความ
-            </button>
-
+        <div
+            id="originalInfo"
+            class="empty"
+        >
+            กรุณาโหลด dictionary.js ก่อน
         </div>
 
 
         <div
-            id="inputMessage"
-            class="message"
-        ></div>
-
-    </div>
-
-
-    <!-- =========================
-         STEP 5
-    ========================= -->
-
-    <div class="card">
-
-        <h2>
-            <span class="step">5</span>
-            👀 ดูตัวอย่างข้อมูลก่อนสร้าง
-        </h2>
-
-
-        <div class="preview-info">
-
-            <div class="badge">
-                ข้อมูลเดิม:
-                <strong id="previewOld">
-                    0
-                </strong>
-            </div>
-
-
-            <div class="badge">
-                เพิ่มใหม่:
-                <strong id="previewNew">
-                    0
-                </strong>
-            </div>
-
-
-            <div class="badge">
-                รวมทั้งหมด:
-                <strong id="previewTotal">
-                    0
-                </strong>
-            </div>
-
-
-            <div class="badge">
-                ID ใหม่:
-                <strong id="previewIdRange">
-                    -
-                </strong>
-            </div>
-
-        </div>
-
-
-        <div class="table-wrap">
+            id="originalTableWrapper"
+            class="table-wrapper hidden"
+        >
 
             <table>
 
                 <thead>
 
                     <tr>
-
                         <th>ID</th>
-                        <th>HSK</th>
-                        <th>汉字</th>
+                        <th>คำศัพท์</th>
                         <th>Pinyin</th>
                         <th>ความหมาย</th>
                         <th>ชนิดคำ</th>
-                        <th>ตัวอย่าง</th>
-                        <th>Example Pinyin</th>
-                        <th>แปลตัวอย่าง</th>
-
+                        <th>HSK</th>
                     </tr>
 
                 </thead>
 
+                <tbody
+                    id="originalTableBody"
+                ></tbody>
 
-                <tbody id="previewBody">
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STEP 3
+    ====================================================== -->
+
+    <section class="card">
+
+        <h2>
+            <span class="step">3</span>
+            เลือกระดับ HSK
+        </h2>
+
+        <p>
+            เลือกระดับ HSK ก่อนวางคำศัพท์
+            <br>
+            <span class="small-text">
+                HSK จะถูกบันทึกเป็น "HSK1" ถึง "HSK6"
+                โดยอัตโนมัติ
+            </span>
+        </p>
+
+
+        <div class="hsk-buttons">
+
+            <button
+                class="hsk-btn"
+                data-hsk="HSK1"
+            >
+                HSK1
+            </button>
+
+            <button
+                class="hsk-btn"
+                data-hsk="HSK2"
+            >
+                HSK2
+            </button>
+
+            <button
+                class="hsk-btn"
+                data-hsk="HSK3"
+            >
+                HSK3
+            </button>
+
+            <button
+                class="hsk-btn"
+                data-hsk="HSK4"
+            >
+                HSK4
+            </button>
+
+            <button
+                class="hsk-btn"
+                data-hsk="HSK5"
+            >
+                HSK5
+            </button>
+
+            <button
+                class="hsk-btn"
+                data-hsk="HSK6"
+            >
+                HSK6
+            </button>
+
+        </div>
+
+
+        <div
+            id="hskStatus"
+            class="status info"
+        >
+            กรุณาเลือกระดับ HSK
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STEP 4
+    ====================================================== -->
+
+    <section class="card">
+
+        <h2>
+            <span class="step">4</span>
+            วางคำศัพท์ใหม่
+        </h2>
+
+
+        <p>
+            ข้อมูลที่วางต้องมี
+            <strong>7 ช่อง</strong>
+        </p>
+
+
+        <div class="format-box">
+
+            <div class="format-label">
+                รูปแบบ:
+            </div>
+
+            <code>
+                คำศัพท์ | pinyin | ความหมาย | ชนิดคำ | ตัวอย่างประโยค | pinyin ประโยค | แปลไทย
+            </code>
+
+        </div>
+
+
+        <div class="format-box">
+
+            <div class="format-label">
+                ตัวอย่าง:
+            </div>
+
+            <code>
+                做客 | zuòkè | ไปเป็นแขก, เยือน | v. | 到朋友家里做客。 | Dào péngyou jiālǐ zuòkè. | ไปเป็นแขกที่บ้านของเพื่อน
+            </code>
+
+        </div>
+
+
+        <div class="info-box">
+
+            💡 <strong>ไม่ต้องใส่ HSK ในแต่ละบรรทัด</strong>
+
+            <br>
+
+            เลือก HSK จากปุ่มด้านบน เช่น
+            <strong>HSK2</strong>
+            แล้วคำศัพท์ทั้งหมดที่เพิ่มรอบนี้จะถูกบันทึกเป็น
+            <strong>"HSK2"</strong>
+
+        </div>
+
+
+        <textarea
+            id="inputText"
+            placeholder="ตัวอย่าง
+
+做客 | zuòkè | ไปเป็นแขก, เยือน | v. | 到朋友家里做客。 | Dào péngyou jiālǐ zuòkè. | ไปเป็นแขกที่บ้านของเพื่อน
+爱 | ài | รัก, ชอบ | v. | 我爱学习中文。 | Wǒ ài xuéxí Zhōngwén. | ฉันรักการเรียนภาษาจีน
+学习 | xuéxí | เรียน, ศึกษา | v. | 我学习中文。 | Wǒ xuéxí Zhōngwén. | ฉันเรียนภาษาจีน"
+        ></textarea>
+
+
+        <div class="buttons">
+
+            <button
+                class="btn btn-primary"
+                id="addBtn"
+            >
+                ➕ เพิ่มคำศัพท์
+            </button>
+
+
+            <button
+                class="btn btn-secondary"
+                id="clearInputBtn"
+            >
+                🗑️ ล้างช่อง
+            </button>
+
+        </div>
+
+
+        <div
+            id="inputStatus"
+            class="status"
+        ></div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STEP 5
+    ====================================================== -->
+
+    <section class="card">
+
+        <h2>
+            <span class="step">5</span>
+            ตรวจสอบคำศัพท์ใหม่
+        </h2>
+
+
+        <div
+            id="previewInfo"
+            class="empty"
+        >
+            ยังไม่มีคำศัพท์ใหม่
+        </div>
+
+
+        <div
+            id="previewTableWrapper"
+            class="table-wrapper hidden"
+        >
+
+            <table>
+
+                <thead>
 
                     <tr>
-
-                        <td
-                            colspan="9"
-                            class="empty"
-                        >
-                            ยังไม่มีข้อมูลใหม่
-                        </td>
-
+                        <th>#</th>
+                        <th>ID</th>
+                        <th>คำศัพท์</th>
+                        <th>Pinyin</th>
+                        <th>ความหมาย</th>
+                        <th>ชนิดคำ</th>
+                        <th>HSK</th>
+                        <th>ตัวอย่าง</th>
+                        <th>สถานะ</th>
                     </tr>
 
-                </tbody>
+                </thead>
+
+                <tbody
+                    id="previewTableBody"
+                ></tbody>
 
             </table>
 
@@ -891,1427 +822,2306 @@ tr:hover td {
 
 
         <div
-            id="previewMessage"
-            class="message"
+            id="duplicateWarning"
+            class="warning-box hidden"
         ></div>
 
-    </div>
+    </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          STEP 6
-    ========================= -->
+    ====================================================== -->
 
-    <div class="card">
+    <section class="card">
 
         <h2>
             <span class="step">6</span>
-            ⚙️ สร้าง dictionary.js
+            สร้าง dictionary.js ใหม่
         </h2>
 
 
         <p>
-            ระบบจะนำข้อมูลเดิมทั้งหมด
-            มารวมกับข้อมูลใหม่
-            และสร้างไฟล์
-            <strong>dictionary.js</strong>
+            ระบบจะรวม
+            <strong>ข้อมูลเดิม + คำศัพท์ใหม่</strong>
+            โดยไม่ลบข้อมูลเดิม
         </p>
 
 
-        <button
-            class="main-btn btn-build"
-            id="buildBtn"
-        >
-            ⚙️ สร้าง dictionary.js
-        </button>
+        <div class="buttons">
+
+            <button
+                class="btn btn-success"
+                id="buildBtn"
+            >
+                🔨 สร้าง dictionary.js
+            </button>
+
+        </div>
 
 
         <div
-            id="buildMessage"
-            class="message"
+            id="buildStatus"
+            class="status"
         ></div>
 
 
-        <!-- DOWNLOAD AREA -->
-
         <div
-            class="download-area"
-            id="downloadArea"
+            id="outputSection"
+            class="hidden"
+            style="margin-top:20px;"
         >
 
-            <strong>
-                ✅ สร้างไฟล์เรียบร้อยแล้ว
-            </strong>
+            <textarea
+                id="outputCode"
+                class="code-output"
+                readonly
+            ></textarea>
 
 
-            <p id="downloadInfo"></p>
-
-
-            <div class="button-row">
+            <div class="buttons">
 
                 <button
-                    class="main-btn btn-download"
+                    class="btn btn-success"
                     id="downloadBtn"
                 >
-                    ⬇️ ดาวน์โหลด dictionary.js
+                    💾 ดาวน์โหลด dictionary.js
                 </button>
 
 
                 <button
-                    class="main-btn btn-copy"
+                    class="btn btn-primary"
                     id="copyBtn"
                 >
-                    📋 คัดลอก JS
+                    📋 คัดลอกโค้ด
                 </button>
 
             </div>
 
 
-            <div
-                id="copyMessage"
-                class="message"
-            ></div>
+            <div class="success-box">
+
+                ✅ สร้างไฟล์สำเร็จ
+
+                <br><br>
+
+                ไฟล์ที่สร้างจะมี:
+
+                <br>
+
+                <code>
+                    const dictionary = [...]
+                </code>
+
+                <br><br>
+
+                และจะสร้าง:
+
+                <br>
+
+                <code>
+                    window.dictionary = dictionary;
+                </code>
+
+                <br><br>
+
+                ทำให้
+                <strong>dictionary.html</strong>
+                และ
+                <strong>word.html</strong>
+                สามารถอ่านข้อมูลผ่าน
+                <strong>window.dictionary</strong>
+                ได้โดยตรง
+
+            </div>
 
         </div>
 
-    </div>
+    </section>
 
-</div>
+</main>
 
 
-<div class="footer">
-    © 2026 ก็แค่จีน by ครูพี่เหม่ยถิง · Dictionary Generator 🇨🇳
-</div>
+<footer>
+    © 2026 ก็แค่จีน by ครูพี่เหม่ยถิง · เรียนจีนแบบน่ารัก ๆ 🇨🇳
+</footer>
 
 
 <script>
 
-/* =========================================================
-   STATE
-========================================================= */
+    /* =========================================================
+       GLOBAL DATA
+    ========================================================= */
 
-let originalData = [];
+    let originalData = [];
 
-let newData = [];
+    let originalRawData = [];
 
-let generatedContent = "";
+    let newData = [];
 
-let selectedHSK = "HSK1";
+    let selectedHSK = "";
 
+    let generatedCode = "";
 
-/* =========================================================
-   ELEMENTS
-========================================================= */
-
-const dictionaryFile =
-    document.getElementById("dictionaryFile");
-
-const fileName =
-    document.getElementById("fileName");
-
-const totalWords =
-    document.getElementById("totalWords");
-
-const lastId =
-    document.getElementById("lastId");
-
-const wordInput =
-    document.getElementById("wordInput");
-
-const previewBody =
-    document.getElementById("previewBody");
-
-const previewOld =
-    document.getElementById("previewOld");
-
-const previewNew =
-    document.getElementById("previewNew");
-
-const previewTotal =
-    document.getElementById("previewTotal");
-
-const previewIdRange =
-    document.getElementById("previewIdRange");
-
-const selectedLevel =
-    document.getElementById("selectedLevel");
+    let originalMaxId = 0;
 
 
-/* =========================================================
-   MESSAGE
-========================================================= */
+    /* =========================================================
+       ELEMENTS
+    ========================================================= */
 
-function showMessage(element, text, type = "success") {
+    const fileInput =
+        document.getElementById("fileInput");
 
-    element.textContent = text;
+    const fileStatus =
+        document.getElementById("fileStatus");
 
-    element.className =
-        "message " + type;
+    const statsBox =
+        document.getElementById("statsBox");
 
-}
+    const originalCountEl =
+        document.getElementById("originalCount");
 
+    const maxIdEl =
+        document.getElementById("maxId");
 
-/* =========================================================
-   ESCAPE HTML
-========================================================= */
+    const newCountEl =
+        document.getElementById("newCount");
 
-function escapeHTML(value) {
+    const originalInfo =
+        document.getElementById("originalInfo");
 
-    return String(value ?? "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+    const originalTableWrapper =
+        document.getElementById(
+            "originalTableWrapper"
+        );
 
-}
+    const originalTableBody =
+        document.getElementById(
+            "originalTableBody"
+        );
 
+    const inputText =
+        document.getElementById("inputText");
 
-/* =========================================================
-   NORMALIZE DATA
-========================================================= */
+    const inputStatus =
+        document.getElementById("inputStatus");
 
-function normalizeData(data) {
+    const previewInfo =
+        document.getElementById("previewInfo");
 
-    if (!Array.isArray(data)) {
-        return [];
-    }
+    const previewTableWrapper =
+        document.getElementById(
+            "previewTableWrapper"
+        );
 
+    const previewTableBody =
+        document.getElementById(
+            "previewTableBody"
+        );
 
-    return data.map((item, index) => {
+    const duplicateWarning =
+        document.getElementById(
+            "duplicateWarning"
+        );
 
-        return {
+    const outputSection =
+        document.getElementById(
+            "outputSection"
+        );
 
-            id:
-                Number(item.id) ||
-                index + 1,
+    const outputCode =
+        document.getElementById(
+            "outputCode"
+        );
 
-            word:
-                item.word ??
-                item.hanzi ??
-                item.chinese ??
-                "",
+    const buildStatus =
+        document.getElementById(
+            "buildStatus"
+        );
 
-            pinyin:
-                item.pinyin ??
-                "",
-
-            meaning:
-                item.meaning ??
-                item.translation ??
-                item.thai ??
-                "",
-
-            pos:
-                item.pos ??
-                item.partOfSpeech ??
-                "",
-
-            example:
-                item.example ??
-                "",
-
-            examplePinyin:
-                item.examplePinyin ??
-                "",
-
-            exampleThai:
-                item.exampleThai ??
-                item.exampleMeaning ??
-                "",
-
-            hsk:
-                item.hsk ??
-                item.level ??
-                ""
-
-        };
-
-    });
-
-}
-
-
-/* =========================================================
-   EXTRACT DICTIONARY
-========================================================= */
-
-function extractDictionary(text) {
-
-    let data = null;
-
-
-    /*
-       รูปแบบ:
-
-       const dictionary = [...]
-       let dictionary = [...]
-       var dictionary = [...]
-    */
-
-    const variableMatch =
-        text.match(
-            /(?:const|let|var)\s+dictionary\s*=\s*(\[[\s\S]*\])\s*;?/m
+    const hskStatus =
+        document.getElementById(
+            "hskStatus"
         );
 
 
-    if (variableMatch) {
+    /* =========================================================
+       NORMALIZE HSK
+       
+       รับ:
+       1
+       "1"
+       HSK1
+       "HSK1"
+       
+       แล้วคืน:
+       HSK1
+    ========================================================= */
 
-        try {
-
-            data = Function(
-                '"use strict"; return (' +
-                variableMatch[1] +
-                ')'
-            )();
-
-        } catch (error) {
-
-            console.error(
-                "Variable parse error:",
-                error
-            );
-
-        }
-
-    }
-
-
-    /*
-       export default [...]
-    */
-
-    if (!data) {
-
-        const exportMatch =
-            text.match(
-                /export\s+default\s+(\[[\s\S]*\])\s*;?/m
-            );
-
-
-        if (exportMatch) {
-
-            try {
-
-                data = Function(
-                    '"use strict"; return (' +
-                    exportMatch[1] +
-                    ')'
-                )();
-
-            } catch (error) {
-
-                console.error(
-                    "Export parse error:",
-                    error
-                );
-
-            }
-
-        }
-
-    }
-
-
-    /*
-       ถ้าไฟล์เป็น array โดยตรง
-    */
-
-    if (!data) {
-
-        const firstBracket =
-            text.indexOf("[");
-
-        const lastBracket =
-            text.lastIndexOf("]");
-
+    function normalizeHSK(value) {
 
         if (
-            firstBracket !== -1 &&
-            lastBracket !== -1 &&
-            lastBracket > firstBracket
+            value === null ||
+            value === undefined
         ) {
-
-            const arrayText =
-                text.substring(
-                    firstBracket,
-                    lastBracket + 1
-                );
-
-
-            try {
-
-                data = Function(
-                    '"use strict"; return (' +
-                    arrayText +
-                    ')'
-                )();
-
-            } catch (error) {
-
-                console.error(
-                    "Array parse error:",
-                    error
-                );
-
-            }
-
+            return "";
         }
 
-    }
+        const text =
+            String(value)
+                .trim()
+                .toUpperCase()
+                .replace(/\s+/g, "");
 
+        const match =
+            text.match(/^HSK([1-6])$/);
 
-    if (!Array.isArray(data)) {
-
-        throw new Error(
-            "ไม่สามารถอ่านข้อมูล dictionary จากไฟล์ได้"
-        );
-
-    }
-
-
-    return data;
-
-}
-
-
-/* =========================================================
-   LOAD FILE
-========================================================= */
-
-dictionaryFile.addEventListener(
-    "change",
-    async function () {
-
-        const file =
-            this.files[0];
-
-
-        if (!file) {
-            return;
+        if (match) {
+            return "HSK" + match[1];
         }
 
+        const numberMatch =
+            text.match(/^([1-6])$/);
 
-        fileName.textContent =
-            file.name;
-
-
-        try {
-
-            const text =
-                await file.text();
-
-
-            const data =
-                extractDictionary(text);
-
-
-            originalData =
-                normalizeData(data);
-
-
-            newData = [];
-
-            generatedContent = "";
-
-
-            document
-                .getElementById("downloadArea")
-                .classList.remove("show");
-
-
-            updateStatistics();
-
-            updatePreview();
-
-
-            showMessage(
-                document.getElementById(
-                    "loadMessage"
-                ),
-                `โหลดสำเร็จ! พบข้อมูลเดิม ${originalData.length.toLocaleString()} คำ`,
-                "success"
-            );
-
-
-        } catch (error) {
-
-            console.error(error);
-
-
-            originalData = [];
-
-            newData = [];
-
-            generatedContent = "";
-
-
-            updateStatistics();
-
-            updatePreview();
-
-
-            showMessage(
-                document.getElementById(
-                    "loadMessage"
-                ),
-                "⚠️ โหลด dictionary.js ไม่สำเร็จ\nกรุณาตรวจสอบรูปแบบไฟล์",
-                "error"
-            );
-
+        if (numberMatch) {
+            return "HSK" + numberMatch[1];
         }
 
-    }
-);
-
-
-/* =========================================================
-   MAX ID
-========================================================= */
-
-function getMaxOriginalId() {
-
-    if (!originalData.length) {
-        return 0;
-    }
-
-
-    return Math.max(
-        ...originalData.map(
-            item => Number(item.id) || 0
-        )
-    );
-
-}
-
-
-function getMaxId() {
-
-    const allData = [
-        ...originalData,
-        ...newData
-    ];
-
-
-    if (!allData.length) {
-        return 0;
-    }
-
-
-    return Math.max(
-        ...allData.map(
-            item => Number(item.id) || 0
-        )
-    );
-
-}
-
-
-/* =========================================================
-   STATISTICS
-========================================================= */
-
-function updateStatistics() {
-
-    totalWords.textContent =
-        originalData.length.toLocaleString();
-
-
-    lastId.textContent =
-        getMaxOriginalId().toLocaleString();
-
-
-    for (let i = 1; i <= 6; i++) {
-
-        const count =
-            originalData.filter(
-                item =>
-                    normalizeHSK(item.hsk) ===
-                    `HSK${i}`
-            ).length;
-
-
-        document.getElementById(
-            `countHSK${i}`
-        ).textContent =
-            count.toLocaleString();
-
-    }
-
-}
-
-
-/* =========================================================
-   NORMALIZE HSK
-========================================================= */
-
-function normalizeHSK(value) {
-
-    if (!value) {
         return "";
     }
 
 
-    const str =
-        String(value)
-            .trim()
-            .toUpperCase();
+    /* =========================================================
+       NORMALIZE ITEM
+    ========================================================= */
+
+    function normalizeItem(
+        item,
+        index = 0
+    ) {
+
+        const numericId =
+            Number(item?.id);
+
+        const id =
+            Number.isFinite(numericId)
+                ? Math.trunc(numericId)
+                : index + 1;
 
 
-    const match =
-        str.match(
-            /HSK\s*([1-6])/
-        );
+        return {
 
+            ...item,
 
-    if (match) {
+            id: id,
 
-        return `HSK${match[1]}`;
+            word:
+                item?.word !== undefined
+                    ? String(item.word).trim()
+                    : "",
 
+            pinyin:
+                item?.pinyin !== undefined
+                    ? String(item.pinyin).trim()
+                    : "",
+
+            meaning:
+                item?.meaning !== undefined
+                    ? String(item.meaning).trim()
+                    : "",
+
+            pos:
+                item?.pos !== undefined
+                    ? String(item.pos).trim()
+                    : "",
+
+            example:
+                item?.example !== undefined
+                    ? String(item.example).trim()
+                    : "",
+
+            examplePinyin:
+                item?.examplePinyin !== undefined
+                    ? String(item.examplePinyin).trim()
+                    : "",
+
+            exampleThai:
+                item?.exampleThai !== undefined
+                    ? String(item.exampleThai).trim()
+                    : "",
+
+            hsk:
+                normalizeHSK(item?.hsk)
+
+        };
     }
 
 
-    return str;
+    /* =========================================================
+       FIND DICTIONARY ARRAY
+       
+       รองรับไฟล์แบบ:
 
-}
+       const dictionary = [...]
+
+       let dictionary = [...]
+
+       var dictionary = [...]
+
+       const dictionaryData = [...]
+
+       window.dictionary = [...]
+
+       window.dictionaryData = [...]
+
+       globalThis.dictionary = [...]
+    ========================================================= */
+
+    function findDictionaryArrayStart(text) {
+
+        const patterns = [
+
+            /\b(?:const|let|var)\s+dictionary\s*=\s*\[/i,
+
+            /\b(?:const|let|var)\s+dictionaryData\s*=\s*\[/i,
+
+            /window\.dictionary\s*=\s*\[/i,
+
+            /window\.dictionaryData\s*=\s*\[/i,
+
+            /globalThis\.dictionary\s*=\s*\[/i,
+
+            /globalThis\.dictionaryData\s*=\s*\[/i
+
+        ];
 
 
-/* =========================================================
-   HSK SELECT
-========================================================= */
+        for (
+            const pattern of patterns
+        ) {
 
-document
-    .querySelectorAll(".level-btn")
-    .forEach(button => {
+            const match =
+                pattern.exec(text);
 
-        button.addEventListener(
-            "click",
-            function () {
+            if (match) {
 
-                document
-                    .querySelectorAll(".level-btn")
-                    .forEach(btn =>
-                        btn.classList.remove(
-                            "active"
-                        )
+                const openBracket =
+                    text.indexOf(
+                        "[",
+                        match.index
                     );
 
-
-                this.classList.add("active");
-
-
-                selectedHSK =
-                    this.dataset.level;
-
-
-                selectedLevel.textContent =
-                    selectedHSK;
-
-            }
-        );
-
-    });
-
-
-/* =========================================================
-   PARSE LINE
-========================================================= */
-
-function parseLine(line) {
-
-    const parts =
-        line
-            .split("|")
-            .map(
-                item => item.trim()
-            );
-
-
-    if (parts.length < 7) {
-
-        return {
-
-            error:
-                "ข้อมูลไม่ครบ 7 ช่อง"
-
-        };
-
-    }
-
-
-    const [
-        word,
-        pinyin,
-        meaning,
-        pos,
-        example,
-        examplePinyin,
-        exampleThai
-    ] = parts;
-
-
-    if (!word) {
-
-        return {
-
-            error:
-                "ไม่มีคำศัพท์จีน"
-
-        };
-
-    }
-
-
-    if (!pinyin) {
-
-        return {
-
-            error:
-                `คำ "${word}" ไม่มี pinyin`
-
-        };
-
-    }
-
-
-    return {
-
-        word,
-        pinyin,
-        meaning,
-        pos,
-        example,
-        examplePinyin,
-        exampleThai
-
-    };
-
-}
-
-
-/* =========================================================
-   DUPLICATE
-========================================================= */
-
-function isDuplicate(word) {
-
-    const normalized =
-        word.trim();
-
-
-    return [
-        ...originalData,
-        ...newData
-    ].some(
-        item =>
-            String(item.word)
-                .trim() === normalized
-    );
-
-}
-
-
-/* =========================================================
-   ADD WORDS
-========================================================= */
-
-document
-    .getElementById("addBtn")
-    .addEventListener(
-        "click",
-        function () {
-
-            const text =
-                wordInput.value.trim();
-
-
-            if (!text) {
-
-                showMessage(
-                    document.getElementById(
-                        "inputMessage"
-                    ),
-                    "กรุณาวางคำศัพท์ก่อน",
-                    "warning"
-                );
-
-                return;
-
-            }
-
-
-            if (!originalData.length) {
-
-                showMessage(
-                    document.getElementById(
-                        "inputMessage"
-                    ),
-                    "กรุณาโหลด dictionary.js เดิมก่อน",
-                    "warning"
-                );
-
-                return;
-
-            }
-
-
-            const lines =
-                text.split(/\r?\n/);
-
-
-            const added = [];
-
-            const errors = [];
-
-            const duplicates = [];
-
-
-            let nextId =
-                getMaxId() + 1;
-
-
-            lines.forEach(
-                (line, index) => {
-
-                    const cleanLine =
-                        line.trim();
-
-
-                    if (!cleanLine) {
-                        return;
-                    }
-
-
-                    const parsed =
-                        parseLine(cleanLine);
-
-
-                    if (parsed.error) {
-
-                        errors.push(
-                            `บรรทัด ${index + 1}: ${parsed.error}`
-                        );
-
-                        return;
-
-                    }
-
-
-                    if (
-                        isDuplicate(
-                            parsed.word
-                        )
-                    ) {
-
-                        duplicates.push(
-                            parsed.word
-                        );
-
-                        return;
-
-                    }
-
-
-                    const item = {
-
-                        id:
-                            nextId++,
-
-                        word:
-                            parsed.word,
-
-                        pinyin:
-                            parsed.pinyin,
-
-                        meaning:
-                            parsed.meaning,
-
-                        pos:
-                            parsed.pos,
-
-                        example:
-                            parsed.example,
-
-                        examplePinyin:
-                            parsed.examplePinyin,
-
-                        exampleThai:
-                            parsed.exampleThai,
-
-                        hsk:
-                            selectedHSK
-
-                    };
-
-
-                    newData.push(item);
-
-                    added.push(item);
-
+                if (
+                    openBracket !== -1
+                ) {
+
+                    return openBracket;
                 }
+            }
+        }
+
+
+        return -1;
+    }
+
+
+    /* =========================================================
+       EXTRACT ARRAY
+       
+       อ่าน [] แบบนับวงเล็บ
+       เพื่อรองรับ object ซ้อนกัน
+    ========================================================= */
+
+    function extractArrayText(
+        text,
+        startIndex
+    ) {
+
+        if (
+            startIndex < 0 ||
+            startIndex >= text.length ||
+            text[startIndex] !== "["
+        ) {
+
+            throw new Error(
+                "ไม่พบ [ ของ dictionary"
             );
-
-
-            updatePreview();
-
-
-            let message = "";
-
-
-            if (added.length) {
-
-                message +=
-                    `✅ เพิ่ม ${added.length} คำเรียบร้อยแล้ว`;
-
-            }
-
-
-            if (duplicates.length) {
-
-                message +=
-                    `\n⚠️ คำซ้ำ ${duplicates.length} คำ: ` +
-                    duplicates.join(", ");
-
-            }
-
-
-            if (errors.length) {
-
-                message +=
-                    `\n❌ ข้อมูลผิด ${errors.length} บรรทัด`;
-
-            }
-
-
-            if (added.length) {
-
-                showMessage(
-                    document.getElementById(
-                        "inputMessage"
-                    ),
-                    message,
-                    "success"
-                );
-
-
-                wordInput.value = "";
-
-
-            } else {
-
-                showMessage(
-                    document.getElementById(
-                        "inputMessage"
-                    ),
-                    message ||
-                    "ไม่พบข้อมูลที่สามารถเพิ่มได้",
-                    "warning"
-                );
-
-            }
-
         }
-    );
 
 
-/* =========================================================
-   PREVIEW
-========================================================= */
+        let depth = 0;
 
-function updatePreview() {
+        let quote = null;
 
-    previewOld.textContent =
-        originalData.length
-            .toLocaleString();
+        let escaped = false;
 
 
-    previewNew.textContent =
-        newData.length
-            .toLocaleString();
+        for (
+            let i = startIndex;
+            i < text.length;
+            i++
+        ) {
 
+            const char =
+                text[i];
 
-    previewTotal.textContent =
-        (
-            originalData.length +
-            newData.length
-        ).toLocaleString();
 
+            /*
+             * อยู่ใน string
+             */
+            if (quote) {
 
-    if (newData.length) {
+                if (escaped) {
 
-        previewIdRange.textContent =
-            `${newData[0].id} – ${newData[newData.length - 1].id}`;
+                    escaped = false;
 
-    } else {
+                    continue;
+                }
 
-        previewIdRange.textContent =
-            "-";
 
-    }
+                if (char === "\\") {
 
+                    escaped = true;
 
-    if (!newData.length) {
+                    continue;
+                }
 
-        previewBody.innerHTML = `
 
-            <tr>
+                if (char === quote) {
 
-                <td
-                    colspan="9"
-                    class="empty"
-                >
-                    ยังไม่มีข้อมูลใหม่
-                </td>
+                    quote = null;
+                }
 
-            </tr>
 
-        `;
-
-        return;
-
-    }
-
-
-    previewBody.innerHTML =
-        newData
-            .map(item => `
-
-                <tr>
-
-                    <td>
-                        <strong>
-                            ${escapeHTML(item.id)}
-                        </strong>
-                    </td>
-
-
-                    <td>
-                        <span class="badge">
-                            ${escapeHTML(item.hsk)}
-                        </span>
-                    </td>
-
-
-                    <td>
-                        <strong>
-                            ${escapeHTML(item.word)}
-                        </strong>
-                    </td>
-
-
-                    <td>
-                        ${escapeHTML(item.pinyin)}
-                    </td>
-
-
-                    <td>
-                        ${escapeHTML(item.meaning)}
-                    </td>
-
-
-                    <td>
-                        ${escapeHTML(item.pos)}
-                    </td>
-
-
-                    <td>
-                        ${escapeHTML(item.example)}
-                    </td>
-
-
-                    <td>
-                        ${escapeHTML(item.examplePinyin)}
-                    </td>
-
-
-                    <td>
-                        ${escapeHTML(item.exampleThai)}
-                    </td>
-
-                </tr>
-
-            `)
-            .join("");
-
-}
-
-
-/* =========================================================
-   CLEAR INPUT
-========================================================= */
-
-document
-    .getElementById("clearInputBtn")
-    .addEventListener(
-        "click",
-        function () {
-
-            wordInput.value = "";
-
-        }
-    );
-
-
-/* =========================================================
-   CREATE DICTIONARY JS
-========================================================= */
-
-function createDictionaryJS(data) {
-
-    const json =
-        JSON.stringify(
-            data,
-            null,
-            2
-        );
-
-
-    return `// =====================================================
-// dictionary.js
-// Generated by Dictionary Generator
-// ก็แค่จีน by ครูพี่เหม่ยถิง
-// Generated: ${new Date().toLocaleString("th-TH")}
-// Total words: ${data.length}
-// =====================================================
-
-const dictionary = ${json};
-
-if (typeof module !== "undefined" && module.exports) {
-    module.exports = dictionary;
-}
-`;
-
-}
-
-
-/* =========================================================
-   BUILD
-========================================================= */
-
-document
-    .getElementById("buildBtn")
-    .addEventListener(
-        "click",
-        function () {
-
-            if (!originalData.length) {
-
-                showMessage(
-                    document.getElementById(
-                        "buildMessage"
-                    ),
-                    "กรุณาโหลด dictionary.js เดิมก่อน",
-                    "warning"
-                );
-
-                return;
-
-            }
-
-
-            if (!newData.length) {
-
-                showMessage(
-                    document.getElementById(
-                        "buildMessage"
-                    ),
-                    "ยังไม่มีคำศัพท์ใหม่\nกรุณาเพิ่มคำศัพท์ก่อน",
-                    "warning"
-                );
-
-                return;
-
-            }
-
-
-            const finalData = [
-
-                ...originalData,
-
-                ...newData
-
-            ];
-
-
-            generatedContent =
-                createDictionaryJS(
-                    finalData
-                );
-
-
-            document
-                .getElementById(
-                    "downloadArea"
-                )
-                .classList.add("show");
-
-
-            document
-                .getElementById(
-                    "downloadInfo"
-                )
-                .textContent =
-                `รวมทั้งหมด ${finalData.length.toLocaleString()} คำ | ID สูงสุด ${getMaxFinalId(finalData).toLocaleString()}`;
-
-
-            showMessage(
-                document.getElementById(
-                    "buildMessage"
-                ),
-                `✅ สร้าง dictionary.js สำเร็จ\nรวม ${finalData.length.toLocaleString()} คำ`,
-                "success"
-            );
-
-        }
-    );
-
-
-/* =========================================================
-   FINAL MAX ID
-========================================================= */
-
-function getMaxFinalId(data) {
-
-    if (!data.length) {
-        return 0;
-    }
-
-
-    return Math.max(
-        ...data.map(
-            item =>
-                Number(item.id) || 0
-        )
-    );
-
-}
-
-
-/* =========================================================
-   DOWNLOAD
-========================================================= */
-
-document
-    .getElementById("downloadBtn")
-    .addEventListener(
-        "click",
-        function () {
-
-            if (!generatedContent) {
-
-                showMessage(
-                    document.getElementById(
-                        "buildMessage"
-                    ),
-                    "ยังไม่มี JS ที่สร้าง",
-                    "warning"
-                );
-
-                return;
-
-            }
-
-
-            const blob =
-                new Blob(
-                    [generatedContent],
-                    {
-                        type:
-                            "application/javascript;charset=utf-8"
-                    }
-                );
-
-
-            const url =
-                URL.createObjectURL(blob);
-
-
-            const a =
-                document.createElement("a");
-
-
-            a.href = url;
-
-
-            a.download =
-                "dictionary.js";
-
-
-            document
-                .body
-                .appendChild(a);
-
-
-            a.click();
-
-
-            document
-                .body
-                .removeChild(a);
-
-
-            URL.revokeObjectURL(url);
-
-        }
-    );
-
-
-/* =========================================================
-   COPY GENERATED JS
-========================================================= */
-
-document
-    .getElementById("copyBtn")
-    .addEventListener(
-        "click",
-        async function () {
-
-            if (!generatedContent) {
-
-                showMessage(
-                    document.getElementById(
-                        "copyMessage"
-                    ),
-                    "ยังไม่มี JS ที่สร้าง\nกรุณากด ⚙️ สร้าง dictionary.js ก่อน",
-                    "warning"
-                );
-
-                return;
-
+                continue;
             }
 
 
             /*
-               วิธีหลัก:
-               Clipboard API
-            */
+             * เริ่ม string
+             */
+            if (
+                char === '"' ||
+                char === "'" ||
+                char === "`"
+            ) {
+
+                quote = char;
+
+                continue;
+            }
+
+
+            if (char === "[") {
+
+                depth++;
+            }
+
+
+            else if (char === "]") {
+
+                depth--;
+
+
+                if (depth === 0) {
+
+                    return text.slice(
+                        startIndex,
+                        i + 1
+                    );
+                }
+            }
+        }
+
+
+        throw new Error(
+            "ไม่พบ ] ปิดท้ายของข้อมูล dictionary"
+        );
+    }
+
+
+    /* =========================================================
+       PARSE DICTIONARY.JS
+    ========================================================= */
+
+    function parseDictionaryJS(text) {
+
+        if (
+            !text ||
+            !text.trim()
+        ) {
+
+            throw new Error(
+                "ไฟล์ว่าง"
+            );
+        }
+
+
+        const start =
+            findDictionaryArrayStart(
+                text
+            );
+
+
+        if (start === -1) {
+
+            throw new Error(
+                "ไม่พบ dictionary = [ ... ] ในไฟล์"
+            );
+        }
+
+
+        const arrayText =
+            extractArrayText(
+                text,
+                start
+            );
+
+
+        let data;
+
+
+        try {
+
+            /*
+             * ประเมินเฉพาะ Array
+             * ไม่รันโค้ดส่วนอื่นของไฟล์
+             */
+            data =
+                Function(
+                    '"use strict"; return (' +
+                    arrayText +
+                    ');'
+                )();
+
+        }
+
+        catch (error) {
+
+            throw new Error(
+                "อ่านข้อมูลใน dictionary.js ไม่สำเร็จ: " +
+                error.message
+            );
+        }
+
+
+        if (!Array.isArray(data)) {
+
+            throw new Error(
+                "ข้อมูลที่อ่านได้ไม่ใช่ Array"
+            );
+        }
+
+
+        return data;
+    }
+
+
+    /* =========================================================
+       FILE UPLOAD
+    ========================================================= */
+
+    fileInput.addEventListener(
+        "change",
+        async function(event) {
+
+            const file =
+                event.target.files[0];
+
+
+            if (!file) {
+                return;
+            }
+
 
             try {
 
-                await navigator.clipboard.writeText(
-                    generatedContent
-                );
+                const text =
+                    await file.text();
 
 
-                showMessage(
-                    document.getElementById(
-                        "copyMessage"
-                    ),
-                    "✅ คัดลอก dictionary.js ทั้งหมดเรียบร้อยแล้ว",
+                const data =
+                    parseDictionaryJS(
+                        text
+                    );
+
+
+                /*
+                 * เก็บข้อมูลเดิมแบบ Raw
+                 * เพื่อรักษาฟิลด์เพิ่มเติม
+                 */
+                originalRawData =
+                    data
+                        .filter(item =>
+                            item &&
+                            typeof item === "object"
+                        )
+                        .map(item => ({
+                            ...item
+                        }));
+
+
+                /*
+                 * ข้อมูลสำหรับใช้งาน Generator
+                 */
+                originalData =
+                    originalRawData.map(
+                        (item, index) =>
+                            normalizeItem(
+                                item,
+                                index
+                            )
+                    );
+
+
+                originalMaxId =
+                    findMaxId(
+                        originalData
+                    );
+
+
+                newData = [];
+
+
+                updateAllUI();
+
+
+                showStatus(
+                    fileStatus,
+
+                    `✅ โหลดสำเร็จ
+
+คำศัพท์เดิม: ${originalData.length.toLocaleString()} คำ
+
+ID สูงสุด: ${originalMaxId.toLocaleString()}
+
+พร้อมเพิ่มคำศัพท์ใหม่ต่อจาก ID ${(
+                        originalMaxId + 1
+                    ).toLocaleString()}`,
+
                     "success"
-                );
-
-
-                return;
-
-            } catch (error) {
-
-                console.warn(
-                    "Clipboard API failed:",
-                    error
                 );
 
             }
 
+            catch (error) {
 
-            /*
-               วิธีสำรอง:
-               execCommand
-            */
+                originalData = [];
 
-            const textarea =
-                document.createElement(
-                    "textarea"
+                originalRawData = [];
+
+                originalMaxId = 0;
+
+                newData = [];
+
+
+                statsBox.classList.add(
+                    "hidden"
                 );
 
 
-            textarea.value =
-                generatedContent;
+                originalTableWrapper.classList.add(
+                    "hidden"
+                );
 
 
-            textarea.style.position =
-                "fixed";
+                showStatus(
+                    fileStatus,
 
-            textarea.style.left =
-                "-9999px";
+                    "❌ โหลดไฟล์ไม่สำเร็จ:\n" +
+                    error.message,
 
-            textarea.style.top =
-                "0";
-
-            textarea.style.opacity =
-                "0";
-
-
-            document
-                .body
-                .appendChild(textarea);
-
-
-            textarea.focus();
-
-            textarea.select();
-
-
-            try {
-
-                const success =
-                    document.execCommand(
-                        "copy"
-                    );
-
-
-                if (success) {
-
-                    showMessage(
-                        document.getElementById(
-                            "copyMessage"
-                        ),
-                        "✅ คัดลอก dictionary.js ทั้งหมดเรียบร้อยแล้ว",
-                        "success"
-                    );
-
-                } else {
-
-                    throw new Error(
-                        "Copy command failed"
-                    );
-
-                }
-
-
-            } catch (error) {
-
-                console.error(error);
-
-
-                showMessage(
-                    document.getElementById(
-                        "copyMessage"
-                    ),
-                    "❌ ไม่สามารถคัดลอกอัตโนมัติได้ กรุณาเปิดผ่าน localhost หรือ Browser ที่อนุญาต Clipboard",
                     "error"
                 );
 
 
-            } finally {
-
-                document
-                    .body
-                    .removeChild(textarea);
-
+                console.error(error);
             }
 
         }
     );
 
 
-/* =========================================================
-   INITIAL
-========================================================= */
+    /* =========================================================
+       FIND MAX NUMERIC ID
+    ========================================================= */
 
-updateStatistics();
+    function findMaxId(data) {
 
-updatePreview();
+        let max = 0;
+
+
+        for (
+            const item of data
+        ) {
+
+            const id =
+                Number(item?.id);
+
+
+            if (
+                Number.isFinite(id) &&
+                id > max
+            ) {
+
+                max =
+                    Math.trunc(id);
+            }
+        }
+
+
+        return max;
+    }
+
+
+    /* =========================================================
+       HSK BUTTON
+    ========================================================= */
+
+    document
+        .querySelectorAll(".hsk-btn")
+        .forEach(button => {
+
+            button.addEventListener(
+                "click",
+                function() {
+
+                    document
+                        .querySelectorAll(
+                            ".hsk-btn"
+                        )
+                        .forEach(btn =>
+                            btn.classList.remove(
+                                "active"
+                            )
+                        );
+
+
+                    this.classList.add(
+                        "active"
+                    );
+
+
+                    selectedHSK =
+                        normalizeHSK(
+                            this.dataset.hsk
+                        );
+
+
+                    hskStatus.textContent =
+                        `✅ เลือก ${selectedHSK} แล้ว
+
+คำศัพท์ใหม่ที่เพิ่มหลังจากนี้จะถูกบันทึกเป็น "${selectedHSK}"`;
+
+
+                    hskStatus.className =
+                        "status success";
+                }
+            );
+
+        });
+
+
+    /* =========================================================
+       ADD BUTTON
+    ========================================================= */
+
+    document
+        .getElementById("addBtn")
+        .addEventListener(
+            "click",
+            addNewWords
+        );
+
+
+    /* =========================================================
+       ADD NEW WORDS
+    ========================================================= */
+
+    function addNewWords() {
+
+        clearStatus(
+            inputStatus
+        );
+
+
+        /*
+         * ต้องโหลด dictionary เดิมก่อน
+         */
+        if (
+            originalData.length === 0
+        ) {
+
+            showStatus(
+                inputStatus,
+
+                "⚠️ กรุณาโหลด dictionary.js เดิมก่อน",
+
+                "error"
+            );
+
+            return;
+        }
+
+
+        /*
+         * ต้องเลือก HSK
+         */
+        if (!selectedHSK) {
+
+            showStatus(
+                inputStatus,
+
+                "⚠️ กรุณาเลือกระดับ HSK1–HSK6 ก่อน",
+
+                "error"
+            );
+
+            return;
+        }
+
+
+        const text =
+            inputText.value.trim();
+
+
+        if (!text) {
+
+            showStatus(
+                inputStatus,
+
+                "⚠️ กรุณาวางคำศัพท์ก่อน",
+
+                "error"
+            );
+
+            return;
+        }
+
+
+        const lines =
+            text
+                .split(/\r?\n/)
+                .map(line =>
+                    line.trim()
+                )
+                .filter(Boolean);
+
+
+        const parsed = [];
+
+        const errors = [];
+
+
+        lines.forEach(
+            (line, index) => {
+
+                const result =
+                    parseVocabularyLine(
+                        line,
+                        index + 1
+                    );
+
+
+                if (result.error) {
+
+                    errors.push(
+                        result.error
+                    );
+
+                }
+
+                else {
+
+                    parsed.push(
+                        result.data
+                    );
+                }
+
+            }
+        );
+
+
+        /*
+         * ถ้ามีบรรทัดผิด
+         * ไม่เพิ่มข้อมูลแม้แต่รายการเดียว
+         */
+        if (errors.length > 0) {
+
+            showStatus(
+
+                inputStatus,
+
+                "❌ พบข้อมูลผิดรูปแบบ:\n\n" +
+                errors.join("\n"),
+
+                "error"
+            );
+
+            return;
+        }
+
+
+        /*
+         * คำศัพท์ที่มีอยู่แล้ว
+         */
+        const existingWords =
+            new Set(
+                originalData
+                    .map(item =>
+                        normalizeWord(
+                            item.word
+                        )
+                    )
+                    .filter(Boolean)
+            );
+
+
+        /*
+         * คำศัพท์ที่เพิ่มไปแล้ว
+         */
+        const pendingWords =
+            new Set(
+                newData
+                    .map(item =>
+                        normalizeWord(
+                            item.word
+                        )
+                    )
+                    .filter(Boolean)
+            );
+
+
+        /*
+         * หา ID ถัดไป
+         */
+        let nextId =
+            Math.max(
+                originalMaxId,
+                findMaxId(newData)
+            ) + 1;
+
+
+        let added = 0;
+
+        const duplicates = [];
+
+
+        for (
+            const item of parsed
+        ) {
+
+            const key =
+                normalizeWord(
+                    item.word
+                );
+
+
+            if (!key) {
+                continue;
+            }
+
+
+            /*
+             * ตรวจคำซ้ำกับข้อมูลเดิม
+             * และคำที่เพิ่มในรอบก่อน
+             */
+            if (
+                existingWords.has(key) ||
+                pendingWords.has(key)
+            ) {
+
+                duplicates.push(
+                    item.word
+                );
+
+                continue;
+            }
+
+
+            const newItem = {
+
+                id: nextId,
+
+                word: item.word,
+
+                pinyin:
+                    item.pinyin,
+
+                meaning:
+                    item.meaning,
+
+                pos:
+                    item.pos,
+
+                example:
+                    item.example,
+
+                examplePinyin:
+                    item.examplePinyin,
+
+                exampleThai:
+                    item.exampleThai,
+
+                /*
+                 * HSK มาจากปุ่ม
+                 */
+                hsk:
+                    selectedHSK
+
+            };
+
+
+            newData.push(
+                newItem
+            );
+
+
+            pendingWords.add(
+                key
+            );
+
+
+            nextId++;
+
+            added++;
+        }
+
+
+        /*
+         * ล้างช่องหลังเพิ่มสำเร็จ
+         */
+        inputText.value = "";
+
+
+        updateAllUI();
+
+
+        if (
+            duplicates.length > 0
+        ) {
+
+            showStatus(
+
+                inputStatus,
+
+                `✅ เพิ่มใหม่ ${added} คำ
+
+⚠️ ข้ามคำซ้ำ ${duplicates.length} คำ:
+${duplicates.join(", ")}`,
+
+                added > 0
+                    ? "success"
+                    : "error"
+            );
+
+        }
+
+        else {
+
+            showStatus(
+
+                inputStatus,
+
+                `✅ เพิ่มคำศัพท์ใหม่ ${added} คำ
+
+ระดับ: ${selectedHSK}`,
+
+                "success"
+            );
+        }
+    }
+
+
+    /* =========================================================
+       PARSE VOCABULARY LINE
+       
+       สำคัญ:
+       รับเพียง 7 ช่อง
+       
+       1 word
+       2 pinyin
+       3 meaning
+       4 pos
+       5 example
+       6 examplePinyin
+       7 exampleThai
+       
+       HSK ไม่ได้อยู่ในข้อความ
+       แต่รับจาก selectedHSK
+    ========================================================= */
+
+    function parseVocabularyLine(
+        line,
+        lineNumber
+    ) {
+
+        const parts =
+            line
+                .split("|")
+                .map(part =>
+                    part.trim()
+                );
+
+
+        /*
+         * ต้องมีอย่างน้อย 7 ช่อง
+         */
+        if (
+            parts.length < 7
+        ) {
+
+            return {
+
+                error:
+                    `บรรทัดที่ ${lineNumber}: ต้องมี 7 ช่อง แต่พบ ${parts.length} ช่อง`
+
+            };
+        }
+
+
+        /*
+         * ถ้ามากกว่า 7 ช่อง
+         * ถือว่าข้อมูลผิดรูปแบบ
+         */
+        if (
+            parts.length > 7
+        ) {
+
+            return {
+
+                error:
+                    `บรรทัดที่ ${lineNumber}: ต้องมี 7 ช่อง แต่พบ ${parts.length} ช่อง กรุณาตรวจสอบเครื่องหมาย |`
+
+            };
+        }
+
+
+        const [
+            word,
+            pinyin,
+            meaning,
+            pos,
+            example,
+            examplePinyin,
+            exampleThai
+        ] = parts;
+
+
+        if (!word) {
+
+            return {
+
+                error:
+                    `บรรทัดที่ ${lineNumber}: ไม่มีคำศัพท์จีน`
+
+            };
+        }
+
+
+        if (!pinyin) {
+
+            return {
+
+                error:
+                    `บรรทัดที่ ${lineNumber}: ไม่มี Pinyin`
+
+            };
+        }
+
+
+        if (!meaning) {
+
+            return {
+
+                error:
+                    `บรรทัดที่ ${lineNumber}: ไม่มีความหมาย`
+
+            };
+        }
+
+
+        return {
+
+            data: {
+
+                word:
+                    word,
+
+                pinyin:
+                    pinyin,
+
+                meaning:
+                    meaning,
+
+                pos:
+                    pos || "",
+
+                example:
+                    example || "",
+
+                examplePinyin:
+                    examplePinyin || "",
+
+                exampleThai:
+                    exampleThai || "",
+
+                hsk:
+                    selectedHSK
+
+            }
+
+        };
+    }
+
+
+    /* =========================================================
+       NORMALIZE WORD
+    ========================================================= */
+
+    function normalizeWord(word) {
+
+        return String(
+            word || ""
+        )
+            .trim()
+            .toLowerCase();
+    }
+
+
+    /* =========================================================
+       UPDATE UI
+    ========================================================= */
+
+    function updateAllUI() {
+
+        originalCountEl.textContent =
+            originalData.length.toLocaleString();
+
+
+        maxIdEl.textContent =
+            originalMaxId.toLocaleString();
+
+
+        newCountEl.textContent =
+            newData.length.toLocaleString();
+
+
+        statsBox.classList.remove(
+            "hidden"
+        );
+
+
+        renderOriginalTable();
+
+        renderPreview();
+
+
+        /*
+         * ถ้าข้อมูลเปลี่ยน
+         * ให้สร้างไฟล์ใหม่อีกครั้ง
+         */
+        outputSection.classList.add(
+            "hidden"
+        );
+
+
+        generatedCode = "";
+
+        outputCode.value = "";
+    }
+
+
+    /* =========================================================
+       ORIGINAL TABLE
+    ========================================================= */
+
+    function renderOriginalTable() {
+
+        if (
+            originalData.length === 0
+        ) {
+
+            originalTableWrapper.classList.add(
+                "hidden"
+            );
+
+
+            originalInfo.textContent =
+                "ยังไม่มีข้อมูล";
+
+            return;
+        }
+
+
+        originalTableWrapper.classList.remove(
+            "hidden"
+        );
+
+
+        const displayData =
+            originalData.slice(
+                0,
+                300
+            );
+
+
+        originalTableBody.innerHTML =
+            displayData
+                .map(item => {
+
+                    return `
+
+                        <tr>
+
+                            <td>
+                                ${escapeHTML(item.id)}
+                            </td>
+
+                            <td>
+                                <strong>
+                                    ${escapeHTML(item.word)}
+                                </strong>
+                            </td>
+
+                            <td>
+                                ${escapeHTML(item.pinyin)}
+                            </td>
+
+                            <td>
+                                ${escapeHTML(item.meaning)}
+                            </td>
+
+                            <td>
+                                ${escapeHTML(item.pos)}
+                            </td>
+
+                            <td>
+
+                                <span class="tag">
+                                    ${escapeHTML(
+                                        item.hsk || "-"
+                                    )}
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                    `;
+
+                })
+                .join("");
+
+
+        if (
+            originalData.length > 300
+        ) {
+
+            originalInfo.innerHTML =
+                `พบข้อมูลเดิม <strong>${originalData.length.toLocaleString()}</strong> คำ · แสดงตัวอย่าง 300 คำแรก`;
+
+        }
+
+        else {
+
+            originalInfo.innerHTML =
+                `พบข้อมูลเดิม <strong>${originalData.length.toLocaleString()}</strong> คำ`;
+        }
+    }
+
+
+    /* =========================================================
+       PREVIEW
+    ========================================================= */
+
+    function renderPreview() {
+
+        if (
+            newData.length === 0
+        ) {
+
+            previewInfo.textContent =
+                "ยังไม่มีคำศัพท์ใหม่";
+
+
+            previewTableWrapper.classList.add(
+                "hidden"
+            );
+
+
+            duplicateWarning.classList.add(
+                "hidden"
+            );
+
+
+            return;
+        }
+
+
+        previewInfo.innerHTML =
+            `เตรียมเพิ่มทั้งหมด <strong>${newData.length.toLocaleString()}</strong> คำ`;
+
+
+        previewTableWrapper.classList.remove(
+            "hidden"
+        );
+
+
+        const originalWords =
+            new Set(
+                originalData
+                    .map(item =>
+                        normalizeWord(
+                            item.word
+                        )
+                    )
+            );
+
+
+        previewTableBody.innerHTML =
+            newData
+                .map(
+                    (item, index) => {
+
+                        const duplicate =
+                            originalWords.has(
+                                normalizeWord(
+                                    item.word
+                                )
+                            );
+
+
+                        return `
+
+                            <tr
+                                class="${
+                                    duplicate
+                                        ? "duplicate"
+                                        : "new-row"
+                                }"
+                            >
+
+                                <td>
+                                    ${index + 1}
+                                </td>
+
+                                <td>
+                                    <strong>
+                                        ${escapeHTML(
+                                            item.id
+                                        )}
+                                    </strong>
+                                </td>
+
+                                <td>
+                                    <strong>
+                                        ${escapeHTML(
+                                            item.word
+                                        )}
+                                    </strong>
+                                </td>
+
+                                <td>
+                                    ${escapeHTML(
+                                        item.pinyin
+                                    )}
+                                </td>
+
+                                <td>
+                                    ${escapeHTML(
+                                        item.meaning
+                                    )}
+                                </td>
+
+                                <td>
+                                    ${escapeHTML(
+                                        item.pos
+                                    )}
+                                </td>
+
+                                <td>
+
+                                    <span class="tag">
+                                        ${escapeHTML(
+                                            item.hsk
+                                        )}
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    ${escapeHTML(
+                                        item.example
+                                    )}
+                                </td>
+
+                                <td>
+                                    ${
+                                        duplicate
+                                            ? "⚠️ ซ้ำ"
+                                            : "✅ ใหม่"
+                                    }
+                                </td>
+
+                            </tr>
+
+                        `;
+
+                    }
+                )
+                .join("");
+
+
+        checkDuplicates();
+    }
+
+
+    /* =========================================================
+       CHECK DUPLICATES
+    ========================================================= */
+
+    function checkDuplicates() {
+
+        const originalWords =
+            new Set(
+                originalData
+                    .map(item =>
+                        normalizeWord(
+                            item.word
+                        )
+                    )
+            );
+
+
+        const duplicates =
+            newData
+                .filter(item =>
+                    originalWords.has(
+                        normalizeWord(
+                            item.word
+                        )
+                    )
+                )
+                .map(item =>
+                    item.word
+                );
+
+
+        if (
+            duplicates.length > 0
+        ) {
+
+            duplicateWarning.classList.remove(
+                "hidden"
+            );
+
+
+            duplicateWarning.innerHTML =
+                `
+                    ⚠️ พบคำที่ซ้ำกับข้อมูลเดิม:
+                    <strong>
+                        ${duplicates
+                            .map(
+                                escapeHTML
+                            )
+                            .join(", ")}
+                    </strong>
+
+                    <br>
+
+                    กรุณาลบคำซ้ำก่อนสร้างไฟล์
+                `;
+
+        }
+
+        else {
+
+            duplicateWarning.classList.add(
+                "hidden"
+            );
+        }
+    }
+
+
+    /* =========================================================
+       BUILD DICTIONARY
+    ========================================================= */
+
+    document
+        .getElementById("buildBtn")
+        .addEventListener(
+            "click",
+            buildDictionary
+        );
+
+
+    function buildDictionary() {
+
+        clearStatus(
+            buildStatus
+        );
+
+
+        if (
+            originalData.length === 0
+        ) {
+
+            showStatus(
+                buildStatus,
+
+                "⚠️ กรุณาโหลด dictionary.js เดิมก่อน",
+
+                "error"
+            );
+
+            return;
+        }
+
+
+        if (
+            newData.length === 0
+        ) {
+
+            showStatus(
+                buildStatus,
+
+                "⚠️ ยังไม่มีคำศัพท์ใหม่สำหรับเพิ่ม",
+
+                "error"
+            );
+
+            return;
+        }
+
+
+        /*
+         * ตรวจคำซ้ำ
+         */
+        const seenWords =
+            new Set();
+
+
+        const duplicateWords = [];
+
+
+        for (
+            const item of originalData
+        ) {
+
+            const key =
+                normalizeWord(
+                    item.word
+                );
+
+
+            if (key) {
+                seenWords.add(key);
+            }
+        }
+
+
+        for (
+            const item of newData
+        ) {
+
+            const key =
+                normalizeWord(
+                    item.word
+                );
+
+
+            if (
+                key &&
+                seenWords.has(key)
+            ) {
+
+                duplicateWords.push(
+                    item.word
+                );
+            }
+
+
+            if (key) {
+                seenWords.add(key);
+            }
+        }
+
+
+        if (
+            duplicateWords.length > 0
+        ) {
+
+            showStatus(
+
+                buildStatus,
+
+                "❌ พบคำซ้ำ:\n" +
+                [
+                    ...new Set(
+                        duplicateWords
+                    )
+                ].join(", ") +
+                "\n\nกรุณาลบคำซ้ำก่อนสร้างไฟล์",
+
+                "error"
+            );
+
+            return;
+        }
+
+
+        /*
+         * รวมข้อมูล
+         *
+         * ข้อมูลเดิม:
+         * ใช้ originalRawData
+         *
+         * ข้อมูลใหม่:
+         * ใช้ newData
+         */
+        const finalData = [
+
+            ...originalRawData
+                .map(
+                    (item, index) => {
+
+                        const normalized =
+                            normalizeItem(
+                                item,
+                                index
+                            );
+
+
+                        /*
+                         * บังคับ field หลัก
+                         * ให้เข้ากับ dictionary.html
+                         */
+                        return {
+
+                            ...item,
+
+                            id:
+                                Number(
+                                    normalized.id
+                                ),
+
+                            word:
+                                normalized.word,
+
+                            pinyin:
+                                normalized.pinyin,
+
+                            meaning:
+                                normalized.meaning,
+
+                            pos:
+                                normalized.pos,
+
+                            example:
+                                normalized.example,
+
+                            examplePinyin:
+                                normalized.examplePinyin,
+
+                            exampleThai:
+                                normalized.exampleThai,
+
+                            hsk:
+                                normalized.hsk
+
+                        };
+
+                    }
+                ),
+
+
+            ...newData.map(
+                item => ({
+
+                    id:
+                        Number(
+                            item.id
+                        ),
+
+                    word:
+                        item.word,
+
+                    pinyin:
+                        item.pinyin,
+
+                    meaning:
+                        item.meaning,
+
+                    pos:
+                        item.pos,
+
+                    example:
+                        item.example,
+
+                    examplePinyin:
+                        item.examplePinyin,
+
+                    exampleThai:
+                        item.exampleThai,
+
+                    hsk:
+                        normalizeHSK(
+                            item.hsk
+                        )
+
+                })
+            )
+
+        ];
+
+
+        /*
+         * ตรวจ ID ซ้ำ
+         */
+        const ids =
+            new Set();
+
+
+        const duplicateIds = [];
+
+
+        for (
+            const item of finalData
+        ) {
+
+            const id =
+                Number(item.id);
+
+
+            if (
+                ids.has(id)
+            ) {
+
+                duplicateIds.push(
+                    id
+                );
+            }
+
+
+            ids.add(id);
+        }
+
+
+        if (
+            duplicateIds.length > 0
+        ) {
+
+            showStatus(
+
+                buildStatus,
+
+                "❌ พบ ID ซ้ำ:\n" +
+                [
+                    ...new Set(
+                        duplicateIds
+                    )
+                ].join(", "),
+
+                "error"
+            );
+
+            return;
+        }
+
+
+        /*
+         * ตรวจ HSK
+         */
+        const invalidHSK =
+            finalData.filter(
+                item =>
+                    !/^HSK[1-6]$/.test(
+                        String(
+                            item.hsk || ""
+                        )
+                    )
+            );
+
+
+        if (
+            invalidHSK.length > 0
+        ) {
+
+            showStatus(
+
+                buildStatus,
+
+                `❌ พบข้อมูล ${invalidHSK.length} รายการที่ HSK ไม่ถูกต้อง
+
+HSK ต้องเป็น HSK1, HSK2, HSK3, HSK4, HSK5 หรือ HSK6`,
+
+                "error"
+            );
+
+            return;
+        }
+
+
+        /*
+         * ตรวจ ID ต้องเป็น Number
+         */
+        const invalidIds =
+            finalData.filter(
+                item =>
+                    !Number.isFinite(
+                        Number(item.id)
+                    )
+            );
+
+
+        if (
+            invalidIds.length > 0
+        ) {
+
+            showStatus(
+
+                buildStatus,
+
+                `❌ พบ ${invalidIds.length} รายการที่ ID ไม่ใช่ตัวเลข`,
+
+                "error"
+            );
+
+            return;
+        }
+
+
+        /*
+         * JSON
+         */
+        const json =
+            JSON.stringify(
+                finalData,
+                null,
+                4
+            );
+
+
+        /*
+         * สร้าง dictionary.js
+         *
+         * จุดสำคัญ:
+         *
+         * const dictionary = [...]
+         *
+         * window.dictionary = dictionary
+         */
+        generatedCode =
+`/*
+ * ก็แค่จีน by ครูพี่เหม่ยถิง
+ * Chinese Dictionary
+ * Generated automatically
+ *
+ * Total words: ${finalData.length}
+ * Last ID: ${findMaxId(finalData)}
+ */
+
+const dictionary = ${json};
+
+
+/*
+ * สำคัญสำหรับ dictionary.html
+ * และ word.html
+ */
+if (typeof window !== "undefined") {
+    window.dictionary = dictionary;
+}
+`;
+
+
+        outputCode.value =
+            generatedCode;
+
+
+        outputSection.classList.remove(
+            "hidden"
+        );
+
+
+        showStatus(
+
+            buildStatus,
+
+            `✅ สร้าง dictionary.js สำเร็จ
+
+ข้อมูลเดิม: ${originalData.length.toLocaleString()} คำ
+
+ข้อมูลใหม่: ${newData.length.toLocaleString()} คำ
+
+รวมทั้งหมด: ${finalData.length.toLocaleString()} คำ
+
+ID สูงสุดใหม่: ${findMaxId(finalData).toLocaleString()}
+
+HSK ของคำใหม่: ${[
+                ...new Set(
+                    newData.map(
+                        item =>
+                            item.hsk
+                    )
+                )
+            ].join(", ")}`,
+
+            "success"
+        );
+
+
+        setTimeout(() => {
+
+            outputSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }, 100);
+    }
+
+
+    /* =========================================================
+       DOWNLOAD
+    ========================================================= */
+
+    document
+        .getElementById("downloadBtn")
+        .addEventListener(
+            "click",
+            downloadDictionary
+        );
+
+
+    function downloadDictionary() {
+
+        if (!generatedCode) {
+
+            alert(
+                "กรุณาสร้าง dictionary.js ก่อน"
+            );
+
+            return;
+        }
+
+
+        const blob =
+            new Blob(
+                [generatedCode],
+                {
+                    type:
+                        "application/javascript;charset=utf-8"
+                }
+            );
+
+
+        const url =
+            URL.createObjectURL(
+                blob
+            );
+
+
+        const a =
+            document.createElement(
+                "a"
+            );
+
+
+        a.href = url;
+
+        a.download =
+            "dictionary.js";
+
+
+        document.body.appendChild(a);
+
+        a.click();
+
+        a.remove();
+
+
+        URL.revokeObjectURL(
+            url
+        );
+    }
+
+
+    /* =========================================================
+       COPY
+    ========================================================= */
+
+    document
+        .getElementById("copyBtn")
+        .addEventListener(
+            "click",
+            copyDictionary
+        );
+
+
+    async function copyDictionary() {
+
+        if (!generatedCode) {
+
+            alert(
+                "กรุณาสร้าง dictionary.js ก่อน"
+            );
+
+            return;
+        }
+
+
+        try {
+
+            await navigator
+                .clipboard
+                .writeText(
+                    generatedCode
+                );
+
+
+            alert(
+                "✅ คัดลอกโค้ด dictionary.js แล้ว"
+            );
+
+        }
+
+        catch (error) {
+
+            outputCode.focus();
+
+            outputCode.select();
+
+            document.execCommand(
+                "copy"
+            );
+
+
+            alert(
+                "✅ คัดลอกโค้ดแล้ว"
+            );
+        }
+    }
+
+
+    /* =========================================================
+       CLEAR INPUT
+    ========================================================= */
+
+    document
+        .getElementById(
+            "clearInputBtn"
+        )
+        .addEventListener(
+            "click",
+            function() {
+
+                inputText.value = "";
+
+                clearStatus(
+                    inputStatus
+                );
+            }
+        );
+
+
+    /* =========================================================
+       STATUS
+    ========================================================= */
+
+    function showStatus(
+        element,
+        message,
+        type
+    ) {
+
+        element.textContent =
+            message;
+
+        element.className =
+            "status " + type;
+
+        element.style.whiteSpace =
+            "pre-line";
+    }
+
+
+    function clearStatus(
+        element
+    ) {
+
+        element.textContent = "";
+
+        element.className =
+            "status";
+
+        element.style.whiteSpace =
+            "";
+    }
+
+
+    /* =========================================================
+       ESCAPE HTML
+    ========================================================= */
+
+    function escapeHTML(value) {
+
+        return String(
+            value ?? ""
+        )
+            .replace(
+                /&/g,
+                "&amp;"
+            )
+            .replace(
+                /</g,
+                "&lt;"
+            )
+            .replace(
+                />/g,
+                "&gt;"
+            )
+            .replace(
+                /"/g,
+                "&quot;"
+            )
+            .replace(
+                /'/g,
+                "&#039;"
+            );
+    }
+
+
+    /* =========================================================
+       INITIALIZE
+    ========================================================= */
+
+    function initialize() {
+
+        originalData = [];
+
+        originalRawData = [];
+
+        newData = [];
+
+        selectedHSK = "";
+
+        generatedCode = "";
+
+        originalMaxId = 0;
+
+        statsBox.classList.add(
+            "hidden"
+        );
+
+        outputSection.classList.add(
+            "hidden"
+        );
+    }
+
+
+    initialize();
 
 </script>
 
