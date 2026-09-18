@@ -1,1707 +1,1910 @@
+```html
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>
-พจนานุกรมจีน–ไทย | ก็แค่จีน by ครูพี่เหม่ยถิง
-</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
->
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
->
+<title>Book Generator | ก็แค่จีน</title>
 
 <style>
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-
-    font-family:
-        "Noto Sans Thai",
-        "Noto Sans SC",
-        sans-serif;
-
-    background:
-        linear-gradient(
-            180deg,
-            #f5faff 0%,
-            #ffffff 55%,
-            #f8fbff 100%
-        );
-
-    color: #26354a;
-
-    min-height: 100vh;
-}
-
-button,
-input {
-    font-family: inherit;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-
-/* ================================
-   NAVBAR
-================================ */
-
-.navbar {
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 100;
-
-    background:
-        rgba(255,255,255,.96);
-
-    border-bottom:
-        1px solid #e5eef8;
-
-    box-shadow:
-        0 2px 12px
-        rgba(55,100,150,.06);
-}
-
-.nav-inner {
-
-    max-width: 1150px;
-
-    min-height: 68px;
-
-    margin: auto;
-
-    padding: 10px 20px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 20px;
-}
-
-.logo {
-
-    color: #3787c8;
-
-    font-size: 19px;
-
-    font-weight: 700;
-
-    white-space: nowrap;
-}
-
-.logo span {
-
-    display: block;
-
-    margin-top: 2px;
-
-    color: #91a5b8;
-
-    font-size: 11px;
-
-    font-weight: 500;
-}
-
-.nav-links {
-
-    display: flex;
-
-    gap: 8px;
-}
-
-.nav-links a {
-
-    padding: 9px 14px;
-
-    border-radius: 12px;
-
-    color: #63778c;
-
-    font-size: 14px;
-
-    transition: .2s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-
-    background: #eaf5ff;
-
-    color: #2582c5;
-}
-
-
-/* ================================
-   HERO
-================================ */
-
-.hero {
-
-    max-width: 1050px;
-
-    margin: 35px auto 20px;
-
-    padding: 0 20px;
-
-    text-align: center;
-}
-
-.hero h1 {
-
-    color: #287fbe;
-
-    font-size:
-        clamp(28px, 5vw, 40px);
-}
-
-.hero > p {
-
-    margin-top: 8px;
-
-    color: #8293a5;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-}
-
-
-/* ================================
-   SEARCH
-================================ */
-
-.search-box {
-
-    max-width: 760px;
-
-    margin: 25px auto 0;
-}
-
-.search-area {
-
-    position: relative;
-}
-
-.search-box input {
-
-    width: 100%;
-
-    height: 56px;
-
-    border:
-        2px solid #dcecf9;
-
-    border-radius: 18px;
-
-    padding:
-        0 22px 0 52px;
-
-    outline: none;
-
-    background: white;
-
-    font-size: 16px;
-
-    transition: .2s;
-}
-
-.search-box input:focus {
-
-    border-color: #8fc8ec;
-
-    box-shadow:
-        0 0 0 4px
-        rgba(76,155,208,.08);
-}
-
-.search-icon {
-
-    position: absolute;
-
-    left: 19px;
-
-    top: 50%;
-
-    transform:
-        translateY(-50%);
-
-    font-size: 21px;
-
-    pointer-events: none;
-}
-
-
-/* ================================
-   ADD
-================================ */
-
-.add-btn {
-
-    width: 100%;
-
-    margin-top: 12px;
-
-    padding: 13px;
-
-    border: 0;
-
-    border-radius: 14px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff91ae,
-            #f47f9d
-        );
-
-    color: white;
-
-    font-size: 15px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: .2s;
-}
-
-.add-btn:hover {
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 7px 18px
-        rgba(244,127,157,.22);
-}
-
-.add-info {
-
-    margin-top: 10px;
-
-    color: #91a2b2;
-
-    font-size: 12px;
-
-    line-height: 1.7;
-}
-
-
-/* ================================
-   MAIN
-================================ */
-
-.container {
-
-    max-width: 1150px;
-
-    margin: auto;
-
-    padding:
-        0 20px 45px;
-}
-
-
-/* ================================
-   FILTER
-================================ */
-
-.filter-card {
-
-    margin-top: 20px;
-
-    padding: 20px;
-
-    background: white;
-
-    border:
-        1px solid #e5eef8;
-
-    border-radius: 20px;
-}
-
-.filter-title {
-
-    margin-bottom: 12px;
-
-    color: #62798f;
-
-    font-size: 14px;
-
-    font-weight: 700;
-}
-
-.letters {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(14,1fr);
-
-    gap: 6px;
-}
-
-.letter-btn {
-
-    height: 35px;
-
-    border:
-        1px solid #dcebf7;
-
-    border-radius: 9px;
-
-    background: #f8fcff;
-
-    color: #5e7790;
-
-    font-size: 12px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: .15s;
-}
-
-.letter-btn:hover,
-.letter-btn.active {
-
-    background: #4c9bd0;
-
-    border-color: #4c9bd0;
-
-    color: white;
-}
-
-.hsk-buttons {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-}
-
-.hsk-btn {
-
-    padding: 8px 16px;
-
-    border:
-        1px solid #dcebf7;
-
-    border-radius: 11px;
-
-    background: #f8fcff;
-
-    color: #5e7790;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: .15s;
-}
-
-.hsk-btn:hover,
-.hsk-btn.active {
-
-    background: #4c9bd0;
-
-    border-color: #4c9bd0;
-
-    color: white;
-}
-
-
-/* ================================
-   RESULT
-================================ */
-
-.result-bar {
-
-    margin:
-        22px 2px 14px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    color: #7c8fa2;
-
-    font-size: 13px;
-}
-
-#resultCount {
-
-    color: #3688c3;
-
-    font-weight: 700;
-}
-
-
-/* ================================
-   WORD GRID
-================================ */
-
-.word-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4,minmax(0,1fr));
-
-    gap: 15px;
-}
-
-.word-card {
-
-    position: relative;
-
-    min-height: 185px;
-
-    padding: 19px;
-
-    background: white;
-
-    border:
-        1px solid #e3edf6;
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 5px 18px
-        rgba(50,100,150,.055);
-
-    transition: .2s;
-}
-
-.word-card:hover {
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 9px 24px
-        rgba(50,100,150,.09);
-}
-
-.word-card > a {
-
-    display: block;
-
-    height: 100%;
-}
-
-.word {
-
-    padding-right: 35px;
-
-    color: #287fbe;
-
-    font-family:
-        "Noto Sans SC",
-        sans-serif;
-
-    font-size: 31px;
-
-    font-weight: 700;
-
-    line-height: 1.35;
-}
-
-.pinyin {
-
-    margin-top: 6px;
-
-    color: #6f91a8;
-
-    font-size: 14px;
-}
-
-.meaning {
-
-    margin-top: 9px;
-
-    color: #44586d;
-
-    font-size: 14px;
-
-    line-height: 1.6;
-}
-
-.card-bottom {
-
-    margin-top: 14px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 10px;
-}
-
-.hsk-tag {
-
-    padding:
-        4px 9px;
-
-    border-radius: 8px;
-
-    background: #eef8ff;
-
-    color: #3b8dc5;
-
-    font-size: 11px;
-
-    font-weight: 700;
-}
-
-.pos {
-
-    overflow: hidden;
-
-    color: #9aa9b7;
-
-    font-size: 11px;
-
-    text-align: right;
-
-    text-overflow: ellipsis;
-
-    white-space: nowrap;
-}
-
-
-/* ================================
-   FAVORITE
-================================ */
-
-.favorite-btn {
-
-    position: absolute;
-
-    right: 13px;
-
-    top: 13px;
-
-    z-index: 5;
-
-    width: 34px;
-
-    height: 34px;
-
-    border: 0;
-
-    border-radius: 50%;
-
-    background: #f5f9fc;
-
-    color: #aabac8;
-
-    font-size: 18px;
-
-    cursor: pointer;
-
-    transition: .2s;
-}
-
-.favorite-btn:hover {
-
-    background: #fff0f4;
-
-    color: #e96889;
-}
-
-.favorite-btn.active {
-
-    background: #fff0f4;
-
-    color: #e96889;
-}
-
-
-/* ================================
-   EMPTY
-================================ */
-
-.empty {
-
-    grid-column: 1 / -1;
-
-    padding: 50px 20px;
-
-    background: white;
-
-    border:
-        1px dashed #d6e6f2;
-
-    border-radius: 20px;
-
-    color: #91a2b2;
-
-    text-align: center;
-
-    line-height: 1.8;
-}
-
-
-/* ================================
-   FOOTER
-================================ */
-
-footer {
-
-    padding: 28px 20px;
-
-    background: white;
-
-    border-top:
-        1px solid #e9f1f7;
-
-    color: #9aabba;
-
-    font-size: 12px;
-
-    text-align: center;
-}
-
-
-/* ================================
-   RESPONSIVE
-================================ */
-
-@media(max-width:1000px) {
-
-    .word-grid {
-
-        grid-template-columns:
-            repeat(3,1fr);
+    * {
+        box-sizing: border-box;
     }
 
-}
+    body {
+        margin: 0;
+        font-family: Arial, "Noto Sans Thai", sans-serif;
+        background: linear-gradient(135deg, #eef7ff, #fff8ef);
+        color: #334155;
+    }
 
-@media(max-width:700px) {
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .navbar {
+        background: rgba(255,255,255,.95);
+        border-bottom: 1px solid #e2e8f0;
+        padding: 14px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+    }
 
     .nav-inner {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 8px;
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
     }
 
-    .nav-links {
+    .logo {
+        font-size: 20px;
+        font-weight: bold;
+        color: #2563eb;
+        text-decoration: none;
+    }
 
+    .home-btn {
+        text-decoration: none;
+        background: #eff6ff;
+        color: #2563eb;
+        padding: 9px 15px;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .home-btn:hover {
+        background: #dbeafe;
+    }
+
+    /* =========================
+       CONTAINER
+    ========================= */
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 30px 18px 60px;
+    }
+
+    .page-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .page-header .emoji {
+        font-size: 50px;
+        margin-bottom: 5px;
+    }
+
+    .page-header h1 {
+        margin: 0;
+        color: #1e3a8a;
+        font-size: 32px;
+    }
+
+    .page-header p {
+        margin-top: 8px;
+        color: #64748b;
+    }
+
+    /* =========================
+       CARD
+    ========================= */
+
+    .panel {
+        background: rgba(255,255,255,.95);
+        border-radius: 22px;
+        padding: 24px;
+        margin-bottom: 22px;
+        box-shadow: 0 8px 30px rgba(15,23,42,.07);
+        border: 1px solid #e5e7eb;
+    }
+
+    .panel-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #1e3a8a;
+        margin-bottom: 18px;
+    }
+
+    /* =========================
+       INFO
+    ========================= */
+
+    .info-box {
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        border-radius: 15px;
+        padding: 16px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    .info-box strong {
+        color: #1d4ed8;
+    }
+
+    /* =========================
+       BULK INPUT
+    ========================= */
+
+    textarea {
         width: 100%;
+        min-height: 180px;
+        resize: vertical;
+        border: 2px solid #dbeafe;
+        border-radius: 15px;
+        padding: 15px;
+        font-size: 14px;
+        line-height: 1.7;
+        outline: none;
+        font-family: Arial, "Noto Sans Thai", sans-serif;
+        background: #fbfdff;
+    }
 
+    textarea:focus {
+        border-color: #60a5fa;
+        background: #fff;
+    }
+
+    .format-example {
+        margin-top: 10px;
+        background: #f8fafc;
+        border-radius: 12px;
+        padding: 12px;
+        font-size: 13px;
+        color: #475569;
         overflow-x: auto;
     }
 
-    .letters {
+    /* =========================
+       BUTTONS
+    ========================= */
 
-        grid-template-columns:
-            repeat(7,1fr);
+    .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
     }
 
-    .word-grid {
-
-        grid-template-columns:
-            repeat(2,1fr);
+    button {
+        border: 0;
+        cursor: pointer;
+        border-radius: 12px;
+        padding: 11px 17px;
+        font-size: 14px;
+        font-weight: bold;
+        transition: .2s;
     }
 
-    .result-bar {
+    button:hover {
+        transform: translateY(-1px);
+    }
 
+    .btn-primary {
+        background: #2563eb;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background: #1d4ed8;
+    }
+
+    .btn-success {
+        background: #16a34a;
+        color: white;
+    }
+
+    .btn-success:hover {
+        background: #15803d;
+    }
+
+    .btn-warning {
+        background: #f59e0b;
+        color: white;
+    }
+
+    .btn-danger {
+        background: #fee2e2;
+        color: #dc2626;
+    }
+
+    .btn-secondary {
+        background: #f1f5f9;
+        color: #334155;
+    }
+
+    .btn-purple {
+        background: #7c3aed;
+        color: white;
+    }
+
+    /* =========================
+       BOOK FORM
+    ========================= */
+
+    .book-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .field {
+        display: flex;
         flex-direction: column;
-
-        gap: 5px;
+        gap: 7px;
     }
 
-}
-
-@media(max-width:430px) {
-
-    .container,
-    .hero {
-
-        padding-left: 14px;
-
-        padding-right: 14px;
+    .field.full {
+        grid-column: 1 / -1;
     }
 
-    .word-grid {
-
-        grid-template-columns: 1fr;
+    label {
+        font-size: 14px;
+        font-weight: bold;
+        color: #475569;
     }
 
-}
+    input,
+    select {
+        width: 100%;
+        padding: 11px 13px;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        outline: none;
+        font-size: 14px;
+        background: white;
+    }
 
+    input:focus,
+    select:focus {
+        border-color: #60a5fa;
+    }
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-bottom: 22px;
+    }
+
+    .stat {
+        background: white;
+        border-radius: 18px;
+        padding: 18px;
+        text-align: center;
+        border: 1px solid #e5e7eb;
+    }
+
+    .stat-number {
+        font-size: 28px;
+        font-weight: bold;
+        color: #2563eb;
+    }
+
+    .stat-label {
+        margin-top: 5px;
+        font-size: 13px;
+        color: #64748b;
+    }
+
+    /* =========================
+       BOOK LIST
+    ========================= */
+
+    .book-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .book-item {
+        border: 1px solid #e2e8f0;
+        border-radius: 17px;
+        padding: 17px;
+        background: #fff;
+    }
+
+    .book-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .book-title {
+        font-weight: bold;
+        font-size: 17px;
+        color: #1e3a8a;
+    }
+
+    .book-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 8px;
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 4px 9px;
+        border-radius: 999px;
+        font-size: 12px;
+        background: #eff6ff;
+        color: #2563eb;
+    }
+
+    .tag.green {
+        background: #dcfce7;
+        color: #15803d;
+    }
+
+    .tag.orange {
+        background: #fef3c7;
+        color: #b45309;
+    }
+
+    .tag.purple {
+        background: #ede9fe;
+        color: #6d28d9;
+    }
+
+    .drive-id {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #64748b;
+        word-break: break-all;
+    }
+
+    .download-url {
+        margin-top: 9px;
+        background: #f8fafc;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: monospace;
+        font-size: 12px;
+        word-break: break-all;
+        color: #475569;
+    }
+
+    .book-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 13px;
+    }
+
+    .book-actions button {
+        padding: 8px 11px;
+        font-size: 12px;
+    }
+
+    /* =========================
+       EMPTY
+    ========================= */
+
+    .empty {
+        text-align: center;
+        padding: 45px 20px;
+        color: #94a3b8;
+    }
+
+    .empty-icon {
+        font-size: 45px;
+        margin-bottom: 10px;
+    }
+
+    /* =========================
+       STATUS
+    ========================= */
+
+    .status {
+        margin-top: 15px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        display: none;
+        font-size: 14px;
+    }
+
+    .status.show {
+        display: block;
+    }
+
+    .status.success {
+        background: #dcfce7;
+        color: #166534;
+    }
+
+    .status.error {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+    .status.warning {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+    /* =========================
+       EXPORT
+    ========================= */
+
+    .export-box {
+        background: #f8fafc;
+        border-radius: 17px;
+        padding: 18px;
+    }
+
+    .export-preview {
+        width: 100%;
+        min-height: 220px;
+        margin-top: 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 12px;
+        padding: 13px;
+        font-family: monospace;
+        font-size: 12px;
+        background: #0f172a;
+        color: #e2e8f0;
+        resize: vertical;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 800px) {
+        .stats {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .book-form {
+            grid-template-columns: 1fr;
+        }
+
+        .field.full {
+            grid-column: auto;
+        }
+    }
+
+    @media (max-width: 550px) {
+        .container {
+            padding: 20px 12px 40px;
+        }
+
+        .panel {
+            padding: 17px;
+            border-radius: 17px;
+        }
+
+        .page-header h1 {
+            font-size: 25px;
+        }
+
+        .stats {
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+        }
+
+        .stat {
+            padding: 13px 8px;
+        }
+
+        .stat-number {
+            font-size: 23px;
+        }
+
+        .book-top {
+            flex-direction: column;
+        }
+    }
 </style>
-
 </head>
-
 
 <body>
 
+<!-- =========================
+     NAVBAR
+========================= -->
 
 <nav class="navbar">
-
     <div class="nav-inner">
 
-        <a
-            href="index.html"
-            class="logo"
-        >
-
-            ก็แค่จีน by ครูพี่เหม่ยถิง
-
-            <span>
-                เรียนจีนให้เข้าใจ ใช้ได้จริง 💙
-            </span>
-
+        <a href="../index.html" class="logo">
+            📚 ก็แค่จีน
         </a>
 
-
-        <div class="nav-links">
-
-            <a href="index.html">
-                หน้าแรก
-            </a>
-
-            <a
-                href="dictionary.html"
-                class="active"
-            >
-                พจนานุกรม
-            </a>
-
-            <a href="favorites.html">
-                ❤️ คำโปรด
-            </a>
-
-        </div>
+        <a href="../books.html" class="home-btn">
+            ← หน้าหนังสือ
+        </a>
 
     </div>
-
 </nav>
 
 
-<section class="hero">
+<div class="container">
 
-    <h1>
-        📖 พจนานุกรมจีน–ไทย
-    </h1>
+    <!-- =========================
+         HEADER
+    ========================= -->
 
-    <p>
-        ค้นหาคำศัพท์จีน พร้อมพินอิน คำแปล ชนิดคำ และตัวอย่างประโยค
-    </p>
+    <header class="page-header">
 
+        <div class="emoji">📥</div>
 
-    <div class="search-box">
+        <h1>ระบบสร้างลิงก์ดาวน์โหลดหนังสือ</h1>
 
-        <div class="search-area">
-
-            <span class="search-icon">
-                🔍
-            </span>
-
-            <input
-                id="searchInput"
-                type="text"
-                placeholder="ค้นหา เช่น 爱 / ai / รัก..."
-                autocomplete="off"
-            >
-
-        </div>
-
-
-        <button
-            class="add-btn"
-            id="openAddWord"
-            type="button"
-        >
-
-            ➕ เพิ่มคำศัพท์
-
-        </button>
-
-
-        <p class="add-info">
-
-            ไม่พบคำศัพท์ที่ต้องการ?
-            ส่งคำศัพท์ให้แอดมินตรวจสอบได้ค่ะ 💕
-
-            <br>
-
-            หลังส่งข้อมูล คำศัพท์จะผ่านการตรวจสอบ
-            ก่อนนำขึ้นเว็บไซต์
-
+        <p>
+            Google Drive → Direct Download Link
         </p>
 
-    </div>
-
-</section>
+    </header>
 
 
-<main class="container">
+    <!-- =========================
+         INFO
+    ========================= -->
 
+    <div class="panel">
 
-    <section class="filter-card">
+        <div class="info-box">
 
-        <div class="filter-title">
-            🔤 เลือกตัวอักษร
+            <strong>วิธีใช้</strong><br>
+
+            1. ตั้งค่าไฟล์ Google Drive เป็น
+            <b>Anyone with the link → Viewer</b><br>
+
+            2. วางลิงก์ Google Drive หลายไฟล์ลงในช่องด้านล่าง
+            <br>
+
+            3. ระบบจะดึง File ID ให้อัตโนมัติ
+            <br>
+
+            4. กด <b>สร้างรายการ</b>
+            <br>
+
+            5. กรอกข้อมูลหนังสือ
+            <br>
+
+            6. กด Export เพื่อนำข้อมูลไปใช้กับ <b>books.html</b>
+
         </div>
 
-        <div
-            class="letters"
-            id="letterButtons"
-        ></div>
 
+        <div class="panel-title">
+            🔗 วางลิงก์ Google Drive หลายไฟล์
+        </div>
 
-        <div
-            class="filter-title"
-            style="margin-top:20px;"
-        >
-            📚 ระดับ HSK
+        <textarea
+            id="driveInput"
+            placeholder="วาง Google Drive ทีละบรรทัด เช่น
+
+https://drive.google.com/file/d/1AbCdEfGhIjKlMn/view?usp=sharing
+https://drive.google.com/file/d/2BcDeFgHiJkLmNo/view?usp=sharing
+https://drive.google.com/file/d/3CdEfGhIjKlMnOp/view?usp=sharing"></textarea>
+
+        <div class="format-example">
+
+            ระบบรองรับตัวอย่างลิงก์:
+
+            <br><br>
+
+            <b>แบบที่ 1</b><br>
+            https://drive.google.com/file/d/FILE_ID/view?usp=sharing
+
+            <br><br>
+
+            <b>แบบที่ 2</b><br>
+            https://drive.google.com/open?id=FILE_ID
+
+            <br><br>
+
+            <b>Direct Download ที่ระบบสร้าง</b><br>
+            https://drive.google.com/uc?export=download&id=FILE_ID
+
         </div>
 
 
-        <div class="hsk-buttons">
+        <div class="button-row">
 
             <button
-                class="hsk-btn active"
-                data-hsk="ALL"
-                type="button"
-            >
-                ทั้งหมด
+                class="btn-primary"
+                onclick="createFromDriveLinks()">
+                ⚡ สร้างรายการ
             </button>
 
             <button
-                class="hsk-btn"
-                data-hsk="HSK1"
-                type="button"
-            >
-                HSK1
-            </button>
-
-            <button
-                class="hsk-btn"
-                data-hsk="HSK2"
-                type="button"
-            >
-                HSK2
-            </button>
-
-            <button
-                class="hsk-btn"
-                data-hsk="HSK3"
-                type="button"
-            >
-                HSK3
-            </button>
-
-            <button
-                class="hsk-btn"
-                data-hsk="HSK4"
-                type="button"
-            >
-                HSK4
-            </button>
-
-            <button
-                class="hsk-btn"
-                data-hsk="HSK5"
-                type="button"
-            >
-                HSK5
-            </button>
-
-            <button
-                class="hsk-btn"
-                data-hsk="HSK6"
-                type="button"
-            >
-                HSK6
+                class="btn-secondary"
+                onclick="clearInput()">
+                🗑️ ล้างช่อง
             </button>
 
         </div>
 
-    </section>
 
-
-    <div class="result-bar">
-
-        <div>
-
-            พบ
-            <span id="resultCount">0</span>
-            คำ
-
-        </div>
-
-        <div>
-            กดที่คำศัพท์เพื่อดูรายละเอียด 📚
-        </div>
+        <div id="inputStatus" class="status"></div>
 
     </div>
 
 
-    <section
-        class="word-grid"
-        id="wordGrid"
-    >
+    <!-- =========================
+         STATS
+    ========================= -->
 
-        <div class="empty">
-            ⏳ กำลังโหลดคำศัพท์...
+    <div class="stats">
+
+        <div class="stat">
+            <div
+                class="stat-number"
+                id="totalCount">
+                0
+            </div>
+
+            <div class="stat-label">
+                ไฟล์ทั้งหมด
+            </div>
         </div>
 
-    </section>
+
+        <div class="stat">
+            <div
+                class="stat-number"
+                id="hskCount">
+                0
+            </div>
+
+            <div class="stat-label">
+                หนังสือ HSK
+            </div>
+        </div>
 
 
-</main>
+        <div class="stat">
+            <div
+                class="stat-number"
+                id="textbookCount">
+                0
+            </div>
+
+            <div class="stat-label">
+                Textbook
+            </div>
+        </div>
 
 
-<footer>
+        <div class="stat">
+            <div
+                class="stat-number"
+                id="workbookCount">
+                0
+            </div>
 
-    © 2026 ก็แค่จีน by ครูพี่เหม่ยถิง
-    · Chinese–Thai Dictionary 💙
+            <div class="stat-label">
+                Workbook
+            </div>
+        </div>
 
-</footer>
+    </div>
 
 
-<!--
-    สำคัญ:
-    dictionary.js ที่ Generator สร้าง
-    ต้องอยู่ที่ data/dictionary.js
--->
+    <!-- =========================
+         DEFAULT INFORMATION
+    ========================= -->
 
-<script src="./data/dictionary.js"></script>
+    <div class="panel">
+
+        <div class="panel-title">
+            ⚙️ ข้อมูลเริ่มต้นสำหรับไฟล์ที่เพิ่ม
+        </div>
+
+        <div class="book-form">
+
+            <div class="field">
+
+                <label>
+                    หมวดหมู่
+                </label>
+
+                <select id="defaultCategory">
+
+                    <option value="汉语教程">
+                        汉语教程
+                    </option>
+
+                    <option value="HSK Standard Course">
+                        HSK Standard Course
+                    </option>
+
+                    <option value="其他">
+                        อื่น ๆ
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    HSK
+                </label>
+
+                <select id="defaultHsk">
+
+                    <option value="">
+                        ไม่ระบุ
+                    </option>
+
+                    <option value="HSK1">
+                        HSK1
+                    </option>
+
+                    <option value="HSK2">
+                        HSK2
+                    </option>
+
+                    <option value="HSK3">
+                        HSK3
+                    </option>
+
+                    <option value="HSK4">
+                        HSK4
+                    </option>
+
+                    <option value="HSK5">
+                        HSK5
+                    </option>
+
+                    <option value="HSK6">
+                        HSK6
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    ประเภท
+                </label>
+
+                <select id="defaultType">
+
+                    <option value="Textbook">
+                        Textbook
+                    </option>
+
+                    <option value="Workbook">
+                        Workbook
+                    </option>
+
+                    <option value="PDF">
+                        PDF
+                    </option>
+
+                    <option value="อื่น ๆ">
+                        อื่น ๆ
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Emoji
+                </label>
+
+                <input
+                    id="defaultEmoji"
+                    value="📘"
+                    placeholder="📘">
+
+            </div>
+
+
+            <div class="field full">
+
+                <label>
+                    ชื่อหนังสือเริ่มต้น
+                </label>
+
+                <input
+                    id="defaultTitle"
+                    placeholder="ถ้าไม่กรอก ระบบจะใช้ชื่อไฟล์">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         BOOK LIST
+    ========================= -->
+
+    <div class="panel">
+
+        <div class="panel-title">
+            📚 รายการหนังสือ
+        </div>
+
+        <div id="bookList" class="book-list">
+
+            <div class="empty">
+
+                <div class="empty-icon">
+                    📚
+                </div>
+
+                <div>
+                    ยังไม่มีไฟล์
+                </div>
+
+                <small>
+                    วางลิงก์ Google Drive ด้านบนเพื่อเริ่มต้น
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         EXPORT
+    ========================= -->
+
+    <div class="panel">
+
+        <div class="panel-title">
+            📦 Export ข้อมูล
+        </div>
+
+        <div class="export-box">
+
+            <p>
+                เมื่อเพิ่มข้อมูลเรียบร้อยแล้ว
+                สามารถ Export เป็นไฟล์สำหรับใช้กับ
+                <b>books.html</b>
+            </p>
+
+
+            <div class="button-row">
+
+                <button
+                    class="btn-success"
+                    onclick="downloadJS()">
+                    📥 Export books.js
+                </button>
+
+
+                <button
+                    class="btn-purple"
+                    onclick="downloadJSON()">
+                    📄 Export books.json
+                </button>
+
+
+                <button
+                    class="btn-secondary"
+                    onclick="copyJS()">
+                    📋 คัดลอก books.js
+                </button>
+
+            </div>
+
+
+            <textarea
+                id="exportPreview"
+                class="export-preview"
+                readonly
+                placeholder="ตัวอย่าง books.js จะแสดงตรงนี้"></textarea>
+
+        </div>
+
+    </div>
+
+</div>
 
 
 <script>
 
-const FAVORITE_KEY =
-    "chineseDictionaryFavorites";
+/* =========================================================
+   DATA
+========================================================= */
 
-const GOOGLE_FORM_URL =
-    "https://forms.gle/QK2QEqGGWuZbfubdA";
-
-let dictionaryData = [];
-
-let currentLetter = "ALL";
-
-let currentHSK = "ALL";
+let books = [];
 
 
-const searchInput =
-    document.getElementById("searchInput");
+/* =========================================================
+   GET FILE ID FROM GOOGLE DRIVE URL
+========================================================= */
 
-const wordGrid =
-    document.getElementById("wordGrid");
+function extractDriveFileId(url) {
 
-const resultCount =
-    document.getElementById("resultCount");
-
-const letterButtons =
-    document.getElementById("letterButtons");
-
-
-/* ========================================
-   HSK
-======================================== */
-
-function normalizeHSK(value) {
-
-    let hsk =
-        String(value ?? "")
-        .trim()
-        .toUpperCase()
-        .replace(/\s+/g,"");
-
-    if (!hsk) {
-        return "";
+    if (!url) {
+        return null;
     }
 
-    if (/^[1-6]$/.test(hsk)) {
-        return "HSK" + hsk;
-    }
+    url = url.trim();
 
-    const match =
-        hsk.match(/^HSK([1-6])$/);
+    /*
+       /file/d/FILE_ID/view
+    */
+
+    let match = url.match(
+        /\/file\/d\/([a-zA-Z0-9_-]+)/
+    );
 
     if (match) {
-        return "HSK" + match[1];
+        return match[1];
     }
 
-    return hsk;
+
+    /*
+       ?id=FILE_ID
+    */
+
+    match = url.match(
+        /[?&]id=([a-zA-Z0-9_-]+)/
+    );
+
+    if (match) {
+        return match[1];
+    }
+
+
+    /*
+       /open?id=FILE_ID
+    */
+
+    match = url.match(
+        /\/open\?id=([a-zA-Z0-9_-]+)/
+    );
+
+    if (match) {
+        return match[1];
+    }
+
+
+    /*
+       uc?id=FILE_ID
+    */
+
+    match = url.match(
+        /\/uc\?(?:[^#]*&)?id=([a-zA-Z0-9_-]+)/
+    );
+
+    if (match) {
+        return match[1];
+    }
+
+
+    return null;
 }
 
 
-/* ========================================
-   NORMALIZE ITEM
-======================================== */
+/* =========================================================
+   CREATE DIRECT DOWNLOAD LINK
+========================================================= */
 
-function normalizeDictionaryItem(item,index) {
+function createDownloadUrl(fileId) {
 
-    return {
-
-        ...item,
-
-        id:
-            item.id ??
-            index + 1,
-
-        word:
-            String(item.word ?? "").trim(),
-
-        pinyin:
-            String(item.pinyin ?? "").trim(),
-
-        meaning:
-            String(item.meaning ?? "").trim(),
-
-        pos:
-            String(item.pos ?? "").trim(),
-
-        hsk:
-            normalizeHSK(item.hsk),
-
-        example:
-            String(item.example ?? "").trim(),
-
-        examplePinyin:
-            String(item.examplePinyin ?? "").trim(),
-
-        exampleThai:
-            String(
-                item.exampleThai ??
-                item.exampleMeaning ??
-                ""
-            ).trim()
-
-    };
+    return `https://drive.google.com/uc?export=download&id=${fileId}`;
 
 }
 
 
-/* ========================================
-   LOAD
-======================================== */
+/* =========================================================
+   CREATE VIEW URL
+========================================================= */
 
-function loadDictionary() {
+function createViewUrl(fileId) {
+
+    return `https://drive.google.com/file/d/${fileId}/view`;
+
+}
+
+
+/* =========================================================
+   GET FILE NAME FROM URL
+========================================================= */
+
+function getFileNameFromUrl(url, index) {
 
     try {
 
-        let source = null;
+        const fileId = extractDriveFileId(url);
 
-        if (
-            Array.isArray(window.dictionary)
-        ) {
+        if (fileId) {
 
-            source =
-                window.dictionary;
-
-        }
-        else if (
-            Array.isArray(window.dictionaryData)
-        ) {
-
-            source =
-                window.dictionaryData;
-
-        }
-        else {
-
-            throw new Error(
-                "ไม่พบข้อมูล dictionary"
-            );
+            return `หนังสือ ${index + 1}`;
 
         }
 
+    } catch (error) {}
 
-        dictionaryData =
-            source
-            .filter(
-                item =>
-                    item &&
-                    typeof item === "object"
-            )
-            .map(
-                normalizeDictionaryItem
-            );
-
-
-        createLetterButtons();
-
-        renderWords();
-
-    }
-
-    catch(error) {
-
-        console.error(error);
-
-        wordGrid.innerHTML = `
-
-            <div class="empty">
-
-                ⚠️ โหลดข้อมูลคำศัพท์ไม่สำเร็จ
-
-                <br><br>
-
-                กรุณาตรวจสอบไฟล์
-
-                <br>
-
-                <b>
-                    data/dictionary.js
-                </b>
-
-            </div>
-
-        `;
-
-    }
+    return `หนังสือ ${index + 1}`;
 
 }
 
 
-/* ========================================
-   FAVORITES
-======================================== */
+/* =========================================================
+   CREATE BOOKS FROM MULTIPLE LINKS
+========================================================= */
 
-function getFavorites() {
+function createFromDriveLinks() {
 
-    try {
+    const input =
+        document.getElementById("driveInput").value.trim();
 
-        const data =
-            JSON.parse(
-                localStorage.getItem(
-                    FAVORITE_KEY
+    if (!input) {
+
+        showStatus(
+            "inputStatus",
+            "กรุณาวางลิงก์ Google Drive ก่อน",
+            "error"
+        );
+
+        return;
+    }
+
+
+    const lines = input
+        .split(/\r?\n/)
+        .map(line => line.trim())
+        .filter(Boolean);
+
+
+    const category =
+        document.getElementById("defaultCategory").value;
+
+    const hsk =
+        document.getElementById("defaultHsk").value;
+
+    const type =
+        document.getElementById("defaultType").value;
+
+    const emoji =
+        document.getElementById("defaultEmoji").value.trim() || "📘";
+
+    const defaultTitle =
+        document.getElementById("defaultTitle").value.trim();
+
+
+    let added = 0;
+    let duplicate = 0;
+    let invalid = 0;
+
+
+    lines.forEach((url, index) => {
+
+        const fileId =
+            extractDriveFileId(url);
+
+        if (!fileId) {
+
+            invalid++;
+
+            return;
+        }
+
+
+        /*
+           ป้องกันไฟล์ซ้ำ
+        */
+
+        const alreadyExists =
+            books.some(book =>
+                book.fileId === fileId
+            );
+
+
+        if (alreadyExists) {
+
+            duplicate++;
+
+            return;
+        }
+
+
+        const id =
+            getNextId();
+
+
+        const title =
+            defaultTitle
+                ? (
+                    lines.length === 1
+                        ? defaultTitle
+                        : `${defaultTitle} ${index + 1}`
                 )
-            );
+                : getFileNameFromUrl(url, index);
 
-        return Array.isArray(data)
-            ? data.map(Number)
-            : [];
 
+        const book = {
+
+            id: id,
+
+            category: category,
+
+            group: "",
+
+            hsk: hsk,
+
+            title: title,
+
+            subtitle: "",
+
+            type: type,
+
+            emoji: emoji,
+
+            color: "",
+
+            driveUrl: url,
+
+            fileId: fileId,
+
+            downloadUrl:
+                createDownloadUrl(fileId),
+
+            viewUrl:
+                createViewUrl(fileId),
+
+            active: true
+
+        };
+
+
+        books.push(book);
+
+        added++;
+
+    });
+
+
+    renderBooks();
+
+    updateStats();
+
+    updateExportPreview();
+
+
+    let message =
+        `เพิ่มสำเร็จ ${added} ไฟล์`;
+
+    if (duplicate > 0) {
+        message +=
+            ` · ซ้ำ ${duplicate} ไฟล์`;
     }
-    catch {
 
-        return [];
-
+    if (invalid > 0) {
+        message +=
+            ` · ลิงก์ไม่ถูกต้อง ${invalid} รายการ`;
     }
 
-}
 
-
-function saveFavorites(list) {
-
-    localStorage.setItem(
-        FAVORITE_KEY,
-        JSON.stringify(list)
+    showStatus(
+        "inputStatus",
+        message,
+        invalid > 0 ? "warning" : "success"
     );
 
 }
 
 
-function isFavorite(id) {
+/* =========================================================
+   NEXT ID
+========================================================= */
 
-    return getFavorites()
-        .includes(Number(id));
+function getNextId() {
 
-}
-
-
-function toggleFavorite(id,event) {
-
-    event.preventDefault();
-
-    event.stopPropagation();
-
-    id = Number(id);
-
-    let favorites =
-        getFavorites();
-
-    if (
-        favorites.includes(id)
-    ) {
-
-        favorites =
-            favorites.filter(
-                x => x !== id
-            );
-
-    }
-    else {
-
-        favorites.push(id);
-
+    if (books.length === 0) {
+        return 1;
     }
 
-    saveFavorites(favorites);
 
-    renderWords();
+    const numbers =
+        books
+            .map(book => Number(book.id))
+            .filter(Number.isFinite);
 
-}
 
-
-/* ========================================
-   LETTER
-======================================== */
-
-function getFirstLetter(pinyin) {
-
-    if (!pinyin) {
-        return "";
+    if (numbers.length === 0) {
+        return 1;
     }
 
-    const first =
-        String(pinyin)
-        .trim()
-        .toLowerCase()
-        .charAt(0);
 
-    return /^[a-z]$/.test(first)
-        ? first.toUpperCase()
-        : "";
+    return Math.max(...numbers) + 1;
 
 }
 
 
-/* ========================================
-   LETTER BUTTONS
-======================================== */
+/* =========================================================
+   RENDER BOOKS
+========================================================= */
 
-function createLetterButtons() {
+function renderBooks() {
 
-    letterButtons.innerHTML = "";
+    const container =
+        document.getElementById("bookList");
 
-    const all =
-        document.createElement("button");
 
-    all.type = "button";
+    if (books.length === 0) {
 
-    all.className =
-        "letter-btn active";
-
-    all.textContent =
-        "ทั้งหมด";
-
-    all.dataset.letter =
-        "ALL";
-
-    all.addEventListener(
-        "click",
-        () => {
-
-            currentLetter = "ALL";
-
-            updateLetterButtons();
-
-            renderWords();
-
-        }
-    );
-
-    letterButtons.appendChild(all);
-
-
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    .split("")
-    .forEach(letter => {
-
-        const button =
-            document.createElement("button");
-
-        button.type = "button";
-
-        button.className =
-            "letter-btn";
-
-        button.textContent =
-            letter;
-
-        button.dataset.letter =
-            letter;
-
-        button.addEventListener(
-            "click",
-            () => {
-
-                currentLetter =
-                    letter;
-
-                updateLetterButtons();
-
-                renderWords();
-
-            }
-        );
-
-        letterButtons.appendChild(button);
-
-    });
-
-}
-
-
-/* ========================================
-   UPDATE LETTER
-======================================== */
-
-function updateLetterButtons() {
-
-    document
-    .querySelectorAll(".letter-btn")
-    .forEach(button => {
-
-        button.classList.toggle(
-            "active",
-            button.dataset.letter === currentLetter
-        );
-
-    });
-
-}
-
-
-/* ========================================
-   FILTER
-======================================== */
-
-function getFilteredWords() {
-
-    const keyword =
-        searchInput.value
-        .trim()
-        .toLowerCase();
-
-
-    return dictionaryData.filter(item => {
-
-        const word =
-            item.word.toLowerCase();
-
-        const pinyin =
-            item.pinyin.toLowerCase();
-
-        const meaning =
-            item.meaning.toLowerCase();
-
-        const example =
-            item.example.toLowerCase();
-
-        const exampleThai =
-            item.exampleThai.toLowerCase();
-
-
-        const searchMatch =
-
-            !keyword ||
-
-            word.includes(keyword) ||
-
-            pinyin.includes(keyword) ||
-
-            meaning.includes(keyword) ||
-
-            example.includes(keyword) ||
-
-            exampleThai.includes(keyword);
-
-
-        const letterMatch =
-
-            currentLetter === "ALL" ||
-
-            getFirstLetter(item.pinyin)
-            === currentLetter;
-
-
-        const hskMatch =
-
-            currentHSK === "ALL" ||
-
-            normalizeHSK(item.hsk)
-            === normalizeHSK(currentHSK);
-
-
-        return (
-            searchMatch &&
-            letterMatch &&
-            hskMatch
-        );
-
-    });
-
-}
-
-
-/* ========================================
-   ESCAPE
-======================================== */
-
-function escapeHTML(value) {
-
-    return String(value ?? "")
-
-        .replace(/&/g,"&amp;")
-
-        .replace(/</g,"&lt;")
-
-        .replace(/>/g,"&gt;")
-
-        .replace(/"/g,"&quot;")
-
-        .replace(/'/g,"&#039;");
-
-}
-
-
-/* ========================================
-   RENDER
-======================================== */
-
-function renderWords() {
-
-    const words =
-        getFilteredWords();
-
-    resultCount.textContent =
-        words.length.toLocaleString();
-
-    wordGrid.innerHTML = "";
-
-
-    if (!words.length) {
-
-        wordGrid.innerHTML = `
+        container.innerHTML = `
 
             <div class="empty">
 
-                🔎
+                <div class="empty-icon">
+                    📚
+                </div>
 
-                <br><br>
+                <div>
+                    ยังไม่มีไฟล์
+                </div>
 
-                ไม่พบคำศัพท์
-
-                <br>
-
-                ลองค้นหาหรือเปลี่ยนตัวกรองดูนะคะ 💕
+                <small>
+                    วางลิงก์ Google Drive ด้านบนเพื่อเริ่มต้น
+                </small>
 
             </div>
 
         `;
 
         return;
-
     }
 
 
-    words.forEach(item => {
+    container.innerHTML =
+        books.map((book, index) => {
 
-        const card =
-            document.createElement("article");
+            return `
 
-        card.className =
-            "word-card";
+                <div class="book-item">
 
+                    <div class="book-top">
 
-        const favorite =
-            isFavorite(item.id);
+                        <div>
 
+                            <div class="book-title">
 
-        card.innerHTML = `
+                                ${escapeHtml(book.emoji || "📘")}
 
-            <button
-                class="favorite-btn ${
-                    favorite ? "active" : ""
-                }"
-                type="button"
-                aria-label="เพิ่มคำโปรด"
-            >
+                                ${escapeHtml(book.title)}
 
-                ${favorite ? "♥" : "♡"}
-
-            </button>
+                            </div>
 
 
-            <a
-                href="word.html?id=${
-                    encodeURIComponent(item.id)
-                }"
-            >
+                            <div class="book-meta">
 
-                <div class="word">
+                                <span class="tag">
+                                    ID ${escapeHtml(book.id)}
+                                </span>
 
-                    ${escapeHTML(item.word)}
+                                <span class="tag">
+                                    ${escapeHtml(book.category || "ไม่ระบุ")}
+                                </span>
+
+                                ${
+                                    book.hsk
+                                    ? `
+                                        <span class="tag purple">
+                                            ${escapeHtml(book.hsk)}
+                                        </span>
+                                    `
+                                    : ""
+                                }
+
+                                <span class="tag green">
+                                    ${escapeHtml(book.type || "PDF")}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="btn-danger"
+                            onclick="removeBook(${index})">
+
+                            🗑️ ลบ
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="drive-id">
+
+                        <b>FILE_ID:</b>
+
+                        ${escapeHtml(book.fileId)}
+
+                    </div>
+
+
+                    <div class="download-url">
+
+                        ${escapeHtml(book.downloadUrl)}
+
+                    </div>
+
+
+                    <div class="book-actions">
+
+                        <button
+                            class="btn-primary"
+                            onclick="copyText('${escapeJs(book.downloadUrl)}')">
+
+                            📋 คัดลอกลิงก์ดาวน์โหลด
+
+                        </button>
+
+
+                        <button
+                            class="btn-success"
+                            onclick="openUrl('${escapeJs(book.downloadUrl)}')">
+
+                            📥 ดาวน์โหลด
+
+                        </button>
+
+
+                        <button
+                            class="btn-secondary"
+                            onclick="openUrl('${escapeJs(book.viewUrl)}')">
+
+                            👀 เปิด Google Drive
+
+                        </button>
+
+
+                        <button
+                            class="btn-warning"
+                            onclick="editBook(${index})">
+
+                            ✏️ แก้ไข
+
+                        </button>
+
+                    </div>
 
                 </div>
 
+            `;
 
-                <div class="pinyin">
-
-                    ${escapeHTML(item.pinyin)}
-
-                </div>
-
-
-                <div class="meaning">
-
-                    ${escapeHTML(item.meaning)}
-
-                </div>
-
-
-                <div class="card-bottom">
-
-                    <span class="hsk-tag">
-
-                        ${escapeHTML(
-                            item.hsk || "ไม่ระบุ"
-                        )}
-
-                    </span>
-
-
-                    <span class="pos">
-
-                        ${escapeHTML(item.pos)}
-
-                    </span>
-
-                </div>
-
-            </a>
-
-        `;
-
-
-        card
-        .querySelector(".favorite-btn")
-        .addEventListener(
-            "click",
-            event =>
-                toggleFavorite(
-                    item.id,
-                    event
-                )
-        );
-
-
-        wordGrid.appendChild(card);
-
-    });
+        }).join("");
 
 }
 
 
-/* ========================================
-   SEARCH
-======================================== */
+/* =========================================================
+   EDIT BOOK
+========================================================= */
 
-searchInput.addEventListener(
-    "input",
-    renderWords
-);
+function editBook(index) {
 
+    const book = books[index];
 
-/* ========================================
-   HSK
-======================================== */
-
-document
-.querySelectorAll(".hsk-btn")
-.forEach(button => {
-
-    button.addEventListener(
-        "click",
-        () => {
-
-            currentHSK =
-                button.dataset.hsk;
+    if (!book) {
+        return;
+    }
 
 
-            document
-            .querySelectorAll(".hsk-btn")
-            .forEach(btn => {
-
-                btn.classList.remove("active");
-
-            });
+    const title =
+        prompt(
+            "ชื่อหนังสือ",
+            book.title || ""
+        );
 
 
-            button.classList.add("active");
+    if (title === null) {
+        return;
+    }
 
-            renderWords();
 
-        }
+    const category =
+        prompt(
+            "หมวดหมู่",
+            book.category || ""
+        );
+
+
+    if (category === null) {
+        return;
+    }
+
+
+    const hsk =
+        prompt(
+            "HSK เช่น HSK1 / HSK2 หรือเว้นว่าง",
+            book.hsk || ""
+        );
+
+
+    if (hsk === null) {
+        return;
+    }
+
+
+    const type =
+        prompt(
+            "ประเภท เช่น Textbook / Workbook / PDF",
+            book.type || ""
+        );
+
+
+    if (type === null) {
+        return;
+    }
+
+
+    book.title = title.trim();
+
+    book.category = category.trim();
+
+    book.hsk = normalizeHsk(hsk);
+
+    book.type = type.trim();
+
+
+    renderBooks();
+
+    updateStats();
+
+    updateExportPreview();
+
+}
+
+
+/* =========================================================
+   NORMALIZE HSK
+========================================================= */
+
+function normalizeHsk(value) {
+
+    value =
+        String(value || "")
+        .trim()
+        .toUpperCase();
+
+
+    if (!value) {
+        return "";
+    }
+
+
+    if (/^HSK[1-6]$/.test(value)) {
+        return value;
+    }
+
+
+    if (/^[1-6]$/.test(value)) {
+        return `HSK${value}`;
+    }
+
+
+    return value;
+
+}
+
+
+/* =========================================================
+   REMOVE BOOK
+========================================================= */
+
+function removeBook(index) {
+
+    if (!books[index]) {
+        return;
+    }
+
+
+    const confirmed =
+        confirm(
+            `ต้องการลบ "${books[index].title}" หรือไม่?`
+        );
+
+
+    if (!confirmed) {
+        return;
+    }
+
+
+    books.splice(index, 1);
+
+
+    renderBooks();
+
+    updateStats();
+
+    updateExportPreview();
+
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+function updateStats() {
+
+    document.getElementById("totalCount")
+        .textContent = books.length;
+
+
+    document.getElementById("hskCount")
+        .textContent =
+            books.filter(book =>
+                /^HSK[1-6]$/.test(book.hsk)
+            ).length;
+
+
+    document.getElementById("textbookCount")
+        .textContent =
+            books.filter(book =>
+                String(book.type)
+                    .toLowerCase() === "textbook"
+            ).length;
+
+
+    document.getElementById("workbookCount")
+        .textContent =
+            books.filter(book =>
+                String(book.type)
+                    .toLowerCase() === "workbook"
+            ).length;
+
+}
+
+
+/* =========================================================
+   GENERATE JS
+========================================================= */
+
+function generateJS() {
+
+    const json =
+        JSON.stringify(
+            books,
+            null,
+            4
+        );
+
+
+    return `/* =====================================================
+   BOOK DATABASE
+   Generated by ก็แค่จีน Book Generator
+   © 2026 ก็แค่จีน by ครูพี่เหม่ยถิง
+===================================================== */
+
+const books = ${json};
+
+if (typeof window !== "undefined") {
+    window.books = books;
+}
+`;
+
+}
+
+
+/* =========================================================
+   GENERATE JSON
+========================================================= */
+
+function generateJSON() {
+
+    return JSON.stringify(
+        books,
+        null,
+        4
     );
 
-});
+}
 
 
-/* ========================================
-   GOOGLE FORM
-======================================== */
+/* =========================================================
+   UPDATE PREVIEW
+========================================================= */
 
-document
-.getElementById("openAddWord")
-.addEventListener(
-    "click",
-    () => {
+function updateExportPreview() {
 
-        window.open(
-            GOOGLE_FORM_URL,
-            "_blank"
+    document.getElementById("exportPreview")
+        .value = generateJS();
+
+}
+
+
+/* =========================================================
+   DOWNLOAD JS
+========================================================= */
+
+function downloadJS() {
+
+    if (books.length === 0) {
+
+        alert(
+            "ยังไม่มีข้อมูลสำหรับ Export"
+        );
+
+        return;
+    }
+
+
+    const content =
+        generateJS();
+
+
+    downloadFile(
+        "books.js",
+        content,
+        "application/javascript"
+    );
+
+}
+
+
+/* =========================================================
+   DOWNLOAD JSON
+========================================================= */
+
+function downloadJSON() {
+
+    if (books.length === 0) {
+
+        alert(
+            "ยังไม่มีข้อมูลสำหรับ Export"
+        );
+
+        return;
+    }
+
+
+    const content =
+        generateJSON();
+
+
+    downloadFile(
+        "books.json",
+        content,
+        "application/json"
+    );
+
+}
+
+
+/* =========================================================
+   COPY JS
+========================================================= */
+
+async function copyJS() {
+
+    if (books.length === 0) {
+
+        alert(
+            "ยังไม่มีข้อมูลสำหรับคัดลอก"
+        );
+
+        return;
+    }
+
+
+    const content =
+        generateJS();
+
+
+    await copyText(content);
+
+
+    showStatus(
+        "inputStatus",
+        "คัดลอก books.js เรียบร้อยแล้ว",
+        "success"
+    );
+
+}
+
+
+/* =========================================================
+   DOWNLOAD FILE
+========================================================= */
+
+function downloadFile(
+    filename,
+    content,
+    mime
+) {
+
+    const blob =
+        new Blob(
+            [content],
+            { type: mime }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const a =
+        document.createElement("a");
+
+
+    a.href = url;
+
+    a.download = filename;
+
+    document.body.appendChild(a);
+
+    a.click();
+
+    a.remove();
+
+
+    setTimeout(() => {
+
+        URL.revokeObjectURL(url);
+
+    }, 1000);
+
+}
+
+
+/* =========================================================
+   COPY TEXT
+========================================================= */
+
+async function copyText(text) {
+
+    try {
+
+        await navigator.clipboard.writeText(text);
+
+        alert(
+            "คัดลอกเรียบร้อยแล้ว"
+        );
+
+    } catch (error) {
+
+        const textarea =
+            document.createElement("textarea");
+
+        textarea.value = text;
+
+        document.body.appendChild(textarea);
+
+        textarea.select();
+
+        document.execCommand("copy");
+
+        textarea.remove();
+
+        alert(
+            "คัดลอกเรียบร้อยแล้ว"
         );
 
     }
-);
+
+}
 
 
-/* ========================================
-   START
-======================================== */
+/* =========================================================
+   OPEN URL
+========================================================= */
 
-loadDictionary();
+function openUrl(url) {
+
+    window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+    );
+
+}
+
+
+/* =========================================================
+   CLEAR INPUT
+========================================================= */
+
+function clearInput() {
+
+    document.getElementById("driveInput")
+        .value = "";
+
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+function showStatus(
+    id,
+    message,
+    type
+) {
+
+    const element =
+        document.getElementById(id);
+
+
+    element.textContent =
+        message;
+
+
+    element.className =
+        `status show ${type}`;
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHtml(value) {
+
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =========================================================
+   ESCAPE JS
+========================================================= */
+
+function escapeJs(value) {
+
+    return String(value ?? "")
+        .replace(/\\/g, "\\\\")
+        .replace(/'/g, "\\'")
+        .replace(/\r/g, "\\r")
+        .replace(/\n/g, "\\n");
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+renderBooks();
+
+updateStats();
+
+updateExportPreview();
 
 </script>
 
 </body>
 </html>
+```
