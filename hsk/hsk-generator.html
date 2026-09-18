@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HSK Generator | ก็แค่จีน by ครูพี่เหม่ยถิง</title>
+<title>HSK Generator | ก็แค่จีน</title>
 
 <style>
 * {
@@ -14,34 +14,46 @@
 body {
     margin: 0;
     font-family: Arial, "Noto Sans Thai", sans-serif;
-    background: linear-gradient(135deg, #eaf6ff, #fff8e8);
+    background: linear-gradient(135deg, #eaf4ff, #fff8e7);
     color: #333;
-    min-height: 100vh;
 }
 
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
-    background: rgba(255,255,255,0.95);
-    border-bottom: 1px solid #e4e4e4;
-    padding: 14px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     position: sticky;
     top: 0;
-    z-index: 100;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    z-index: 1000;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-inner {
+    max-width: 1100px;
+    margin: auto;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
 .logo {
+    text-decoration: none;
+    color: #2563eb;
     font-size: 20px;
     font-weight: bold;
-    color: #1976d2;
+    white-space: nowrap;
 }
 
 .nav-links {
     display: flex;
-    gap: 8px;
     flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
 }
 
 .nav-links a {
@@ -49,58 +61,77 @@ body {
     color: #555;
     padding: 8px 12px;
     border-radius: 10px;
-    transition: 0.2s;
+    font-size: 14px;
 }
 
-.nav-links a:hover {
-    background: #eaf5ff;
-    color: #1976d2;
+.nav-links a:hover,
+.nav-links a.active {
+    background: #eaf2ff;
+    color: #2563eb;
 }
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container {
-    width: min(1050px, 94%);
-    margin: 30px auto 50px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px 60px;
 }
 
-.header {
+/* =========================
+   HERO
+========================= */
+
+.hero {
     text-align: center;
-    margin-bottom: 25px;
+    padding: 30px 20px 35px;
 }
 
-.header h1 {
-    margin: 0 0 8px;
-    color: #1976d2;
-    font-size: 30px;
+.hero h1 {
+    margin: 0 0 10px;
+    font-size: 34px;
+    color: #2563eb;
 }
 
-.header p {
+.hero p {
     margin: 0;
-    color: #777;
+    color: #666;
 }
 
-.card {
-    background: rgba(255,255,255,0.96);
-    border-radius: 22px;
+/* =========================
+   PANEL
+========================= */
+
+.panel {
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
     padding: 25px;
     margin-bottom: 22px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.07);
-    border: 1px solid rgba(255,255,255,0.8);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
 }
 
-.card h2 {
-    margin-top: 0;
-    color: #1976d2;
-    font-size: 21px;
+.panel-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 18px;
+    color: #2563eb;
 }
+
+/* =========================
+   FORM
+========================= */
 
 .form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 18px;
 }
 
 .form-group {
-    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group.full {
@@ -108,72 +139,38 @@ body {
 }
 
 label {
-    display: block;
     font-weight: bold;
     margin-bottom: 7px;
     color: #444;
 }
 
-select,
-input[type="text"],
-input[type="url"] {
+input,
+select {
     width: 100%;
     padding: 12px 14px;
-    border: 1px solid #d9d9d9;
+    border: 1px solid #d8dee9;
     border-radius: 12px;
     font-size: 15px;
-    outline: none;
     background: white;
+    outline: none;
     transition: 0.2s;
 }
 
-select:focus,
-input:focus {
-    border-color: #64b5f6;
-    box-shadow: 0 0 0 3px rgba(100,181,246,0.15);
+input:focus,
+select:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96,165,250,0.15);
 }
 
-.link-box {
-    border: 1px solid #e5e5e5;
-    border-radius: 16px;
-    padding: 17px;
-    margin-bottom: 15px;
-    background: #fcfcfc;
-}
-
-.link-title {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.link-status {
-    margin-top: 8px;
-    font-size: 13px;
-    min-height: 20px;
-}
-
-.status-ok {
-    color: #16803c;
-}
-
-.status-error {
-    color: #d93025;
-}
-
-.status-warning {
-    color: #b36b00;
-}
-
-.file-id {
-    margin-top: 6px;
-    padding: 7px 10px;
-    background: #f0f8ff;
-    border-radius: 8px;
+.help {
+    margin-top: 5px;
     font-size: 12px;
-    color: #1769aa;
-    word-break: break-all;
-    display: none;
+    color: #888;
 }
+
+/* =========================
+   BUTTONS
+========================= */
 
 .button-row {
     display: flex;
@@ -185,7 +182,7 @@ input:focus {
 button {
     border: none;
     border-radius: 12px;
-    padding: 12px 18px;
+    padding: 11px 18px;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
@@ -194,211 +191,215 @@ button {
 
 button:hover {
     transform: translateY(-1px);
-    opacity: 0.95;
 }
 
 .btn-primary {
-    background: #1976d2;
+    background: #2563eb;
     color: white;
 }
 
-.btn-success {
-    background: #2e9d59;
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-green {
+    background: #16a34a;
     color: white;
 }
 
-.btn-warning {
-    background: #f3a62f;
+.btn-green:hover {
+    background: #15803d;
+}
+
+.btn-orange {
+    background: #f59e0b;
     color: white;
 }
 
-.btn-danger {
-    background: #e85c5c;
-    color: white;
+.btn-orange:hover {
+    background: #d97706;
 }
 
 .btn-gray {
-    background: #eeeeee;
-    color: #444;
+    background: #e5e7eb;
+    color: #333;
 }
 
-.btn-purple {
-    background: #7657c8;
+.btn-red {
+    background: #ef4444;
     color: white;
 }
 
-.preview {
-    display: none;
-}
+/* =========================
+   STATS
+========================= */
 
-.preview.active {
-    display: block;
-}
-
-.preview-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-}
-
-.preview-title {
-    font-size: 20px;
-    font-weight: bold;
-    color: #1976d2;
-}
-
-.preview-info {
-    background: #f4f9ff;
-    border-radius: 14px;
-    padding: 15px;
-    margin-bottom: 18px;
-}
-
-.preview-info div {
-    margin: 5px 0;
-}
-
-.file-preview {
+.stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
+    margin-bottom: 22px;
 }
 
-.file-item {
-    background: #fff;
-    border: 1px solid #e4e4e4;
-    border-radius: 15px;
-    padding: 16px;
-}
-
-.file-item .icon {
-    font-size: 27px;
-    margin-bottom: 8px;
-}
-
-.file-item .name {
-    font-weight: bold;
-    margin-bottom: 6px;
-}
-
-.file-item .url {
-    font-size: 11px;
-    color: #777;
-    word-break: break-all;
-}
-
-.code-box {
-    display: none;
-}
-
-.code-box.active {
-    display: block;
-}
-
-textarea {
-    width: 100%;
-    min-height: 230px;
-    resize: vertical;
-    padding: 15px;
-    border-radius: 14px;
-    border: 1px solid #ddd;
-    background: #1e1e1e;
-    color: #d7f9d7;
-    font-family: Consolas, Monaco, monospace;
-    font-size: 13px;
-    line-height: 1.6;
-    outline: none;
-}
-
-.info-box {
-    padding: 15px 17px;
-    border-radius: 14px;
-    margin-top: 15px;
-    line-height: 1.7;
-}
-
-.info-blue {
-    background: #edf7ff;
-    border: 1px solid #cdeaff;
-    color: #245b80;
-}
-
-.info-yellow {
-    background: #fff8e6;
-    border: 1px solid #f3df9b;
-    color: #795b00;
-}
-
-.info-green {
-    background: #eefaf2;
-    border: 1px solid #ccebd5;
-    color: #28643a;
-}
-
-.file-connect {
-    border: 2px dashed #b9d9f4;
-    border-radius: 18px;
-    padding: 20px;
-    background: #f8fcff;
+.stat {
+    background: white;
+    border-radius: 16px;
+    padding: 18px;
     text-align: center;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
 }
 
-.file-connect h3 {
-    margin: 0 0 8px;
-    color: #1976d2;
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2563eb;
 }
 
-.file-connect p {
-    color: #666;
-    margin: 5px 0 15px;
+.stat-label {
+    margin-top: 5px;
+    color: #777;
+    font-size: 13px;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    display: none;
+    padding: 14px 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
     font-size: 14px;
 }
 
-.file-name {
-    margin-top: 12px;
-    font-weight: bold;
-    color: #2e9d59;
-    word-break: break-all;
+.status.show {
+    display: block;
 }
 
-.save-result {
-    display: none;
-    padding: 16px;
-    margin-top: 15px;
-    border-radius: 14px;
-    background: #eefaf2;
-    border: 1px solid #bde4c8;
-    color: #256b39;
-    line-height: 1.7;
+.status.success {
+    background: #dcfce7;
+    color: #166534;
 }
 
-.save-result.error {
-    background: #fff0f0;
-    border-color: #f1b5b5;
-    color: #a52d2d;
+.status.error {
+    background: #fee2e2;
+    color: #991b1b;
 }
 
-footer {
-    text-align: center;
-    color: #888;
-    padding: 20px;
-    font-size: 13px;
+.status.info {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+/* =========================
+   DATA TABLE
+========================= */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 850px;
+}
+
+th,
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background: #f5f8ff;
+    color: #2563eb;
+    font-size: 14px;
+}
+
+td {
+    font-size: 14px;
 }
 
 .badge {
     display: inline-block;
-    padding: 4px 9px;
-    border-radius: 20px;
-    background: #e8f3ff;
-    color: #1976d2;
+    padding: 5px 9px;
+    border-radius: 999px;
     font-size: 12px;
     font-weight: bold;
 }
 
-@media (max-width: 750px) {
+.badge-old {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge-new {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.badge-level {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+/* =========================
+   CODE BOX
+========================= */
+
+.code-box {
+    background: #111827;
+    color: #e5e7eb;
+    border-radius: 14px;
+    padding: 18px;
+    overflow: auto;
+    max-height: 500px;
+    white-space: pre;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty {
+    text-align: center;
+    padding: 35px 20px;
+    color: #888;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #777;
+    font-size: 13px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .navbar-inner {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
     .form-grid {
         grid-template-columns: 1fr;
     }
@@ -407,22 +408,32 @@ footer {
         grid-column: auto;
     }
 
-    .file-preview {
-        grid-template-columns: 1fr;
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .navbar {
-        padding: 12px 15px;
-        flex-direction: column;
-        gap: 10px;
+    .hero h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .container {
+        padding: 20px 12px 40px;
     }
 
-    .header h1 {
-        font-size: 25px;
-    }
-
-    .card {
+    .panel {
         padding: 18px;
+        border-radius: 16px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    button {
+        width: 100%;
     }
 }
 </style>
@@ -430,131 +441,244 @@ footer {
 
 <body>
 
-<nav class="navbar">
-    <div class="logo">🐼 ก็แค่จีน</div>
+<!-- =========================
+     NAVBAR
+========================= -->
 
-    <div class="nav-links">
-        <a href="index.html">หน้าแรก</a>
-        <a href="hsk.html">HSK</a>
-        <a href="dictionary.html">พจนานุกรม</a>
+<nav class="navbar">
+    <div class="navbar-inner">
+
+        <a href="../index.html" class="logo">
+            ก็แค่จีน 🇨🇳
+        </a>
+
+        <div class="nav-links">
+            <a href="../index.html">หน้าแรก</a>
+            <a href="hsk.html">📚 ไฟล์ข้อสอบ HSK</a>
+            <a href="hsk-generator.html" class="active">⚙️ จัดการข้อสอบ</a>
+            <a href="../dictionary.html">📖 พจนานุกรม</a>
+            <a href="../favorites.html">❤️ คำที่ชอบ</a>
+        </div>
+
     </div>
 </nav>
 
+
 <div class="container">
 
-    <div class="header">
-        <h1>📚 HSK Exam Generator</h1>
-        <p>เพิ่มข้อสอบ HSK เข้า <b>exam-data.js</b> ได้ง่าย ๆ</p>
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+        <h1>⚙️ HSK Exam Generator</h1>
+        <p>
+            เพิ่มและจัดการข้อมูลข้อสอบ HSK สำหรับเว็บไซต์
+        </p>
+    </section>
+
+
+    <!-- =========================
+         STATUS
+    ========================= -->
+
+    <div id="status" class="status"></div>
+
+
+    <!-- =========================
+         STATS
+    ========================= -->
+
+    <div class="stats">
+
+        <div class="stat">
+            <div class="stat-number" id="totalCount">0</div>
+            <div class="stat-label">ข้อสอบทั้งหมด</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number" id="oldCount">0</div>
+            <div class="stat-label">HSK เดิม</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number" id="newCount">0</div>
+            <div class="stat-label">HSK 3.0</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number" id="levelCount">0</div>
+            <div class="stat-label">ระดับที่มีข้อมูล</div>
+        </div>
+
     </div>
 
-    <!-- STEP 1 -->
-    <div class="card">
 
-        <h2>① ข้อมูลชุดข้อสอบ</h2>
+    <!-- =========================
+         LOAD OLD DATA
+    ========================= -->
+
+    <section class="panel">
+
+        <div class="panel-title">
+            📂 โหลดข้อมูลข้อสอบเดิม
+        </div>
+
+        <p style="color:#666; line-height:1.7;">
+            ระบบจะพยายามโหลด <b>exam-data.js</b> จากโฟลเดอร์เดียวกับไฟล์นี้
+            แล้วนำข้อมูลเดิมมาแสดง เพื่อให้เพิ่มชุดข้อสอบต่อได้
+        </p>
+
+        <div class="button-row">
+
+            <button
+                class="btn-primary"
+                onclick="loadExamData()">
+                🔄 โหลด exam-data.js
+            </button>
+
+            <button
+                class="btn-gray"
+                onclick="clearAllData()">
+                🗑️ ล้างข้อมูลทั้งหมด
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ADD FORM
+    ========================= -->
+
+    <section class="panel">
+
+        <div class="panel-title">
+            ➕ เพิ่มชุดข้อสอบใหม่
+        </div>
 
         <div class="form-grid">
 
             <div class="form-group">
-                <label>📂 ระบบข้อสอบ</label>
+                <label for="version">
+                    ระบบข้อสอบ
+                </label>
 
                 <select id="version">
-                    <option value="OLD">HSK ฉบับเก่า</option>
-                    <option value="3.0">HSK 3.0</option>
+
+                    <option value="old">
+                        HSK เดิม
+                    </option>
+
+                    <option value="3.0">
+                        HSK 3.0
+                    </option>
+
                 </select>
             </div>
 
+
             <div class="form-group">
-                <label>📘 ระดับ HSK</label>
+                <label for="level">
+                    ระดับ HSK
+                </label>
 
                 <select id="level">
+
                     <option value="HSK1">HSK1</option>
                     <option value="HSK2">HSK2</option>
                     <option value="HSK3">HSK3</option>
                     <option value="HSK4">HSK4</option>
                     <option value="HSK5">HSK5</option>
                     <option value="HSK6">HSK6</option>
-                    <option value="HSK7-9">HSK7–9</option>
+                    <option value="HSK7-9">HSK7-9</option>
+
                 </select>
             </div>
 
-            <div class="form-group full">
-                <label>📝 ชื่อชุดข้อสอบ</label>
+
+            <div class="form-group">
+                <label for="set">
+                    ชื่อชุดข้อสอบ
+                </label>
 
                 <input
                     type="text"
-                    id="setName"
-                    placeholder="เช่น ชุดที่ 1 / 模拟考试 01"
+                    id="set"
+                    placeholder="เช่น ชุดที่ 1"
                 >
+
+                <div class="help">
+                    เช่น ชุดที่ 1, ชุดที่ 2 หรือ Mock Test 1
+                </div>
             </div>
 
-        </div>
 
-        <div class="info-box info-blue">
-            💡 ตัวอย่าง: เลือก <b>HSK ฉบับเก่า → HSK1 → ชุดที่ 1</b>
-            แล้วใส่ลิงก์ข้อสอบ เฉลย และไฟล์เสียง
-        </div>
+            <div class="form-group">
+                <label for="id">
+                    ID
+                </label>
 
-    </div>
+                <input
+                    type="text"
+                    id="id"
+                    placeholder="ระบบสร้างให้อัตโนมัติ"
+                >
 
-
-    <!-- STEP 2 -->
-    <div class="card">
-
-        <h2>② วางลิงก์ Google Drive</h2>
-
-        <!-- EXAM -->
-        <div class="link-box">
-
-            <div class="link-title">
-                📝 ข้อสอบ
+                <div class="help">
+                    เว้นว่างได้ ระบบจะสร้าง ID ให้อัตโนมัติ
+                </div>
             </div>
 
-            <input
-                type="url"
-                id="examUrl"
-                placeholder="วางลิงก์ Google Drive ของข้อสอบ"
-            >
 
-            <div id="examStatus" class="link-status"></div>
-            <div id="examId" class="file-id"></div>
+            <div class="form-group full">
 
-        </div>
+                <label for="exam">
+                    📝 ลิงก์ข้อสอบ
+                </label>
 
+                <input
+                    type="url"
+                    id="exam"
+                    placeholder="https://drive.google.com/..."
+                >
 
-        <!-- ANSWER -->
-        <div class="link-box">
+                <div class="help">
+                    ใส่ลิงก์ Google Drive หรือไฟล์ PDF ที่ใช้เป็นข้อสอบ
+                </div>
 
-            <div class="link-title">
-                ✅ เฉลย
             </div>
 
-            <input
-                type="url"
-                id="answerUrl"
-                placeholder="วางลิงก์ Google Drive ของเฉลย"
-            >
 
-            <div id="answerStatus" class="link-status"></div>
-            <div id="answerId" class="file-id"></div>
+            <div class="form-group full">
 
-        </div>
+                <label for="answer">
+                    ✅ ลิงก์เฉลย
+                </label>
 
+                <input
+                    type="url"
+                    id="answer"
+                    placeholder="https://drive.google.com/..."
+                >
 
-        <!-- LISTENING -->
-        <div class="link-box">
-
-            <div class="link-title">
-                🎧 Listening
             </div>
 
-            <input
-                type="url"
-                id="listeningUrl"
-                placeholder="วางลิงก์ Google Drive ของไฟล์เสียง"
-            >
 
-            <div id="listeningStatus" class="link-status"></div>
-            <div id="listeningId" class="file-id"></div>
+            <div class="form-group full">
+
+                <label for="listening">
+                    🎧 ลิงก์ Listening
+                </label>
+
+                <input
+                    type="url"
+                    id="listening"
+                    placeholder="https://drive.google.com/..."
+                >
+
+            </div>
 
         </div>
 
@@ -563,214 +687,100 @@ footer {
 
             <button
                 class="btn-primary"
-                onclick="checkAllLinks()"
-            >
-                🔍 ตรวจลิงก์ทั้งหมด
+                onclick="addExam()">
+                ➕ เพิ่มชุดข้อสอบ
             </button>
 
             <button
                 class="btn-gray"
-                onclick="clearForm()"
-            >
-                🗑️ ล้างข้อมูล
+                onclick="resetForm()">
+                ↩️ ล้างแบบฟอร์ม
             </button>
 
         </div>
 
-    </div>
+    </section>
 
 
-    <!-- STEP 3 -->
-    <div class="card preview" id="previewCard">
+    <!-- =========================
+         CURRENT DATA
+    ========================= -->
 
-        <div class="preview-header">
+    <section class="panel">
 
-            <div class="preview-title">
-                👀 ตัวอย่างข้อมูล
-            </div>
+        <div class="panel-title">
+            📊 ข้อมูลข้อสอบปัจจุบัน
+        </div>
 
-            <span class="badge">
-                ตรวจสอบแล้ว
-            </span>
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>#</th>
+                        <th>ID</th>
+                        <th>ระบบ</th>
+                        <th>ระดับ</th>
+                        <th>ชุด</th>
+                        <th>ลิงก์</th>
+                        <th>จัดการ</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="dataTable">
+
+                </tbody>
+
+            </table>
 
         </div>
 
-        <div class="preview-info">
-
-            <div>
-                📂 ระบบ:
-                <b id="previewVersion"></b>
-            </div>
-
-            <div>
-                📘 ระดับ:
-                <b id="previewLevel"></b>
-            </div>
-
-            <div>
-                📝 ชุด:
-                <b id="previewSet"></b>
-            </div>
-
+        <div id="emptyData" class="empty">
+            ยังไม่มีข้อมูลข้อสอบ
         </div>
 
-
-        <div class="file-preview">
-
-            <div class="file-item">
-
-                <div class="icon">📝</div>
-
-                <div class="name">
-                    ข้อสอบ
-                </div>
-
-                <div
-                    class="url"
-                    id="previewExam"
-                ></div>
-
-            </div>
+    </section>
 
 
-            <div class="file-item">
+    <!-- =========================
+         GENERATED CODE
+    ========================= -->
 
-                <div class="icon">✅</div>
+    <section class="panel">
 
-                <div class="name">
-                    เฉลย
-                </div>
-
-                <div
-                    class="url"
-                    id="previewAnswer"
-                ></div>
-
-            </div>
-
-
-            <div class="file-item">
-
-                <div class="icon">🎧</div>
-
-                <div class="name">
-                    Listening
-                </div>
-
-                <div
-                    class="url"
-                    id="previewListening"
-                ></div>
-
-            </div>
-
+        <div class="panel-title">
+            💻 ตัวอย่าง exam-data.js
         </div>
 
+        <p style="color:#666; line-height:1.7;">
+            หลังจากเพิ่มข้อมูลแล้ว ระบบจะสร้าง JavaScript
+            สำหรับนำไปแทนที่ไฟล์ <b>exam-data.js</b>
+        </p>
+
+        <div id="codeBox" class="code-box">
+ยังไม่มีข้อมูล
+        </div>
 
         <div class="button-row">
 
             <button
-                class="btn-success"
-                onclick="generateCode()"
-            >
-                ⚙️ สร้างโค้ด
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- STEP 4 -->
-    <div class="card code-box" id="codeCard">
-
-        <h2>③ โค้ดที่สร้าง</h2>
-
-        <textarea
-            id="generatedCode"
-            readonly
-        ></textarea>
-
-        <div class="button-row">
-
-            <button
-                class="btn-purple"
-                onclick="copyCode()"
-            >
+                class="btn-green"
+                onclick="copyCode()">
                 📋 คัดลอกโค้ด
             </button>
 
             <button
-                class="btn-success"
-                onclick="addToExamData()"
-            >
-                ➕ เพิ่มเข้า exam-data.js
-            </button>
-
-            <button
-                class="btn-warning"
-                onclick="downloadExamDataSnippet()"
-            >
-                💾 ดาวน์โหลดโค้ดชุดนี้
+                class="btn-orange"
+                onclick="downloadJS()">
+                📥 ดาวน์โหลด exam-data.js
             </button>
 
         </div>
 
-        <div class="info-box info-yellow">
-            ⚠️ ปุ่ม <b>เพิ่มเข้า exam-data.js</b>
-            จะให้เลือกไฟล์ <b>exam-data.js</b> ของเว็บไซต์
-            จากนั้นระบบจะเพิ่มชุดข้อสอบนี้เข้าไปท้ายข้อมูลเดิมให้อัตโนมัติ
-        </div>
-
-        <div
-            id="saveResult"
-            class="save-result"
-        ></div>
-
-    </div>
-
-
-    <!-- FILE SYSTEM -->
-    <div class="card">
-
-        <h2>④ ไฟล์ exam-data.js</h2>
-
-        <div class="file-connect">
-
-            <h3>📂 เชื่อมต่อไฟล์ exam-data.js</h3>
-
-            <p>
-                เลือกไฟล์ <b>exam-data.js</b> ที่ใช้อยู่บนเว็บไซต์
-                เพื่อให้ระบบสามารถเพิ่มชุดข้อสอบลงไฟล์โดยตรง
-            </p>
-
-            <button
-                class="btn-primary"
-                onclick="chooseExamDataFile()"
-            >
-                📂 เลือก exam-data.js
-            </button>
-
-            <div
-                id="selectedFileName"
-                class="file-name"
-            ></div>
-
-        </div>
-
-        <div class="info-box info-green">
-
-            ✅ เมื่อเลือกไฟล์แล้ว ระบบจะจำไฟล์ไว้ในหน้านี้
-            <br>
-            ✅ กด <b>เพิ่มเข้า exam-data.js</b> ได้หลายชุดต่อเนื่อง
-            <br>
-            ✅ ข้อมูลเดิมจะไม่ถูกลบ ระบบจะเพิ่มข้อมูลใหม่ต่อท้าย
-            <br>
-            ✅ หากไม่รองรับการเขียนไฟล์โดยตรง สามารถใช้ปุ่มดาวน์โหลดแทนได้
-
-        </div>
-
-    </div>
+    </section>
 
 </div>
 
@@ -782,1346 +792,968 @@ footer {
 
 <script>
 
-/* =========================================================
-   ตัวแปรหลัก
-========================================================= */
+/* =====================================================
+   DATA
+===================================================== */
 
-let currentData = null;
-
-let examDataFileHandle = null;
+let examData = [];
 
 
-/* =========================================================
-   ตรวจ HSK 7-9
-========================================================= */
+/* =====================================================
+   LOAD exam-data.js
+===================================================== */
 
-const versionSelect = document.getElementById("version");
-const levelSelect = document.getElementById("level");
+function loadExamData() {
 
-versionSelect.addEventListener("change", function() {
+    showStatus(
+        "กำลังโหลด exam-data.js ...",
+        "info"
+    );
 
-    if (this.value === "OLD") {
+    const oldScript = document.getElementById(
+        "dynamicExamData"
+    );
 
-        const option79 = [...levelSelect.options]
-            .find(option => option.value === "HSK7-9");
+    if (oldScript) {
+        oldScript.remove();
+    }
 
-        if (option79) {
-            option79.disabled = true;
+    const script = document.createElement("script");
+
+    script.id = "dynamicExamData";
+
+    script.src =
+        "exam-data.js?t=" +
+        Date.now();
+
+    script.onload = function() {
+
+        if (
+            Array.isArray(window.examData)
+        ) {
+
+            examData =
+                JSON.parse(
+                    JSON.stringify(
+                        window.examData
+                    )
+                );
+
+            renderAll();
+
+            showStatus(
+                "โหลดข้อมูล exam-data.js สำเร็จ " +
+                examData.length +
+                " รายการ",
+                "success"
+            );
+
+        } else {
+
+            showStatus(
+                "พบไฟล์ exam-data.js แต่ไม่พบ window.examData",
+                "error"
+            );
+
         }
 
-        if (levelSelect.value === "HSK7-9") {
-            levelSelect.value = "HSK1";
-        }
+    };
 
-    } else {
+    script.onerror = function() {
 
-        const option79 = [...levelSelect.options]
-            .find(option => option.value === "HSK7-9");
+        showStatus(
+            "ไม่สามารถโหลด exam-data.js ได้ กรุณาตรวจสอบว่าไฟล์อยู่ในโฟลเดอร์ hsk/ เดียวกับ hsk-generator.html",
+            "error"
+        );
 
-        if (option79) {
-            option79.disabled = false;
+    };
+
+    document.body.appendChild(script);
+}
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+window.addEventListener(
+    "load",
+    function() {
+
+        if (
+            Array.isArray(window.examData)
+        ) {
+
+            examData =
+                JSON.parse(
+                    JSON.stringify(
+                        window.examData
+                    )
+                );
+
+            renderAll();
+
+        } else {
+
+            showStatus(
+                "ยังไม่ได้โหลด exam-data.js กดปุ่ม 🔄 โหลด exam-data.js",
+                "info"
+            );
+
         }
 
     }
-
-});
-
-
-/* เรียกครั้งแรก */
-
-versionSelect.dispatchEvent(
-    new Event("change")
 );
 
 
-/* =========================================================
-   Google Drive File ID
-========================================================= */
+/* =====================================================
+   GENERATE ID
+===================================================== */
 
-function getDriveFileId(url) {
+function generateID() {
 
-    if (!url) {
-        return "";
-    }
+    const version =
+        document.getElementById("version").value;
 
-    url = url.trim();
+    const level =
+        document.getElementById("level").value;
 
-    /*
-        รูปแบบ:
+    const prefix =
+        version === "3.0"
+            ? "H3"
+            : "H";
 
-        https://drive.google.com/file/d/FILE_ID/view
-    */
+    const levelNumber =
+        level
+            .replace("HSK", "")
+            .replace("-", "");
 
-    let match = url.match(
-        /drive\.google\.com\/file\/d\/([^\/?#]+)/
-    );
+    let number = 1;
 
-    if (match) {
-        return match[1];
-    }
-
-
-    /*
-        รูปแบบ:
-
-        https://drive.google.com/open?id=FILE_ID
-    */
-
-    try {
-
-        const parsed = new URL(url);
-
-        const id = parsed.searchParams.get("id");
-
-        if (id) {
-            return id;
-        }
-
-    } catch (error) {
-
-    }
-
-
-    /*
-        กรณีวาง File ID มาโดยตรง
-    */
-
-    if (
-        /^[a-zA-Z0-9_-]{10,}$/.test(url)
+    while (
+        examData.some(
+            item => item.id ===
+                prefix +
+                levelNumber +
+                String(number).padStart(3, "0")
+        )
     ) {
-        return url;
-    }
 
+        number++;
 
-    return "";
-}
-
-
-/* =========================================================
-   แปลง Google Drive เป็น Download URL
-========================================================= */
-
-function convertDriveUrl(url) {
-
-    const fileId = getDriveFileId(url);
-
-    if (!fileId) {
-        return "";
     }
 
     return (
-        "https://drive.google.com/uc?export=download&id="
-        + encodeURIComponent(fileId)
+        prefix +
+        levelNumber +
+        String(number).padStart(3, "0")
     );
 }
 
 
-/* =========================================================
-   ตรวจช่องเดียว
-========================================================= */
+/* =====================================================
+   ADD EXAM
+===================================================== */
 
-function checkSingleLink(
-    inputId,
-    statusId,
-    fileIdId,
-    label
-) {
+function addExam() {
 
-    const input = document.getElementById(inputId);
-    const status = document.getElementById(statusId);
-    const fileIdBox = document.getElementById(fileIdId);
+    const version =
+        document.getElementById("version").value.trim();
 
-    const originalUrl = input.value.trim();
+    const level =
+        document.getElementById("level").value.trim();
 
-    status.className = "link-status";
-    fileIdBox.style.display = "none";
-    fileIdBox.textContent = "";
+    const set =
+        document.getElementById("set").value.trim();
 
-    if (!originalUrl) {
+    const exam =
+        document.getElementById("exam").value.trim();
 
-        status.textContent =
-            "❌ กรุณาวางลิงก์ " + label;
+    const answer =
+        document.getElementById("answer").value.trim();
 
-        status.classList.add("status-error");
+    const listening =
+        document.getElementById("listening").value.trim();
 
-        return null;
-    }
+    let id =
+        document.getElementById("id").value.trim();
 
 
-    const fileId = getDriveFileId(originalUrl);
+    if (!set) {
 
-
-    if (!fileId) {
-
-        status.textContent =
-            "❌ ไม่สามารถอ่าน File ID ได้";
-
-        status.classList.add("status-error");
-
-        return null;
-    }
-
-
-    const downloadUrl =
-        convertDriveUrl(originalUrl);
-
-
-    status.textContent =
-        "✅ พบ File ID และสร้างลิงก์ดาวน์โหลดแล้ว";
-
-    status.classList.add("status-ok");
-
-
-    fileIdBox.style.display = "block";
-
-    fileIdBox.innerHTML =
-        "<b>File ID:</b> "
-        + escapeHtml(fileId)
-        + "<br><br>"
-        + "<b>Download URL:</b> "
-        + escapeHtml(downloadUrl);
-
-
-    return {
-        original: originalUrl,
-        fileId: fileId,
-        download: downloadUrl
-    };
-
-}
-
-
-/* =========================================================
-   ตรวจทั้ง 3 ช่อง
-========================================================= */
-
-function checkAllLinks() {
-
-    const setName =
-        document.getElementById("setName")
-            .value
-            .trim();
-
-    if (!setName) {
-
-        alert("กรุณาใส่ชื่อชุดข้อสอบก่อน");
-
-        document
-            .getElementById("setName")
-            .focus();
+        showStatus(
+            "กรุณาใส่ชื่อชุดข้อสอบ",
+            "error"
+        );
 
         return;
+
     }
 
 
-    const exam = checkSingleLink(
-        "examUrl",
-        "examStatus",
-        "examId",
-        "ข้อสอบ"
-    );
+    if (!exam) {
 
-
-    const answer = checkSingleLink(
-        "answerUrl",
-        "answerStatus",
-        "answerId",
-        "เฉลย"
-    );
-
-
-    const listening = checkSingleLink(
-        "listeningUrl",
-        "listeningStatus",
-        "listeningId",
-        "Listening"
-    );
-
-
-    if (!exam || !answer || !listening) {
-
-        document
-            .getElementById("previewCard")
-            .classList.remove("active");
-
-        document
-            .getElementById("codeCard")
-            .classList.remove("active");
+        showStatus(
+            "กรุณาใส่ลิงก์ข้อสอบ",
+            "error"
+        );
 
         return;
+
     }
 
 
-    currentData = {
+    if (!id) {
 
-        id: createId(),
+        id = generateID();
 
-        version:
-            document.getElementById("version").value,
+    }
 
-        level:
-            document.getElementById("level").value,
 
-        set:
-            setName,
+    if (
+        examData.some(
+            item => item.id === id
+        )
+    ) {
 
-        exam:
-            exam.download,
+        showStatus(
+            "ID นี้มีอยู่แล้ว กรุณาใช้ ID อื่น",
+            "error"
+        );
 
-        answer:
-            answer.download,
+        return;
 
-        listening:
-            listening.download
+    }
+
+
+    const newExam = {
+
+        id: id,
+
+        version: version,
+
+        level: level,
+
+        set: set,
+
+        exam: exam,
+
+        answer: answer,
+
+        listening: listening
 
     };
 
 
-    showPreview();
+    examData.push(newExam);
+
+
+    resetForm();
+
+    renderAll();
+
+
+    showStatus(
+        "เพิ่มชุดข้อสอบสำเร็จ ✓",
+        "success"
+    );
 
 }
 
 
-/* =========================================================
-   แสดง Preview
-========================================================= */
+/* =====================================================
+   DELETE
+===================================================== */
 
-function showPreview() {
+function deleteExam(index) {
 
-    if (!currentData) {
+    const item =
+        examData[index];
+
+    if (!item) {
         return;
     }
 
 
-    document.getElementById("previewVersion")
-        .textContent =
-        currentData.version === "OLD"
-            ? "HSK ฉบับเก่า"
-            : "HSK 3.0";
+    const confirmDelete =
+        confirm(
+            "ต้องการลบข้อมูลนี้หรือไม่?\n\n" +
+            item.level +
+            " · " +
+            item.set
+        );
 
 
-    document.getElementById("previewLevel")
-        .textContent =
-        currentData.level;
-
-
-    document.getElementById("previewSet")
-        .textContent =
-        currentData.set;
-
-
-    document.getElementById("previewExam")
-        .textContent =
-        currentData.exam;
-
-
-    document.getElementById("previewAnswer")
-        .textContent =
-        currentData.answer;
-
-
-    document.getElementById("previewListening")
-        .textContent =
-        currentData.listening;
-
-
-    document.getElementById("previewCard")
-        .classList.add("active");
-
-
-    document.getElementById("codeCard")
-        .classList.remove("active");
-
-
-    document.getElementById("previewCard")
-        .scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
-}
-
-
-/* =========================================================
-   สร้าง ID
-========================================================= */
-
-function createId() {
-
-    const now =
-        Date.now()
-            .toString(36);
-
-    const random =
-        Math.random()
-            .toString(36)
-            .substring(2, 7);
-
-    return now + random;
-
-}
-
-
-/* =========================================================
-   สร้าง JavaScript Object
-========================================================= */
-
-function makeObjectCode(data) {
-
-    return `{
-    id: ${JSON.stringify(data.id)},
-    version: ${JSON.stringify(data.version)},
-    level: ${JSON.stringify(data.level)},
-    set: ${JSON.stringify(data.set)},
-    exam: ${JSON.stringify(data.exam)},
-    answer: ${JSON.stringify(data.answer)},
-    listening: ${JSON.stringify(data.listening)}
-}`;
-
-}
-
-
-/* =========================================================
-   สร้างโค้ด
-========================================================= */
-
-function generateCode() {
-
-    if (!currentData) {
-
-        alert("กรุณาตรวจสอบลิงก์ก่อน");
-
+    if (!confirmDelete) {
         return;
     }
 
 
-    const objectCode =
-        makeObjectCode(currentData);
+    examData.splice(
+        index,
+        1
+    );
 
 
-    document.getElementById("generatedCode")
-        .value =
-        objectCode;
+    renderAll();
 
 
-    document.getElementById("codeCard")
-        .classList.add("active");
-
-
-    document.getElementById("codeCard")
-        .scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+    showStatus(
+        "ลบข้อมูลแล้ว",
+        "success"
+    );
 
 }
 
 
-/* =========================================================
-   Copy
-========================================================= */
+/* =====================================================
+   EDIT
+===================================================== */
+
+function editExam(index) {
+
+    const item =
+        examData[index];
+
+    if (!item) {
+        return;
+    }
+
+
+    document.getElementById(
+        "version"
+    ).value =
+        item.version || "old";
+
+
+    document.getElementById(
+        "level"
+    ).value =
+        item.level || "HSK1";
+
+
+    document.getElementById(
+        "set"
+    ).value =
+        item.set || "";
+
+
+    document.getElementById(
+        "id"
+    ).value =
+        item.id || "";
+
+
+    document.getElementById(
+        "exam"
+    ).value =
+        item.exam || "";
+
+
+    document.getElementById(
+        "answer"
+    ).value =
+        item.answer || "";
+
+
+    document.getElementById(
+        "listening"
+    ).value =
+        item.listening || "";
+
+
+    examData.splice(
+        index,
+        1
+    );
+
+
+    renderAll();
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+
+    showStatus(
+        "นำข้อมูลมาแก้ไขแล้ว เมื่อแก้เสร็จให้กด ➕ เพิ่มชุดข้อสอบ",
+        "info"
+    );
+
+}
+
+
+/* =====================================================
+   RESET FORM
+===================================================== */
+
+function resetForm() {
+
+    document.getElementById(
+        "version"
+    ).value = "old";
+
+    document.getElementById(
+        "level"
+    ).value = "HSK1";
+
+    document.getElementById(
+        "set"
+    ).value = "";
+
+    document.getElementById(
+        "id"
+    ).value = "";
+
+    document.getElementById(
+        "exam"
+    ).value = "";
+
+    document.getElementById(
+        "answer"
+    ).value = "";
+
+    document.getElementById(
+        "listening"
+    ).value = "";
+
+}
+
+
+/* =====================================================
+   CLEAR ALL
+===================================================== */
+
+function clearAllData() {
+
+    if (examData.length === 0) {
+
+        showStatus(
+            "ไม่มีข้อมูลให้ล้าง",
+            "info"
+        );
+
+        return;
+
+    }
+
+
+    const confirmed =
+        confirm(
+            "ต้องการล้างข้อมูลทั้งหมดจากหน้านี้หรือไม่?\n\n" +
+            "ข้อมูลใน GitHub จะไม่ถูกลบจนกว่าคุณจะนำไฟล์ใหม่ไปอัปโหลด"
+        );
+
+
+    if (!confirmed) {
+        return;
+    }
+
+
+    examData = [];
+
+
+    renderAll();
+
+
+    showStatus(
+        "ล้างข้อมูลในหน้านี้แล้ว",
+        "success"
+    );
+
+}
+
+
+/* =====================================================
+   RENDER ALL
+===================================================== */
+
+function renderAll() {
+
+    renderStats();
+
+    renderTable();
+
+    renderCode();
+
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+function renderStats() {
+
+    const total =
+        examData.length;
+
+
+    const oldCount =
+        examData.filter(
+            item =>
+                item.version === "old"
+        ).length;
+
+
+    const newCount =
+        examData.filter(
+            item =>
+                item.version === "3.0"
+        ).length;
+
+
+    const levels =
+        new Set(
+            examData.map(
+                item => item.level
+            )
+        );
+
+
+    document.getElementById(
+        "totalCount"
+    ).textContent =
+        total;
+
+
+    document.getElementById(
+        "oldCount"
+    ).textContent =
+        oldCount;
+
+
+    document.getElementById(
+        "newCount"
+    ).textContent =
+        newCount;
+
+
+    document.getElementById(
+        "levelCount"
+    ).textContent =
+        levels.size;
+
+}
+
+
+/* =====================================================
+   RENDER TABLE
+===================================================== */
+
+function renderTable() {
+
+    const tbody =
+        document.getElementById(
+            "dataTable"
+        );
+
+    const empty =
+        document.getElementById(
+            "emptyData"
+        );
+
+
+    tbody.innerHTML = "";
+
+
+    if (examData.length === 0) {
+
+        empty.style.display =
+            "block";
+
+        return;
+
+    }
+
+
+    empty.style.display =
+        "none";
+
+
+    examData.forEach(
+        (item, index) => {
+
+            const tr =
+                document.createElement(
+                    "tr"
+                );
+
+
+            const versionText =
+                item.version === "3.0"
+                    ? "HSK 3.0"
+                    : "HSK เดิม";
+
+
+            const versionClass =
+                item.version === "3.0"
+                    ? "badge-new"
+                    : "badge-old";
+
+
+            tr.innerHTML = `
+
+                <td>
+                    ${index + 1}
+                </td>
+
+                <td>
+                    <code>${escapeHTML(item.id || "")}</code>
+                </td>
+
+                <td>
+                    <span class="badge ${versionClass}">
+                        ${versionText}
+                    </span>
+                </td>
+
+                <td>
+                    <span class="badge badge-level">
+                        ${escapeHTML(item.level || "")}
+                    </span>
+                </td>
+
+                <td>
+                    ${escapeHTML(item.set || "")}
+                </td>
+
+                <td>
+
+                    ${
+                        item.exam
+                            ? `<a href="${escapeAttribute(item.exam)}"
+                                  target="_blank"
+                                  rel="noopener">
+                                  📝 เปิด
+                               </a>`
+                            : "-"
+                    }
+
+                </td>
+
+                <td>
+
+                    <button
+                        class="btn-orange"
+                        style="padding:7px 10px;font-size:12px;"
+                        onclick="editExam(${index})">
+                        ✏️ แก้ไข
+                    </button>
+
+                    <button
+                        class="btn-red"
+                        style="padding:7px 10px;font-size:12px;"
+                        onclick="deleteExam(${index})">
+                        🗑️ ลบ
+                    </button>
+
+                </td>
+
+            `;
+
+
+            tbody.appendChild(
+                tr
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   GENERATE JS
+===================================================== */
+
+function generateJS() {
+
+    const cleanData =
+        examData.map(
+            item => ({
+
+                id: item.id || "",
+
+                version:
+                    item.version || "old",
+
+                level:
+                    item.level || "",
+
+                set:
+                    item.set || "",
+
+                exam:
+                    item.exam || "",
+
+                answer:
+                    item.answer || "",
+
+                listening:
+                    item.listening || ""
+
+            })
+        );
+
+
+    return (
+`window.examData = ${JSON.stringify(cleanData, null, 2)};`
+    );
+
+}
+
+
+/* =====================================================
+   RENDER CODE
+===================================================== */
+
+function renderCode() {
+
+    const box =
+        document.getElementById(
+            "codeBox"
+        );
+
+
+    if (examData.length === 0) {
+
+        box.textContent =
+            "ยังไม่มีข้อมูล";
+
+        return;
+
+    }
+
+
+    box.textContent =
+        generateJS();
+
+}
+
+
+/* =====================================================
+   COPY CODE
+===================================================== */
 
 async function copyCode() {
 
-    const textarea =
-        document.getElementById("generatedCode");
+    if (examData.length === 0) {
+
+        showStatus(
+            "ยังไม่มีข้อมูลสำหรับคัดลอก",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    const code =
+        generateJS();
 
 
     try {
 
         await navigator.clipboard.writeText(
-            textarea.value
+            code
         );
 
-        alert("✅ คัดลอกโค้ดเรียบร้อยแล้ว");
+
+        showStatus(
+            "คัดลอกโค้ด exam-data.js แล้ว ✓",
+            "success"
+        );
 
     } catch (error) {
 
-        textarea.select();
-
-        document.execCommand("copy");
-
-        alert("✅ คัดลอกโค้ดเรียบร้อยแล้ว");
+        showStatus(
+            "ไม่สามารถคัดลอกอัตโนมัติได้ กรุณาคัดลอกจากช่องโค้ด",
+            "error"
+        );
 
     }
 
 }
 
 
-/* =========================================================
-   เลือก exam-data.js
-========================================================= */
+/* =====================================================
+   DOWNLOAD JS
+===================================================== */
 
-async function chooseExamDataFile() {
+function downloadJS() {
 
-    if (!("showOpenFilePicker" in window)) {
+    if (examData.length === 0) {
 
-        alert(
-            "เบราว์เซอร์นี้ยังไม่รองรับการเขียนไฟล์โดยตรง\n\n" +
-            "แนะนำให้ใช้ Google Chrome หรือ Microsoft Edge รุ่นใหม่"
+        showStatus(
+            "ยังไม่มีข้อมูลสำหรับสร้างไฟล์",
+            "error"
         );
 
         return;
-    }
-
-
-    try {
-
-        const handles =
-            await window.showOpenFilePicker({
-
-                multiple: false,
-
-                types: [
-                    {
-                        description:
-                            "JavaScript file",
-
-                        accept: {
-                            "text/javascript": [
-                                ".js"
-                            ]
-                        }
-                    }
-                ]
-
-            });
-
-
-        if (!handles || !handles.length) {
-            return;
-        }
-
-
-        examDataFileHandle =
-            handles[0];
-
-
-        const file =
-            await examDataFileHandle.getFile();
-
-
-        document.getElementById(
-            "selectedFileName"
-        ).textContent =
-            "✅ เลือกไฟล์แล้ว: "
-            + file.name;
-
-
-    } catch (error) {
-
-        if (error.name !== "AbortError") {
-
-            console.error(error);
-
-            alert(
-                "ไม่สามารถเลือกไฟล์ได้\n\n"
-                + error.message
-            );
-
-        }
-
-    }
-
-}
-
-
-/* =========================================================
-   อ่านไฟล์ exam-data.js
-========================================================= */
-
-async function readExamDataFile() {
-
-    if (!examDataFileHandle) {
-
-        await chooseExamDataFile();
 
     }
 
 
-    if (!examDataFileHandle) {
-        return null;
-    }
-
-
-    const file =
-        await examDataFileHandle.getFile();
-
-
-    return await file.text();
-
-}
-
-
-/* =========================================================
-   หา Array ของ exam-data.js
-========================================================= */
-
-function findExamArray(text) {
-
-    /*
-        รองรับรูปแบบประมาณนี้:
-
-        const examData = [
-            ...
-        ];
-
-        หรือ
-
-        let examData = [
-            ...
-        ];
-
-        หรือ
-
-        window.examData = [
-            ...
-        ];
-    */
-
-
-    const patterns = [
-
-        /(?:const|let|var)\s+examData\s*=\s*\[/i,
-
-        /window\.examData\s*=\s*\[/i,
-
-        /examData\s*=\s*\[/i
-
-    ];
-
-
-    let match = null;
-
-
-    for (const pattern of patterns) {
-
-        const found =
-            pattern.exec(text);
-
-        if (found) {
-
-            match = found;
-
-            break;
-
-        }
-
-    }
-
-
-    if (!match) {
-        return null;
-    }
-
-
-    const startBracket =
-        text.indexOf(
-            "[",
-            match.index
-        );
-
-
-    if (startBracket === -1) {
-        return null;
-    }
-
-
-    const endBracket =
-        findMatchingBracket(
-            text,
-            startBracket,
-            "[",
-            "]"
-        );
-
-
-    if (endBracket === -1) {
-        return null;
-    }
-
-
-    return {
-        start: startBracket,
-        end: endBracket
-    };
-
-}
-
-
-/* =========================================================
-   หา ] ที่ตรงกับ [
-   รองรับ string / comment
-========================================================= */
-
-function findMatchingBracket(
-    text,
-    start,
-    openChar,
-    closeChar
-) {
-
-    let depth = 0;
-
-    let inString = false;
-
-    let stringChar = "";
-
-    let inLineComment = false;
-
-    let inBlockComment = false;
-
-    let escaped = false;
-
-
-    for (
-        let i = start;
-        i < text.length;
-        i++
-    ) {
-
-        const char = text[i];
-
-        const next = text[i + 1];
-
-
-        /* line comment */
-
-        if (inLineComment) {
-
-            if (char === "\n") {
-                inLineComment = false;
-            }
-
-            continue;
-        }
-
-
-        /* block comment */
-
-        if (inBlockComment) {
-
-            if (
-                char === "*" &&
-                next === "/"
-            ) {
-
-                inBlockComment = false;
-
-                i++;
-
-            }
-
-            continue;
-        }
-
-
-        /* string */
-
-        if (inString) {
-
-            if (escaped) {
-
-                escaped = false;
-
-                continue;
-            }
-
-
-            if (char === "\\") {
-
-                escaped = true;
-
-                continue;
-            }
-
-
-            if (char === stringChar) {
-
-                inString = false;
-
-                stringChar = "";
-
-            }
-
-            continue;
-        }
-
-
-        /* comments */
-
-        if (
-            char === "/" &&
-            next === "/"
-        ) {
-
-            inLineComment = true;
-
-            i++;
-
-            continue;
-
-        }
-
-
-        if (
-            char === "/" &&
-            next === "*"
-        ) {
-
-            inBlockComment = true;
-
-            i++;
-
-            continue;
-
-        }
-
-
-        /* strings */
-
-        if (
-            char === '"' ||
-            char === "'" ||
-            char === "`"
-        ) {
-
-            inString = true;
-
-            stringChar = char;
-
-            continue;
-
-        }
-
-
-        /* brackets */
-
-        if (char === openChar) {
-
-            depth++;
-
-        }
-
-
-        if (char === closeChar) {
-
-            depth--;
-
-            if (depth === 0) {
-
-                return i;
-
-            }
-
-        }
-
-    }
-
-
-    return -1;
-
-}
-
-
-/* =========================================================
-   เพิ่ม Object เข้า exam-data.js
-========================================================= */
-
-async function addToExamData() {
-
-    if (!currentData) {
-
-        alert(
-            "กรุณาตรวจสอบลิงก์และสร้างโค้ดก่อน"
-        );
-
-        return;
-    }
-
-
-    const resultBox =
-        document.getElementById(
-            "saveResult"
-        );
-
-
-    resultBox.style.display = "block";
-
-    resultBox.classList.remove("error");
-
-    resultBox.innerHTML =
-        "⏳ กำลังเปิดไฟล์ exam-data.js...";
-
-
-    try {
-
-        const text =
-            await readExamDataFile();
-
-
-        if (text === null) {
-
-            resultBox.style.display = "none";
-
-            return;
-        }
-
-
-        const arrayInfo =
-            findExamArray(text);
-
-
-        if (!arrayInfo) {
-
-            throw new Error(
-                "ไม่พบ examData = [ ... ] ในไฟล์"
-            );
-
-        }
-
-
-        const objectCode =
-            makeObjectCode(currentData);
-
-
-        const before =
-            text.substring(
-                0,
-                arrayInfo.end
-            );
-
-
-        const after =
-            text.substring(
-                arrayInfo.end
-            );
-
-
-        /*
-            ตรวจว่าข้อมูลเดิมมี object หรือไม่
-        */
-
-        const insideArray =
-            text.substring(
-                arrayInfo.start + 1,
-                arrayInfo.end
-            ).trim();
-
-
-        let insertion = "";
-
-
-        if (insideArray.length > 0) {
-
-            insertion =
-                ",\n\n    "
-                + objectCode
-                    .split("\n")
-                    .join("\n    ");
-
-        } else {
-
-            insertion =
-                "\n\n    "
-                + objectCode
-                    .split("\n")
-                    .join("\n    ")
-                + "\n";
-
-        }
-
-
-        const newText =
-            before
-            + insertion
-            + after;
-
-
-        /*
-            เขียนกลับเข้าไฟล์
-        */
-
-        const writable =
-            await examDataFileHandle
-                .createWritable();
-
-
-        await writable.write(newText);
-
-        await writable.close();
-
-
-        resultBox.innerHTML =
-            "✅ <b>เพิ่มข้อมูลเข้า exam-data.js เรียบร้อยแล้ว!</b>"
-            + "<br><br>"
-            + "📂 ระบบ: "
-            + escapeHtml(
-                currentData.version === "OLD"
-                    ? "HSK ฉบับเก่า"
-                    : "HSK 3.0"
-            )
-            + "<br>"
-            + "📘 ระดับ: "
-            + escapeHtml(currentData.level)
-            + "<br>"
-            + "📝 ชุด: "
-            + escapeHtml(currentData.set)
-            + "<br>"
-            + "🆔 ID: "
-            + escapeHtml(currentData.id);
-
-
-        /*
-            เคลียร์ฟอร์มเพื่อเตรียมชุดต่อไป
-        */
-
-        setTimeout(() => {
-
-            resetInputsOnly();
-
-        }, 700);
-
-
-    } catch (error) {
-
-        console.error(error);
-
-        resultBox.classList.add("error");
-
-        resultBox.innerHTML =
-            "❌ <b>ไม่สามารถเพิ่มข้อมูลได้</b>"
-            + "<br><br>"
-            + escapeHtml(
-                error.message
-            )
-            + "<br><br>"
-            + "💡 หากไฟล์มีโครงสร้างไม่ตรงกับระบบ "
-            + "ให้ใช้ปุ่ม <b>ดาวน์โหลดโค้ดชุดนี้</b> "
-            + "เพื่อบันทึกข้อมูลแทน";
-
-    }
-
-}
-
-
-/* =========================================================
-   ดาวน์โหลดโค้ดเป็น JS
-========================================================= */
-
-function downloadExamDataSnippet() {
-
-    if (!currentData) {
-
-        alert(
-            "กรุณาตรวจสอบลิงก์และสร้างโค้ดก่อน"
-        );
-
-        return;
-    }
-
-
-    const objectCode =
-        makeObjectCode(currentData);
-
-
-    const content =
-`// HSK Exam Data
-// Generated by ก็แค่จีน by ครูพี่เหม่ยถิง
-
-const newExamData = [
-    ${objectCode
-        .split("\n")
-        .join("\n    ")}
-];
-`;
+    const code =
+        generateJS();
 
 
     const blob =
         new Blob(
-            [content],
+            [code],
             {
                 type:
-                    "text/javascript;charset=utf-8"
+                    "application/javascript;charset=utf-8"
             }
         );
 
 
     const url =
-        URL.createObjectURL(blob);
+        URL.createObjectURL(
+            blob
+        );
 
 
     const a =
-        document.createElement("a");
+        document.createElement(
+            "a"
+        );
+
 
     a.href = url;
 
     a.download =
-        "hsk-exam-snippet.js";
+        "exam-data.js";
 
 
-    document.body.appendChild(a);
+    document.body.appendChild(
+        a
+    );
+
 
     a.click();
 
+
     a.remove();
 
-    URL.revokeObjectURL(url);
 
-}
-
-
-/* =========================================================
-   Reset เฉพาะช่องกรอก
-========================================================= */
-
-function resetInputsOnly() {
-
-    document.getElementById("setName").value = "";
-
-    document.getElementById("examUrl").value = "";
-
-    document.getElementById("answerUrl").value = "";
-
-    document.getElementById("listeningUrl").value = "";
-
-
-    [
-        "examStatus",
-        "answerStatus",
-        "listeningStatus"
-    ].forEach(id => {
-
-        const el =
-            document.getElementById(id);
-
-        el.textContent = "";
-
-        el.className =
-            "link-status";
-
-    });
-
-
-    [
-        "examId",
-        "answerId",
-        "listeningId"
-    ].forEach(id => {
-
-        document.getElementById(id)
-            .style.display = "none";
-
-    });
-
-
-    currentData = null;
-
-
-    document.getElementById(
-        "previewCard"
-    ).classList.remove("active");
-
-
-    document.getElementById(
-        "codeCard"
-    ).classList.remove("active");
-
-}
-
-
-/* =========================================================
-   ล้างข้อมูลทั้งหมด
-========================================================= */
-
-function clearForm() {
-
-    resetInputsOnly();
-
-    document.getElementById(
-        "generatedCode"
-    ).value = "";
-
-
-    document.getElementById(
-        "saveResult"
-    ).style.display = "none";
-
-}
-
-
-/* =========================================================
-   Escape HTML
-========================================================= */
-
-function escapeHtml(value) {
-
-    return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-
-}
-
-
-/* =========================================================
-   ตรวจลิงก์อัตโนมัติเมื่อวาง
-========================================================= */
-
-document.getElementById("examUrl")
-    .addEventListener(
-        "input",
-        () => {
-
-            quickCheck(
-                "examUrl",
-                "examStatus",
-                "examId",
-                "ข้อสอบ"
-            );
-
-        }
+    URL.revokeObjectURL(
+        url
     );
 
 
-document.getElementById("answerUrl")
-    .addEventListener(
-        "input",
-        () => {
-
-            quickCheck(
-                "answerUrl",
-                "answerStatus",
-                "answerId",
-                "เฉลย"
-            );
-
-        }
+    showStatus(
+        "สร้างไฟล์ exam-data.js แล้ว ✓",
+        "success"
     );
 
-
-document.getElementById("listeningUrl")
-    .addEventListener(
-        "input",
-        () => {
-
-            quickCheck(
-                "listeningUrl",
-                "listeningStatus",
-                "listeningId",
-                "Listening"
-            );
-
-        }
-    );
+}
 
 
-/* =========================================================
-   Quick Check
-========================================================= */
+/* =====================================================
+   STATUS
+===================================================== */
 
-function quickCheck(
-    inputId,
-    statusId,
-    fileIdId,
-    label
+function showStatus(
+    message,
+    type = "info"
 ) {
 
-    const value =
-        document.getElementById(inputId)
-            .value
-            .trim();
-
-
     const status =
-        document.getElementById(statusId);
-
-
-    const idBox =
-        document.getElementById(fileIdId);
-
-
-    if (!value) {
-
-        status.textContent = "";
-
-        status.className =
-            "link-status";
-
-        idBox.style.display =
-            "none";
-
-        return;
-    }
-
-
-    const fileId =
-        getDriveFileId(value);
-
-
-    if (!fileId) {
-
-        status.textContent =
-            "❌ ยังอ่าน File ID ไม่ได้";
-
-        status.className =
-            "link-status status-error";
-
-        idBox.style.display =
-            "none";
-
-        return;
-
-    }
-
-
-    const download =
-        convertDriveUrl(value);
+        document.getElementById(
+            "status"
+        );
 
 
     status.textContent =
-        "✅ อ่าน File ID สำเร็จ";
+        message;
 
 
     status.className =
-        "link-status status-ok";
+        "status show " +
+        type;
 
 
-    idBox.style.display =
-        "block";
+    clearTimeout(
+        window.statusTimer
+    );
 
 
-    idBox.innerHTML =
-        "<b>File ID:</b> "
-        + escapeHtml(fileId)
-        + "<br><br>"
-        + "<b>Download:</b> "
-        + escapeHtml(download);
+    window.statusTimer =
+        setTimeout(
+            function() {
+
+                status.classList.remove(
+                    "show"
+                );
+
+            },
+            5000
+        );
 
 }
 
 
-/* =========================================================
-   รองรับการกด Enter ในชื่อชุด
-========================================================= */
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
 
-document.getElementById("setName")
-    .addEventListener(
-        "keydown",
-        function(event) {
+function escapeHTML(value) {
 
-            if (event.key === "Enter") {
+    return String(value)
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
 
-                event.preventDefault();
+}
 
-                checkAllLinks();
 
-            }
+/* =====================================================
+   ESCAPE ATTRIBUTE
+===================================================== */
 
-        }
-    );
+function escapeAttribute(value) {
+
+    return String(value)
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        );
+
+}
 
 </script>
 
